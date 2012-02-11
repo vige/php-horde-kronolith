@@ -1,0 +1,7 @@
+php-horde-kronolith (3.0.15-1) unstable; urgency=low
+
+  * kronolith package
+  * Initial packaging (Closes: #nnnnnn)
+  * Copyright file by Soren Stoutner and Jay Barksdale
+
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 11 Feb 2012 15:06:35 +0100
