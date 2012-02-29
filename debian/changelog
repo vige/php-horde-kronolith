@@ -1,3 +1,9 @@
+php-horde-kronolith (3.0.15-2) UNRELEASED; urgency=low
+
+  * Fixed watchfile
+
+ -- Mathieu Parent <sathieu@debian.org>  Wed, 29 Feb 2012 18:37:22 +0100
+
 php-horde-kronolith (3.0.15-1) unstable; urgency=low
 
   * kronolith package
