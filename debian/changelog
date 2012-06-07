@@ -4,5 +4,7 @@ php-horde-kronolith (3.0.15-1) unstable; urgency=low
   * Initial packaging (Closes: #657377)
   * Copyright file by Soren Stoutner and Jay Barksdale
   * Build-depends on php-horde-role
+  * Updated debian/pearrc to install Horde apps in /usr/share/horde
+    instead of /usr/share/horde4
 
- -- Mathieu Parent <sathieu@debian.org>  Wed, 29 Feb 2012 18:46:42 +0100
+ -- Mathieu Parent <sathieu@debian.org>  Thu, 07 Jun 2012 15:14:13 +0200
