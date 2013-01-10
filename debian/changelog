@@ -1,3 +1,9 @@
+php-horde-kronolith (4.0.3-1) UNRELEASED; urgency=low
+
+  * New upstream version 4.0.3
+
+ -- Mathieu Parent <sathieu@debian.org>  Thu, 10 Jan 2013 20:02:39 +0100
+
 php-horde-kronolith (4.0.2-2) unstable; urgency=low
 
   * Add a description of Horde in long description
