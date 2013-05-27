@@ -1,3 +1,9 @@
+php-horde-kronolith (4.0.4-2) UNRELEASED; urgency=low
+
+  * Use pristine-tar
+
+ -- Mathieu Parent <sathieu@debian.org>  Mon, 27 May 2013 08:46:25 +0200
+
 php-horde-kronolith (4.0.4-1) unstable; urgency=low
 
   * New upstream version 4.0.4
