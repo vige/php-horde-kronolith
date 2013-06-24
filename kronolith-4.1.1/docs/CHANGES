@@ -1,4 +1,13 @@
 ------
+v4.1.1
+------
+
+[mjr] Fix setting RECURRENCE-ID field when exporting ics file (Bug #12368).
+[jan] Fix propagating calendar URLs if import/export is turned off.
+[mjr] Add API methods for using history modification sequences.
+
+
+------
 v4.1.0
 ------
 

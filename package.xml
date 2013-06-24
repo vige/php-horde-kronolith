@@ -22,10 +22,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2013-06-04</date>
- <time>23:52:23</time>
+ <date>2013-06-18</date>
+ <time>18:32:41</time>
  <version>
-  <release>4.1.0</release>
+  <release>4.1.1</release>
   <api>4.1.0</api>
  </version>
  <stability>
@@ -34,7 +34,9 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [jan] Add help text for CalDAV usage.
+* [mjr] Fix setting RECURRENCE-ID field when exporting ics file (Bug #12368).
+* [jan] Fix propagating calendar URLs if import/export is turned off.
+* [mjr] Add API methods for using history modification sequences.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -69,11 +71,11 @@
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="91fc78b157c0b8ae0fb1ce6e33e49ee1" name="config/menu.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="c7d44b781ae19766fb2ba2cc58225187" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="20545159e791cf2563a4d705d2c4b98c" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="9cdde270b76edaf8db660ca13afdbd19" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="6aa2fa058e57cf39b3b687c24d54a5ae" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="d079ffa93589f0a8dfebb27e24f25433" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="a5ef28bd4616b638d37af5964206f733" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="1d8bfcb96c97cb614cfae915da005b49" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="7c9a689bf94dbe7ca69d149a82d02acd" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
@@ -82,7 +84,7 @@
    <file baseinstalldir="/" md5sum="43d412a18073ba46b6c4dbe1284faed7" name="js/edit.js" role="horde" />
    <file baseinstalldir="/" md5sum="e8f6f4563d14ba194c08fb848994099c" name="js/embed.js" role="horde" />
    <file baseinstalldir="/" md5sum="2191fc52c69209554c14895c73c89c81" name="js/goto.js" role="horde" />
-   <file baseinstalldir="/" md5sum="9bddc52a3fa180a79916809883cbf643" name="js/kronolith.js" role="horde" />
+   <file baseinstalldir="/" md5sum="ed0b73395d5a65c1ad7e7f64d56e94e7" name="js/kronolith.js" role="horde" />
    <file baseinstalldir="/" md5sum="21b2930e618d641fe46e66874b7751a8" name="js/smartmobile.js" role="horde" />
    <file baseinstalldir="/" md5sum="26e31b7894960f30cab67fa93928999e" name="js/views.js" role="horde" />
    <file baseinstalldir="/" md5sum="6a59aad64533a22e4f972b282bbdee94" name="lib/Ajax/Application/Handler.php" role="horde" />
@@ -167,15 +169,15 @@
    <file baseinstalldir="/" md5sum="8fce96c540068702d3d6983239d66c87" name="lib/View/Year.php" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="609f841e28a3c4f5ffb6e9f3eab34333" name="lib/Ajax.php" role="horde" />
-   <file baseinstalldir="/" md5sum="84fe88457507322770bb2195ae00a08e" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="8d16c25b3f2425b7e93f6458a2daaa05" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="ad032f51da04ed27b1167d75d70aa0d7" name="lib/Api.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8e3c207fbc2833161d7c58a0ec1257d8" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="128c87c5994711f6a9ad965156db6aa9" name="lib/Calendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="d2a2e8a077122099164b3a3009d5086f" name="lib/Day.php" role="horde" />
    <file baseinstalldir="/" md5sum="e88ba3547ad0640584df557d70c59f73" name="lib/Driver.php" role="horde" />
-   <file baseinstalldir="/" md5sum="316ca0463d05214fecbfd3531ee692a3" name="lib/Event.php" role="horde" />
+   <file baseinstalldir="/" md5sum="6be0259b55b20e0c592042944e9ffece" name="lib/Event.php" role="horde" />
    <file baseinstalldir="/" md5sum="b1fc69b1aedc35aee263f047374df4d5" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="98a8782abc9374a957d6cf5f3986c766" name="lib/FreeBusy.php" role="horde" />
-   <file baseinstalldir="/" md5sum="2f632a8e9ddea459d2ba5f3f747a16f5" name="lib/Kronolith.php" role="horde" />
+   <file baseinstalldir="/" md5sum="fa852f65d341b3a2fafdcd7b5816a5f9" name="lib/Kronolith.php" role="horde" />
    <file baseinstalldir="/" md5sum="f6dc755b9d536402a1919bc9992d1958" name="lib/Resource.php" role="horde" />
    <file baseinstalldir="/" md5sum="da3de1aeeb14284aa70f776f255588a0" name="lib/Storage.php" role="horde" />
    <file baseinstalldir="/" md5sum="edfcbe618dbce0e07312693e05f351af" name="lib/Tagger.php" role="horde" />
@@ -191,15 +193,15 @@
    <file baseinstalldir="/" md5sum="4438756adbf7d236bcf5385a554a0347" name="locale/cs/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="2df56f187c5b43c43b6a8a2cb483c8ca" name="locale/da/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="110ba3e9d4bc6e6f99f74fe495f91368" name="locale/da/LC_MESSAGES/kronolith.po" role="horde" />
-   <file baseinstalldir="/" md5sum="07231f1b88c1d627df26bf6d0c24849b" name="locale/de/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="2faba0b1ed441407364558bb42c7016c" name="locale/de/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="7daf8b880db093b5cc88e483a739cb2f" name="locale/de/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="ee819a2452ccd201aa51a18d283ab7e4" name="locale/de/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="02420864253bdc3e5459b9cdfa0e0aa0" name="locale/de/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="dc0282331a4b1d47d407497657a20e8d" name="locale/el/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="7fce10dd434447508fdaadef15b19931" name="locale/el/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="f78ea0649591388759b06503784109c0" name="locale/en/help.xml" role="horde" />
-   <file baseinstalldir="/" md5sum="75061cb5402938de4b428a83ca23e497" name="locale/es/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="9a9d82387dd63cf6c7ea7124d872084e" name="locale/es/LC_MESSAGES/kronolith.po" role="horde" />
-   <file baseinstalldir="/" md5sum="3dd63b3d98a4168c8f33767367c8e612" name="locale/es/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="c60013df3b79dd86da00623389929386" name="locale/es/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="2ad492f5c1159e175d1f7a70ee7196f6" name="locale/es/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="3f6acb17b99fae8316aa3ad935743594" name="locale/es/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="515a290ad4bd88b8b2ee7564e10c5a0f" name="locale/et/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="693332bfba92ec6ca168f82d5c5be639" name="locale/et/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="8d63748dcecd38f0b6e2b31592aef12c" name="locale/eu/LC_MESSAGES/kronolith.mo" role="horde" />
@@ -219,8 +221,8 @@
    <file baseinstalldir="/" md5sum="aa133f3c4964fd22d0117a657b09697b" name="locale/hu/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="96deac1036823b97b505e07259901857" name="locale/it/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="98397c24795fbed919e690986dbae4a2" name="locale/it/LC_MESSAGES/kronolith.po" role="horde" />
-   <file baseinstalldir="/" md5sum="adddad2e5bb4de2077dfdde5d2e74ffa" name="locale/ja/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="8f0e165f8557cbc57d62b97ce1878ea0" name="locale/ja/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="9e67fae7f7f018635c798fc815909fff" name="locale/ja/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="b6b2b43ab801d57df25a62791a979322" name="locale/ja/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="2f05a5318c76c61f136c91dca852f0c6" name="locale/ko/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="c21bf8fa1a62977b97e14c53918cbec2" name="locale/ko/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="cbf8e5b51e8a0be9d5339ea99af080f3" name="locale/lt/LC_MESSAGES/kronolith.mo" role="horde" />
@@ -230,8 +232,8 @@
    <file baseinstalldir="/" md5sum="c2a964baa22ac4de2d0ba185d8fd33cd" name="locale/lv/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="534f0f2afdc4bf6f38f8f51c99f00dbd" name="locale/nb/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="c9486117dc0b95609864e14a68a64737" name="locale/nb/LC_MESSAGES/kronolith.po" role="horde" />
-   <file baseinstalldir="/" md5sum="6292ca3f2f5efb875d3579d0bbf1867b" name="locale/nl/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="f33d09de2d63fc385ef69ec311789d0d" name="locale/nl/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="1725b54e06944da653a3bbdf37470562" name="locale/nl/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="d903b219901a76bfcd2c856ba4815ff9" name="locale/nl/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="492788292f170d072c98ccce11706c36" name="locale/nn/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="9476d864e90a4ba3cda8c51b42e42049" name="locale/nn/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="025d7a59e4636000c8a04ee2a623d979" name="locale/pl/LC_MESSAGES/kronolith.mo" role="horde" />
@@ -261,7 +263,7 @@
    <file baseinstalldir="/" md5sum="88cc011b460b563a205b158de458c1b0" name="locale/zh_TW/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="98b7b0057da69e3669e7c1eca4885e90" name="locale/zh_TW/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="locale/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="299745b6faf6160d117ee3b3adff7374" name="locale/kronolith.pot" role="horde" />
+   <file baseinstalldir="/" md5sum="c760b6e2fcf6d199bcb07f322eb05a8c" name="locale/kronolith.pot" role="horde" />
    <file baseinstalldir="/" md5sum="0598d25be47ca3efbb8666649feca5d7" name="migration/1_kronolith_base_tables.php" role="horde" />
    <file baseinstalldir="/" md5sum="25f3e8688359c0a25b2db8ed700079eb" name="migration/2_kronolith_upgrade_autoincrement.php" role="horde" />
    <file baseinstalldir="/" md5sum="4ece8e1c3b89e3556815900479fd9de8" name="migration/3_kronolith_upgrade_addallday.php" role="horde" />
@@ -587,7 +589,7 @@
    <package>
     <name>Horde_History</name>
     <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
+    <min>2.1.0</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
    </package>
@@ -1918,6 +1920,23 @@
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * [jan] Add help text for CalDAV usage.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.1.1</release>
+    <api>4.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-06-18</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [mjr] Fix setting RECURRENCE-ID field when exporting ics file (Bug #12368).
+* [jan] Fix propagating calendar URLs if import/export is turned off.
+* [mjr] Add API methods for using history modification sequences.
    </notes>
   </release>
  </changelog>
