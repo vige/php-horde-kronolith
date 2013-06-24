@@ -39,12 +39,13 @@ class Kronolith_Application extends Horde_Registry_Application
     public $features = array(
         'alarmHandler' => true,
         'dynamicView' => true,
-        'smartmobileView' => true
+        'smartmobileView' => true,
+        'modseq' => true
     );
 
     /**
      */
-    public $version = 'H5 (4.1.0)';
+    public $version = 'H5 (4.1.1)';
 
     /**
      * Global variables defined:
