@@ -1,8 +1,8 @@
-php-horde-kronolith (4.1.2-1) UNRELEASED; urgency=low
+php-horde-kronolith (4.1.2-1) unstable; urgency=low
 
   * New upstream version 4.1.2
 
- -- Mathieu Parent <sathieu@debian.org>  Sun, 11 Aug 2013 12:34:49 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Sun, 11 Aug 2013 13:09:54 +0200
 
 php-horde-kronolith (4.1.1-1) unstable; urgency=low
 
