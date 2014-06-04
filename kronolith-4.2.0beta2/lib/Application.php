@@ -47,7 +47,7 @@ class Kronolith_Application extends Horde_Registry_Application
 
     /**
      */
-    public $version = 'H5 (4.2.0alpha2)';
+    public $version = 'H5 (4.2.0beta2)';
 
     /**
      * Global variables defined:
@@ -69,6 +69,14 @@ class Kronolith_Application extends Horde_Registry_Application
         $GLOBALS['injector']->bindFactory('Kronolith_Geo', 'Kronolith_Factory_Geo', 'create');
         $GLOBALS['injector']->bindFactory('Kronolith_Shares', 'Kronolith_Factory_Shares', 'create');
 
+        /* Set the timezone variable, if available. */
+        $GLOBALS['registry']->setTimeZone();
+
+        /* Store the request timestamp if it's not already present. */
+        if (!isset($_SERVER['REQUEST_TIME'])) {
+            $_SERVER['REQUEST_TIME'] = time();
+        }
+
         if (!$GLOBALS['prefs']->getValue('dynamic_view')) {
             $this->features['dynamicView'] = false;
         }
@@ -76,17 +84,6 @@ class Kronolith_Application extends Horde_Registry_Application
             !$GLOBALS['prefs']->getValue('dynamic_view') ||
             empty($this->initParams['nodynamicinit'])) {
             Kronolith::initialize();
-        }
-    }
-
-    protected function _authenticated()
-    {
-        /* Set the timezone variable, if available. */
-        $GLOBALS['registry']->setTimeZone();
-
-        /* Store the request timestamp if it's not already present. */
-        if (!isset($_SERVER['REQUEST_TIME'])) {
-            $_SERVER['REQUEST_TIME'] = time();
         }
     }
 
@@ -578,6 +575,11 @@ class Kronolith_Application extends Horde_Registry_Application
             foreach ($calendars as $calendar) {
                 list($type, $cal) = explode('_', $calendar, 2);
                 $kronolith_driver = Kronolith::getDriver($type, $cal);
+                $calendarObject = Kronolith::getCalendar($kronolith_driver);
+                if (!$calendarObject ||
+                    !$calendarObject->hasPermission(Horde_Perms::READ)) {
+                    throw new Horde_Exception_PermissionDenied();
+                }
                 $events[$calendar] = $kronolith_driver->listEvents(
                     $start,
                     $end,
@@ -625,24 +627,23 @@ class Kronolith_Application extends Horde_Registry_Application
                     }
                 }
 
-                $injector->getInstance('Horde_Core_Factory_Data')->create('Csv', array('cleanup' => array($this, 'cleanupData')))->exportFile(_("events.csv"), $data, true);
+                $injector->getInstance('Horde_Core_Factory_Data')
+                    ->create('Csv', array('cleanup' => array($this, 'cleanupData')))
+                    ->exportFile(_("events.csv"), $data, true);
                 exit;
 
             case Horde_Data::EXPORT_ICALENDAR:
-                $calNames = $calIds = array();
+                $calNames = array();
                 $iCal = new Horde_Icalendar();
 
                 foreach ($events as $calevents) {
                     foreach ($calevents as $dayevents) {
                         foreach ($dayevents as $event) {
-                            $calIds[$event->calendar] = true;
                             $calNames[Kronolith::getCalendar($event->getDriver())->name()] = true;
                             $iCal->addComponent($event->toiCalendar($iCal));
                         }
                     }
                 }
-
-                $kshares = $injector->getInstance('Kronolith_Shares');
 
                 $iCal->setAttribute('X-WR-CALNAME', implode(', ', array_keys($calNames)));
 
@@ -699,7 +700,7 @@ class Kronolith_Application extends Horde_Registry_Application
                 '{' . CalDAV\Plugin::NS_CALDAV . '}calendar-description' =>
                     $share->get('desc'),
                 '{http://apple.com/ns/ical/}calendar-color' =>
-                    $share->get('color'),
+                    $share->get('color') . 'ff',
                 '{' . CalDAV\Plugin::NS_CALDAV . '}supported-calendar-component-set' => new CalDAV\Property\SupportedCalendarComponentSet(array('VEVENT')),
                 '{http://sabredav.org/ns}read-only' => !$share->hasPermission($user, Horde_Perms::EDIT),
             );
@@ -819,7 +820,7 @@ class Kronolith_Application extends Horde_Registry_Application
             }
 
             $event = $kronolith_driver->getEvent();
-            $event->fromiCalendar($content);
+            $event->fromiCalendar($content, true);
 
             try {
                 try {
@@ -856,6 +857,15 @@ class Kronolith_Application extends Horde_Registry_Application
             if (!$existing_event) {
                 $dav->addObjectMap($id, $object, $internal);
             }
+
+            // Send iTip messages.
+            // Notifications will get lost, there is no way to return messages
+            // to clients.
+            Kronolith::sendITipNotifications(
+                $event,
+                new Horde_Notification_Handler(new Horde_Notification_Storage_Object()),
+                Kronolith::ITIP_REQUEST
+            );
         }
     }
 
@@ -875,11 +885,23 @@ class Kronolith_Application extends Horde_Registry_Application
                 ?: preg_replace('/\.ics$/', '', $object);
         } catch (Horde_Dav_Exception $e) {
         }
-        Kronolith::getDriver(null, $internal)->deleteEvent($object);
+
+        $kronolith_driver = Kronolith::getDriver(null, $internal);
+        $event = $kronolith_driver->getEvent($object);
+        $kronolith_driver->deleteEvent($object);
 
         try {
             $dav->deleteExternalObjectId($object, $internal);
         } catch (Horde_Dav_Exception $e) {
         }
+
+        // Send iTip messages.
+        // Notifications will get lost, there is no way to return messages to
+        // clients.
+        Kronolith::sendITipNotifications(
+            $event,
+            new Horde_Notification_Handler(new Horde_Notification_Storage_Object()),
+            Kronolith::ITIP_CANCEL
+        );
     }
 }

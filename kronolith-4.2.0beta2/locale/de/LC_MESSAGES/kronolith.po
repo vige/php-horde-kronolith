@@ -1,151 +1,163 @@
-# Japanese translation for kronolith.
-# Copyright 2004-2013 Horde LLC (http://www.horde.org/)
-# This file is distributed under the same license as the kronorith package.
-# Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>
+# German translations for Kronolith.
+# Copyright 2001-2014 Horde LLC (http://www.horde.org/)
+# This file is distributed under the same license as the Kronolith package.
+# Jan Schneider <jan@horde.org>, 2001-2014.
 #
+# free/busy: Frei/Gebucht
 msgid ""
 msgstr ""
-"Project-Id-Version: Konolith H5 (4.2.0-git)\n"
+"Project-Id-Version: Kronolith H5 (4.2-git)\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2014-03-10 15:14+0900\n"
-"PO-Revision-Date: 2014-03-10 15:34+0900\n"
-"Last-Translator: Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>\n"
-"Language-Team: i18n@lists.horde.org\n"
-"Language: ja\n"
+"POT-Creation-Date: 2014-06-04 11:28+0200\n"
+"PO-Revision-Date: 2014-06-04 11:45+0200\n"
+"Last-Translator: Jan Schneider <jan@horde.org>\n"
+"Language-Team: German <i18n@lists.horde.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.4\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: feed/index.php:124
 msgid " to "
-msgstr " to "
+msgstr " bis "
 
 #: templates/edit/edit.inc:283
 #, php-format
 msgid " until %s"
-msgstr "%s まで"
+msgstr " bis %s"
 
 #: templates/edit/edit.inc:283
 msgid " without end"
-msgstr "終了なし"
+msgstr " ohne Ende"
 
 #: templates/edit/edit.inc:173
 #, php-format
 msgid "%d %s before the event starts"
-msgstr "イベント開始前 %d %s"
+msgstr "%d %s vor dem Terminbeginn"
 
-#: lib/Event.php:2240
+#: lib/Event.php:2355
 #, php-format
 msgid "%d day"
 msgid_plural "%d days"
-msgstr[0] "%d 日"
+msgstr[0] "%d Tag"
+msgstr[1] "%d Tage"
 
 #: templates/search/header.inc:4
 #, php-format
 msgid "%d events"
-msgstr "%d イベント"
+msgstr "%d Termine"
 
-#: lib/Event.php:2243
+#: lib/Event.php:2358
 #, php-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d 時間"
+msgstr[0] "%d Stunde"
+msgstr[1] "%d Stunden"
 
-#: lib/Event.php:2246
+#: lib/Event.php:2361
 #, php-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d 分"
+msgstr[0] "%d Minute"
+msgstr[1] "%d Minuten"
 
 #: templates/view/view.inc:129
 #, php-format
 msgid "%d times"
-msgstr "%d 回"
+msgstr "%d mal"
 
-#: lib/Event.php:2237
+#: lib/Event.php:2352
 #, php-format
 msgid "%d week"
 msgid_plural "%d weeks"
-msgstr[0] "%d 週"
+msgstr[0] "%d Woche"
+msgstr[1] "%d Wochen"
 
 #: templates/chunks/permissions.inc:20
 #, php-format
 msgid "%s %sShare with the %s %sgroup%s and %sallow them to%s %s"
-msgstr "%s %s共有 %s %sグループ%s そして %s許可する%s %s"
+msgstr "%s %sMit der %s %sGruppe%s teilen und %sihnen erlauben%s %s"
 
 #: templates/chunks/permissions.inc:38
 #, php-format
 msgid "%s %sShare with the users:%s %s and %sallow them to%s %s"
-msgstr "%s %sユーザと共有：%s %s そして %s許可する%s %s"
+msgstr "%s %sMit den Benutzern:%s %s teilen und %sihnen erlauben%s %s"
 
 #: lib/Api.php:820 lib/Api.php:831
 #, php-format
 msgid "%s Already Exists"
-msgstr "%s 既にあります"
+msgstr "%s existiert bereits"
 
 #: templates/edit/edit_timespan.inc:110
 #, php-format
 msgid "%s Day(s) %s Hour(s) %s Minutes"
-msgstr "%s 日 %s 時間 %s 分"
+msgstr "%s Tag(e) %s Stunde(n) %s Minuten"
 
 #: templates/dynamic/edit.inc:145 templates/dynamic/task.inc:100
 #, php-format
 msgid ""
 "%s Don't repeat %s or repeat %s daily, %s weekly, %s monthly %s or %s yearly "
 "%s"
-msgstr "%s繰り返さない%s または 繰り返す：%s毎日、%s毎週、%s毎月%s %s毎年%s"
+msgstr ""
+"%s Nicht wiederholen %s oder %s täglich, %s wöchentlich, %s monatlich %s "
+"oder %s jährlich %s wiederholen"
 
 #: templates/dynamic/edit.inc:123
 #, php-format
 msgid "%s Don't set %s or %s set %s before the event %s"
-msgstr "%s セットしない %s または %s イベントの前 %s にセットする %s"
+msgstr "%s nicht einrichten %s oder %s einrichten %s vor dem Termin %s"
 
 #: templates/dynamic/edit.inc:90
 #, php-format
 msgid "%s Private %s &mdash; hides details if calendar is public %s"
-msgstr "%s 私的 %s &mdash; 公開予定表なら詳細を隠す %s"
+msgstr "%s Privat %s &mdash; Versteckt Details in öffentlichen Kalendern %s"
 
-#: lib/Event.php:2254
+#: lib/Event.php:2369
 #, php-format
 msgid "%s at %s"
-msgstr "%s の %s に"
+msgstr "%s um %s"
 
 #: templates/dynamic/task.inc:78
 #, php-format
 msgid "%s don't set %s or %s set %s before due date %s"
-msgstr "%s セットしない %s または %s 期日の前 %s にセットする %s"
+msgstr ""
+"%s nicht einrichten %s oder %s einrichten %s vor dem Fälligkeitsdatum %s"
 
 #: data.php:210
 #, php-format
 msgid "%s file successfully imported"
-msgstr "%s ファイルは正常にインポートされました"
+msgstr "Die %s-Datei wurde erfolgreich importiert"
 
 #: templates/share/notification.plain.php:5
 #, php-format
 msgid "%s has assigned the ownership of the calendar \"%s\" to you."
-msgstr "%s さんが予定表 ¥\"%s¥\" の所有権をあなたに与えました。"
+msgstr "%s hat den Kalender \"%s\" an Sie übergeben."
 
 #: templates/share/notification.html.php:13
 #, php-format
 msgid "%s has assigned the ownership of the calendar %s to you."
-msgstr "%s さんが予定表 %s の所有権をあなたに与えました。"
+msgstr "%s hat den Kalender %s an Sie übergeben."
 
-#: lib/Kronolith.php:1906
+#: lib/Kronolith.php:1920
 #, php-format
 msgid "%s has cancelled \"%s\"."
-msgstr "%s はキャンセル済み：¥\"%s¥\""
+msgstr "%s hat \"%s\" abgesagt."
 
-#: lib/Kronolith.php:1908
+#: lib/Kronolith.php:1922
 #, php-format
 msgid "%s has cancelled an instance of the recurring \"%s\"."
-msgstr "%s さんは \"%s\" の繰り返しをキャンセルしました。"
+msgstr "%s hat eine einzelne Wiederholung von \"%s\" abgesagt."
 
-#: lib/Kronolith.php:1924
+#: lib/Driver/Sql.php:522
+#, php-format
+msgid "%s not found"
+msgstr "%s nicht gefunden"
+
+#: lib/Kronolith.php:1938
 #, php-format
 msgid "%s wants to notify you about changes of \"%s\"."
-msgstr "%s さんはあなたが \"%s\" の変更を通知することを望んでいます。"
+msgstr "%s möchte Sie auf Änderungen an \"%s\" aufmerksam machen."
 
 #: templates/share/notification.plain.php:7
 #, php-format
@@ -153,8 +165,8 @@ msgid ""
 "%s wants to share the calendar \"%s\" with you to grant you access to all "
 "events in this calendar."
 msgstr ""
-"%s さんは、予定表 \"%s\" をあなたが付随する全てのイベントにアクセス可能な形で"
-"共有したいと望んでいます。"
+"%s möchte den Kalender \"%s\" mit Ihnen teilen, um Ihnen den Zugriff auf "
+"alle Termine in diesem Kalender zu ermöglichen."
 
 #: templates/share/notification.html.php:15
 #, php-format
@@ -162,69 +174,76 @@ msgid ""
 "%s wants to share the calendar %s with you to grant you access to all events "
 "in this calendar."
 msgstr ""
-"%s さんは、予定表 %s をあなたが付随する全てのイベントにアクセス可能な形で共有"
-"したいと望んでいます。"
+"%s möchte den Kalender %s mit Ihnen teilen, um Ihnen den Zugriff auf alle "
+"Termine in diesem Kalender zu ermöglichen."
 
-#: lib/Kronolith.php:1919
+#: lib/Kronolith.php:1933
 #, php-format
 msgid "%s wishes to make you aware of \"%s\"."
-msgstr "%s さんはあなたが \"%s\" に気付くことを望んでいます。"
+msgstr "%s möchte Sie auf \"%s\" aufmerksam machen."
 
 #: templates/chunks/permissions.inc:51
 #, php-format
 msgid "%sAdvanced sharing.%s You can also return to the %sstandard settings%s."
-msgstr "%s詳細な共有です。%s あるいは %s標準の共有%s に戻れます。"
+msgstr ""
+"%sErweiterte Rechte.%s Sie können auch zu den %sStandard-Einstellungen%s "
+"zurückkehren."
 
 #: templates/chunks/permissions.inc:10
 #, php-format
 msgid ""
 "%sShare with everyone%s (public) and %s %smake it searchable%s by everyone "
 "too"
-msgstr "%s誰とも共有する%s （公開） そして %s 誰からも %s検索可能%s とする"
+msgstr ""
+"%sMit allen teilen%s (öffentlich) und auch für alle %s %sdurchsuchbar%s "
+"machen"
 
 #: templates/chunks/permissions.inc:2
 #, php-format
 msgid "%sStandard sharing.%s You can also set %sadvanced sharing%s options."
 msgstr ""
-"%s標準の共有です。%s あるいは %s詳細な共有%s オプションが使用可能です。"
+"%sStandard-Rechte.%s Sie können auch %sErweiterte Rechte-Einstellungen%s "
+"vornehmen."
 
-#: templates/chunks/calendar.php:149
+#: templates/chunks/calendar.php:151
 #, php-format
 msgid "%sWarning:%s also %sdeletes all events%s currently in the calendar."
-msgstr "%s警告：%s 現在の予定表の %s全てのイベントを削除%s します。"
+msgstr ""
+"%sWarnung:%s %sLöscht auch alle Termine%s die sich bereits im Kalender "
+"befinden."
 
 #: templates/contacts/contacts.inc:178
 msgid "* Add these by clicking Add *"
-msgstr "*「追加」をクリックして追加 *"
+msgstr "* Auswahl durch Klick auf \"Hinzufügen\" *"
 
 #: templates/contacts/contacts.inc:163
 msgid "* Please select address(es) *"
-msgstr "* アドレスを選択して下さい *"
+msgstr "* Bitte Adresse(n) auswählen *"
 
 #: templates/edit/edit.inc:283
 #, php-format
 msgid ", %d times"
-msgstr "、%d 回"
+msgstr ", %d mal"
 
 #: templates/search/header.inc:4
 msgid "1 event"
-msgstr "１イベント"
+msgstr "1 Termin"
 
 #: config/prefs.php:187
 msgid "1 hour"
-msgstr "１時間"
+msgstr "1 Stunde"
 
 #: config/prefs.php:184
 msgid "15 minutes"
-msgstr "15分"
+msgstr "15 Minuten"
 
 #: config/prefs.php:185
 msgid "20 minutes"
-msgstr "20分"
+msgstr "20 Minuten"
 
 #: config/prefs.php:186
 msgid "30 minutes"
-msgstr "30分"
+msgstr "30 Minuten"
 
 #: templates/data/export.inc:118 templates/data/export.inc:203
 msgid "AM"
@@ -232,190 +251,194 @@ msgstr "AM"
 
 #: lib/Kronolith.php:870
 msgid "Accepted"
-msgstr "受理"
+msgstr "Angenommen"
 
-#: lib/Kronolith.php:1533
+#: lib/Kronolith.php:1547
 msgid "Access permissions"
-msgstr "アクセス権"
+msgstr "Zugriffsrechte"
 
 #: templates/search/search.inc:8
 msgid "Ad_vanced Search"
-msgstr "_V詳細検索"
+msgstr "E_rweiterte Suche"
 
 #: templates/chunks/permissions.inc:201 templates/chunks/permissions.inc:248
 #: templates/contacts/contacts.inc:172
 msgid "Add"
-msgstr "追加"
+msgstr "Hinzufügen"
 
 #: templates/edit/edit.inc:30
 msgid "Add Event"
-msgstr "イベント追加"
+msgstr "Termin hinzufügen"
 
 #: templates/dynamic/sidebar.html.php:132
 msgid "Add Holidays"
-msgstr "休日を追加"
+msgstr "Feiertage hinzufügen"
 
 #: templates/dynamic/sidebar.html.php:119
 msgid "Add Remote Calendar"
-msgstr "リモートカレンダーを追加"
+msgstr "Externen Kalender hinzufügen"
 
 #: templates/dynamic/sidebar.html.php:87
 msgid "Add Resource"
-msgstr "リソース追加"
+msgstr "Ressource hinzufügen"
 
 #: templates/dynamic/sidebar.html.php:102
 msgid "Add Resource Group"
-msgstr "リソースグループを追加"
+msgstr "Ressourcegruppe hinzufügen"
 
 #: new.php:87
 msgid "Add a new event"
-msgstr "新しいイベントを追加"
+msgstr "Einen neuen Termin hinzufügen"
 
 #: templates/attendees/attendees.inc:126
 msgid "Add attendees"
-msgstr "参加者を追加"
+msgstr "Teilnehmer hinzufügen"
 
 #: templates/dynamic/edit.inc:209
 msgid "Add attendees e-mail addresses"
-msgstr "出席者のメールアドレスを追加"
+msgstr "E-Mail-Adressen der Teilnehmer hinzufügen"
 
 #: templates/dynamic/edit.inc:86
 msgid "Add event to"
-msgstr "イベント追加"
+msgstr "Termin hinzufügen zu"
 
 #: templates/attendees/attendees.inc:137
 msgid "Add resource"
-msgstr "リソース追加"
+msgstr "Ressourcen hinzufügen"
 
 #: templates/dynamic/edit.inc:234
 msgid "Add resources"
-msgstr "リソース追加"
+msgstr "Ressourcen hinzufügen"
 
 #: templates/dynamic/index.inc:8 templates/dynamic/task.inc:25
 msgid "Add to"
-msgstr "ここに追加"
+msgstr "Hinzufügen zu"
 
 #: templates/contacts/contacts.inc:198
 msgid "Add to attendees"
-msgstr "参加者に追加"
+msgstr "Zu Teilnehmern hinzufügen"
 
-#: lib/Ajax/Application/Handler.php:957
+#: lib/Ajax/Application/Handler.php:959
 msgid "Added task list not found."
-msgstr "追加されえたタスク表が見つかりません。"
+msgstr "Hinzugefügte Aufgabenliste nicht gefunden."
 
 #: contacts.php:74 templates/attendees/attendees.inc:132
 #: templates/contacts/contacts.inc:139
 msgid "Address Book"
-msgstr "アドレス帳"
+msgstr "Adressbuch"
 
 #: config/prefs.php:73
 msgid "Address Books"
-msgstr "アドレス帳"
+msgstr "Adressbücher"
 
 #: templates/search/search_advanced.inc:10
 msgid "Advanced Search"
-msgstr "詳細検索"
+msgstr "Erweiterte Suche"
 
 #: templates/dynamic/index.inc:40 templates/smartmobile/day.html.php:9
 #: templates/smartmobile/month.html.php:9
 #: templates/smartmobile/summary.html.php:9
 msgid "Agenda"
-msgstr "議題"
+msgstr "Übersicht"
 
 #: templates/edit/edit.inc:179 templates/view/view.inc:49
 msgid "Alarm"
-msgstr "アラーム"
+msgstr "Alarm"
 
-#: lib/Event.php:3342
+#: lib/Event.php:3457
 #, php-format
 msgid "Alarm %d day before"
 msgid_plural "Alarm %d days before"
-msgstr[0] "%d 日前にアラーム"
+msgstr[0] "Alarm %d Tag vorher"
+msgstr[1] "Alarm %d Tage vorher"
 
-#: lib/Event.php:3345
+#: lib/Event.php:3460
 #, php-format
 msgid "Alarm %d hour before"
 msgid_plural "Alarm %d hours before"
-msgstr[0] "%d 時間前にアラーム"
+msgstr[0] "Alarm %d Stunde vorher"
+msgstr[1] "Alarm %d Stunden vorher"
 
-#: lib/Event.php:3348
+#: lib/Event.php:3463
 #, php-format
 msgid "Alarm %d minute before"
 msgid_plural "Alarm %d minutes before"
-msgstr[0] "%d 分前にアラーム"
+msgstr[0] "Alarm %d Minute vorher"
+msgstr[1] "Alarm %d Minuten vorher"
 
-#: lib/Event.php:3339
+#: lib/Event.php:3454
 #, php-format
 msgid "Alarm %d week before"
 msgid_plural "Alarm %d weeks before"
-msgstr[0] "%d 週間前にアラーム"
+msgstr[0] "Alarm %d Woche vorher"
+msgstr[1] "Alarm %d Wochen vorher"
 
 #: data.php:54
 msgid "Alarm Date"
-msgstr "アラーム日付"
+msgstr "Alarmdatum"
 
 #: data.php:53
 msgid "Alarm Span (minutes)"
-msgstr "アラーム間隔（分）"
+msgstr "Alarm (Minuten)"
 
 #: data.php:55
 msgid "Alarm Time"
-msgstr "アラーム時間"
+msgstr "Alarmzeit"
 
 #: templates/edit/edit.inc:191 templates/prefs/defaultalarm.html:8
 msgid "Alarm Unit"
-msgstr "アラーム単位"
+msgstr "Alarmeinheit"
 
 #: templates/edit/edit.inc:189 templates/prefs/defaultalarm.html:6
 msgid "Alarm Value"
-msgstr "アラーム値"
+msgstr "Alarmdauer"
 
 #: templates/edit/edit.inc:184
 msgid "Alarm enabled"
-msgstr "アラーム有効"
+msgstr "Alarm aktiviert"
 
 #: lib/Ajax.php:134
 msgid "Alarm:"
-msgstr "アラーム："
+msgstr "Alarm:"
 
 #: templates/dynamic/edit.inc:136 templates/dynamic/task.inc:91
 #, php-format
 msgid "Alert me %s as default %s or %s using:"
-msgstr "警報は %s デフォルトの方法で %s あるいは %s 指定の方法で："
+msgstr "Benachrichtigung %s wie immer %s oder %s per:"
 
 #: templates/delete/delete.inc:27 templates/dynamic/agenda.inc:6
 #: templates/dynamic/tasks.inc:5 templates/edit/edit.inc:45
 msgid "All"
-msgstr "全て"
+msgstr "Alle"
 
 #: lib/FreeBusy/View.php:196 lib/FreeBusy/View.php:199
 #: lib/FreeBusy/View.php:202
 msgid "All Attendees"
-msgstr "全ての参加者"
+msgstr "Alle Teilnehmer"
 
 #: templates/chunks/permissions.inc:94 templates/perms/perms.inc:54
 msgid "All Authenticated Users"
-msgstr "全ての認証済ユーザ"
+msgstr "Angemeldete Benutzer"
 
 #: lib/Block/Month.php:40
 msgid "All Calendars"
-msgstr "全予定表"
+msgstr "Alle Kalender"
 
 #: templates/search/search.inc:57
 msgid "All Future"
-msgstr "今後全て"
+msgstr "Alle zukünftigen"
 
 #: templates/search/search.inc:51
 msgid "All Past"
-msgstr "過去全て"
+msgstr "Alle vergangenen"
 
 #: lib/Block/Month.php:28 lib/Block/Monthlist.php:40
 #: lib/Block/Prevmonthlist.php:38 lib/Block/Summary.php:59
 msgid "All Visible"
-msgstr "閲覧可能なもの全て"
+msgstr "Alle sichtbaren"
 
 #: lib/Ajax.php:136 lib/Block/Month.php:177 lib/Block/Summary.php:179
-#: lib/Event.php:3460 lib/View/Day.php:94 lib/View/Day.php:97
+#: lib/Event.php:3575 lib/View/Day.php:94 lib/View/Day.php:97
 #: lib/View/Week.php:123 lib/View/Week.php:148 lib/View/Year.php:135
 #: templates/agenda/notification.html.php:24
 #: templates/agenda/notification.plain.php:6 templates/dynamic/day.inc:14
@@ -423,63 +446,68 @@ msgstr "閲覧可能なもの全て"
 #: templates/edit/edit_timespan.inc:109
 #: templates/smartmobile/javascript_defs.php:135
 msgid "All day"
-msgstr "丸１日"
+msgstr "Ganztägig"
 
 #: templates/view/view.inc:36
 msgid "All day event"
-msgstr "丸１日のイベント"
+msgstr "Ganztägiger Termin"
 
 #: templates/data/export.inc:33
 msgid "All events"
-msgstr "全イベント"
+msgstr "Alle Termine"
 
 #: lib/LoginTasks/Task/PurgeEvents.php:91
 #, php-format
 msgid "All of your events older than %d days will be permanently deleted."
-msgstr "あなたのイベントで %d 日よりも古いイベントは全て消去されます。"
+msgstr ""
+"Alle Ihre Termine, die älter als %d Tage sind, werden endgültig gelöscht."
 
 #: config/prefs.php:313
 msgid ""
 "All state removed for your ActiveSync devices. They will resynchronize next "
 "time they connect to the server."
 msgstr ""
-"ActiveSync 端末の全ステータスが削除されました。次に端末がサーバに接続された"
-"時、再同期されます。"
+"Der Status Ihrer ActiveSync-Geräte wurde zurückgesetzt. Bei der nächsten "
+"Verbindung mit dem Server werden sie neu synchronisiert."
 
 #: templates/dynamic/edit.inc:55
 msgid "All-day event"
-msgstr "丸１日のイベント"
+msgstr "Ganztägiger Termin"
 
 #: lib/Form/CreateResource.php:28 lib/Form/EditResource.php:36
-#: templates/chunks/calendar.php:365
+#: templates/chunks/calendar.php:369
 msgid "Always Accept"
-msgstr "常に許諾"
+msgstr "Immer zulassen"
 
 #: lib/Form/CreateResource.php:29 lib/Form/EditResource.php:37
-#: templates/chunks/calendar.php:366
+#: templates/chunks/calendar.php:370
 msgid "Always Decline"
-msgstr "常に辞退"
+msgstr "Immer ablehnen"
 
 #: lib/Kronolith.php:964 templates/search/search_advanced.inc:36
 msgid "Any"
-msgstr "どれでも"
+msgstr "Alle"
 
 #: lib/Ajax.php:137
 msgid "Are you sure you want to delete this calendar and all the events in it?"
-msgstr "本当にこの予定表と中に含まれる全てのイベントを削除したいのですか？"
+msgstr ""
+"Sind Sie sicher, dass Sie diesen Kalender und alle Termine darin löschen "
+"möchten?"
 
 #: lib/Ajax.php:138
 msgid "Are you sure you want to delete this task list and all the tasks in it?"
-msgstr "本当にこのタスク表と中に含まれる全てのタスクを削除したいのですか？"
+msgstr ""
+"Sind Sie sicher, dass Sie diese Aufgabenliste und alle Aufgaben darin "
+"löschen möchten?"
 
 #: templates/dynamic/task.inc:49
 msgid "Assignee"
-msgstr "担当者"
+msgstr "Zuständiger"
 
 #: templates/data/export.inc:85 templates/data/export.inc:176
 #: templates/edit/edit_timespan.inc:32 templates/edit/edit_timespan.inc:80
 msgid "At"
-msgstr "時間"
+msgstr "um"
 
 #: templates/itip/notification.html.php:74
 #: templates/itip/notification.plain.php:22
@@ -488,124 +516,133 @@ msgid ""
 "mail client supports iTip requests you can use this file to easily update "
 "your local copy of the event."
 msgstr ""
-"このメールに添付されているのは、イベントの詳細についての iCalendar ファイルで"
-"す。もし、メーラが iTip をサポートしていれば、添付ファイルから簡単に予定表を"
-"更新できます。"
+"Im Anhang befindet sich eine iCalendar-Datei mit mehr Informationen zu "
+"diesem Termin. Wenn Ihr E-Mail-Programm iTip-Anfragen beherrscht, können Sie "
+"diese Datei dazu benutzen, Ihre lokale Version des Termins zu aktualisieren."
 
 #: perms.php:64
 msgid "Attempt to edit a non-existent share."
-msgstr "存在しない共有を編集しようとしました。"
+msgstr "Es wurde versucht, ein nicht existierendes Recht zu bearbeiten."
 
 #: templates/attendees/attendees.inc:49 templates/attendees/attendees.inc:61
 #: templates/attendees/attendees.inc:86 templates/attendees/attendees.inc:98
 #: templates/view/view.inc:173 templates/view/view.inc:191
 msgid "Attendance"
-msgstr "参加"
+msgstr "Anwesenheit"
 
 #: templates/attendees/attendees.inc:48 templates/view/view.inc:172
 msgid "Attendee"
-msgstr "参加者"
+msgstr "Teilnehmer"
 
 #: templates/dynamic/edit.inc:99 templates/view/view.inc:169
 msgid "Attendees"
-msgstr "参加者"
+msgstr "Teilnehmer"
 
 #: templates/edit/edit.inc:263
 msgid "Attendees and Resources"
-msgstr "参加者とリソース"
+msgstr "Teilnehmer und Ressourcen"
 
 #: templates/alarm/mail.html.php:33 templates/itip/notification.html.php:42
 #: templates/itip/notification.plain.php:10
 msgid "Attendees:"
-msgstr "参加者："
+msgstr "Teilnehmer:"
 
-#: templates/chunks/calendar.php:364
+#: templates/chunks/calendar.php:368
 msgid "Auto"
-msgstr "自動"
+msgstr "Automatisch"
 
 #: lib/Form/CreateResource.php:30 lib/Form/EditResource.php:38
 msgid "Automatically"
-msgstr "自動的"
+msgstr "Automatik"
 
 #: templates/dynamic/edit.inc:218 templates/dynamic/edit.inc:243
 msgid "Availability"
-msgstr "可能性"
+msgstr "Verfügbarkeit"
 
 #: templates/search/search.inc:10
 msgid "Basic Search"
-msgstr "簡易検索"
+msgstr "Einfache Suche"
 
 #: lib/FreeBusy/View.php:129 lib/FreeBusy/View.php:150
 #: lib/FreeBusy/View.php:172 lib/FreeBusy/View.php:180
 #: templates/fbview/legend.html:9
 msgid "Busy"
-msgstr "多忙"
+msgstr "Beschäftigt"
 
 #: templates/search/search_advanced.inc:32
 msgid "C_alendar"
-msgstr "_A予定表"
+msgstr "_Kalender"
 
-#: lib/Form/EditCalendar.php:107 templates/chunks/calendar.php:112
-#: templates/chunks/calendar.php:223
+#: lib/Form/EditCalendar.php:107 templates/chunks/calendar.php:114
+#: templates/chunks/calendar.php:227
 msgid "CalDAV Account URL"
-msgstr "CalDAV アカウント URL"
+msgstr "CalDAV-Konto-Adresse"
 
-#: lib/Form/EditCalendar.php:98 templates/chunks/calendar.php:107
-#: templates/chunks/calendar.php:218
+#: lib/Form/EditCalendar.php:98 templates/chunks/calendar.php:109
+#: templates/chunks/calendar.php:222
 msgid "CalDAV Subscription URL"
-msgstr "CalDAV 登録 URL"
+msgstr "CalDAV-Abonnement-Adresse"
 
 #: templates/edit/edit.inc:73
 msgid "Cal_endar"
-msgstr "予定表"
+msgstr "_Kalender"
 
 #: lib/Block/Month.php:22 lib/Block/Monthlist.php:22
 #: lib/Block/Prevmonthlist.php:22 lib/Block/Summary.php:26
 #: lib/Calendars/Kolab.php:41
 msgid "Calendar"
-msgstr "予定表"
+msgstr "Kalender"
 
-#: templates/chunks/calendar.php:157 templates/chunks/calendar.php:392
+#: templates/chunks/calendar.php:159 templates/chunks/calendar.php:396
 msgid "Calendar ICS file"
-msgstr "予定表 ICS ファイル"
+msgstr "ICS-Kalenderdatei"
 
 #: lib/Block/Summary.php:17
 msgid "Calendar Summary"
-msgstr "予定表概要"
+msgstr "Kalender-Übersicht"
+
+#: lib/Api.php:405 lib/Application.php:880
+msgid "Calendar does not exist or no permission to delete"
+msgstr "Der Kalender existiert nicht oder keine Berechtigung zum Löschen"
+
+#: lib/Api.php:292 lib/Application.php:720 lib/Application.php:761
+#: lib/Application.php:807
+msgid "Calendar does not exist or no permission to edit"
+msgstr "Der Kalender existiert nicht oder keine Berechtigung zum Ändern."
 
 #: lib/Block/Month.php:48 lib/Block/Month.php:67 lib/Block/Monthlist.php:86
 #: lib/Block/Prevmonthlist.php:79 lib/Block/Summary.php:97
 msgid "Calendar not found"
-msgstr "予定表が見つかりません"
+msgstr "Kalender nicht gefunden"
 
 #: lib/Calendars/Default.php:45
 #, php-format
 msgid "Calendar of %s"
-msgstr "%s の予定表"
+msgstr "Kalender von %s"
 
 #: templates/chunks/permissions.inc:59
 msgid "Calendar owner"
-msgstr "予定表の所有者"
+msgstr "Kalenderbesitzer"
 
 #: data.php:134
 msgid "Calendar successfully purged."
-msgstr "予定表は正常にパージされました。"
+msgstr "Kalender erfolgreich geleert."
 
 #: templates/chunks/calendar.php:55
 msgid "Calendar title"
-msgstr "予定表のタイトル"
+msgstr "Kalendername"
 
 #: config/prefs.php:25 config/prefs.php:32 config/prefs.php:65
 msgid "Calendars"
-msgstr "予定表"
+msgstr "Kalender"
 
 #: templates/calendar_titles.inc:9
 msgid "Calendars Printed: "
-msgstr "印刷する予定表："
+msgstr "Gedruckte Kalender: "
 
 #: data.php:154
 msgid "Can't create a new event."
-msgstr "新しいイベントを作成できません。"
+msgstr "Ein neuer Termin konnte nicht erstellt werden."
 
 #: lib/Form/DeleteCalendar.php:35 lib/Form/DeleteCalendar.php:44
 #: lib/Form/DeleteResource.php:38 lib/Form/DeleteResource.php:48
@@ -615,272 +652,318 @@ msgstr "新しいイベントを作成できません。"
 #: lib/Form/EditResource.php:74 lib/Form/EditResource.php:139
 #: lib/Form/EditResourceGroup.php:50 lib/Form/EditResourceGroup.php:80
 #: lib/Form/UnsubscribeRemoteCalendar.php:29
-#: lib/Form/UnsubscribeRemoteCalendar.php:38 templates/chunks/calendar.php:166
-#: templates/chunks/calendar.php:251 templates/chunks/calendar.php:278
-#: templates/chunks/calendar.php:299 templates/chunks/calendar.php:319
-#: templates/chunks/calendar.php:343 templates/chunks/calendar.php:398
-#: templates/chunks/calendar.php:433 templates/delete/delete.inc:28
+#: lib/Form/UnsubscribeRemoteCalendar.php:38 templates/chunks/calendar.php:168
+#: templates/chunks/calendar.php:255 templates/chunks/calendar.php:282
+#: templates/chunks/calendar.php:303 templates/chunks/calendar.php:323
+#: templates/chunks/calendar.php:347 templates/chunks/calendar.php:402
+#: templates/chunks/calendar.php:437 templates/delete/delete.inc:28
 #: templates/delete/one.inc:25 templates/dynamic/edit.inc:296
 #: templates/dynamic/edit.inc:311 templates/dynamic/index.inc:14
 #: templates/dynamic/task.inc:166 templates/dynamic/task.inc:180
 #: templates/edit/edit.inc:58 templates/edit/edit.inc:444
 msgid "Cancel"
-msgstr "キャンセル"
+msgstr "Abbrechen"
 
 #: lib/Kronolith.php:846 templates/dynamic/edit.inc:73
 msgid "Cancelled"
-msgstr "キャンセル"
+msgstr "Abgesagt"
 
-#: lib/Kronolith.php:1904
+#: lib/Kronolith.php:1918
 #, php-format
 msgid "Cancelled: %s"
-msgstr "キャンセル済み：%s"
+msgstr "Abgesagt: %s"
 
 #: lib/Driver/Ical.php:523
 msgid "Cannot delete exceptions (yet)."
-msgstr "例外を（まだ）削除できません。"
+msgstr "Ausnahmen können (noch) nicht gelöscht werden."
 
 #: lib/Kronolith.php:715
 #, php-format
 msgid "Cannot parse event description \"%s\""
-msgstr "イベントの説明 \"%s\" が解釈できません"
+msgstr "Die Terminbeschreibung \"%s\" wurde nicht verstanden"
 
 #: lib/Form/EditCalendar.php:159
 msgid "Change Permissions"
-msgstr "アクセス権の変更"
+msgstr "Rechte Ändern"
 
 #: config/prefs.php:57
 msgid ""
 "Choose how you want to be notified about event changes, event alarms and "
 "upcoming events."
-msgstr "イベントの変更、アラームをどう通知して欲しいかを選択して下さい。"
+msgstr ""
+"Legen Sie fest, wie Sie über Terminänderungen, Terminalarme und kommende "
+"Termine benachrichtigt werden möchten."
 
 #: lib/Prefs/Special/EventAlarms.php:29
 msgid "Choose how you want to receive reminders for events with alarms:"
-msgstr "イベントのアラームをメールで通知して欲しいものを選択："
+msgstr ""
+"Legen Sie fest, wie Sie über Termine mit Alarmen benachrichtigt werden "
+"möchten:"
 
 #: config/prefs.php:378
 msgid ""
 "Choose if you want to be notified of new, edited, and deleted events by "
 "email:"
-msgstr "イベントの追加、編集、削除をメールで通知して欲しいものを選択："
+msgstr ""
+"Legen Sie fest, ob Sie per E-Mail über neue, geänderte oder gelöschte "
+"Termine benachrichtigt werden möchten:"
 
 #: config/prefs.php:391
 msgid "Choose if you want to receive daily agenda email reminders:"
-msgstr "日毎の予定でメールで通知して欲しいものを選択："
+msgstr ""
+"Legen Sie fest, ob Sie täglich per E-Mail über die Termine des Tages "
+"informiert werden möchten:"
 
 #: config/prefs.php:410
 msgid "Choose if you want to receive reminders for events with alarms:"
-msgstr "イベントのアラームをメールで通知して欲しいものを選択："
+msgstr ""
+"Legen Sie fest, ob Sie Benachrichtigungen über Termine mit Alarm erhalten "
+"möchten:"
 
 #: config/prefs.php:483
 msgid "Choose the calendars to include in the above Free/Busy URL:"
-msgstr "上の予定情報（Free/Busy URL）にデータを送る予定表を選択："
+msgstr ""
+"Wählen Sie die Kalender aus, die einbezogen werden sollen, wenn die obige "
+"Frei/Gebucht-Adresse erzeugt wird:"
 
 #: config/prefs.php:34
 msgid "Choose the calendars to use for synchronization with external devices."
-msgstr "外部の装置と同期させる予定表を選択します。"
+msgstr ""
+"Wählen Sie die Kalender, die für die Synchronisation mit externen Geräten "
+"verwendet werden sollen."
+
+#: config/prefs.php:528
+msgid ""
+"Choose the identity to use for ActiveSync. This determines the email address "
+"used as the ORGANIZER for events you create."
+msgstr ""
+"Wählen Sie eine Identität, die für ActiveSync benutzt werden soll. Damit "
+"wird die E-Mail-Adresse festgelegt, die als Organisator für Ihre Termine "
+"verwendet wird."
 
 #: config/prefs.php:217
 msgid "Choose the views to show event locations in:"
-msgstr "イベント場所を表示させる画面を選択："
+msgstr ""
+"Wählen Sie die Ansichten, in denen die Terminorte angezeigt werden sollen:"
 
 #: config/prefs.php:206
 msgid "Choose the views to show event start and end times in:"
-msgstr "開始と終了時間を表示させる画面を選択："
+msgstr ""
+"Wählen Sie die Ansichten, in denen Terminbeginn und -ende angezeigt werden "
+"sollen:"
 
 #: config/prefs.php:27
 msgid "Choose your default calendar."
-msgstr "デフォルトの予定表を選択してください。"
+msgstr "Wählen Sie Ihren Standard-Kalender aus."
 
 #: templates/attendees/attendees.inc:154
 msgid "Clear all"
-msgstr "全て消去"
+msgstr "Alle entfernen"
 
 #: lib/Form/EditResource.php:66
 msgid "Click or copy this URL to display the calendar of this resource"
-msgstr "この URL をクリックするかコピーして、このリソースの予定表を表示します"
+msgstr ""
+"Kopieren Sie diese Adresse in Ihren Browser oder klicken Sie darauf, um "
+"diese Ressource anzuzeigen"
 
 #: lib/Form/EditCalendar.php:70
 msgid "Click or copy this URL to display this calendar"
-msgstr "この URL をクリックするかコピーして、この予定表を表示します"
+msgstr ""
+"Kopieren Sie diese Adresse in Ihren Browser oder klicken Sie darauf, um "
+"diesen Kalender anzuzeigen"
 
 #: templates/dynamic/edit.inc:281
 msgid "Client"
-msgstr "クライアント"
+msgstr "Kunde"
 
 #: templates/javascript_defs.php:21
 msgid "Close"
-msgstr "閉じる"
+msgstr "Schließen"
 
 #: templates/perms/perms.inc:10
 msgid "Close Window"
-msgstr "ウインドウを閉じる"
+msgstr "Fenster schließen"
 
 #: templates/contacts/contacts.inc:199
 msgid "Close window"
-msgstr "ウインドウを閉じる"
+msgstr "Fenster schließen"
 
 #: templates/dynamic/sidebar.html.php:35 templates/dynamic/sidebar.html.php:47
 msgid "Collapse"
-msgstr "畳む"
+msgstr "Schließen"
 
 #: lib/Form/CreateCalendar.php:25 lib/Form/EditCalendar.php:55
 #: lib/Form/EditRemoteCalendar.php:30 lib/Form/SubscribeRemoteCalendar.php:25
-#: templates/chunks/calendar.php:61 templates/chunks/calendar.php:184
-#: templates/chunks/calendar.php:269
+#: templates/chunks/calendar.php:61 templates/chunks/calendar.php:186
+#: templates/chunks/calendar.php:273
 msgid "Color"
-msgstr "色"
+msgstr "Farbe"
 
-#: templates/chunks/calendar.php:63 templates/chunks/calendar.php:186
-#: templates/chunks/calendar.php:271
+#: templates/chunks/calendar.php:63 templates/chunks/calendar.php:188
+#: templates/chunks/calendar.php:275
 msgid "Color Picker"
-msgstr "色選択"
+msgstr "Farbauswahl"
 
 #: data.php:21 templates/data/import.inc:13
 msgid "Comma separated values"
-msgstr "コンマ区切りの値"
+msgstr "Kommagetrennte Werte"
 
 #: templates/dynamic/tasks.inc:6
 msgid "Completed"
-msgstr "完了"
+msgstr "Erledigt"
+
+#: config/prefs.php:527
+msgid "Configured Horde Default"
+msgstr "Konfigurierter Horde Standard"
 
 #: config/prefs.php:92
 msgid "Confirm deletion of events?"
-msgstr "イベントを削除する際に確認しますか？"
+msgstr "Löschen von Terminen bestätigen?"
 
 #: lib/Kronolith.php:843 templates/dynamic/edit.inc:72
 msgid "Confirmed"
-msgstr "確定"
+msgstr "Bestätigt"
 
-#: templates/chunks/calendar.php:276 templates/chunks/calendar.php:298
+#: templates/chunks/calendar.php:280 templates/chunks/calendar.php:302
 msgid "Continue"
-msgstr "続く"
+msgstr "Weiter"
 
 #: config/prefs.php:474
 msgid "Copy this URL for use wherever you need your Free/Busy URL:"
-msgstr "このURLをあなたの予定情報URLが必要なところにコピー："
+msgstr ""
+"Benutzen Sie die folgende Adresse, wann immer Sie Ihre Frei/Gebucht-Adresse "
+"benötigen:"
 
 #: lib/Form/EditCalendar.php:111
 msgid "Copy this URL to a CalDAV client to subscribe to all your calendars"
-msgstr "あなたの全ての予定表をCalDAVクライアントに登録するなら、このURLを使用"
+msgstr ""
+"Kopieren Sie diese Adresse in ein CalDAV-Programm um alle Ihre Kalender zu "
+"abonnieren."
 
 #: lib/Form/EditCalendar.php:102
 msgid "Copy this URL to a CalDAV client to subscribe to this calendar"
-msgstr "この予定表をCalDAVクライアントに登録するなら、このURLを使用"
+msgstr ""
+"Kopieren Sie diese Adresse in ein CalDAV-Programm um diesen Kalender zu "
+"abonnieren."
 
 #: lib/Form/EditCalendar.php:127
 msgid "Copy this URL to a WebDAV or ICS client to subscribe to this calendar"
-msgstr "この予定表をWebDAVクライアントに登録するなら、このURLを使用"
+msgstr ""
+"Kopieren Sie diese Adresse in ein WebDAV- oder ICS-Programm um diesen "
+"Kalender zu abonnieren."
 
 #: lib/Form/EditCalendar.php:139
 msgid "Copy this URL to a news feed reader to subscribe to this calendar"
-msgstr "この予定表をフィードリーダーに登録するなら、この URL を使用"
+msgstr ""
+"Kopieren Sie diese Adresse in ein Newsfeed-Programm um diesen Kalender zu "
+"abonnieren."
 
 #: lib/Driver/Ical.php:579
 #, php-format
 msgid "Could not open %s: %s"
-msgstr "%s を開けませんでした：%s"
+msgstr "%s konnte nicht gelesen werden: %s"
 
 #: lib/Form/CreateCalendar.php:33 lib/Form/CreateResource.php:49
 #: lib/Form/CreateResourceGroup.php:36 templates/dynamic/task.inc:178
 msgid "Create"
-msgstr "作成"
+msgstr "Erstellen"
 
 #: lib/Form/CreateCalendar.php:22
 msgid "Create Calendar"
-msgstr "予定表を作成"
+msgstr "Kalender erstellen"
 
 #: lib/Form/CreateResource.php:26
 msgid "Create Resource"
-msgstr "リソースを作成"
+msgstr "Ressource erstellen"
 
 #: lib/Form/CreateResourceGroup.php:26
 msgid "Create Resource Group"
-msgstr "リソースグループの作成"
+msgstr "Ressourcengruppe erstellen"
 
 #: lib/View/Day.php:93 lib/View/Day.php:231 lib/View/Month.php:199
 #: templates/week/head.inc:20
 msgid "Create a New Event"
-msgstr "新規イベントを作成"
+msgstr "Neuen Termin erstellen"
 
 #: lib/Application.php:202
 msgid "Create a new Local Calendar"
-msgstr "予定表を作成"
+msgstr "Neuen lokalen Kalender erstellen"
 
-#: lib/Application.php:274
+#: lib/Application.php:276
 msgid "Create a new Resource"
-msgstr "新しいリソースの作成"
+msgstr "Neue Ressource erstellen"
 
-#: lib/Application.php:262
+#: lib/Application.php:264
 msgid "Create a new Resource Group"
-msgstr "新しいリソースグループの作成"
+msgstr "Neue Ressourcengruppe erstellen"
 
 #: lib/Application.php:215
 msgid "Create a new System Calendar"
-msgstr "システム予定表を新規作成"
+msgstr "Neuen System-Kalender erstellen"
 
 #: templates/view/view.inc:76
 msgid "Created"
-msgstr "作成日"
+msgstr "Erstellt"
 
 #: templates/delete/delete.inc:25 templates/edit/edit.inc:43
 msgid "Current"
-msgstr "現在"
+msgstr "Diesen"
 
 #: config/prefs.php:48
 #, php-format
 msgid "Customize tasks to run upon logon to %s."
-msgstr "%s へのログオン時に実行するタスクを設定します。"
+msgstr ""
+"Legen Sie fest, welche Aufgaben nach der Anmeldung bei %s erledigt werden "
+"sollen."
 
 #: templates/edit/edit.inc:302 templates/view/view.inc:100
 msgid "Daily: Recurs every"
-msgstr "毎日：繰り返し"
+msgstr "Täglich: Wiederholung alle"
 
 #: templates/alarm/mail.html.php:13
 msgid "Date and time:"
-msgstr "日付と時間："
+msgstr "Datum und Uhrzeit:"
 
 #: templates/alarm/mail.plain.php:10
 msgid "Date:"
-msgstr "日付："
+msgstr "Datum:"
 
-#: attendees.php:187 config/prefs.php:100 lib/Application.php:446
-#: lib/Kronolith.php:2405 templates/dynamic/index.inc:32
+#: attendees.php:187 config/prefs.php:100 lib/Application.php:447
+#: lib/Kronolith.php:2420 templates/dynamic/index.inc:32
 #: templates/smartmobile/day.html.php:2 templates/smartmobile/day.html.php:7
 #: templates/smartmobile/month.html.php:7
 #: templates/smartmobile/summary.html.php:7
 msgid "Day"
-msgstr "日"
+msgstr "Tag"
 
 #: templates/edit/edit.inc:152 templates/edit/edit.inc:195
 #: templates/view/view.inc:58 templates/prefs/defaultalarm.html:12
 msgid "Day(s)"
-msgstr "日間"
+msgstr "Tag(e)"
 
-#: lib/Kronolith.php:2472
+#: lib/Kronolith.php:2487
 msgid "De_lete"
-msgstr "_L削除"
+msgstr "_Löschen"
 
 #: lib/Kronolith.php:873
 msgid "Declined"
-msgstr "辞退済み"
+msgstr "Abgelehnt"
 
 #: templates/dynamic/edit.inc:60
 msgid "Default"
-msgstr "デフォルト"
+msgstr "Standard"
 
 #: templates/prefs/defaultalarm.html:2
 msgid "Default Alarm Setting:"
-msgstr "アラームのデフォルト設定："
+msgstr "Standard-Alarmeinstellungen:"
 
 #: config/prefs.php:26
 msgid "Default Calendar"
-msgstr "デフォルト予定表"
+msgstr "Standard-Kalender"
 
 #: templates/chunks/permissions.inc:85
 msgid "Default users"
-msgstr "デフォルトユーザ"
+msgstr "Angemeldete Benutzer"
 
 #: templates/chunks/permissions.inc:114 templates/chunks/permissions.inc:141
 #: templates/chunks/permissions.inc:169 templates/chunks/permissions.inc:222
@@ -892,17 +975,17 @@ msgstr "デフォルトユーザ"
 #: templates/perms/perms.inc:283 templates/perms/perms.inc:301
 #: templates/perms/perms.inc:330 templates/perms/perms.inc:364
 msgid "Delegate"
-msgstr "委任"
+msgstr "Delegieren"
 
-#: lib/Event.php:2441 lib/Event.php:3405 lib/Form/DeleteCalendar.php:34
+#: lib/Event.php:2556 lib/Event.php:3520 lib/Form/DeleteCalendar.php:34
 #: lib/Form/DeleteResource.php:37 lib/Form/DeleteResourceGroup.php:39
 #: lib/Form/EditCalendar.php:172 lib/Form/EditCalendar.php:190
 #: lib/Form/EditResource.php:73 lib/Form/EditResource.php:133
 #: lib/Form/EditResourceGroup.php:49 lib/Form/EditResourceGroup.php:74
-#: templates/chunks/calendar.php:163 templates/chunks/calendar.php:248
-#: templates/chunks/calendar.php:277 templates/chunks/calendar.php:318
-#: templates/chunks/calendar.php:342 templates/chunks/calendar.php:397
-#: templates/chunks/calendar.php:432 templates/chunks/permissions.inc:109
+#: templates/chunks/calendar.php:165 templates/chunks/calendar.php:252
+#: templates/chunks/calendar.php:281 templates/chunks/calendar.php:322
+#: templates/chunks/calendar.php:346 templates/chunks/calendar.php:401
+#: templates/chunks/calendar.php:436 templates/chunks/permissions.inc:109
 #: templates/chunks/permissions.inc:136 templates/chunks/permissions.inc:164
 #: templates/chunks/permissions.inc:217 templates/chunks/permissions.inc:264
 #: templates/delete/one.inc:24 templates/dynamic/edit.inc:294
@@ -915,112 +998,115 @@ msgstr "委任"
 #: templates/perms/perms.inc:300 templates/perms/perms.inc:326
 #: templates/perms/perms.inc:360
 msgid "Delete"
-msgstr "削除"
+msgstr "Löschen"
 
-#: lib/Event.php:3402 lib/Form/DeleteCalendar.php:28
+#: lib/Event.php:3517 lib/Form/DeleteCalendar.php:28
 #: lib/Form/DeleteResource.php:31 lib/Form/DeleteResourceGroup.php:31
 #: lib/View/DeleteEvent.php:43
 #, php-format
 msgid "Delete %s"
-msgstr "%s を削除"
+msgstr "%s löschen"
 
 #: templates/dynamic/edit.inc:304
 msgid "Delete All"
-msgstr "全て削除"
+msgstr "Alle löschen"
 
 #: templates/dynamic/edit.inc:305
 msgid "Delete This Event Only"
-msgstr "このイベントのみ削除"
+msgstr "Nur diesen Termin löschen"
 
 #: templates/dynamic/edit.inc:306
 msgid "Delete This and Future Events"
-msgstr "このイベントと今後のイベントを削除"
+msgstr "Diesen und zukünftige Termine löschen"
 
-#: lib/Event.php:2440
+#: lib/Event.php:2555
 #, php-format
 msgid "Delete exception on %s"
-msgstr "%s から削除除外"
+msgstr "Ausnahme am %s löschen"
 
 #: lib/LoginTasks/Task/PurgeEvents.php:80
 #, php-format
 msgid "Deleted %d event older than %d days."
 msgid_plural "Deleted %d events older than %d days."
-msgstr[0] "%2$d 日よりも古い %1$d イベントは削除されました。"
+msgstr[0] "%d Termin älter als %d Tage wurde gelöscht."
+msgstr[1] "%d Termine älter als %d Tage wurden gelöscht."
 
 #: lib/Driver/Ical.php:519
 msgid "Deleting events is not supported with this remote calendar."
-msgstr "このリモート予定表ではイベントの削除はサポートされていません。"
+msgstr "Dieser externe Kalender unterstützt das Löschen von Terminen nicht."
 
 #: templates/edit/edit.inc:232 templates/search/search.inc:26
 #: templates/search/search_advanced.inc:75
 msgid "Descri_ption"
-msgstr "_P説明"
+msgstr "_Beschreibung"
 
 #: data.php:56 lib/Form/CreateCalendar.php:30 lib/Form/CreateResource.php:44
 #: lib/Form/CreateResourceGroup.php:34 lib/Form/EditCalendar.php:59
 #: lib/Form/EditRemoteCalendar.php:31 lib/Form/EditResource.php:54
 #: lib/Form/EditResourceGroup.php:44 lib/Form/SubscribeRemoteCalendar.php:32
-#: templates/chunks/calendar.php:69 templates/chunks/calendar.php:192
-#: templates/chunks/calendar.php:311 templates/chunks/calendar.php:375
-#: templates/chunks/calendar.php:413 templates/dynamic/edit.inc:95
+#: templates/chunks/calendar.php:69 templates/chunks/calendar.php:194
+#: templates/chunks/calendar.php:315 templates/chunks/calendar.php:379
+#: templates/chunks/calendar.php:417 templates/dynamic/edit.inc:95
 #: templates/dynamic/task.inc:64 templates/view/view.inc:154
 msgid "Description"
-msgstr "説明"
+msgstr "Beschreibung"
 
 #: templates/alarm/mail.html.php:53 templates/itip/notification.html.php:62
 msgid "Description:"
-msgstr "説明："
+msgstr "Beschreibung:"
 
 #: templates/contacts/contacts.inc:187
 msgid "Display"
-msgstr "表示"
+msgstr "Anzeige"
 
 #: config/prefs.php:12
 msgid "Display Preferences"
-msgstr "表示の個人設定"
+msgstr "Anzeige-Einstellungen"
 
 #: lib/Form/EditCalendar.php:66 lib/Form/EditResource.php:62
 msgid "Display URL"
-msgstr "表示URL"
+msgstr "Anzeige-Adresse"
 
 #: lib/Kronolith.php:811
 msgid "Does not recur"
-msgstr "繰り返しではありません"
+msgstr "Keine Wiederholung"
 
 #: config/prefs.php:397
 msgid ""
 "Don't send me a notification if I've added, changed or deleted the event?"
-msgstr "このイベントを追加、削除、変更した時、自分には通知しないようにする？"
+msgstr ""
+"Mir keine Benachrichtigung schicken, wenn ich selbst den Termin hinzugefügt, "
+"geändert oder gelöscht habe?"
 
 #: templates/chunks/permissions.inc:5
 msgid "Don't share this calendar"
-msgstr "この予定表を共有しない"
+msgstr "Diesen Kalender nicht teilen"
 
 #: templates/chunks/permissions.inc:5
 msgid "Don't share this task list"
-msgstr "このタスク表を共有しない"
+msgstr "Diese Aufgabenliste nicht teilen"
 
 #: templates/dynamic/task.inc:13
 msgid "Due date"
-msgstr "期日"
+msgstr "Fälligkeitsdatum"
 
 #: templates/edit/edit_timespan.inc:102
 msgid "Duration"
-msgstr "継続期間"
+msgstr "_Dauer"
 
-#: lib/Event.php:3166
+#: lib/Event.php:3281
 msgid "Duration Day"
-msgstr "継続日数"
+msgstr "Dauer Tage"
 
-#: lib/Event.php:3177
+#: lib/Event.php:3292
 msgid "Duration Hour"
-msgstr "継続時間"
+msgstr "Dauer Stunden"
 
-#: lib/Event.php:3187
+#: lib/Event.php:3302
 msgid "Duration Minute"
-msgstr "継続（分）"
+msgstr "Dauer Minuten"
 
-#: lib/Event.php:3390 templates/chunks/permissions.inc:105
+#: lib/Event.php:3505 templates/chunks/permissions.inc:105
 #: templates/chunks/permissions.inc:132 templates/chunks/permissions.inc:160
 #: templates/chunks/permissions.inc:213 templates/chunks/permissions.inc:260
 #: templates/dynamic/edit.inc:205 templates/perms/perms.inc:58
@@ -1031,41 +1117,41 @@ msgstr "継続（分）"
 #: templates/perms/perms.inc:275 templates/perms/perms.inc:299
 #: templates/perms/perms.inc:322 templates/perms/perms.inc:356
 msgid "Edit"
-msgstr "編集"
+msgstr "Bearbeiten"
 
-#: lib/Event.php:3387 lib/Form/EditCalendar.php:36
+#: lib/Event.php:3502 lib/Form/EditCalendar.php:36
 #: lib/Form/EditRemoteCalendar.php:22 lib/Form/EditResource.php:34
 #: lib/Form/EditResourceGroup.php:34 lib/View/EditEvent.php:44
 #: templates/attendees/attendees.inc:58
 #, php-format
 msgid "Edit %s"
-msgstr "%s を編集"
+msgstr "%s bearbeiten"
 
 #: templates/edit/edit.inc:272
 msgid "Edit Attendees and Resources"
-msgstr "参加者とリソースの編集"
+msgstr "Teilnehmer und Ressourcen bearbeiten"
 
 #: templates/attendees/attendees.inc:126
 msgid "Edit attendee"
-msgstr "参加者の編集"
+msgstr "Teilnehmer bearbeiten"
 
 #: attendees.php:270
 msgid "Edit attendees"
-msgstr "参加者の編集"
+msgstr "Teilnehmer bearbeiten"
 
 #: perms.php:98
 msgid "Edit permissions"
-msgstr "アクセス権の編集"
+msgstr "Rechte bearbeiten"
 
 #: perms.php:97
 #, php-format
 msgid "Edit permissions for \"%s\""
-msgstr "\"%s\" のアクセス権の編集"
+msgstr "Rechte für \"%s\" bearbeiten"
 
 #: templates/perms/perms.inc:12
 #, php-format
 msgid "Edit permissions for %s"
-msgstr "%s のアクセス権を編集"
+msgstr "Rechte für %s bearbeiten"
 
 #: templates/dynamic/edit.inc:20
 #, php-format
@@ -1073,69 +1159,69 @@ msgid ""
 "Edit the %s Entire Series %s, the %s Current Event %s or this and all %s "
 "Future Events %s?"
 msgstr ""
-"編集するのは %s 続き全体 %s、%s 現在のイベント %s あるいは %s 将来のイベント "
-"%s のどれですか？"
+"Die %s ganze Serie %s, den %s aktuellen Termin %s oder den aktuellen und  %s "
+"alle zukünftigen Termine %s bearbeiten?"
 
 #: lib/Form/CreateResource.php:45 lib/Form/EditResource.php:53
 msgid "Email"
-msgstr "電子メール"
+msgstr "E-Mail-Adresse"
 
 #: templates/contacts/contacts.inc:190
 msgid "Email Address"
-msgstr "メールアドレス"
+msgstr "E-Mail-Adresse"
 
-#: templates/chunks/calendar.php:127
+#: templates/chunks/calendar.php:129
 msgid "Embed Script"
-msgstr "組み込みスクリプト"
+msgstr "Skript für Einbetten"
 
-#: templates/chunks/calendar.php:128
+#: templates/chunks/calendar.php:130
 msgid "Embed calendar on external website"
-msgstr "外部のwebサイトに予定表を組み込む"
+msgstr "Kalendar in externe Webseite einbetten"
 
 #: lib/Form/EditCalendar.php:146
 msgid "Embed code"
-msgstr "組み込みコード"
+msgstr "Code zum Einbetten"
 
 #: templates/edit/edit_timespan.inc:53
 msgid "En_d"
-msgstr "_D終了"
+msgstr "En_de"
 
 #: data.php:51
 msgid "End Date"
-msgstr "終了日付"
+msgstr "Enddatum"
 
-#: lib/Event.php:3139 templates/data/export.inc:161
+#: lib/Event.php:3254 templates/data/export.inc:161
 msgid "End Day"
-msgstr "終了日"
+msgstr "Enddatum"
 
-#: lib/Event.php:3151 templates/data/export.inc:178
+#: lib/Event.php:3266 templates/data/export.inc:178
 msgid "End Hour"
-msgstr "終了時間"
+msgstr "Endstunde"
 
-#: lib/Event.php:3161 templates/data/export.inc:190
+#: lib/Event.php:3276 templates/data/export.inc:190
 msgid "End Minute"
-msgstr "終了（分）"
+msgstr "Endminute"
 
-#: lib/Event.php:3131 templates/data/export.inc:148
+#: lib/Event.php:3246 templates/data/export.inc:148
 msgid "End Month"
-msgstr "終了月"
+msgstr "Endmonat"
 
 #: templates/data/export.inc:125 templates/search/event_headers.inc:7
 #: templates/view/view.inc:42
 msgid "End On"
-msgstr "終了日"
+msgstr "endet am"
 
 #: data.php:52
 msgid "End Time"
-msgstr "終了時間"
+msgstr "Endzeit"
 
-#: lib/Event.php:3121 templates/data/export.inc:134
+#: lib/Event.php:3236 templates/data/export.inc:134
 msgid "End Year"
-msgstr "終了年"
+msgstr "Endjahr"
 
 #: templates/itip/notification.html.php:23
 msgid "End:"
-msgstr "終了："
+msgstr "Ende:"
 
 #: templates/dynamic/task.inc:175
 msgid ""
@@ -1143,105 +1229,107 @@ msgid ""
 "parent task. Include due dates like \"laundry tomorrow\" or \"get dry "
 "cleaning next Thursday\"."
 msgstr ""
-"１行に１つのタスクを入力。インデントでその上の子タスクとすることができます。"
-"期日を指定することもできます（ただし、英語表記のみ）。"
+"Geben Sie eine Aufgabe pro Zeile ein. Unteraufgaben können durch Einrückung "
+"unter den Überaufgaben erstellt werden. Fälligkeitsdaten können eingefügt "
+"werden, z.B. \"Morgen Wäsche erledigen\" oder \"Nächsten Donnerstag von der "
+"Reinigung abholen\"."
 
 #: attendees.php:235 attendees.php:255
 #, php-format
 msgid "Error retrieving free/busy information for %s: %s"
-msgstr "%s さんの予定情報取得中にエラー発生：%s"
+msgstr "Fehler beim Auslesen der Frei/Gebucht-Informationen für %s: %s"
 
 #: attendees.php:213
 #, php-format
 msgid "Error retrieving your free/busy information: %s"
-msgstr "予定情報取得中にエラー発生：%s"
+msgstr "Fehler beim Auslesen Ihrer Frei/Gebucht-Informationen: %s"
 
-#: lib/Ajax/Application/Handler.php:1400
+#: lib/Ajax/Application/Handler.php:1402
 #, php-format
 msgid "Error saving timeslice: %s"
-msgstr "タイムスライスの保存中にエラーが発生しました：%s"
+msgstr "Fehler beim Speichern des Zeitabschnitts: %s"
 
 #: templates/smartmobile/javascript_defs.php:134
 msgid "Error when communicating with the server."
-msgstr "サーバとの交信時にエラーが起きました。"
+msgstr "Fehler während der Kommunikation mit dem Server."
 
 #: templates/smartmobile/event.html.php:2
 msgid "Event"
-msgstr "イベント"
+msgstr "Termin"
 
 #: config/prefs.php:40
 msgid "Event Defaults"
-msgstr "イベントのデフォルト"
+msgstr "Standardwerte"
 
 #: templates/dynamic/edit.inc:272
 msgid "Event ICS file"
-msgstr "イベント ICS ファイル"
+msgstr "ICS-Termindatei"
 
 #: feed/index.php:140
 msgid "Event Status:"
-msgstr "イベントの状況："
+msgstr "Terminstatus:"
 
-#: lib/Kronolith.php:2112
+#: lib/Kronolith.php:2127
 msgid "Event added:"
-msgstr "追加されたイベント："
+msgstr "Termin hinzugefügt:"
 
-#: lib/Kronolith.php:2122
+#: lib/Kronolith.php:2137
 msgid "Event deleted:"
-msgstr "削除されたイベント："
+msgstr "Termin gelöscht:"
 
-#: lib/Kronolith.php:2117
+#: lib/Kronolith.php:2132
 msgid "Event edited:"
-msgstr "編集されたイベント："
+msgstr "Termin bearbeitet:"
 
 #: lib/Driver/Horde.php:182 lib/Driver/Ical.php:401 lib/Driver/Ical.php:418
 #: lib/Driver/Sql.php:480 lib/View/DeleteEvent.php:54
 #: lib/View/EditEvent.php:55 lib/View/Event.php:54 lib/View/ExportEvent.php:18
 msgid "Event not found"
-msgstr "イベントが見つかりません"
+msgstr "Termin nicht gefunden"
 
-#: lib/Driver/Kolab.php:318 lib/Driver/Kolab.php:358
+#: lib/Driver/Kolab.php:317 lib/Driver/Kolab.php:357
 #, php-format
 msgid "Event not found: %s"
-msgstr "イベントが見つかりません：%s"
+msgstr "Termin nicht gefunden: %s"
 
 #: templates/dynamic/edit.inc:28
 msgid "Event title"
-msgstr "イベントのタイトル"
+msgstr "Titel"
 
 #: config/prefs.php:39 config/prefs.php:46 config/prefs.php:55
 msgid "Events"
-msgstr "イベント"
+msgstr "Termine"
 
 #: templates/day/head.inc:4 templates/dynamic/day.inc:9
 msgid "Events for this day"
-msgstr "この日のイベント"
+msgstr "Termine für diesen Tag"
 
 #: lib/Api.php:135
 #, php-format
 msgid "Events from %s"
-msgstr "%s からのイベント"
+msgstr "Termine aus %s"
 
 #: lib/Ajax.php:151
 #, php-format
 msgid "Events matching \"%s\""
-msgstr "\"%s\" に一致するイベント"
+msgstr "Zu \"%s\" passende Termine"
 
-#: lib/Event.php:1949
+#: lib/Event.php:1998
 msgid "Events must have a start date."
-msgstr "開始日時が必要です。"
+msgstr "Termine müssen ein Startdatum haben."
 
-#: lib/Event.php:1916
+#: lib/Event.php:1968
 msgid "Events must have a title."
-msgstr "タイトルが必要です。"
+msgstr "Termine müssen einen Titel haben."
 
-#: lib/Ajax.php:171 lib/Event.php:2413 lib/Event.php:3357
+#: lib/Ajax.php:171 lib/Event.php:2528 lib/Event.php:3472
 #: templates/smartmobile/javascript_defs.php:178
 msgid "Exception"
-msgstr "例外"
+msgstr "Ausnahme"
 
 #: templates/edit/edit.inc:395 templates/view/view.inc:135
 msgid "Exceptions"
-msgstr "例外"
+msgstr "Ausnahmen"
 
 #: templates/dynamic/sidebar.html.php:58 templates/dynamic/sidebar.html.php:72
 #: templates/dynamic/sidebar.html.php:89
@@ -1249,150 +1337,151 @@ msgstr "例外"
 #: templates/dynamic/sidebar.html.php:120
 #: templates/dynamic/sidebar.html.php:133
 msgid "Expand"
-msgstr "拡大"
+msgstr "Vergrößern"
 
-#: lib/Kronolith.php:2479 templates/chunks/calendar.php:86
-#: templates/chunks/calendar.php:206 templates/chunks/calendar.php:380
+#: lib/Kronolith.php:2494 templates/chunks/calendar.php:88
+#: templates/chunks/calendar.php:210 templates/chunks/calendar.php:384
 #: templates/data/export.inc:212 templates/dynamic/edit.inc:111
 msgid "Export"
-msgstr "エクスポート"
+msgstr "Exportieren"
 
 #: templates/data/export.inc:8
 msgid "Export Calendar"
-msgstr "予定表のエクスポート"
+msgstr "Kalender exportieren"
 
-#: templates/chunks/calendar.php:156 templates/chunks/calendar.php:241
-#: templates/chunks/calendar.php:391 templates/dynamic/edit.inc:271
+#: templates/chunks/calendar.php:158 templates/chunks/calendar.php:245
+#: templates/chunks/calendar.php:395 templates/dynamic/edit.inc:271
 msgid "Export ICS file"
-msgstr "ICS ファイルのエクスポート"
+msgstr "ICS-Datei exportieren"
 
-#: lib/Form/EditCalendar.php:135 templates/chunks/calendar.php:122
+#: lib/Form/EditCalendar.php:135 templates/chunks/calendar.php:124
 msgid "Feed URL"
-msgstr "フィード URL"
+msgstr "Feed-URL"
 
 #: templates/contacts/contacts.inc:144
 msgid "Find"
-msgstr "捜す"
+msgstr "Suche"
 
 #: templates/dynamic/edit.inc:80
 msgid "Find in Maps"
-msgstr "地図の中を探す"
+msgstr "In Karte suchen"
 
 #: lib/Block/Month.php:112 lib/View/Year.php:62 templates/edit/edit.inc:315
 msgid "Fr"
-msgstr "金"
+msgstr "Fr"
 
 #: lib/Kronolith.php:849 templates/dynamic/edit.inc:70
 msgid "Free"
-msgstr "自由"
+msgstr "Frei"
 
 #: config/prefs.php:66
 msgid "Free/Busy Information"
-msgstr "予定情報（Free/Busy）"
+msgstr "Frei/Gebucht-Informationen"
 
 #: templates/dynamic/edit.inc:167 templates/dynamic/task.inc:122
 #: templates/month/head.inc:12 templates/view/view.inc:107
 msgid "Friday"
-msgstr "金曜"
+msgstr "Freitag"
 
 #: templates/dynamic/edit.inc:35
 msgid "From"
-msgstr "開始"
+msgstr "Von"
 
-#: lib/Event.php:2111 lib/Event.php:2142
+#: lib/Event.php:2226 lib/Event.php:2257
 #, php-format
 msgid "From %s at %s to %s at %s"
-msgstr "開始 %s 時間 %s 終了 %s 時間 %s"
+msgstr "Vom %s um %s bis zum %s um %s"
 
-#: lib/Event.php:2108 lib/Event.php:2139
+#: lib/Event.php:2223 lib/Event.php:2254
 #, php-format
 msgid "From %s to %s"
-msgstr "開始 %s 終了 %s"
+msgstr "Vom %s bis zum %s"
 
 #: templates/delete/delete.inc:26 templates/dynamic/agenda.inc:8
 #: templates/dynamic/tasks.inc:8 templates/edit/edit.inc:44
 msgid "Future"
-msgstr "今後"
+msgstr "Zukünftige"
 
 #: templates/search/search_advanced.inc:18
 msgid "General"
-msgstr "全般"
+msgstr "Allgemeines"
 
 #: lib/Block/Summary.php:169
 #, php-format
 msgid "Goto %s"
-msgstr "%s に移動"
+msgstr "Gehe nach %s"
 
 #: lib/Form/CreateResource.php:48 lib/Form/EditResource.php:56
 #: templates/chunks/permissions.inc:234 templates/perms/perms.inc:295
 msgid "Groups"
-msgstr "グループ"
+msgstr "Gruppen"
 
 #: templates/chunks/permissions.inc:121 templates/perms/perms.inc:95
 msgid "Guest Permissions"
-msgstr "ゲストのアクセス権"
+msgstr "Gastrechte"
 
 #: templates/edit/edit.inc:7
 msgid "Hide"
-msgstr "隠す"
+msgstr "Ausblenden"
 
 #: lib/Ajax.php:142
 msgid "Hide Notifications"
-msgstr "通知を隠す"
+msgstr "Benachrichtigungen verstecken"
 
 #: templates/dynamic/task.inc:33
 msgid "High"
-msgstr "高い"
+msgstr "Hoch"
 
 #: templates/dynamic/task.inc:33
 msgid "Highest"
-msgstr "最高"
+msgstr "Höchste"
 
-#: lib/Application.php:364 templates/chunks/calendar.php:334
+#: lib/Application.php:365 templates/chunks/calendar.php:338
 #: templates/dynamic/sidebar.html.php:133
 msgid "Holidays"
-msgstr "休日"
+msgstr "Feiertage"
 
 #: lib/Factory/Driver.php:100
 msgid "Holidays are disabled"
-msgstr "休日の表示無効"
+msgstr "Feiertage sind deaktiviert"
 
 #: search.php:91
 msgid "Holidays:"
-msgstr "休日："
+msgstr "Feiertage:"
 
 #: templates/edit/edit.inc:156 templates/edit/edit.inc:194
 #: templates/view/view.inc:61 templates/prefs/defaultalarm.html:11
 msgid "Hour(s)"
-msgstr "時間"
+msgstr "Stunde(n)"
 
 #: config/prefs.php:182
 msgid "How long should the time slots on the day and week views be?"
-msgstr "日と週の表示単位をどれくらいにしますか？"
+msgstr ""
+"Wie lang sollen die Zeitabschnitte in der Tages- und Wochenansicht sein?"
 
 #: config/prefs.php:430
 msgid "How many days of Free/Busy information should be generated?"
-msgstr "何日分の予定情報を生成しますか？"
+msgstr "Für wieviele Tage sollen Frei/Gebucht-Informationen angezeigt werden?"
 
 #: config/prefs.php:112
 msgid ""
 "How many events should be displayed per day in the month view? Set to 0 to "
 "always show all events."
 msgstr ""
-"月表示の際、1日にいくつのイベントを表示しますか？０（ゼロ）なら全てのイベント"
-"を表示します。"
+"Wieviele Termine sollen in der Monatsansicht pro Tag angezeigt werden? "
+"Setzen Sie den Wert auf 0, um alle Termine anzuzeigen."
 
 #: templates/dynamic/index.inc:7
 msgid "I.e. Dinner with John tomorrow 8pm"
-msgstr "すなわち、ジョンと明日の8時に夕食"
+msgstr "z.B. Essen mit Peter morgen abend"
 
 #: templates/itip/notification.plain.php:25
 msgid ""
 "If your email client doesn't support iTip requests you can use one of the "
 "following links to accept or decline the event."
 msgstr ""
-"もしもメールクライアントが iTip をサポートしていないなら、以下のリンクでイベ"
-"ントへの受諾・謝絶ができます。"
+"Falls Ihr E-Mail-Programm keine iTip-Anfragen unterstützt, können Sie einen "
+"der folgenden Links verwenden, um den Termin zu bestätigen oder abzulehnen."
 
 #: templates/itip/notification.html.php:76
 #, php-format
@@ -1400,354 +1489,362 @@ msgid ""
 "If your email client doesn't support iTip requests you can use the following "
 "links to: %saccept%s, %saccept tentatively%s or %sdecline%s the event."
 msgstr ""
-"もしもメールクライアントが iTip をサポートしていないなら、以下のリンクでイベ"
-"ントの %s受諾%s、%s仮受諾%s あるいは %s謝絶%s ができます。"
+"Falls Ihr E-Mail-Programm keine iTip-Anfragen unterstützt, können Sie die "
+"folgenden Links verwenden, um den Termin: %szu bestätigen%s, %sunter "
+"Vorbehalt zu bestätigen%s oder %sabzulehnen%s."
 
-#: templates/chunks/calendar.php:85
+#: templates/chunks/calendar.php:87
 msgid "Import"
-msgstr "インポート"
+msgstr "Importieren"
 
 #: templates/data/import.inc:7
 #, php-format
 msgid "Import Calendar, Step %d"
-msgstr "予定表のインポート、ステップ %d"
+msgstr "Kalender importieren, Schritt %d"
 
-#: templates/chunks/calendar.php:142
+#: templates/chunks/calendar.php:144
 msgid "Import ICS file"
-msgstr "ICS ファイルをインポート"
+msgstr "ICS-Datei importieren"
 
-#: data.php:234
+#: data.php:233
 msgid "Import/Export Calendar"
-msgstr "予定表のインポート/エクスポート"
+msgstr "Kalender-Import/-Export"
 
 #: lib/Ajax.php:143
 msgid "Importing calendar data. This may take a while..."
-msgstr "予定表データのインポート中。少し時間が掛かります…"
+msgstr "Importiere Kalenderdaten. Dies kann einige Zeit dauern..."
 
-#: templates/chunks/calendar.php:146
+#: templates/chunks/calendar.php:148
 #, php-format
 msgid "Importing should %s %sreplace this calendar%s."
-msgstr "インポートして %s %sこの予定表を入れ替える%s"
+msgstr "Der Import soll %s %sdiesen Kalender ersetzen%s."
 
 #: templates/dynamic/tasks.inc:7
 msgid "Incomplete"
-msgstr "未完"
+msgstr "Unerledigt"
 
 #: templates/perms/perms.inc:178
 msgid "Individual Users"
-msgstr "各個人"
+msgstr "Einzelne Benutzer"
+
+#: lib/Api.php:285
+msgid "Invalid calendar data supplied."
+msgstr "Ungültige Kalenderdaten angebeben."
 
 #: templates/share/notification.plain.php:1
 #, php-format
 msgid "Invitation from %s to the calendar \"%s\""
-msgstr "%s さんから予定表 \"%s\" への招待状"
+msgstr "Einladung von %s zum Kalender \"%s\"."
 
 #: templates/share/notification.html.php:1
 #, php-format
 msgid "Invitation from %s to the calendar %s"
-msgstr "%s さんから予定表 %s への招待状"
+msgstr "Einladung von %s zum Kalender %s"
 
 #: templates/dynamic/edit.inc:275
 msgid "Job type"
-msgstr "職種"
+msgstr "Arbeitsart"
 
 #: templates/search/search.inc:53
 msgid "Last 24 hours"
-msgstr "24時間前まで"
+msgstr "Letzte 24 Stunden"
 
 #: templates/view/view.inc:83
 msgid "Last Modified"
-msgstr "最終変更日"
+msgstr "Letzte Änderung"
 
 #: templates/search/search.inc:52
 msgid "Last week"
-msgstr "先週"
+msgstr "Letzte Woche"
 
-#: templates/chunks/calendar.php:130
+#: templates/chunks/calendar.php:132
 msgid "Learn how to embed other calendar views."
-msgstr "予定表を外部から表示する方法を知る。"
+msgstr "Mehr Informationen über das Einbetten von Kalendern."
 
-#: templates/chunks/calendar.php:106
+#: templates/chunks/calendar.php:108
 msgid "Learn how to subscribe via CalDAV from calendar clients."
-msgstr "予定表クライアントからCalDAV経由で登録する方法を知る。"
+msgstr "Mehr Informationen über das Abonnieren von Kalendern über CalDAV."
 
 #: templates/data/export.inc:29
 msgid "Limit the time span to export:"
-msgstr "エクスポートの範囲："
+msgstr "Wählen Sie die Zeitspanne, die exportiert werden soll:"
 
 #: config/prefs.php:439
 msgid ""
 "List all contacts when loading the contacts screen? (if disabled, you will "
 "only see contacts that you search for explicitly)"
 msgstr ""
-"連絡先を表示する時、連絡先を全部表示しますか？（でなければ、検索したものだけ"
-"表示されます）"
+"Alle Kontakte beim Öffnen der Kontaktliste anzeigen? (Falls deaktiviert, "
+"werden nur die Kontakte angezeigt, nach denen Sie ausdrücklich suchen)"
 
 #: templates/edit/edit.inc:114 templates/search/search_advanced.inc:55
 msgid "Lo_cation"
-msgstr "_C場所"
+msgstr "_Ort"
 
 #: templates/javascript_defs.php:23
 msgid "Loading ..."
-msgstr "ロード中..."
+msgstr "Lade..."
 
 #: templates/dynamic/sidebar.html.php:27
 msgid "Loading calendars..."
-msgstr "予定表のロード中..."
+msgstr "Lade Kalender..."
 
 #: lib/Ui/VarRenderer/Kronolith.php:33 templates/attendees/attendees.inc:129
-#: templates/chunks/calendar.php:99 templates/dynamic/edit.inc:80
+#: templates/chunks/calendar.php:101 templates/dynamic/edit.inc:80
 #: templates/dynamic/edit.inc:211 templates/dynamic/edit.inc:236
 #: templates/dynamic/edit.inc:261 templates/dynamic/task.inc:159
 #: templates/edit/edit.inc:422
 msgid "Loading..."
-msgstr "ロード中..."
+msgstr "Lade..."
 
-#: data.php:57 lib/Event.php:3442 templates/dynamic/edit.inc:76
+#: data.php:57 lib/Event.php:3557 templates/dynamic/edit.inc:76
 #: templates/search/event_headers.inc:4 templates/view/view.inc:6
 msgid "Location"
-msgstr "場所"
+msgstr "Ort"
 
 #: templates/alarm/mail.html.php:22 templates/alarm/mail.plain.php:7
 #: templates/itip/notification.html.php:32
 #: templates/itip/notification.plain.php:5
 msgid "Location:"
-msgstr "場所："
+msgstr "Position:"
 
 #: config/prefs.php:47
 msgid "Login Tasks"
-msgstr "ログイン タスク"
+msgstr "Anmeldeaufgaben"
 
 #: feed/index.php:57
 #, php-format
 msgid "Login required for the requested feed (%s)."
-msgstr "要求されたフィード(%s) にはログインが必要です。"
+msgstr "Für den gewünschten Feed (%s) müssen Sie angemeldet sein."
 
 #: templates/dynamic/task.inc:33
 msgid "Low"
-msgstr "低い"
+msgstr "Niedrig"
 
 #: templates/dynamic/task.inc:33
 msgid "Lowest"
-msgstr "最低"
+msgstr "Niedrigste"
 
 #: lib/Form/CreateResource.php:31 lib/Form/EditResource.php:39
-#: templates/chunks/calendar.php:367
+#: templates/chunks/calendar.php:371
 msgid "Manual"
-msgstr "手動"
+msgstr "Manuell"
 
 #: templates/dynamic/edit.inc:105
 msgid "Map"
-msgstr "地図"
+msgstr "Karte"
 
 #: templates/dynamic/task.inc:57
 msgid "Mark task as"
-msgstr "タスクに印を付ける"
+msgstr "Aufgabe markieren als"
 
-#: lib/Application.php:99
+#: lib/Application.php:96
 msgid "Maximum Number of Events"
-msgstr "イベントの最大数"
+msgstr "Maximale Anzahl an Terminen"
 
 #: lib/Block/Monthlist.php:30 lib/Block/Summary.php:48
 msgid "Maximum number of events to display (0 = no limit)"
-msgstr "表示するイベントの最大数（0 は無制限）"
+msgstr "Maximale Anzahl der anzuzeigenden Termine (0 = keine Begrenzung)"
 
-#: lib/Event.php:3438
+#: lib/Event.php:3553
 msgid "Me"
-msgstr "私"
+msgstr "Ich"
 
-#: lib/Event.php:3367
+#: lib/Event.php:3482
 msgid "Meeting"
-msgstr "会議"
+msgstr "Besprechung"
 
 #: templates/edit/edit.inc:160 templates/edit/edit.inc:193
 #: templates/view/view.inc:64 templates/prefs/defaultalarm.html:10
 msgid "Minute(s)"
-msgstr "分"
+msgstr "Minute(n)"
 
 #: lib/Block/Month.php:112 lib/View/Year.php:58 templates/edit/edit.inc:311
 msgid "Mo"
-msgstr "月"
+msgstr "Mo"
 
 #: config/prefs.php:129 templates/dynamic/edit.inc:163
 #: templates/dynamic/task.inc:118 templates/month/head.inc:8
 #: templates/view/view.inc:103
 msgid "Monday"
-msgstr "月曜"
+msgstr "Montag"
 
-#: attendees.php:190 config/prefs.php:103 lib/Application.php:449
-#: lib/Kronolith.php:2423 templates/dynamic/index.inc:35
+#: attendees.php:190 config/prefs.php:103 lib/Application.php:450
+#: lib/Kronolith.php:2438 templates/dynamic/index.inc:35
 #: templates/smartmobile/day.html.php:8 templates/smartmobile/month.html.php:2
 #: templates/smartmobile/month.html.php:8
 #: templates/smartmobile/summary.html.php:8
 msgid "Month"
-msgstr "月"
+msgstr "Monat"
 
 #: config/prefs.php:203 config/prefs.php:214
 msgid "Month, Week, and Day Views"
-msgstr "月間、週間、日表示"
+msgstr "Monats-, Wochen und Tagesansichten"
 
 #: templates/edit/edit.inc:322 templates/edit/edit.inc:328
 #: templates/view/view.inc:112 templates/view/view.inc:114
 msgid "Monthly: Recurs every"
-msgstr "毎月：繰り返し"
+msgstr "Monatlich: Wiederholung alle"
 
 #: lib/Block/Monthlist.php:26
 msgid "Months Ahead"
-msgstr "次の月"
+msgstr "Monate im voraus"
 
 #: lib/Block/Prevmonthlist.php:27
 msgid "Months Before"
-msgstr "前の月"
+msgstr "Monate zuvor"
 
 #: lib/Api.php:1102
 msgid "Multiple iCalendar components found; only one vEvent is supported."
 msgstr ""
-"複数の iCalendar 要素があります；ただ１つの vEvent だけをサポートします。"
+"Mehrere iCalendar-Komponenten gefunden; nur ein vEvent wird unterstützt."
 
 #: smartmobile.php:18
 msgid "My Calendar"
-msgstr "私の予定表"
+msgstr "Mein Kalender"
 
 #: lib/Application.php:195 templates/dynamic/sidebar.html.php:35
 msgid "My Calendars"
-msgstr "私の予定表"
+msgstr "Meine Kalender"
 
 #: search.php:75
 msgid "My Calendars:"
-msgstr "私の予定表："
+msgstr "Meine Kalender:"
 
 #: config/prefs.php:474
 msgid "My Free/Busy URL"
-msgstr "私の予定情報 URL"
+msgstr "Meine Frei/Gebucht-URL"
 
 #: templates/dynamic/sidebar.html.php:47
 msgid "My Task Lists"
-msgstr "私のタスク表"
+msgstr "Meine Aufgabenlisten"
 
 #: lib/Form/CreateCalendar.php:24 lib/Form/CreateResource.php:43
 #: lib/Form/CreateResourceGroup.php:33 lib/Form/EditCalendar.php:41
 #: lib/Form/EditRemoteCalendar.php:25 lib/Form/EditResource.php:52
 #: lib/Form/EditResourceGroup.php:43 lib/Form/SubscribeRemoteCalendar.php:24
-#: templates/chunks/calendar.php:178 templates/chunks/calendar.php:305
-#: templates/chunks/calendar.php:356 templates/chunks/calendar.php:408
+#: templates/chunks/calendar.php:180 templates/chunks/calendar.php:309
+#: templates/chunks/calendar.php:360 templates/chunks/calendar.php:412
 #: templates/contacts/contacts.inc:189
 msgid "Name"
-msgstr "名前"
+msgstr "Name"
 
 #: templates/dynamic/sidebar.html.php:33
 msgid "New Calendar"
-msgstr "新しい予定表"
+msgstr "Neuer Kalender"
 
-#: lib/Application.php:445
+#: lib/Application.php:446
 msgid "New Event"
-msgstr "新イベント"
+msgstr "Neuer Termin"
 
 #: templates/dynamic/sidebar.html.php:45
 msgid "New Task List"
-msgstr "新規タスク表"
+msgstr "Neue Aufgabenliste"
 
 #: lib/CalendarsManager.php:408
 #, php-format
 msgid ""
 "New calendar created and automatically shared with the following group(s): "
 "%s."
-msgstr "新しい予定表を作成し、以下のグループと共有しました：%s"
+msgstr ""
+"Neuer Kalender erstellt und automatisch folgenden Gruppen Zugriff gewährt: "
+"%s."
 
 #: templates/buttonbar.html.php:8 templates/data/import.inc:35
 #: templates/dynamic/index.inc:31 templates/smartmobile/day.html.php:17
 #: templates/smartmobile/month.html.php:17
 msgid "Next"
-msgstr "次"
+msgstr "Weiter"
 
 #: templates/search/search.inc:55
 msgid "Next 24 hours"
-msgstr "今後24時間"
+msgstr "Nächste 24 Stunden"
 
 #: lib/FreeBusy/View/Day.php:29
 msgid "Next Day"
-msgstr "明日"
+msgstr "Nächster Tag"
 
 #: lib/FreeBusy/View/Month.php:42
 msgid "Next Month"
-msgstr "来月"
+msgstr "Nächster Monat"
 
 #: lib/FreeBusy/View/Week.php:44
 msgid "Next Week"
-msgstr "来週"
+msgstr "Nächste Woche"
 
 #: templates/dynamic/sidebar.html.php:8
 msgid "Next month"
-msgstr "来月"
+msgstr "Nächster Monat"
 
 #: templates/search/search.inc:56
 msgid "Next week"
-msgstr "来週"
+msgstr "Nächste Woche"
 
 #: config/prefs.php:373 config/prefs.php:386 config/prefs.php:405
 #: templates/dynamic/edit.inc:318 templates/dynamic/edit.inc:325
 #: templates/dynamic/edit.inc:332
 msgid "No"
-msgstr "なし"
+msgstr "Nein"
 
 #: templates/fbview/legend.html:13
 msgid "No Information"
-msgstr "情報なし"
+msgstr "Keine Informationen"
 
 #: index.php:63 index.php:65
 msgid "No Sound"
-msgstr "音なし"
+msgstr "Kein Ton"
 
 #: templates/edit/edit.inc:188 templates/view/view.inc:69
 msgid "No alarm"
-msgstr "アラームなし"
+msgstr "Kein Alarm"
 
 #: templates/attendees/attendees.inc:55 templates/attendees/attendees.inc:92
 msgid "No attendees"
-msgstr "参加者なし"
+msgstr "Keine Teilnehmer"
 
 #: lib/Api.php:1243
 msgid ""
 "No attendees have been updated because none of the provided email addresses "
 "have been found in the event's attendees list."
 msgstr ""
-"参加者のメールアドレスが一つも見つからないので、参加者は更新されませんでし"
-"た。"
+"Es wurden keine Teilnehmer aktualisiert, weil keine der angegebenen E-Mail-"
+"Adressen in der Teilnehmerliste gefunden wurde."
 
 #: lib/Application.php:114
 msgid "No calendars are available to guests."
-msgstr "ゲスト用の予定表はありません。"
+msgstr "Es sind keine Kalender für Gäste verfügbar."
 
 #: lib/Driver/Sql.php:510
 msgid "No calendars to search"
-msgstr "検索する予定表がありません"
+msgstr "Keine Kalender zu durchsuchen"
 
 #: templates/edit/edit.inc:360 templates/view/view.inc:129
 msgid "No end date"
-msgstr "いつまでも"
+msgstr "Kein Ende"
 
 #: lib/Block/Monthlist.php:209 lib/Block/Prevmonthlist.php:168
 #: lib/Block/Summary.php:205 templates/smartmobile/javascript_defs.php:136
 msgid "No events to display"
-msgstr "表示するべきイベントはありません"
+msgstr "Keine Termine"
 
 #: lib/FreeBusy.php:227
 #, php-format
 msgid "No free/busy information found at the free/busy url of %s."
-msgstr "URL %s に予定情報は見つかりませんでした。"
+msgstr ""
+"Keine Frei/Gebucht-Informationen unter der Frei/Gebucht-URL von %s gefunden."
 
 #: lib/FreeBusy.php:229
 #, php-format
 msgid "No free/busy url found for %s."
-msgstr "%s に予定情報 URL はありませんでした。"
+msgstr "Keine Frei/Gebucht-URL für %s gefunden."
 
 #: lib/Api.php:761 lib/Api.php:781 lib/Api.php:1109
 msgid "No iCalendar data was found."
-msgstr "iCalendar のデータがありません。"
+msgstr "Es wurden keine iCalendar-Daten gefunden."
 
 #: templates/dynamic/agenda.inc:22 templates/dynamic/tasks.inc:22
 msgid "No items"
-msgstr "アイテムはありません"
+msgstr "Keine Einträge"
 
 #: templates/dynamic/sidebar.html.php:62 templates/dynamic/sidebar.html.php:76
 #: templates/dynamic/sidebar.html.php:93
@@ -1755,126 +1852,128 @@ msgstr "アイテムはありません"
 #: templates/dynamic/sidebar.html.php:124
 #: templates/dynamic/sidebar.html.php:137
 msgid "No items to display"
-msgstr "表示する項目がありません"
+msgstr "Keine vorhanden"
 
 #: lib/Ajax.php:147 templates/dynamic/task.inc:44
 msgid "No parent task"
-msgstr "親タスクなし"
+msgstr "Keine Überaufgabe"
 
-#: lib/Event.php:2411 templates/edit/edit.inc:297
+#: lib/Event.php:2526 templates/edit/edit.inc:297
 msgid "No recurrence"
-msgstr "繰り返しなし"
+msgstr "Keine Wiederholung"
 
-#: lib/Event.php:2894
+#: lib/Event.php:3009
 msgid "No resources from this group were available"
-msgstr "このグループのリソースはありません"
+msgstr "Keine Ressourcen dieser Gruppe waren verfügbar."
 
 #: lib/FreeBusy.php:168
 msgid "No valid email address found"
-msgstr "正しいメールアドレスがありません"
+msgstr "Keine gültige E-Mail-Adresse gefunden"
 
 #: lib/Ajax.php:145 lib/Form/CreateResource.php:32
 #: lib/Form/EditResource.php:40 lib/Kronolith.php:880 lib/Kronolith.php:901
-#: templates/chunks/calendar.php:363 templates/dynamic/task.inc:51
+#: templates/chunks/calendar.php:367 templates/dynamic/task.inc:51
 msgid "None"
-msgstr "なし"
+msgstr "Keine"
 
 #: templates/dynamic/task.inc:33
 msgid "Normal"
-msgstr "標準"
+msgstr "Normal"
 
 #: lib/View/DeleteEvent.php:38 lib/View/EditEvent.php:39 lib/View/Event.php:38
 msgid "Not Found"
-msgstr "見つかりません"
+msgstr "Nicht gefunden"
 
 #: templates/edit/edit.inc:203
 msgid "Notification"
-msgstr "通知"
+msgstr "Benachrichtigung"
 
 #: config/prefs.php:56 lib/Ajax.php:135
 msgid "Notifications"
-msgstr "通知"
+msgstr "Benachrichtigungen"
 
 #: templates/search/search.inc:54
 msgid "Now"
-msgstr "今"
+msgstr "Jetzt"
 
 #: templates/chunks/permissions.inc:149 templates/perms/perms.inc:137
 msgid "Object Creator"
-msgstr "オブジェクト作成者"
+msgstr "Objektersteller"
 
 #: templates/edit/edit_timespan.inc:13 templates/edit/edit_timespan.inc:58
 msgid "On"
-msgstr "日付"
+msgstr "Am"
 
-#: lib/Event.php:2106 lib/Event.php:2137
+#: lib/Event.php:2221 lib/Event.php:2252
 #, php-format
 msgid "On %s"
-msgstr "時刻 %s"
+msgstr "Am %s"
 
 #: config/prefs.php:376
 msgid "On all calendars I have explicitly read access to"
-msgstr "読み出し権のある全ての予定表"
+msgstr "Bei allen Kalendern, für die ich ausdrücklich Leserechte habe"
 
 #: config/prefs.php:389 config/prefs.php:408
 msgid "On all calendars I have read access to"
-msgstr "読み出しアクセス権のある予定表全部"
+msgstr "Bei allen Kalendern, für die ich Leserechte habe"
 
 #: config/prefs.php:375 config/prefs.php:388 config/prefs.php:407
 msgid "On all shown calendars"
-msgstr "表示してある予定表全部"
+msgstr "Bei allen angezeigten Kalendern"
 
 #: config/prefs.php:374 config/prefs.php:387 config/prefs.php:406
 msgid "On my calendars only"
-msgstr "私の予定表のみ"
+msgstr "Nur bei meinen Kalendern"
 
-#: lib/Kronolith.php:1410
+#: lib/Kronolith.php:1424
 msgid ""
 "Only the owner or system administrator may change ownership or owner "
 "permissions for a share"
-msgstr "所有者かシステム管理者だけが共有の所有権とアクセス権を変更できます。"
+msgstr ""
+"Nur der Besitzer oder der Systemadministrator kann den Besitzer oder die "
+"Besitzerrechte ändern"
 
 #: lib/Kronolith.php:898
 msgid "Optional"
-msgstr "任意"
+msgstr "Freiwillig"
 
 #: lib/FreeBusy/View.php:158
 msgid "Optional Attendees"
-msgstr "任意の参加者"
+msgstr "Freiwillige Teilnehmer"
 
 #: templates/perms/perms.inc:260
 msgid "Or enter a user name:"
-msgstr "またはユーザ名を入力："
+msgstr "Oder geben Sie einen Benutzernamen ein:"
 
 #: config/prefs.php:72
 msgid "Other Preferences"
-msgstr "その他の個人設定"
+msgstr "Andere Einstellungen"
 
-#: lib/Ajax.php:139 lib/Application.php:314
+#: lib/Ajax.php:139 lib/Application.php:315
 msgid "Other events"
-msgstr "他のイベント"
+msgstr "Andere Termine"
 
 #: lib/FreeBusy/View.php:233
 msgid "Overview"
-msgstr "概略"
+msgstr "Übersicht"
 
 #: lib/Form/EditCalendar.php:44 templates/perms/perms.inc:26
 #: templates/view/view.inc:28
 msgid "Owner"
-msgstr "作成者"
+msgstr "Besitzer"
 
 #: templates/perms/perms.inc:32 templates/perms/perms.inc:41
 msgid "Owner:"
-msgstr "作成者："
+msgstr "Besitzer:"
 
-#: lib/Event.php:3437
+#: lib/Event.php:3552
 #, php-format
 msgid "Owner: %s"
-msgstr "作成者：%s"
+msgstr "Besitzer: %s"
 
-#: lib/Kronolith.php:1423
+#: lib/Kronolith.php:1437
 msgid "Ownership assignment"
-msgstr "所有権の割り当て"
+msgstr "Besitzübergabe"
 
 #: templates/data/export.inc:119 templates/data/export.inc:204
 msgid "PM"
@@ -1882,132 +1981,132 @@ msgstr "PM"
 
 #: templates/dynamic/task.inc:42
 msgid "Parent task"
-msgstr "親タスク"
+msgstr "Überaufgabe"
 
 #: lib/Form/EditRemoteCalendar.php:29 lib/Form/SubscribeRemoteCalendar.php:34
-#: templates/chunks/calendar.php:292
+#: templates/chunks/calendar.php:296
 msgid "Password"
-msgstr "パスワード"
+msgstr "Passwort"
 
 #: templates/dynamic/agenda.inc:7
 msgid "Past"
-msgstr "過去"
+msgstr "Vergangene"
 
 #: templates/edit/edit.inc:292 templates/view/view.inc:95
 msgid "Pattern"
-msgstr "パターン"
+msgstr "Rhythmus"
 
 #: templates/delete/one.inc:22 templates/dynamic/edit.inc:301
 msgid "Permanently delete this event?"
-msgstr "このイベントを削除しますか？"
+msgstr "Diesen Termin unwiederbringlich löschen?"
 
-#: lib/Ajax/Application/Handler.php:1461 lib/Block/Month.php:70
+#: lib/Ajax/Application/Handler.php:1463 lib/Block/Month.php:70
 #: lib/Block/Monthlist.php:89 lib/Block/Prevmonthlist.php:82
-#: lib/Block/Summary.php:100 lib/Kronolith.php:2645 lib/Kronolith.php:2653
-#: lib/Kronolith.php:2659 lib/Kronolith.php:2665
+#: lib/Block/Summary.php:100 lib/Kronolith.php:2660 lib/Kronolith.php:2668
+#: lib/Kronolith.php:2674 lib/Kronolith.php:2680
 msgid "Permission Denied"
-msgstr "アクセス拒否"
+msgstr "Zugriff verweigert"
 
 #: lib/Api.php:506
 #, php-format
 msgid "Permission Denied or Calendar Not Found: %s - skipping."
-msgstr "アクセス拒否あるいは予定表がありません：%s - スキップします。"
+msgstr "Zugriff verweigert oder Kalender nicht gefunden: %s - übersprungen."
 
 #: lib/Form/DeleteResource.php:54 lib/Form/DeleteResourceGroup.php:55
 msgid "Permission denied"
-msgstr "アクセスが拒否されました"
+msgstr "Zugriff verweigert"
 
 #: feed/index.php:38
 #, php-format
 msgid "Permission denied for the requested feed (%s)."
-msgstr "要求されたフィード(%s) へのアクセスを拒否されました。"
+msgstr "Zugriff auf diesen Feed (%s) verweigert."
 
 #: templates/chunks/permissions.inc:86 templates/chunks/permissions.inc:182
 #: templates/chunks/permissions.inc:235
 msgid "Permissions"
-msgstr "アクセス権"
+msgstr "Rechte"
 
 #: lib/Ajax.php:140
 msgid "Please enter correct values in the form first."
-msgstr "先ず、フォームに正しい値を入力して下さい。"
+msgstr "Bitte geben Sie erst gültige Werte in das Formular ein."
 
 #: templates/fbview/legend.html:11
 msgid "Possible Meeting Time"
-msgstr "会議可能な時間"
+msgstr "Mögliche Besprechungszeit"
 
 #: lib/Ajax.php:150
 msgid "Preferences"
-msgstr "個人設定"
+msgstr "Benutzereinstellungen"
 
 #: templates/buttonbar.html.php:6 templates/dynamic/index.inc:29
 #: templates/smartmobile/day.html.php:15
 #: templates/smartmobile/month.html.php:15
 msgid "Previous"
-msgstr "前"
+msgstr "Zurück"
 
 #: lib/FreeBusy/View/Day.php:25
 msgid "Previous Day"
-msgstr "前の日"
+msgstr "Vorheriger Tag"
 
 #: lib/FreeBusy/View/Month.php:38
 msgid "Previous Month"
-msgstr "前の月"
+msgstr "Vorheriger Monat"
 
 #: lib/FreeBusy/View/Week.php:39
 msgid "Previous Week"
-msgstr "前の週"
+msgstr "Vorherige Woche"
 
 #: templates/dynamic/sidebar.html.php:6
 msgid "Previous month"
-msgstr "先月"
+msgstr "Vorheriger Monat"
 
 #: templates/dynamic/edit.inc:260 templates/dynamic/task.inc:158
 msgid "Previously used tags"
-msgstr "使用しているタグ"
+msgstr "Bisher verwendete Tags"
 
 #: config/prefs.php:204 config/prefs.php:215
 msgid "Print Views"
-msgstr "印刷表示"
+msgstr "Druckansichten"
 
 #: lib/Block/Prevmonthlist.php:13
 msgid "Prior Events"
-msgstr "重要なイベント"
+msgstr "Vergangene Termine"
 
 #: templates/dynamic/task.inc:31
 msgid "Priority"
-msgstr "優先度"
+msgstr "Priorität"
 
-#: lib/Event.php:3362
+#: lib/Event.php:3477
 msgid "Private event"
-msgstr "私的イベント"
+msgstr "Privater Termin"
 
 #: templates/edit/edit.inc:133
 msgid "Private?"
-msgstr "私用？"
+msgstr "Privat?"
 
 #: config/prefs.php:504
 msgid "Purge old events from your calendar?"
-msgstr "予定表から古いイベントをパージしますか？"
+msgstr "Alte Termine aus Ihrem Kalender löschen?"
 
 #: config/prefs.php:511
 msgid "Purge old events how often:"
-msgstr "古いイベントをパージする頻度："
+msgstr "Wie oft sollen alte Termine gelöscht werden:"
 
 #: config/prefs.php:517
 msgid "Purge old events older than this amount of days."
-msgstr "この日数よりも古いイベントはパージされます。"
+msgstr "Alte Termine nach so vielen Tagen endgültig löschen."
 
 #: templates/dynamic/index.inc:4
 msgid "Quick Event Creation"
-msgstr "イベントの簡易作成"
+msgstr "Schnelles Hinzufügen"
 
 #: templates/dynamic/task.inc:173
 msgid "Quick Task Creation"
-msgstr "タスクの簡易作成"
+msgstr "Schnelles Hinzufügen"
 
 #: lib/View/Sidebar.php:40
 msgid "Quick _insert"
-msgstr "_I簡易挿入"
+msgstr "Schnell _Einfügen"
 
 #: templates/chunks/permissions.inc:101 templates/chunks/permissions.inc:128
 #: templates/chunks/permissions.inc:156 templates/chunks/permissions.inc:209
@@ -2019,7 +2118,7 @@ msgstr "_I簡易挿入"
 #: templates/perms/perms.inc:271 templates/perms/perms.inc:298
 #: templates/perms/perms.inc:318 templates/perms/perms.inc:352
 msgid "Read"
-msgstr "読み出し"
+msgstr "Lesen"
 
 #: lib/Form/DeleteCalendar.php:31
 #, php-format
@@ -2027,8 +2126,8 @@ msgid ""
 "Really delete the calendar \"%s\"? This cannot be undone and all data on "
 "this calendar will be permanently removed."
 msgstr ""
-"本当に予定表 \"%s\" を削除しますか？この操作は取り消せませんし、予定表のデー"
-"タは全て消去されます。"
+"Den Kalender \"%s\" wirklich löschen? Dieser Vorgang kann nicht rückgängig "
+"gemacht werden, und alle Daten in diesem Kalender werden endgültig gelöscht."
 
 #: lib/Form/DeleteResource.php:34 lib/Form/DeleteResourceGroup.php:35
 #, php-format
@@ -2036,161 +2135,161 @@ msgid ""
 "Really delete the resource \"%s\"? This cannot be undone and all data on "
 "this resource will be permanently removed."
 msgstr ""
-"本当にリソース \"%s\" を削除しますか？この操作は取り消せませんし、リソースの"
-"データは全て消去されます。"
+"Die Ressource \"%s\" wirklich löschen? Dieser Vorgang kann nicht rückgängig "
+"gemacht werden, und alle Daten zu dieser Ressource werden endgültig gelöscht."
 
 #: lib/Form/UnsubscribeRemoteCalendar.php:25
 #, php-format
 msgid "Really unsubscribe from the calendar \"%s\" (%s)?"
-msgstr "本当に予定表 \"%s\" (%s)の登録を解除しますか？"
+msgstr "Wirklich vom Kalender \"%s\" (%s) abmelden?"
 
 #: templates/edit/edit.inc:357 templates/view/view.inc:128
 msgid "Recur Until"
-msgstr "終了日"
+msgstr "Wiederholen bis"
 
 #: templates/edit/edit.inc:282 templates/view/view.inc:92
 msgid "Recurrence"
-msgstr "繰り返し"
+msgstr "Wiederholung"
 
 #: data.php:61
 msgid "Recurrence Data"
-msgstr "繰り返しのデータ"
+msgstr "Wiederholungsmuster"
 
 #: data.php:59
 msgid "Recurrence End Date"
-msgstr "繰り返し終了日時"
+msgstr "Wiederholungsende"
 
-#: lib/Event.php:3228
+#: lib/Event.php:3343
 msgid "Recurrence End Day"
-msgstr "繰り返し終了日"
+msgstr "Wiederholungsendtag"
 
-#: lib/Event.php:3214
+#: lib/Event.php:3329
 msgid "Recurrence End Month"
-msgstr "繰り返し終了月"
+msgstr "Wiederholungsendmonat"
 
-#: lib/Event.php:3198
+#: lib/Event.php:3313
 msgid "Recurrence End Year"
-msgstr "繰り返し終了年"
+msgstr "Wiederholungsendjahr"
 
 #: data.php:60
 msgid "Recurrence Interval"
-msgstr "繰り返しの間隔"
+msgstr "Wiederholungsintervall"
 
 #: data.php:58
 msgid "Recurrence Type"
-msgstr "繰り返しの型"
+msgstr "Wiederholungstyp"
 
 #: lib/Kronolith.php:814 templates/smartmobile/javascript_defs.php:157
 msgid "Recurs daily"
-msgstr "毎日繰り返し"
+msgstr "Täglich"
 
 #: templates/smartmobile/javascript_defs.php:158
 #, php-format
 msgid "Recurs every %s days"
-msgstr "%s 日毎に繰り返す"
+msgstr "Wiederholung alle %s Tage"
 
 #: templates/smartmobile/javascript_defs.php:164
 #, php-format
 msgid "Recurs every %s months on the %s"
-msgstr "%s ヶ月毎の %s に繰り返す"
+msgstr "Wiederholung alle %s Monate am %s"
 
 #: templates/smartmobile/javascript_defs.php:167
 #, php-format
 msgid "Recurs every %s months on the same weekday"
-msgstr "%s ヶ月毎の同じ曜日に繰り返す"
+msgstr "Wiederholung alle %s Monate am gleichen Wochentag"
 
 #: templates/smartmobile/javascript_defs.php:161
 #, php-format
 msgid "Recurs every %s weeks on %s"
-msgstr "%s 週毎の %s に繰り返す"
+msgstr "Wiederholung alle %s Wochen am %s"
 
 #: templates/smartmobile/javascript_defs.php:170
 #, php-format
 msgid "Recurs every %s years on %s"
-msgstr "%s 年毎の %s に繰り返す"
+msgstr "Wiederholung alle %s Jahre am %s"
 
 #: templates/smartmobile/javascript_defs.php:173
 #, php-format
 msgid "Recurs every %s years on the same day"
-msgstr "%s 年毎の同じ日に繰り返す"
+msgstr "Wiederholung alle %s Jahre am gleichen Tag"
 
 #: templates/smartmobile/javascript_defs.php:176
 #, php-format
 msgid "Recurs every %s years on the same weekday"
-msgstr "%s 年毎の同じ日に繰り返す"
+msgstr "Wiederholung alle %s Jahre am gleichen Wochentag"
 
 #: templates/smartmobile/javascript_defs.php:166
 msgid "Recurs every month on the same weekday"
-msgstr "毎月、同じ曜日で繰り返す"
+msgstr "Wiederholung jeden Monat am gleichen Wochentag"
 
 #: templates/smartmobile/javascript_defs.php:175
 msgid "Recurs every year on the same weekday"
-msgstr "毎年の同じ日に繰り返す"
+msgstr "Wiederholung jedes Jahr am gleichen Wochentag"
 
 #: lib/Kronolith.php:821
 msgid "Recurs monthly"
-msgstr "毎月繰り返し"
+msgstr "Monatlich"
 
 #: templates/smartmobile/javascript_defs.php:163
 #, php-format
 msgid "Recurs on the %s of every month"
-msgstr "毎月、%s に繰り返す"
+msgstr "Wiederholung jeden Monat am %s"
 
 #: templates/smartmobile/javascript_defs.php:169
 #, php-format
 msgid "Recurs once a year, on %s"
-msgstr "毎年、%s に繰り返す"
+msgstr "Wiederholung jedes Jahr am %s"
 
 #: templates/smartmobile/javascript_defs.php:172
 msgid "Recurs once a year, on the same day"
-msgstr "毎年、同じ日に繰り返す"
+msgstr "Wiederholung jedes Jahr am gleichen Tag"
 
 #: lib/Kronolith.php:817
 msgid "Recurs weekly"
-msgstr "毎週繰り返し"
+msgstr "Wöchentlich"
 
 #: templates/smartmobile/javascript_defs.php:160
 #, php-format
 msgid "Recurs weekly on every %s"
-msgstr "毎週同じ %s に繰り返す"
+msgstr "Wiederholung jede Woche am %s"
 
 #: lib/Kronolith.php:826
 msgid "Recurs yearly"
-msgstr "毎年繰り返し"
+msgstr "Jährlich"
 
 #: templates/dynamic/edit.inc:96 templates/dynamic/task.inc:65
 msgid "Reminder"
-msgstr "催促"
+msgstr "Erinnerung"
 
-#: lib/Application.php:339 templates/dynamic/sidebar.html.php:120
+#: lib/Application.php:340 templates/dynamic/sidebar.html.php:120
 msgid "Remote Calendars"
-msgstr "リモートカレンダー"
+msgstr "Externe Kalender"
 
 #: search.php:88
 msgid "Remote Calendars:"
-msgstr "リモートカレンダー："
+msgstr "Externe Kalender:"
 
 #: templates/contacts/contacts.inc:173
 msgid "Remove"
-msgstr "削除"
+msgstr "Entfernen"
 
 #: templates/attendees/attendees.inc:58 templates/attendees/attendees.inc:95
 #, php-format
 msgid "Remove %s"
-msgstr "%s を削除"
+msgstr "%s entfernen"
 
 #: attendees.php:181
 msgid "Remove Attendee"
-msgstr "参加取り止め"
+msgstr "Teilnehmer entfernen"
 
 #: templates/dynamic/edit.inc:97 templates/dynamic/task.inc:66
 msgid "Repeat"
-msgstr "繰り返し"
+msgstr "Wiederholung"
 
 #: templates/dynamic/edit.inc:153 templates/dynamic/task.inc:108
 #, php-format
 msgid "Repeat %s every day %s or %s every %s days %s"
-msgstr "繰り返し：%s 毎日 %s あるいは %s 毎 %s 日毎 %s"
+msgstr "%s Jeden Tag %s oder %s alle %s Tage %s wiederholen"
 
 #: templates/dynamic/edit.inc:172 templates/dynamic/task.inc:127
 #, php-format
@@ -2198,13 +2297,13 @@ msgid ""
 "Repeat %s every month %s or %s every %s months, %s on the same %s date %s or "
 "%s weekday %s"
 msgstr ""
-"繰り返し： %s 毎月 %s あるいは %s 毎 %s 月、%s 同じ %s 日 %s または %s 曜日 "
-"%s"
+"%s Jeden Monat %s oder %s alle %s Monate %s am gleichen %s Datum %s oder %s "
+"Wochentag %s wiederholen"
 
 #: templates/dynamic/edit.inc:159 templates/dynamic/task.inc:114
 #, php-format
 msgid "Repeat %s every week %s or %s every %s weeks %s On %s"
-msgstr "繰り返し： %s 毎週 %s あるいは %s 毎 %s 週 %s 曜日 %s"
+msgstr "%s Jede Woche %s oder %s alle %s Wochen %s am %s wiederholen"
 
 #: templates/dynamic/edit.inc:180 templates/dynamic/task.inc:135
 #, php-format
@@ -2212,296 +2311,312 @@ msgid ""
 "Repeat %s every year %s or %s every %s years %s on the same %s date %s day "
 "of the year %s month and weekday %s"
 msgstr ""
-"繰り返し： %s 毎年 %s あるいは %s 毎 %s 年、%s 同じ %s 日 %s または %s 同じ月"
-"の同じ曜日 %s"
+"%s Jedes Jahr %s oder %s alle %s Jahre %s am gleichen %s Datum %s Tag des "
+"Jahres %s Monat und Wochentag %s wiederholen"
 
 #: templates/data/import.inc:31
 msgid ""
 "Replace existing calendar with the imported one? <strong>Warning: This "
 "deletes all entries in your current calendar.</strong>"
 msgstr ""
-"インポートで既存の予定表を上書きしますか？ <strong>警告：現在の予定表の内容が"
-"全て削除されます。</strong>"
+"Existierenden Kalender mit dem importierten ersetzen? <strong>Warnung: Damit "
+"werden alle aktuellen Einträge in dem Kalender gelöscht.</strong>"
 
 #: lib/Kronolith.php:905
 msgid "Required"
-msgstr "必須"
+msgstr "Notwendig"
 
 #: lib/FreeBusy/View.php:137 lib/FreeBusy/View.php:207
 #: lib/FreeBusy/View.php:210 lib/FreeBusy/View.php:213
 msgid "Required Attendees"
-msgstr "必須参加者"
+msgstr "Notwendige Teilnehmer"
 
 #: lib/FreeBusy/View.php:187
 msgid "Required Resources"
-msgstr "リソースが必要です"
+msgstr "Benötigte Ressourcen"
+
+#: lib/Event/Resource/Sql.php:77
+#, php-format
+msgid "Reserved by: %s"
+msgstr "Reserviert durch: %s"
 
 #: templates/edit/edit.inc:57 templates/edit/edit.inc:443
 msgid "Reset to Defaults"
-msgstr "デフォルトに戻す"
+msgstr "Zurücksetzen"
 
 #: templates/attendees/attendees.inc:85 templates/view/view.inc:190
 msgid "Resource"
-msgstr "リソース"
+msgstr "Ressource"
 
-#: lib/Application.php:258 templates/dynamic/sidebar.html.php:104
+#: lib/Application.php:260 templates/dynamic/sidebar.html.php:104
 msgid "Resource Groups"
-msgstr "リソースグループ"
+msgstr "Ressourcegruppen"
 
-#: templates/chunks/calendar.php:361
+#: lib/Application.php:100
+msgid "Resource Management"
+msgstr "Ressourcenverwaltung"
+
+#: templates/chunks/calendar.php:365
 msgid "Resource Response Type"
-msgstr "リソース応答の種類"
+msgstr "Ressourcen-Bereitstellung"
 
-#: lib/Driver/Resource/Sql.php:287
+#: lib/Driver/Resource/Sql.php:296
 msgid "Resource not valid."
-msgstr "リソースが正しくありません。"
+msgstr "Ungültige Ressource."
 
-#: lib/Application.php:270 lib/Form/CreateResourceGroup.php:35
-#: lib/Form/EditResourceGroup.php:45 templates/chunks/calendar.php:418
+#: lib/Application.php:272 lib/Form/CreateResourceGroup.php:35
+#: lib/Form/EditResourceGroup.php:45 templates/chunks/calendar.php:422
 #: templates/dynamic/edit.inc:101 templates/dynamic/sidebar.html.php:89
 #: templates/view/view.inc:187
 msgid "Resources"
-msgstr "リソース"
+msgstr "Ressourcen"
 
 #: lib/Factory/Driver.php:74
 msgid "Resources are disabled"
-msgstr "リソースは無効です"
+msgstr "Ressourcen sind deaktiviert"
 
 #: templates/attendees/attendees.inc:50 templates/attendees/attendees.inc:87
 #: templates/view/view.inc:174 templates/view/view.inc:192
 msgid "Response"
-msgstr "応答"
+msgstr "Antwort"
 
 #: lib/Form/CreateResource.php:46 lib/Form/EditResource.php:55
 msgid "Response type"
-msgstr "応答の種類"
+msgstr "Antwort"
 
 #: config/prefs.php:175
 msgid ""
 "Restrict day and week views to these time slots, even if there <strong>are</"
 "strong> earlier or later events?"
 msgstr ""
-"日表示と週表示をこれらの時間に制限しますか（範囲外にイベントがあったとして"
-"も）？"
+"Tages- und Wochenansichten auch auf diesen Zeitabschnitt beschränken, wenn "
+"es frühere oder spätere Termine gibt?"
 
 #: lib/Application.php:145
 msgid "Return to calendars"
-msgstr "予定表に戻る"
+msgstr "Zurück zu den Kalendern"
 
 #: lib/Application.php:144
 msgid "Return to my calendars"
-msgstr "私の予定表に戻る"
+msgstr "Zurück zu meinen Kalendern"
 
 #: lib/Block/Month.php:112 lib/View/Year.php:63 templates/edit/edit.inc:316
 msgid "Sa"
-msgstr "土"
+msgstr "Sa"
 
 #: templates/dynamic/edit.inc:168 templates/dynamic/task.inc:123
 #: templates/month/head.inc:13 templates/view/view.inc:108
 msgid "Saturday"
-msgstr "土曜"
+msgstr "Samstag"
 
 #: lib/Form/EditCalendar.php:171 lib/Form/EditCalendar.php:183
 #: lib/Form/EditRemoteCalendar.php:34 lib/Form/EditRemoteCalendar.php:46
 #: lib/Form/EditResource.php:72 lib/Form/EditResource.php:84
 #: lib/Form/EditResourceGroup.php:48 lib/Form/EditResourceGroup.php:60
-#: templates/chunks/calendar.php:162 templates/chunks/calendar.php:247
-#: templates/chunks/calendar.php:317 templates/chunks/calendar.php:341
-#: templates/chunks/calendar.php:396 templates/chunks/calendar.php:431
+#: templates/chunks/calendar.php:164 templates/chunks/calendar.php:251
+#: templates/chunks/calendar.php:321 templates/chunks/calendar.php:345
+#: templates/chunks/calendar.php:400 templates/chunks/calendar.php:435
 #: templates/dynamic/edit.inc:292 templates/dynamic/index.inc:12
 #: templates/dynamic/task.inc:164
 msgid "Save"
-msgstr "保存"
+msgstr "Speichern"
 
 #: templates/perms/perms.inc:375
 #, php-format
 msgid "Save %s"
-msgstr "%s を保存"
+msgstr "%s speichern"
 
-#: lib/Kronolith.php:2464 lib/View/EditEvent.php:98 lib/View/EditEvent.php:107
+#: lib/Kronolith.php:2479 lib/View/EditEvent.php:98 lib/View/EditEvent.php:107
 #: templates/dynamic/edit.inc:293 templates/edit/edit.inc:46
 msgid "Save As New"
-msgstr "新規として保存"
+msgstr "Als Kopie speichern"
 
 #: lib/View/EditEvent.php:101 new.php:69
 msgid "Save Event"
-msgstr "イベントを保存"
+msgstr "Termin speichern"
 
 #: templates/attendees/attendees.inc:152 templates/perms/perms.inc:376
 msgid "Save and Finish"
-msgstr "保存して終了"
+msgstr "Speichern und Beenden"
 
 #: templates/dynamic/edit.inc:287
 msgid "Save time"
-msgstr "保存時間"
+msgstr "Zeiteintrag speichern"
 
-#: lib/Application.php:454 search.php:109 templates/contacts/contacts.inc:156
+#: lib/Application.php:455 search.php:109 templates/contacts/contacts.inc:156
 #: templates/search/search.inc:66 templates/search/search_advanced.inc:88
 msgid "Search"
-msgstr "検索"
+msgstr "Suche"
 
 #: templates/search/header.inc:6
 msgid "Search Results"
-msgstr "検索結果"
+msgstr "Suchergebnisse"
 
 #: templates/contacts/contacts.inc:161
 msgid "Search results"
-msgstr "検索結果"
+msgstr "Suchergebnisse"
 
 #: lib/Geo/Sql.php:117
 msgid "Searching requires a GIS enabled database."
-msgstr "検索にはGIS（地理情報システム）対応のデータベースが必要です。"
+msgstr "Zum Suchen wird eine GIS-fähige Datenbank benötigt."
 
 #: templates/chunks/permissions.inc:243
 msgid "Select a group"
-msgstr "グループを選択"
+msgstr "Gruppe auswählen"
 
 #: templates/perms/perms.inc:340
 msgid "Select a group to add"
-msgstr "追加するグループを選択"
+msgstr "Hinzuzufügende Gruppe auswählen"
 
 #: templates/chunks/permissions.inc:241 templates/perms/perms.inc:338
 msgid "Select a group to add:"
-msgstr "編集するグループを選択："
+msgstr "Hinzuzufügende Gruppe auswählen:"
 
 #: templates/chunks/permissions.inc:67 templates/perms/perms.inc:34
 msgid "Select a new owner:"
-msgstr "新所有者を選択："
+msgstr "Neuen Besitzer auswählen:"
 
 #: templates/chunks/permissions.inc:191
 msgid "Select a user"
-msgstr "ユーザを選択"
+msgstr "Benutzer auswählen"
 
 #: templates/perms/perms.inc:222 templates/perms/perms.inc:224
 msgid "Select a user to add:"
-msgstr "追加するユーザを選択："
+msgstr "Hinzuzufügenden Benutzer auswählen:"
 
 #: config/prefs.php:74
 msgid "Select address book sources for adding and searching for addresses."
-msgstr "アドレス検索に使用するアドレス帳を選択します。"
+msgstr ""
+"Wählen Sie die Adressbücher zum Suchen nach und Hinzufügen von neuen "
+"Adressen aus."
 
 #: config/prefs.php:14
 msgid ""
 "Select confirmation preferences, how to display the different views and "
 "choose default view."
 msgstr ""
-"確認の個人設定を選択し、様々な表示の方法やデフォルトの表示を選択します。"
+"Legen Sie Bestätigungs-Einstellungen fest, wie die unterschiedlichen "
+"Ansichten dargestellt werden sollen, und wählen Sie eine Standardansicht."
 
 #: templates/attendees/attendees.inc:140
 msgid "Select resource"
-msgstr "リソースを選択"
+msgstr "Ressource auswählen"
 
 #: templates/data/import.inc:18
 msgid "Select the calendar to import to:"
-msgstr "インポートする予定表を選択："
+msgstr "Wählen Sie den Kalender, in den importiert werden soll:"
 
 #: templates/data/export.inc:19
 msgid "Select the calendar(s) to export from"
-msgstr "エクスポートする予定表を選択"
+msgstr "Wählen Sie den/die Kalender, der/die exportiert werden soll(en)"
 
 #: config/prefs.php:273
 msgid ""
 "Select the calendars that, in addition to the default, should be used for "
 "synchronization with external devices:"
-msgstr "外部の装置と同期を取る予定表を選択し、必要ならデフォルトに指定します。"
+msgstr ""
+"Wählen Sie die Kalender, die zusätzlich zum Standardkalender für die "
+"Synchronisation mit externen Geräten verwendet werden sollen:"
 
 #: templates/data/export.inc:12
 msgid "Select the export format:"
-msgstr "エクスポートの形式を選択："
+msgstr "Wählen Sie das Exportformat:"
 
 #: templates/data/import.inc:27
 msgid "Select the file to import:"
-msgstr "インポートするファイルを選択："
+msgstr "Wählen Sie die Datei, die importiert werden soll:"
 
 #: config/prefs.php:126
 msgid "Select the first weekday:"
-msgstr "週の最初の曜日を選択："
+msgstr "Wählen Sie den ersten Wochentag"
 
 #: templates/data/import.inc:11
 msgid "Select the format of the source file:"
-msgstr "元ファイルの形式を選択："
+msgstr "Wählen Sie das Format der importierten Datei:"
 
 #: config/prefs.php:105
 msgid "Select the view to display on startup:"
-msgstr "最初の表示形式を選択："
+msgstr "Wählen Sie die Ansicht aus, die beim Start angezeigt werden soll:"
 
 #: templates/contacts/contacts.inc:176
 msgid "Selected addresses"
-msgstr "選択されたアドレス"
+msgstr "Ausgewählte Adressen"
 
 #: templates/delete/delete.inc:21 templates/delete/one.inc:19
 msgid "Send a cancel notification to all attendees when deleting this event?"
-msgstr "このイベントを削除する時に参加者全員にキャンセルの通知を出しますか？"
+msgstr ""
+"Eine Terminabsage an alle Teilnehmer schicken, wenn dieser Termin gelöscht "
+"wird?"
 
 #: templates/view/view.inc:178
 #, php-format
 msgid "Send an email to %s"
-msgstr "%s にメールを送る"
+msgstr "E-Mail-Nachricht an %s schreiben"
 
 #: templates/dynamic/edit.inc:322
 msgid "Send cancellation notice to attendees?"
-msgstr "キャンセルの通知を参加者に送りますか？"
+msgstr "Absagen an alle Teilnehmer schicken?"
 
 #: templates/edit/edit.inc:436
 msgid "Send invitations to all attendees?"
-msgstr "イベントを保存した時、参加者全員に通知を出しますか？"
+msgstr "Einladungen an alle Teilnehmer schicken?"
 
 #: templates/edit/edit.inc:436
 msgid "Send updates to all attendees?"
-msgstr "参加者全員に更新を送りますか？"
+msgstr "Aktualisierungen an alle Teilnehmer schicken?"
 
 #: templates/dynamic/edit.inc:315
 msgid "Send updates to attendees?"
-msgstr "参加者に更新を送りますか？"
+msgstr "Aktualisierungen an Teilnehmer schicken?"
 
 #: config/prefs.php:41
 msgid "Set default values for new events."
-msgstr "新しいイベント用のデフォルトを設定して下さい。"
+msgstr "Legen Sie Standardeinstellungen für neue Termine fest."
 
 #: templates/dynamic/task.inc:15
 msgid "Set due date"
-msgstr "期日を設定"
+msgstr "Fälligkeitsdatum festlegen"
 
 #: templates/dynamic/edit.inc:46 templates/dynamic/edit.inc:193
 #: templates/dynamic/task.inc:148 templates/edit/edit_timespan.inc:70
 msgid "Set end date"
-msgstr "終了日を設定"
+msgstr "Enddatum festlegen"
 
 #: templates/edit/edit.inc:375
 msgid "Set recurrence end date"
-msgstr "繰り返し終了日を設定"
+msgstr "Wiederholungsende festlegen"
 
 #: templates/dynamic/edit.inc:37 templates/edit/edit_timespan.inc:24
 msgid "Set start date"
-msgstr "開始日を設定"
+msgstr "Startdatum festlegen"
 
 #: config/prefs.php:67
 msgid ""
 "Set your Free/Busy calendars and your own and other users' Free/Busy "
 "preferences."
 msgstr ""
-"あなたの予定情報用の予定表と、他の人の予定情報を得るためのオプションを設定し"
-"ます。"
+"Legen Sie Ihre Frei/Gebucht-Kalender und -Einstellungen und die anderer "
+"Benutzer fest."
 
 #: lib/Ajax.php:152
 msgid "Shared"
-msgstr "共有"
+msgstr "Gemeinsam"
 
 #: lib/Application.php:221 templates/dynamic/sidebar.html.php:58
 msgid "Shared Calendars"
-msgstr "共有予定表"
+msgstr "Gemeinsame Kalender"
 
 #: search.php:77
 msgid "Shared Calendars:"
-msgstr "共有予定表："
+msgstr "Gemeinsame Kalender:"
 
 #: templates/dynamic/sidebar.html.php:72
 msgid "Shared Task Lists"
-msgstr "共有タスク表"
+msgstr "Gemeinsame Aufgabenlisten"
 
-#: templates/chunks/calendar.php:75 templates/chunks/calendar.php:197
+#: templates/chunks/calendar.php:76 templates/chunks/calendar.php:200
 msgid "Sharing"
-msgstr "共有"
+msgstr "Teilen"
 
 #: templates/chunks/permissions.inc:97 templates/chunks/permissions.inc:124
 #: templates/chunks/permissions.inc:152 templates/chunks/permissions.inc:205
@@ -2514,935 +2629,977 @@ msgstr "共有"
 #: templates/perms/perms.inc:297 templates/perms/perms.inc:314
 #: templates/perms/perms.inc:348
 msgid "Show"
-msgstr "表示"
+msgstr "Zeigen"
 
 #: config/prefs.php:225
 msgid "Show Free/Busy legend?"
-msgstr "予定情報（Free/Budy）の解説を表示しますか？"
+msgstr "Frei/Gebucht-Legende anzeigen?"
 
 #: config/prefs.php:195
 msgid "Show delete, alarm, and recurrence icons in calendar views?"
-msgstr "予定表の中で削除、警報、繰り返しのアイコンを表示しますか？"
+msgstr ""
+"Löschen-, Alarm- und Wiederholungssymbole in der Kalenderansicht anzeigen?"
 
 #: lib/Block/Monthlist.php:34 lib/Block/Prevmonthlist.php:32
 #: lib/Block/Summary.php:53
 msgid "Show only events that have an alarm set?"
-msgstr "アラームのあるイベントだけを表示しますか？"
+msgstr "Nur Termine mit Alarm anzeigen?"
 
 #: config/prefs.php:232
 msgid "Show shared calendars side-by-side?"
-msgstr "共有予定表を並べて表示しますか？"
+msgstr "Gemeinsame Kalender nebeneinander anzeigen?"
 
 #: config/prefs.php:85
 msgid "Show the dynamic view by default, if the browser supports it?"
-msgstr "ブラウザがサポートしているなら、動的表示をデフォルトにしますか？"
+msgstr ""
+"Standardmäßig die dynamische Ansicht anzeigen, falls der Browser dies "
+"unterstützt?"
 
 #: config/prefs.php:119
 msgid "Show time of day between each day in week views?"
-msgstr "週表示でも毎日時間を表示しますか？"
+msgstr "Uhrzeiten zwischen allen Tagen in den Wochenansichten anzeigen?"
 
 #: lib/Application.php:173
 msgid "Showing calendar:"
 msgid_plural "Showing calendars:"
-msgstr[0] "予定表を表示："
+msgstr[0] "Angezeigter Kalender:"
+msgstr[1] "Angezeigte Kalender:"
 
 #: templates/dynamic/edit.inc:329
 msgid "Some resources have scheduling conflicts, save anyway?"
-msgstr "いくつかのリソースが競合していますが、保存しますか？"
+msgstr "Einige Ressourcen haben Terminkonflikte, trotzdem speichern?"
 
 #: templates/edit/edit_timespan.inc:11
 msgid "Sta_rt"
-msgstr "_R開始"
+msgstr "_Beginn"
 
 #: data.php:49
 msgid "Start Date"
-msgstr "開始日時"
+msgstr "Startdatum"
 
-#: lib/Event.php:3098 templates/data/export.inc:68
+#: lib/Event.php:3213 templates/data/export.inc:68
 msgid "Start Day"
-msgstr "開始日"
+msgstr "Starttag"
 
-#: lib/Event.php:3108 templates/data/export.inc:87
+#: lib/Event.php:3223 templates/data/export.inc:87
 msgid "Start Hour"
-msgstr "開始時"
+msgstr "Startstunde"
 
-#: lib/Event.php:3117 templates/data/export.inc:102
+#: lib/Event.php:3232 templates/data/export.inc:102
 msgid "Start Minute"
-msgstr "開始分"
+msgstr "Startminute"
 
-#: lib/Event.php:3090 templates/data/export.inc:54
+#: lib/Event.php:3205 templates/data/export.inc:54
 msgid "Start Month"
-msgstr "開始月"
+msgstr "Startmonat"
 
 #: templates/data/export.inc:37 templates/search/event_headers.inc:6
 #: templates/view/view.inc:35
 msgid "Start On"
-msgstr "開始日時"
+msgstr "Beginn"
 
 #: data.php:50
 msgid "Start Time"
-msgstr "開始時間"
+msgstr "Startzeit"
 
-#: lib/Event.php:3080 templates/data/export.inc:39
+#: lib/Event.php:3195 templates/data/export.inc:39
 msgid "Start Year"
-msgstr "開始年"
+msgstr "Startjahr"
 
 #: templates/itip/notification.html.php:16
 msgid "Start:"
-msgstr "開始："
+msgstr "Beginn:"
 
 #: templates/edit/edit.inc:123 templates/search/search_advanced.inc:65
 msgid "Stat_us"
-msgstr "_U状態"
+msgstr "_Status"
 
 #: templates/dynamic/edit.inc:68 templates/search/event_headers.inc:5
 #: templates/view/view.inc:21
 msgid "Status"
-msgstr "状態"
+msgstr "Status"
 
 #: templates/dynamic/edit.inc:189 templates/dynamic/task.inc:144
 #, php-format
 msgid "Stop %s never%s, %s at %s or %s after %s recurrences %s"
-msgstr "停止 %s 完全に%s, %s ちょうど %s or %s 後で %s 繰り返し %s"
+msgstr "%s Niemals%s, %s am %s oder %s nach %s Wiederholungen %s beenden"
 
 #: lib/Block/Month.php:114 lib/Block/Month.php:116 lib/View/Year.php:56
 #: lib/View/Year.php:65 templates/edit/edit.inc:317
 msgid "Su"
-msgstr "日"
+msgstr "So"
 
-#: lib/Form/SubscribeRemoteCalendar.php:36 templates/chunks/calendar.php:164
-#: templates/chunks/calendar.php:249
+#: lib/Form/SubscribeRemoteCalendar.php:36 templates/chunks/calendar.php:166
+#: templates/chunks/calendar.php:253
 msgid "Subscribe"
-msgstr "登録"
+msgstr "Abonnieren"
 
-#: templates/chunks/calendar.php:123
+#: templates/chunks/calendar.php:125
 msgid "Subscribe from a feed reader"
-msgstr "フィードリーダーから登録"
+msgstr "Mit einem Feedreader abonnieren"
 
-#: lib/Application.php:343 lib/Form/SubscribeRemoteCalendar.php:22
+#: lib/Application.php:344 lib/Form/SubscribeRemoteCalendar.php:22
 msgid "Subscribe to a Remote Calendar"
-msgstr "リモートカレンダーを登録"
+msgstr "Externen Kalender abonnieren"
 
-#: templates/chunks/calendar.php:113 templates/chunks/calendar.php:224
+#: templates/chunks/calendar.php:115 templates/chunks/calendar.php:228
 msgid "Subscribe to all your calendars from another calendar program"
-msgstr "全ての予定表を他の予定表プログラムに登録"
+msgstr "Alle Ihre Kalender mit einem anderen Kalenderprogamm abonnieren"
 
-#: templates/chunks/calendar.php:108 templates/chunks/calendar.php:118
+#: templates/chunks/calendar.php:110 templates/chunks/calendar.php:120
 msgid "Subscribe to this calendar from another calendar program"
-msgstr "この予定表を他の予定表プログラムに登録"
+msgstr "Diesen Kalender mit einem anderen Kalenderprogamm abonnieren"
 
-#: templates/chunks/calendar.php:219 templates/chunks/calendar.php:229
+#: templates/chunks/calendar.php:223 templates/chunks/calendar.php:233
 msgid "Subscribe to this task list from another calendar program"
-msgstr "このタスク表を他のプログラムに登録"
+msgstr "Diese Aufgabenliste mit einem anderen Kalenderprogamm abonnieren"
 
-#: templates/chunks/calendar.php:81 templates/chunks/calendar.php:203
+#: templates/chunks/calendar.php:83 templates/chunks/calendar.php:207
 msgid "Subscription"
-msgstr "購読"
+msgstr "Abonnement"
 
-#: lib/Ajax/Application/Handler.php:1403
+#: lib/Ajax/Application/Handler.php:1405
 msgid "Successfully saved timeslice."
-msgstr "タイムスライスは保存されました。"
+msgstr "Zeitabschnitt erfolgreich gespeichert."
 
 #: templates/smartmobile/summary.html.php:2
 msgid "Summary"
-msgstr "概要"
+msgstr "Übersicht"
 
 #: config/prefs.php:128 templates/dynamic/edit.inc:169
 #: templates/dynamic/task.inc:124 templates/month/head.inc:6
 #: templates/month/head.inc:15 templates/view/view.inc:109
 msgid "Sunday"
-msgstr "日曜"
+msgstr "Sonntag"
 
 #: config/prefs.php:325
-msgid "Support separate collections?"
-msgstr "分割したコレクションをサポートしますか？"
+msgid "Support separate calendars?"
+msgstr "Getrennte Kalender unterstützen?"
 
 #: config/prefs.php:33
 msgid "Synchronization Preferences"
-msgstr "同期の個人設定"
+msgstr "Synchronisations-Einstellungen"
 
 #: lib/Form/EditCalendar.php:52
 msgid "System"
-msgstr "システム"
+msgstr "System"
 
 #: lib/Form/CreateCalendar.php:28 lib/Form/EditCalendar.php:57
 msgid "System Calendar"
-msgstr "システム予定表"
+msgstr "System-Kalender"
 
 #: lib/Application.php:209
 msgid "System Calendars"
-msgstr "システム予定表"
+msgstr "System-Kalender"
 
 #: lib/Form/CreateCalendar.php:28 lib/Form/EditCalendar.php:57
 msgid ""
 "System calendars don't have an owner. Only administrators can change the "
 "calendar settings and permissions."
 msgstr ""
-"システム予定表には所有者はいません。管理者だけが予定表の設定とアクセス権を変"
-"更できます。"
+"System-Kalender haben keinen Besitzer. Nur Administratoren können deren "
+"Einstellungen oder Rechte bearbeiten."
 
 #: lib/Form/CreateCalendar.php:31 lib/Form/EditCalendar.php:60
 #: templates/chunks/calendar.php:70 templates/dynamic/edit.inc:103
 #: templates/dynamic/task.inc:67 templates/edit/edit.inc:412
 #: templates/edit/edit.inc:418 templates/view/view.inc:144
 msgid "Tags"
-msgstr "タグ"
+msgstr "Tags"
 
-#: templates/chunks/calendar.php:242
+#: templates/chunks/calendar.php:246
 msgid "Task list ICS file"
-msgstr "タスク表 ICS ファイル"
+msgstr "ICS-Aufgabenlisten-Datei"
 
 #: templates/chunks/permissions.inc:59
 msgid "Task list owner"
-msgstr "タスク表の所有者"
+msgstr "Aufgabenlistenbesitzer"
 
 #: templates/dynamic/task.inc:7
 msgid "Task title"
-msgstr "タスク題名"
+msgstr "Aufgabe"
 
 #: lib/Ajax.php:153 templates/dynamic/index.inc:38
 msgid "Tasks"
-msgstr "タスク"
+msgstr "Aufgaben"
 
 #: lib/Kronolith.php:853 lib/Kronolith.php:876 templates/dynamic/edit.inc:71
 msgid "Tentative"
-msgstr "あやふや"
+msgstr "Unter Vorbehalt"
 
 #: lib/Block/Month.php:112 lib/View/Year.php:61 templates/edit/edit.inc:314
 msgid "Th"
-msgstr "木"
+msgstr "Do"
 
 #: data.php:126
 #, php-format
 msgid "The %s file didn't contain any events."
-msgstr "ファイル %s にはイベントは１つもありません。"
+msgstr "Die %s-Datei enthielt keine Termine."
 
 #: lib/Driver.php:65
 msgid "The Calendar backend is not currently available."
-msgstr "予定表バックエンドは現在使用できません。"
+msgstr "Der Kalenderserver ist zur Zeit nicht verfügbar."
 
 #: lib/Factory/Driver.php:116
 #, php-format
 msgid "The Calendar backend is not currently available: %s"
-msgstr "予定表バックエンドは現在使用できません：%s"
+msgstr "Der Kalenderserver ist zur Zeit nicht verfügbar: %s"
 
 #: lib/Application.php:66
 msgid ""
 "The Content_Tagger class could not be found. Make sure the Content "
 "application is installed."
 msgstr ""
-"Content_Tagger クラスが見つかりません。Content アプリケーションをインストール"
-"して下さい。"
+"Klasse Content_Tagger nicht gefunden. Bitte stellen Sie sicher, dass die "
+"\"Content\"-Anwendung installiert ist."
 
 #: templates/contacts/contacts.inc:72
 msgid "The Edit Attendees screen is no longer present. Exiting."
-msgstr "参加者の編集画面がありませんので、終了します。"
+msgstr "Die Teilnehmeransicht ist nicht mehr geladen. Abbruch."
 
 #: lib/Api.php:1263
 msgid ""
 "The attendee hasn't been updated because the update was not sent from the "
 "attendee."
-msgstr "参加者から更新が送られて来ないので、参加者は更新されませんでした。"
+msgstr ""
+"Der Teilnehmer wurde nicht aktualisiert, weil die Aktualisierung nicht von "
+"diesem Teilnehmer geschickt wurde."
 
 #: lib/Ajax.php:155
 msgid "The authentication information you specified wasn't accepted."
-msgstr "あなたの指定した認証情報は受け入れられませんでした。"
+msgstr "Die Anmeldedaten, die Sie angegeben haben, wurden nicht akzeptiert."
 
-#: calendars/create.php:31 lib/Ajax/Application/Handler.php:910
+#: calendars/create.php:31 lib/Ajax/Application/Handler.php:912
 #: resources/create.php:31 resources/groups/create.php:27
 #, php-format
 msgid "The calendar \"%s\" has been created."
-msgstr "予定表 \"%s\" は作成されました。"
+msgstr "Der Kalender \"%s\" wurde erzeugt."
 
-#: calendars/delete.php:44 lib/Ajax/Application/Handler.php:1127
+#: calendars/delete.php:44 lib/Ajax/Application/Handler.php:1129
 #, php-format
 msgid "The calendar \"%s\" has been deleted."
-msgstr "予定表 \"%s\" は削除されました。"
+msgstr "Der Kalender \"%s\" wurde gelöscht."
 
-#: calendars/edit.php:47 lib/Ajax/Application/Handler.php:935
+#: calendars/edit.php:47 lib/Ajax/Application/Handler.php:937
 #, php-format
 msgid "The calendar \"%s\" has been renamed to \"%s\"."
-msgstr "予定表 \"%s\" は \"%s\" に名前が変更されました。"
+msgstr "Der Kalender \"%s\" wurde nach \"%s\" umbenannt."
 
 #: calendars/edit.php:49 calendars/remote_edit.php:46
-#: lib/Ajax/Application/Handler.php:937 lib/Ajax/Application/Handler.php:1028
+#: lib/Ajax/Application/Handler.php:939 lib/Ajax/Application/Handler.php:1030
 #, php-format
 msgid "The calendar \"%s\" has been saved."
-msgstr "予定表 \"%s\" は保存されました。"
+msgstr "Der Kalender \"%s\" wurde gespeichert."
 
 #: lib/Kronolith.php:1089
 #, php-format
 msgid "The calendar %s returned the error: %s"
-msgstr "予定表 %s はエラーを返しました：%s"
+msgstr "Der Kalender %s hat folgenden Fehler zurückgeliefert: %s"
 
 #: data.php:136
 #, php-format
 msgid "The calendar could not be purged: %s"
-msgstr "予定表はパージできませんでした：%s"
+msgstr "Der Kalender konnte nicht geleert werden: %s"
 
 #: lib/Ajax.php:146
 msgid "The calendar title must not be empty."
-msgstr "予定表の題名は空ではいけません。"
+msgstr "Der Kalendername darf nicht leer sein."
 
 #: templates/javascript_defs.php:22
 msgid "The end date must be later than the start date."
-msgstr "終了日時は開始日時よりも後でなければなりません。"
+msgstr "Das Enddatum muss hinter dem Startdatum liegen."
 
-#: lib/Kronolith.php:2113
+#: lib/Kronolith.php:2128
 #, php-format
 msgid ""
 "The event \"%s\" has been added to \"%s\" calendar, which is on %s at %s."
-msgstr "イベント \"%s\" を予定表 \"%s\" に追加しました。予定は %s の %s です。"
+msgstr ""
+"Der Termin \"%s\", der am %3$s um %4$s Uhr stattfindet, wurde zum Kalender "
+"\"%2$s\" hinzugefügt."
 
-#: lib/Kronolith.php:2123
+#: lib/Kronolith.php:2138
 #, php-format
 msgid ""
 "The event \"%s\" has been deleted from \"%s\" calendar, which was on %s at "
 "%s."
 msgstr ""
-"イベント \"%s\" を予定表 \"%s\" から削除しました。予定は %s の %s でした。"
+"Der Termin \"%s\", der am %3$s um %4$s Uhr stattfinden sollte, wurde aus dem "
+"Kalender \"%2$s\" gelöscht."
 
-#: lib/Kronolith.php:2118
+#: lib/Kronolith.php:2133
 #, php-format
 msgid ""
 "The event \"%s\" has been edited on \"%s\" calendar, which is on %s at %s."
-msgstr "イベント \"%s\" を予定表 \"%s\" で変更しました。予定は %s の %s です。"
+msgstr ""
+"Der Termin \"%s\", der am %3$s um %4$s Uhr stattfindet, wurde im Kalender "
+"\"%2$s\" geändert."
 
 #: lib/Driver/Ical.php:463
 msgid "The event could not be added to the remote server."
-msgstr "イベントはリモートサーバーに追加できませんでした。"
+msgstr "Der Termin konnte nicht auf dem externen Server gespeichert werden."
 
 #: lib/Driver/Ical.php:536
 msgid "The event could not be deleted from the remote server."
-msgstr "イベントはリモートサーバーから削除できませんでした。"
+msgstr "Der Termin konnte nicht auf dem externen Server gelöscht werden."
 
 #: lib/Driver/Ical.php:436
 msgid "The event could not be updated on the remote server."
-msgstr "イベントはリモートサーバーで更新できませんでした。"
+msgstr "Der Termin konnte nicht auf dem externen Server aktualisiert werden."
 
-#: lib/Kronolith.php:2011
+#: lib/Kronolith.php:2025
 #, php-format
 msgid "The event notification to %s was successfully sent."
-msgstr "イベント通知は %s さんに送られました。"
+msgstr "Ihre Terminbenachrichtigung an %s wurde erfolgreich versendet."
 
 #: edit.php:73
 msgid "The exception has been removed."
-msgstr "例外は削除されました。"
+msgstr "Die Ausnahme wurde gelöscht."
 
 #: templates/itip/notification.plain.php:15
 msgid "The following is a more detailed description of the event:"
-msgstr "以下はイベントの詳細です："
+msgstr "Hier ist eine detailliertere Beschreibung des Termins:"
 
-#: lib/Kronolith.php:2180
+#: lib/Kronolith.php:2195
 #, php-format
 msgid "The following resource has accepted your request: %s"
 msgid_plural "The following resources have accepted your request: %s"
-msgstr[0] "以下のリソースはあなたの指示で許可されました：%s"
+msgstr[0] "Für die folgende Ressource wurde Ihre Anfrage angenommen: %s"
+msgstr[1] "Für die folgenden Ressourcen wurde Ihre Anfrage angenommen: %s"
 
-#: lib/Kronolith.php:2173
+#: lib/Kronolith.php:2188
 #, php-format
 msgid "The following resource has declined your request: %s"
 msgid_plural "The following resources have declined your request: %s"
-msgstr[0] "以下のリソースはあなたの指示で拒否されました：%s"
+msgstr[0] "Für die folgende Ressource wurde Ihre Anfrage abgelehnt: %s"
+msgstr[1] "Für die folgenden Ressourcen wurde Ihre Anfrage abgelehnt: %s"
 
 #: lib/FreeBusy.php:184
 #, php-format
 msgid "The free/busy url for %s cannot be retrieved."
-msgstr "%s 用の予定表 URL は取得できませんでした。"
+msgstr "Die Frei/Gebucht-URL für %s konnte nicht gelesen werden."
 
 #: calendars/remote_edit.php:37 calendars/remote_unsubscribe.php:38
-#: lib/Kronolith.php:1712
+#: lib/Kronolith.php:1726
 msgid "The remote calendar was not found."
-msgstr "リモートカレンダーは見つかりませんでした。"
+msgstr "Externen Kalender nicht gefunden."
 
-#: lib/Driver/Ical.php:658
+#: lib/Driver/Ical.php:661
 msgid "The remote server URL does not point to a CalDAV directory."
-msgstr "リモートサーバーURLはCalDAVディレクトリを指していません。"
+msgstr "Die URL des externen Servers verweist nicht auf einen CalDAV server."
 
 #: attend.php:43
 msgid ""
 "The request was incomplete. Some parameters that are necessary to accept or "
 "decline an event are missing."
 msgstr ""
-"要求が不完全でした。イベントを受諾あるいは謝絶するためのパラメータが不足して"
-"いました。"
+"Die Anfrage war unvollständig. Einige der Parameter, die notwendig sind, um "
+"einen Termin zu bestätigen oder abzusagen, fehlen."
 
-#: lib/Ajax/Application/Handler.php:163 lib/Ajax/Application/Handler.php:248
-#: lib/Ajax/Application/Handler.php:380 lib/Ajax/Application/Handler.php:513
+#: lib/Ajax/Application/Handler.php:165 lib/Ajax/Application/Handler.php:250
+#: lib/Ajax/Application/Handler.php:382 lib/Ajax/Application/Handler.php:515
 msgid "The requested event was not found."
-msgstr "要求されたイベントは見つかりませんでした。"
+msgstr "Der gesuchte Termin wurde nicht gefunden."
 
 #: feed/index.php:32
 #, php-format
 msgid "The requested feed (%s) was not found on this server."
-msgstr "要求されたフィード %s はサーバ上では見つかりませんでした。"
+msgstr "Der gesuchte Feed (%s) wurde auf diesem Server nicht gefunden."
 
-#: lib/Ajax/Application/Handler.php:630
+#: lib/Ajax/Application/Handler.php:632
 msgid "The requested task was not found."
-msgstr "要求されたタスクは見つかりませんでした。"
+msgstr "Gewünschte Aufgabe nicht gefunden."
 
-#: lib/Ajax/Application/Handler.php:1171 lib/Ajax/Application/Handler.php:1188
+#: lib/Ajax/Application/Handler.php:1173 lib/Ajax/Application/Handler.php:1190
 #: resources/delete.php:42
 #, php-format
 msgid "The resource \"%s\" has been deleted."
-msgstr "リソース ¥\"%s¥\" が削除されました。"
+msgstr "Die Ressource \"%s\" wurde gelöscht."
 
 #: resources/edit.php:43
 #, php-format
 msgid "The resource \"%s\" has been renamed to \"%s\"."
-msgstr "リソース \"%s\" は \"%s\" に名前が変更されました。"
+msgstr "Die Ressource \"%s\" wurde nach \"%s\" umbenannt."
 
-#: lib/Ajax/Application/Handler.php:1072 resources/edit.php:45
+#: lib/Ajax/Application/Handler.php:1074 resources/edit.php:45
 #, php-format
 msgid "The resource \"%s\" has been saved."
-msgstr "リソース ¥\"%s¥\" が保存されました。"
+msgstr "Die Ressource \"%s\" wurde gespeichert."
 
-#: lib/Event.php:604
+#: lib/Event.php:608
 #, php-format
 msgid "The resource \"%s\" was locked. Please try again."
-msgstr "リソース \"%s\" はロックされています。再度試して下さい。"
+msgstr ""
+"Die Ressource \"%s\" wurde gesperrt. Bitte versuchen Sie es noch einmal."
 
 #: resources/groups/delete.php:38
 #, php-format
 msgid "The resource group \"%s\" has been deleted."
-msgstr "リソースグループ ¥\"%s¥\" が削除されました。"
+msgstr "Die Ressourcengruppe \"%s\" wurde gelöscht."
 
 #: resources/groups/edit.php:39
 #, php-format
 msgid "The resource group \"%s\" has been renamed to \"%s\"."
-msgstr "リソースグループ \"%s\" は \"%s\" に名前が変更されました。"
+msgstr "Die Ressourcengruppe \"%s\" wurde nach \"%s\" umbenannt."
 
-#: lib/Ajax/Application/Handler.php:1098 resources/groups/edit.php:41
+#: lib/Ajax/Application/Handler.php:1100 resources/groups/edit.php:41
 #, php-format
 msgid "The resource group \"%s\" has been saved."
-msgstr "リソースグループ ¥\"%s¥\" が保存されました。"
+msgstr "Die Ressourcengruppe \"%s\" wurde gespeichert."
 
-#: lib/Ajax/Application/Handler.php:985
+#: lib/Ajax/Application/Handler.php:987
 #, php-format
 msgid "The task list \"%s\" has been created."
-msgstr "タスク表 \"%s\" が作成されました。"
+msgstr "Die Aufgabenliste \"%s\" wurde erstellt."
 
-#: lib/Ajax/Application/Handler.php:1143
+#: lib/Ajax/Application/Handler.php:1145
 #, php-format
 msgid "The task list \"%s\" has been deleted."
-msgstr "タスク表 \"%s\" は削除されました。"
-
-#: lib/Ajax/Application/Handler.php:1010
-#, php-format
-msgid "The task list \"%s\" has been renamed to \"%s\"."
-msgstr "タスク表 \"%s\" は \"%s\" に名前が変更されました。"
+msgstr "Die Aufgabenliste \"%s\" wurde gelöscht."
 
 #: lib/Ajax/Application/Handler.php:1012
 #, php-format
+msgid "The task list \"%s\" has been renamed to \"%s\"."
+msgstr "Die Aufgabenliste \"%s\" wurde nach \"%s\" umbenannt."
+
+#: lib/Ajax/Application/Handler.php:1014
+#, php-format
 msgid "The task list \"%s\" has been saved."
-msgstr "タスク表 \"%s\" は保存されました。"
+msgstr "Die Aufgabenliste \"%s\" wurde gespeichert."
 
 #: lib/Ajax.php:148
 msgid "The task list title must not be empty."
-msgstr "タスク表の題名は空ではいけません。"
+msgstr "Der Aufgabenlistenname darf nicht leer sein."
 
 #: lib/Block/Summary.php:31
 msgid "The time span to show"
-msgstr "表示する期間"
+msgstr "Zeitspanne die angezeigt werden soll"
 
-#: lib/Kronolith.php:1412 lib/Kronolith.php:1546
+#: lib/Kronolith.php:1426 lib/Kronolith.php:1560
 #, php-format
 msgid "The user \"%s\" does not exist."
-msgstr "\"%s\" というユーザは存在しません。"
+msgstr "Der Benutzer \"%s\" existiert nicht."
 
 #: templates/search/empty.inc:3
 msgid "There are no events matching the current criteria."
-msgstr "現在の基準に一致するイベントはありません。"
+msgstr "Es wurden keine passenden Termine gefunden."
 
 #: add.php:83 edit.php:75 edit.php:229
 #, php-format
 msgid "There was an error accessing the calendar: %s"
-msgstr "予定表のアクセス中にエラーが発生しました： %s"
+msgstr "Beim Zugriff auf den Kalender ist ein Fehler aufgetreten: %s."
 
 #: add.php:80
 #, php-format
 msgid "There was an error adding the event: %s"
-msgstr "イベントの追加中にエラーが発生しました： %s"
+msgstr "Beim Hinzufügen des Termins ist ein Fehler aufgetreten: %s."
 
 #: config/prefs.php:315
 #, php-format
 msgid "There was an error communicating with the ActiveSync server: %s"
-msgstr "ActiveSync サーバとの通信中にエラーが発生しました： %s"
+msgstr ""
+"In der Kommunikation mit dem ActiveSync-Server ist ein Fehler aufgetreten: %s"
 
 #: edit.php:20
 #, php-format
 msgid "There was an error editing the event: %s"
-msgstr "イベントの変更中にエラーが発生しました： %s"
+msgstr "Beim Bearbeiten des Termins ist ein Fehler aufgetreten: %s"
 
-#: lib/Api.php:306 lib/Api.php:753 lib/Api.php:1094 lib/Application.php:802
+#: lib/Api.php:306 lib/Api.php:753 lib/Api.php:1094 lib/Application.php:812
 msgid "There was an error importing the iCalendar data."
-msgstr "iCalendar データをインポート中にエラーが発生しました。"
+msgstr "Beim Importieren der iCalendar Daten ist ein Fehler aufgetreten."
 
-#: edit.php:213 lib/Ajax/Application/Handler.php:237
+#: edit.php:213 lib/Ajax/Application/Handler.php:239
 #, php-format
 msgid "There was an error moving the event: %s"
-msgstr "イベントの移動中にエラーが発生しました： %s"
+msgstr "Beim Verschieben des Termins ist ein Fehler aufgetreten: %s."
 
-#: lib/Application.php:431
+#: lib/Application.php:432
 #, php-format
 msgid "There was an error removing calendars for %s. Details have been logged."
-msgstr "%s の予定表を削除中にエラーが発生しました。詳細は記録されています。"
+msgstr ""
+"Beim Löschen der Kalender von %s ist ein Fehler aufgetreten. Details wurden "
+"protokolliert."
 
-#: lib/Kronolith.php:2016
+#: lib/Kronolith.php:2030
 #, php-format
 msgid "There was an error sending an event notification to %s: %s"
-msgstr "イベント通知を %s さんに送信中にエラーが発生しました：%s"
+msgstr ""
+"Beim Verschicken einer Terminbenachrichtigung an %s ist ein Fehler "
+"aufgetreten: %s"
 
 #: lib/Block/Month.php:13
 msgid "This Month"
-msgstr "今月"
+msgstr "Dieser Monat"
 
-#: templates/chunks/calendar.php:283
+#: templates/chunks/calendar.php:287
 msgid "This calendar requires to specify a user name and password."
-msgstr "この予定表はユーザ名とパスワードを要求しています。"
+msgstr "Für diesen Kalender werden Benutzername und Passwort benötigt."
 
 #: templates/dynamic/edit.inc:274
 msgid "This event can be saved as a timeslice in your timesheet."
-msgstr "このイベントはあなたの時間表の中のタイムスライスとして保存可能です。"
+msgstr ""
+"Dieser Termin kann als Zeitabschnitt in Ihrer Zeiterfassung gespeichert "
+"werden."
 
 #: data.php:108
 msgid "This file format is not supported."
-msgstr "このファイル形式はサポートされていません。"
+msgstr "Dieses Dateiformat wird nicht unterstützt."
 
 #: templates/dynamic/edit.inc:18
 msgid "This is a recurring event"
-msgstr "これは繰り返しのイベントです"
+msgstr "Dies ist ein Wiederholungstermin"
 
 #: templates/delete/delete.inc:18
 msgid ""
 "This is a recurring event. Delete the current event only, this<br /"
 ">occurrence and all future occurences, or all occurences?"
 msgstr ""
-"これは繰り返しイベントです。削除するのは現在のイベントだけですか？ それとも今"
-"後のイベントもですか？"
+"Dies ist ein Wiederholungstermin. Nur den aktuellen Termin löschen,<br /"
+">alle zukünftigen Termine inklusive diesem oder die ganze Serie?"
 
 #: templates/edit/edit.inc:42
 msgid ""
 "This is a recurring event. Edit the current event only, this occurrence<br /"
 ">and all future occurences, all occurences, or save this event as new?"
 msgstr ""
-"これは繰り返しイベントです。編集するのは現在のイベントだけですか？ それとも今"
-"後のイベントもですか？"
+"Dies ist ein Wiederholungstermin. Nur den aktuellen Termin<br />bearbeiten, "
+"alle zukünftigen Termine inklusive diesem, die<br />ganze Serie, oder eine "
+"Kopie des Termins speichern?"
 
 #: templates/dynamic/edit.inc:199
 #, php-format
 msgid "This is an exception to a recurring event originally scheduled on %s"
-msgstr "これは %s に予定されていた繰り返しイベントの例外です"
+msgstr ""
+"Dies ist die Ausnahme eine Wiederholungstermins, der ursprünglich am %s "
+"stattfinden sollte."
 
 #: templates/edit/edit.inc:290 templates/view/view.inc:98
 #, php-format
 msgid ""
 "This is an exception to a recurring event originally scheduled on %s at %s"
-msgstr "これは %s の %s に予定されていた繰り返しイベントの例外です"
+msgstr ""
+"Dies ist die Ausnahme eine Wiederholungstermins, der ursprünglich am %s um "
+"%s stattfinden sollte."
 
 #: data.php:155
 #, php-format
 msgid "This is what the server said: %s"
-msgstr "サーバからの応答：%s"
+msgstr "Meldung des Servers: %s"
 
 #: templates/dynamic/edit.inc:166 templates/dynamic/task.inc:121
 #: templates/month/head.inc:11 templates/view/view.inc:106
 msgid "Thursday"
-msgstr "木曜"
+msgstr "Donnerstag"
 
 #: templates/search/search.inc:35
 msgid "Time Sp_an"
-msgstr "_A期間"
+msgstr "Zeits_panne"
 
 #: templates/edit/edit_timespan.inc:4
 msgid "Time span"
-msgstr "期間"
+msgstr "Zeitspanne"
 
 #: templates/alarm/mail.plain.php:12
 msgid "Time:"
-msgstr "時間："
+msgstr "Uhrzeit:"
 
 #: templates/dynamic/edit.inc:58
 msgid "Timezone"
-msgstr "タイムゾーン"
+msgstr "Zeitzone"
 
 #: templates/edit/edit.inc:64 templates/search/search_advanced.inc:23
 msgid "Tit_le"
-msgstr "_L表題"
+msgstr "Tite_l"
 
 #: data.php:48 templates/search/event_headers.inc:3
 #: templates/search/search.inc:18
 msgid "Title"
-msgstr "表題"
+msgstr "Titel"
 
 #: templates/itip/notification.plain.php:33
 msgid "To accept the event tentatively:"
-msgstr "イベントを仮受諾するなら："
+msgstr "Um den Termin unter Vorbehalt zu bestätigen:"
 
 #: templates/itip/notification.plain.php:28
 msgid "To accept the event:"
-msgstr "イベントを受諾するなら："
+msgstr "Um den Termin zu bestätigen:"
 
 #: templates/itip/notification.plain.php:38
 msgid "To decline the event:"
-msgstr "イベントを辞退するなら："
+msgstr "Um den Termin abzulehnen:"
 
 #: lib/Form/EditCalendar.php:147
 msgid "To embed this calendar in another website, use the code above."
-msgstr "この予定表を他のWebサイトに埋め込むには、このコードを使用して下さい。"
+msgstr ""
+"Um diesen Kalender in eine Webseite einzubetten, verwenden Sie bitte den "
+"obenstehenden Code."
 
 #: templates/dynamic/edit.inc:258
 msgid ""
 "To make it easier to find, you can enter comma separated tags related to the "
 "event subject."
 msgstr ""
-"検索を容易にするために、イベントの内容に関連した複数のタグをカンマで区切って"
-"入力できます。"
+"Um den Termin leichter wiederzufinden, können Sie passende kommagetrennte "
+"Tags hinzufügen."
 
 #: templates/dynamic/task.inc:156
 msgid ""
 "To make it easier to find, you can enter comma separated tags related to the "
 "task subject."
 msgstr ""
-"検索を容易にするために、イベントの内容に関連した複数のタグをカンマで区切って"
-"入力できます。"
+"Um die Aufgabe leichter wiederzufinden, können Sie passende kommagetrennte "
+"Tags hinzufügen."
 
 #: templates/share/notification.html.php:17
 #: templates/share/notification.plain.php:9
 msgid "To subscribe to this calendar, you need to click the following link:"
-msgstr "この予定表を登録するには、以下のリンクをクリックすること："
+msgstr ""
+"Um diesen Kalender zu abonnieren, klicken Sie bitte auf den folgenden Link:"
 
 #: lib/Block/Monthlist.php:163 lib/Block/Prevmonthlist.php:135
-#: lib/Block/Summary.php:154 lib/Kronolith.php:2400
+#: lib/Block/Summary.php:154 lib/Kronolith.php:2415
 #: templates/smartmobile/javascript_defs.php:138
 msgid "Today"
-msgstr "今日"
+msgstr "Heute"
 
 #: lib/Block/Monthlist.php:165 lib/Block/Monthlist.php:173
 #: lib/Block/Prevmonthlist.php:137 lib/Block/Summary.php:156
 #: templates/smartmobile/javascript_defs.php:139
 msgid "Tomorrow"
-msgstr "明日"
+msgstr "Morgen"
 
 #: lib/Block/Month.php:112 lib/View/Year.php:59 templates/edit/edit.inc:312
 msgid "Tu"
-msgstr "火"
+msgstr "Di"
 
 #: templates/dynamic/edit.inc:164 templates/dynamic/task.inc:119
 #: templates/month/head.inc:9 templates/view/view.inc:104
 msgid "Tuesday"
-msgstr "火曜"
+msgstr "Dienstag"
 
 #: lib/Form/EditRemoteCalendar.php:26 lib/Form/SubscribeRemoteCalendar.php:31
-#: templates/chunks/calendar.php:263 templates/dynamic/edit.inc:98
+#: templates/chunks/calendar.php:267 templates/dynamic/edit.inc:98
 #: templates/edit/edit.inc:247 templates/edit/edit.inc:252
 #: templates/view/view.inc:14
 msgid "URL"
 msgstr "URL"
 
-#: lib/Ajax/Application/Handler.php:1124 lib/Ajax/Application/Handler.php:1140
+#: lib/Ajax/Application/Handler.php:1126 lib/Ajax/Application/Handler.php:1142
 #: lib/Form/DeleteResource.php:61 lib/Form/DeleteResourceGroup.php:62
-#: lib/Kronolith.php:1329
+#: lib/Kronolith.php:1343
 #, php-format
 msgid "Unable to delete \"%s\": %s"
-msgstr "\"%s\" を削除できません：%s"
+msgstr "\"%s\" kann nicht gelöscht werden: %s"
 
 #: lib/Api.php:420
 #, php-format
 msgid "Unable to delete calendar \"%s\": %s"
-msgstr "予定表 \"%s\" を削除できません：%s"
+msgstr "Der Kalender \"%s\" kann nicht gelöscht werden: %s"
 
 #: lib/Api.php:1048
 msgid ""
 "Unable to delete event. An exception date was provided but the event does "
 "not seem to be recurring."
 msgstr ""
-"イベントを削除できません。除外の日時が指定されましたが、イベントは繰り返しま"
-"せん。"
+"Termin kann nicht gelöscht werden. Es wurde ein Ausnahme angegeben, aber der "
+"Termin scheint gar kein Wiederholungstermin zu sein."
 
 #: lib/Factory/Driver.php:119 lib/Factory/Storage.php:44
 #, php-format
 msgid "Unable to load the definition of %s."
-msgstr "定義 %s をロードできません。"
+msgstr "Der %s-Treiber konnte nicht geladen werden."
+
+#: lib/Event.php:1472
+msgid "Unable to locate original event series."
+msgstr "Die ursprüngliche Terminserie konnte nicht gefunden werden."
 
 #: lib/Ajax.php:141
 msgid "Unable to locate requested address"
-msgstr "要求されたアドレスの場所が特定できません"
+msgstr "Die gesuchte Adresse wurde nicht gefunden"
 
-#: lib/Event.php:995
+#: lib/Event.php:1002
 msgid "Unable to parse event."
-msgstr "イベントを解釈できません。"
+msgstr "Der Termin konnte nicht ausgewertet werden."
 
-#: lib/Kronolith.php:1791
+#: lib/Kronolith.php:1805
 #, php-format
 msgid "Unable to recognize \"%s\" as an email address."
-msgstr "\"%s\" をメールアドレスと認識できません。"
+msgstr "\"%s\" wurde nicht als gültige E-Mail-Adresse erkannt."
 
-#: lib/Kronolith.php:1302
+#: lib/Kronolith.php:1316
 #, php-format
 msgid "Unable to save calendar \"%s\": %s"
-msgstr "予定表 \"%s\" を保存できません：%s"
+msgstr "Der Kalender \"%s\" kann nicht gespeichert werden: %s"
 
 #: lib/Form/EditResource.php:128 lib/Form/EditResourceGroup.php:69
 #, php-format
 msgid "Unable to save resource \"%s\": %s"
-msgstr "リソース \"%s\" を保存できません：%s"
+msgstr "Die Ressource \"%s\" kann nicht gespeichert werden: %s"
 
-#: lib/Driver/Ical.php:725
+#: lib/Driver/Ical.php:728
 msgid "Unexpected response from remote server."
-msgstr "リモートサーバーから予期しない応答がありました。"
+msgstr "Unerwartete Antwort des Servers."
 
 #: lib/Api.php:1342 lib/Api.php:1359
 msgid "Unknown calendar protocol"
-msgstr "不明なカレンダープロトコルです"
+msgstr "Unbekanntes Kalender-Protokoll."
 
 #: lib/Ajax.php:154
 msgid "Unknown resource."
-msgstr "不明なリソースです。"
+msgstr "Unbekannter Ressource."
 
 #: lib/Form/EditRemoteCalendar.php:35 lib/Form/EditRemoteCalendar.php:53
-#: lib/Form/UnsubscribeRemoteCalendar.php:28 templates/chunks/calendar.php:165
-#: templates/chunks/calendar.php:250
+#: lib/Form/UnsubscribeRemoteCalendar.php:28 templates/chunks/calendar.php:167
+#: templates/chunks/calendar.php:254
 msgid "Unsubscribe"
-msgstr "登録解除"
+msgstr "Ausblenden"
 
 #: lib/Form/UnsubscribeRemoteCalendar.php:22
 #, php-format
 msgid "Unsubscribe from %s"
-msgstr "%s の登録を解除する"
+msgstr "Von %s abmelden"
 
 #: lib/Api.php:370 lib/Api.php:800 lib/Api.php:910 lib/Api.php:964
 #: lib/Api.php:1115
 #, php-format
 msgid "Unsupported Content-Type: %s"
-msgstr "サポートしていないコンテンツタイプです：%s"
+msgstr "Nicht unterstützter Inhaltstyp: %s"
 
 #: lib/Block/Monthlist.php:13 lib/Block/Monthlist.php:57
 msgid "Upcoming Events"
-msgstr "これからのイベント"
+msgstr "Kommende Termine"
 
 #: templates/attendees/attendees.inc:153
 msgid "Update"
-msgstr "更新"
+msgstr "Aktualisierung"
 
 #: perms.php:87
 #, php-format
 msgid "Updated \"%s\"."
-msgstr "\"%s\" を更新しました。"
+msgstr "\"%s\" wurde aktualisiert."
 
-#: lib/Kronolith.php:1923
+#: lib/Kronolith.php:1937
 #, php-format
 msgid "Updated: %s."
-msgstr "更新しました：%s"
+msgstr "Aktualisiert: %s."
 
 #: templates/edit/edit.inc:212
 msgid "Use custom notification method"
-msgstr "カスタムの通知方法を使用"
+msgstr "Bestimmte Benachrichtigung verwenden"
 
 #: templates/edit/edit.inc:211
 msgid "Use default notification method"
-msgstr "デフォルトの通知方法を使用"
+msgstr "Standard-Benachrichtigung verwenden"
 
 #: config/prefs.php:13
 msgid "User Interface"
-msgstr "ユーザーインターフェイス"
+msgstr "Benutzeroberfläche"
 
 #: templates/chunks/permissions.inc:188
 msgid "User to add"
-msgstr "追加するユーザ"
+msgstr "Hinzuzufügender Benutzer"
 
 #: templates/perms/perms.inc:262
 msgid "User to add:"
-msgstr "追加するユーザ："
+msgstr "Hinzuzufügender Benutzer:"
 
 #: lib/Form/EditRemoteCalendar.php:28 lib/Form/SubscribeRemoteCalendar.php:33
-#: templates/chunks/calendar.php:286
+#: templates/chunks/calendar.php:290
 msgid "Username"
-msgstr "ユーザ名"
+msgstr "Benutzername"
 
 #: templates/chunks/permissions.inc:181
 msgid "Users"
-msgstr "ユーザ"
+msgstr "Benutzer"
 
 #: lib/Block/Month.php:170 lib/Block/Month.php:186 lib/View/Year.php:144
 #: lib/View/Year.php:147
 msgid "View Day"
-msgstr "日付を表示"
+msgstr "Tag anzeigen"
 
 #: lib/Block/Month.php:112 lib/View/Year.php:60 templates/edit/edit.inc:313
 msgid "We"
-msgstr "水"
+msgstr "Mi"
 
 #: templates/alarm/mail.plain.php:1
 msgid "We would like to remind you of this upcoming event."
-msgstr "あなたに今後のイベントをお知らせいたします。"
+msgstr "Wir möchten Sie an den folgenden Termin erinnern."
 
-#: lib/Form/EditCalendar.php:123 templates/chunks/calendar.php:117
-#: templates/chunks/calendar.php:228
+#: lib/Form/EditCalendar.php:123 templates/chunks/calendar.php:119
+#: templates/chunks/calendar.php:232
 msgid "WebDAV/ICS Subscription URL"
-msgstr "WebDAV/ICS 登録 URL"
+msgstr "WebDAV/ICS-Abonnement-Adresse"
 
 #: templates/dynamic/edit.inc:165 templates/dynamic/task.inc:120
 #: templates/month/head.inc:10 templates/view/view.inc:105
 msgid "Wednesday"
-msgstr "水曜"
+msgstr "Mittwoch"
 
-#: attendees.php:189 config/prefs.php:101 lib/Application.php:448
-#: lib/Kronolith.php:2417 templates/dynamic/index.inc:34
+#: attendees.php:189 config/prefs.php:101 lib/Application.php:449
+#: lib/Kronolith.php:2432 templates/dynamic/index.inc:34
 msgid "Week"
-msgstr "週"
+msgstr "Woche"
 
 #: lib/View/Month.php:165 week.php:26 workweek.php:27
 #, php-format
 msgid "Week %d"
-msgstr "第%d週"
+msgstr "%d. Woche"
 
 #: templates/edit/edit.inc:148 templates/edit/edit.inc:196
 #: templates/view/view.inc:55 templates/prefs/defaultalarm.html:13
 msgid "Week(s)"
-msgstr "週間"
+msgstr "Woche(n)"
 
 #: templates/edit/edit.inc:308 templates/view/view.inc:110
 msgid "Weekly: Recurs every"
-msgstr "毎週：繰り返し"
+msgstr "Wöchentlich: Wiederholung alle"
 
 #: config/prefs.php:158
 msgid ""
 "What time should day and week views end, when there are no later events?"
-msgstr "日表示と週表示の終了時間は？"
+msgstr ""
+"Wann sollen die Tages- und Wochenansichten enden, wenn keine späteren "
+"Termine vorliegen?"
 
 #: config/prefs.php:139
 msgid ""
 "What time should day and week views start, when there are no earlier events?"
-msgstr "日表示と週表示の開始時間は？"
+msgstr ""
+"Wann sollen die Tages- und Wochenansichten beginnen, wenn keine früheren "
+"Termine vorliegen?"
 
 #: feed/index.php:124
 msgid "When:"
-msgstr "何時："
+msgstr "Wann:"
 
 #: feed/index.php:137
 msgid "Where:"
-msgstr "何処で："
+msgstr "Wo:"
 
 #: feed/index.php:134
 msgid "Who:"
-msgstr "誰が："
+msgstr "Wer:"
 
-#: attendees.php:188 config/prefs.php:102 lib/Application.php:447
-#: lib/Kronolith.php:2411 templates/dynamic/index.inc:33
+#: attendees.php:188 config/prefs.php:102 lib/Application.php:448
+#: lib/Kronolith.php:2426 templates/dynamic/index.inc:33
 msgid "Work Week"
-msgstr "月金"
+msgstr "Arbeitswoche"
 
-#: lib/Application.php:450 lib/Kronolith.php:2429
+#: lib/Application.php:451 lib/Kronolith.php:2444
 #: templates/dynamic/index.inc:36
 msgid "Year"
-msgstr "年"
+msgstr "Jahr"
 
 #: templates/edit/edit.inc:334 templates/edit/edit.inc:340
 #: templates/edit/edit.inc:346 templates/view/view.inc:116
 #: templates/view/view.inc:118 templates/view/view.inc:120
 msgid "Yearly: Recurs every"
-msgstr "毎年：繰り返し"
+msgstr "Jährlich: Wiederholung alle"
 
 #: templates/dynamic/edit.inc:317 templates/dynamic/edit.inc:324
 #: templates/dynamic/edit.inc:331
 msgid "Yes"
-msgstr "はい"
+msgstr "Ja"
 
 #: templates/smartmobile/javascript_defs.php:137
 msgid "Yesterday"
-msgstr "昨日"
+msgstr "Gestern"
 
-#: lib/Kronolith.php:1291
+#: lib/Kronolith.php:1305
 msgid "You are not allowed to change this calendar."
-msgstr "あなたはこの予定表の変更を許可されていません。"
+msgstr "Sie dürfen diesen Kalender nicht ändern."
 
 #: resources/edit.php:28 resources/groups/edit.php:24
 msgid "You are not allowed to change this resource."
-msgstr "あなたはこのリソースの変更を許可されていません。"
+msgstr "Sie dürfen diese Ressource nicht ändern."
 
 #: add.php:62 data.php:37 data.php:147 edit.php:34
-#: lib/Ajax/Application/Handler.php:207 new.php:29
+#: lib/Ajax/Application/Handler.php:209 new.php:29
 #, php-format
 msgid "You are not allowed to create more than %d events."
-msgstr "あなたは %d 以上のイベント作成を許可されていません。"
+msgstr "Sie dürfen nicht mehr als %d Termine erstellen."
 
-#: lib/Ajax/Application/Handler.php:1047
+#: lib/Ajax/Application/Handler.php:1049
 msgid "You are not allowed to create new resources."
-msgstr "あなたはリソースの新規作成を許可されていません。"
+msgstr "Sie dürfen keine neuen Ressourcen anlegen."
 
-#: calendars/delete.php:35 lib/Kronolith.php:1322
+#: calendars/delete.php:35 lib/Kronolith.php:1336
 msgid "You are not allowed to delete this calendar."
-msgstr "あなたはこの予定表の削除を許可されていません。"
+msgstr "Sie dürfen diesen Kalender nicht löschen."
 
 #: resources/groups/delete.php:24
 msgid "You are not allowed to delete this resource group."
-msgstr "あなたはこのリソースグループの削除を許可されていません。"
+msgstr "Sie dürfen diese Ressourcengruppe nicht löschen."
 
-#: lib/Ajax/Application/Handler.php:1161 lib/Ajax/Application/Handler.php:1179
+#: lib/Ajax/Application/Handler.php:1163 lib/Ajax/Application/Handler.php:1181
 #: resources/delete.php:28
 msgid "You are not allowed to delete this resource."
-msgstr "あなたはこのリソースの削除を許可されていません。"
+msgstr "Sie dürfen diese Ressource nicht löschen."
 
-#: lib/Ajax/Application/Handler.php:1134
+#: lib/Ajax/Application/Handler.php:1136
 msgid "You are not allowed to delete this task list."
-msgstr "あなたはこのタスク表の削除を許可されていません。"
+msgstr "Sie dürfen diese Aufgabenliste nicht löschen."
 
-#: lib/Ajax/Application/Handler.php:1056
+#: lib/Ajax/Application/Handler.php:1058
 msgid "You are not allowed to edit this resource."
-msgstr "あなたはこのリソースの変更を許可されていません。"
+msgstr "Sie dürfen diese Ressource nicht bearbeiten."
 
 #: calendars/edit.php:36
 msgid "You are not allowed to see this calendar."
-msgstr "あなたはこの予定表の閲覧を許可されていません。"
+msgstr "Sie dürfen diesen Kalender nicht anzeigen."
 
-#: lib/Ajax/Application/Handler.php:1204 lib/Ajax/Application/Handler.php:1211
+#: lib/Ajax/Application/Handler.php:1206 lib/Ajax/Application/Handler.php:1213
 msgid "You are not allowed to view this calendar."
-msgstr "あなたはこの予定表を閲覧できません。"
+msgstr "Sie dürfen diesen Kalender nicht lesen."
 
 #: attend.php:53
 msgid "You are not an attendee of the specified event."
-msgstr "あなたは指定したイベントの参加者ではありません。"
+msgstr "Sie sind kein Teilnehmer dieses Termins."
 
 #: templates/dynamic/edit.inc:122 templates/dynamic/task.inc:77
 #, php-format
 msgid "You can change the default settings in the %sNotification options%s"
-msgstr "デフォルト設定は %s通知オプション%s で変更できます"
+msgstr ""
+"Sie können die Standardwerte in den %sBenachrichtigungs-Einstellungen%s "
+"anpassen."
 
 #: templates/contacts/contacts.inc:78
 msgid "You can only use this form from the Edit Attendees screen."
-msgstr "このフォームは参加者の編集画面でのみ使用できます。"
+msgstr "Sie können dieses Formular nur von der Teilnehmeransicht aus benutzen."
 
-#: lib/Kronolith.php:1873
+#: lib/Kronolith.php:1887
 #, php-format
 msgid ""
 "You do not have an email address configured in your Personal Information "
 "Preferences. You must set one %shere%s before event notifications can be "
 "sent."
 msgstr ""
-"あなたは個人情報の設定でメールアドレスを設定していません。イベント通知を受け"
-"るためには %sここ%s の設定が必要です。"
+"Sie haben in Ihren Einstellungen unter Persönliche Informationen keine E-"
+"Mail-Adresse angegeben. Sie müssen %shier%s eine Adresse eintragen, bevor "
+"Terminbenachrichtigungen verschickt werden können."
 
 #: add.php:48
 msgid "You do not have permission to add events to this calendar."
-msgstr "あなたがこの予定表にイベントを追加することは許可されていません。"
+msgstr ""
+"Sie haben nicht genügend Rechte, um Termine zu diesem Kalender hinzuzufügen."
 
 #: add.php:53 edit.php:181
 msgid "You do not have permission to delegate events to this user."
-msgstr "あなたがイベントをこのユーザに委譲することは許可されていません。"
+msgstr ""
+"Sie haben nicht genügend Rechte, um Termine an diesen Benutzer zu delegieren."
 
-#: delete.php:40 delete.php:47 lib/Ajax/Application/Handler.php:466
+#: delete.php:40 delete.php:47 lib/Ajax/Application/Handler.php:468
 msgid "You do not have permission to delete this event."
-msgstr "あなたにはこのイベントを削除する権限がありません。"
+msgstr "Sie haben nicht genügend Rechte, um diesen Termin zu löschen."
 
-#: edit.php:65 edit.php:112 edit.php:176 lib/Ajax/Application/Handler.php:257
-#: lib/Ajax/Application/Handler.php:383
+#: edit.php:65 edit.php:112 edit.php:176 lib/Ajax/Application/Handler.php:259
+#: lib/Ajax/Application/Handler.php:385
 msgid "You do not have permission to edit this event."
-msgstr "あなたにはこのイベントを変更する権限がありません。"
+msgstr "Sie haben nicht genügend Rechte, um diesen Termin zu bearbeiten."
 
 #: edit.php:203
 msgid "You do not have permission to move this event."
-msgstr "あなたにはこのイベントを移動する権限がありません。"
+msgstr "Sie haben nicht genügend Rechte, um diesen Termin zu verschieben."
 
 #: templates/agenda/notification.html.php:58
 #, php-format
@@ -3451,8 +3608,10 @@ msgid ""
 "agenda. You can change this if you %slogin to the calendar%s and change your "
 "preferences."
 msgstr ""
-"あなたがこのメッセージを受け取ったのは、あなた予定表の日課を通知をすると設定"
-"したからです。あなたは %s予定表にログイン%s し、設定を変更できます。"
+"Sie erhalten diese Nachricht, weil Sie Ihren Kalender so eingestellt haben, "
+"dass Ihnen eine tägliche Terminübersicht zugeschickt wird. Sie können dies "
+"ändern, indem Sie sich %sbei Ihrem Kalender anmelden%s und Ihre "
+"Einstellungen anpassen."
 
 #: templates/alarm/mail.html.php:66
 #, php-format
@@ -3461,204 +3620,219 @@ msgid ""
 "reminders of events with alarms. You can change this if you %slogin to the "
 "calendar%s and change your preferences."
 msgstr ""
-"あなたがこのメッセージを受け取ったのは、あなたがイベントのアラームを通知する"
-"と設定したからです。あなたは %s予定表にログイン%s し、設定を変更できます。"
+"Sie erhalten diese Nachricht, weil Sie Ihren Kalender so eingestellt haben, "
+"dass Ihnen Erinnerungen an Termine mit Alarm zugeschickt werden. Sie können "
+"dies ändern, indem Sie sich %sbei Ihrem Kalender anmelden%s und Ihre "
+"Einstellungen anpassen."
 
-#: calendars/remote_subscribe.php:34 lib/Ajax/Application/Handler.php:1030
+#: calendars/remote_subscribe.php:34 lib/Ajax/Application/Handler.php:1032
 #, php-format
 msgid "You have been subscribed to \"%s\" (%s)."
-msgstr "あなたは \"%s\"(%s) を登録しました。"
+msgstr "Sie haben \"%s\" (%s) abonniert."
 
-#: calendars/remote_unsubscribe.php:47 lib/Ajax/Application/Handler.php:1153
+#: calendars/remote_unsubscribe.php:47 lib/Ajax/Application/Handler.php:1155
 #, php-format
 msgid "You have been unsubscribed from \"%s\" (%s)."
-msgstr "あなたは \"%s\"(%s) の登録を解除しました。"
+msgstr "Sie wurden von \"%s\" (%s) abgemeldet."
 
 #: data.php:88
 msgid ""
 "You have specified an invalid calendar or you do not have permission to add "
 "events to the selected calendar."
 msgstr ""
-"あなたは無効な予定表を指定したか、あるいは選択した予定表にイベントを追加する"
-"権限がありません。"
+"Sie haben einen ungültigen Kalender angegeben, oder Sie haben nicht genügend "
+"Rechte, um Termine zu dem ausgewählten Kalender hinzuzufügen."
 
 #: attend.php:23
 msgid "You have successfully accepted attendence to this event."
-msgstr "あなたはこのイベントの参加者に参加されました。"
+msgstr "Sie haben erfolgreich die Teilnahme an diesem Event zugesagt."
 
 #: attend.php:28
 msgid "You have successfully declined attendence to this event."
-msgstr "あなたにはこのイベントへの招待を辞退しました。"
+msgstr "Sie haben erfolgreich die Teilnahme an diesem Event abgesagt."
 
 #: attend.php:33
 msgid "You have tentatively accepted attendence to this event."
-msgstr "あなたにはこのイベントへの招待を仮受諾しました。"
+msgstr "Sie haben unter Vorbehalt die Teilnahme an diesem Event zugesagt."
 
 #: templates/contacts/contacts.inc:54
 msgid "You must select an address first."
-msgstr "アドレスを最初に選択して下さい。"
+msgstr "Sie müssen erst eine Adresse auswählen."
 
 #: lib/Ajax.php:149
 msgid "You must specify a URL."
-msgstr "URL を指定してください。"
+msgstr "Sie müssen eine URL angeben."
 
-#: lib/Kronolith.php:1656
+#: lib/Kronolith.php:1670
 msgid "You must specify a name and a URL."
-msgstr "名前と URL を指定してください。"
+msgstr "Sie müssen einen Namen und eine URL angeben."
 
-#: lib/Kronolith.php:2113
+#: lib/Kronolith.php:2128
 msgid "You requested to be notified when events are added to your calendars."
-msgstr "あなたはあなたの予定表にイベントが追加された時の通知を要求しました。"
+msgstr ""
+"Sie wollten benachrichtigt werden, wenn Termine zu Ihren Kalendern "
+"hinzugefügt werden."
 
-#: lib/Kronolith.php:2123
+#: lib/Kronolith.php:2138
 msgid ""
 "You requested to be notified when events are deleted from your calendars."
-msgstr "あなたはあなたの予定表からイベントが削除された時の通知を要求しました。"
+msgstr ""
+"Sie wollten benachrichtigt werden, wenn Termine aus Ihren Kalendern gelöscht "
+"werden."
 
-#: lib/Kronolith.php:2118
+#: lib/Kronolith.php:2133
 msgid "You requested to be notified when events are edited in your calendars."
-msgstr "あなたはあなたの予定表のイベントが変更された時の通知を要求しました。"
+msgstr ""
+"Sie wollten benachrichtigt werden, wenn Termine in Ihren Kalendern geändert "
+"werden."
 
 #: lib/Ajax.php:156
 #, php-format
 msgid ""
 "You used an unknown date format \"%s\". Please try something like \"%s\"."
 msgstr ""
-"あなたは不明な日付形式\"%s\"を使用しています。例えば\"%s\"のような形式にして"
-"下さい。"
+"Sie haben ein unbekanntes Datumsformat \"%s\" benutzt. Bitte versuchen Sie "
+"etwas wie \"%s\"."
 
 #: lib/Ajax.php:157
 #, php-format
 msgid ""
 "You used an unknown time format \"%s\". Please try something like \"%s\"."
 msgstr ""
-"あなたは不明な時間形式\"%s\"を使用しています。例えば\"%s\"のような形式にして"
-"下さい。"
+"Sie haben ein unbekanntes Zeitformat \"%s\" benutzt. Bitte versuchen Sie "
+"etwas wie \"%s\"."
 
 #: templates/agenda/notification.html.php:1
 msgid "Your daily agenda"
-msgstr "あなたの日課"
+msgstr "Ihr Tagesprogramm"
 
 #: templates/agenda/notification.plain.php:1
 #, php-format
 msgid "Your daily agenda for %s"
-msgstr "%s の計画"
+msgstr "Ihr Tagesprogramm für den %s"
 
 #: config/prefs.php:241
 msgid "Your default calendar:"
-msgstr "デフォルト予定表："
+msgstr "Ihr Standard-Kalender:"
 
-#: lib/Event.php:2502 lib/Event/Horde.php:276 lib/Event/Ical.php:73
+#: lib/Event.php:2617 lib/Event/Horde.php:276 lib/Event/Ical.php:73
 msgid "[Unnamed event]"
-msgstr "[無名イベント]"
+msgstr "[Unbenannter Termin]"
+
+#: lib/Event/Resource/Sql.php:82
+#, php-format
+msgid "[Unnamed event] %s"
+msgstr "[Unbenannter Termin] %s"
 
 #: templates/edit/edit.inc:172
 msgid "_Alarm"
-msgstr "_Aアラーム"
+msgstr "_Alarm"
 
 #: templates/search/search_advanced.inc:8
 msgid "_Basic Search"
-msgstr "_B簡易検索"
+msgstr "Ein_fache Suche"
 
-#: lib/Kronolith.php:2464
+#: lib/Kronolith.php:2479
 msgid "_Edit"
-msgstr "_E編集"
+msgstr "_Bearbeiten"
 
 #: lib/Application.php:131
 msgid "_Goto"
-msgstr "_G移動"
+msgstr "_Gehe zu"
 
 #: lib/Application.php:138
 msgid "_Import/Export"
-msgstr "_Iイン/アウト"
+msgstr "_Import/Export"
 
 #: lib/Application.php:165 lib/View/Sidebar.php:33
 msgid "_New Event"
-msgstr "_N新イベント"
+msgstr "_Neuer Termin"
 
 #: lib/View/SidebarTasks.php:29
 msgid "_New Task"
-msgstr "_N新タスク"
+msgstr "_Neue Aufgabe"
 
 #: lib/Application.php:133
 msgid "_Search"
-msgstr "_S検索"
+msgstr "_Suche"
 
-#: lib/Kronolith.php:2399 templates/dynamic/index.inc:25
+#: lib/Kronolith.php:2414 templates/dynamic/index.inc:25
 msgid "_Today"
-msgstr "_T今日"
+msgstr "_Heute"
 
 #: templates/edit/edit.inc:82
 #, php-format
 msgid "as %s"
-msgstr "as %s"
+msgstr "als %s"
 
 #: templates/dynamic/edit.inc:40 templates/dynamic/edit.inc:49
 #: templates/dynamic/task.inc:18
 msgid "at"
-msgstr " at "
+msgstr "um"
 
 #: templates/edit/edit.inc:198
 msgid "before the event starts"
-msgstr "イベント開始前"
+msgstr "vor dem Terminbeginn"
 
 #: templates/prefs/defaultalarm.html:15
 msgid "before the event starts. A value of \"0\" means no default alarms."
-msgstr "イベント開始前。「0」はアラーム無しを意味します。"
+msgstr ""
+"vor dem Terminbeginn. Ein Wert von \"0\" bedeutet kein standardmäßiger Alarm."
 
-#: lib/Event.php:2501
+#: lib/Event.php:2616 lib/Event/Resource/Sql.php:81
 msgid "busy"
-msgstr "多忙"
+msgstr "Beschäftigt"
 
-#: lib/Event.php:403 lib/Event.php:412
+#: lib/Event.php:403 lib/Event.php:416
 #, php-format
 msgid "by %s"
-msgstr "%s 作"
+msgstr "durch %s"
 
-#: lib/Event.php:405 lib/Event.php:414
+#: lib/Event.php:405 lib/Event.php:418
 msgid "by me"
-msgstr "自作"
+msgstr "durch mich"
 
 #: templates/dynamic/task.inc:59
 msgid "completed"
-msgstr "完了"
+msgstr "Erledigt"
 
 #: lib/Block/Summary.php:35
 msgid "day"
-msgstr "日"
+msgstr "Tag"
 
 #: templates/edit/edit.inc:303 templates/view/view.inc:100
 msgid "day(s)"
-msgstr "日"
+msgstr "Tag(e)"
 
 #: lib/Block/Summary.php:36 lib/Block/Summary.php:37 lib/Block/Summary.php:38
 #: lib/Block/Summary.php:39 lib/Block/Summary.php:40
 #: templates/dynamic/edit.inc:130 templates/dynamic/task.inc:85
 msgid "days"
-msgstr "日間"
+msgstr "Tage"
 
-#: lib/Application.php:624 templates/data/export.inc:1
+#: lib/Application.php:632 templates/data/export.inc:1
 msgid "events.csv"
-msgstr "events.csv"
+msgstr "termine.csv"
 
-#: lib/Application.php:647
+#: lib/Application.php:652
 msgid "events.ics"
-msgstr "events.ics"
+msgstr "termine.ics"
 
 #: templates/dynamic/edit.inc:129 templates/dynamic/task.inc:84
 msgid "hours"
-msgstr "時間"
+msgstr "Stunden"
 
-#: templates/chunks/calendar.php:140 templates/chunks/calendar.php:154
-#: templates/chunks/calendar.php:239 templates/chunks/calendar.php:389
+#: templates/chunks/calendar.php:142 templates/chunks/calendar.php:156
+#: templates/chunks/calendar.php:243 templates/chunks/calendar.php:393
 #: templates/dynamic/edit.inc:270
 msgid ""
 "iCalendar is a computer file format which allows internet users to send "
 "meeting requests and tasks to other internet users, via email, or sharing "
 "files with an extension of .ics."
 msgstr ""
-"iCalendar は計算機用のファイル形式であり、インターネットユーザがメールや拡張"
-"子.ics の共有ファイルを通じて会議の招集を可能にします。"
+"iCalendar ist ein computerlesbares Dateiformat, mit dem Terminanfragen und "
+"Aufgaben per E-Mail verschickt oder durch Dateien mit der .ics Erweiterung "
+"ausgetauscht werden können."
 
 #: templates/contacts/contacts.inc:147
 msgid "in"
@@ -3666,71 +3840,71 @@ msgstr "in"
 
 #: templates/dynamic/edit.inc:128 templates/dynamic/task.inc:83
 msgid "minutes"
-msgstr "分"
+msgstr "Minuten"
 
 #: templates/edit/edit.inc:323 templates/edit/edit.inc:329
 #: templates/view/view.inc:112 templates/view/view.inc:114
 msgid "month(s)"
-msgstr "ヶ月"
+msgstr "Monat(e)"
 
 #: lib/Ajax.php:144
 msgid "more..."
-msgstr "さらに..."
+msgstr "mehr..."
 
 #: templates/itip/notification.plain.php:1
 #, php-format
 msgid "on %s at %s"
-msgstr "%s の %s に"
+msgstr "am %s um %s"
 
 #: templates/edit/edit.inc:323 templates/view/view.inc:112
 msgid "on the same date"
-msgstr "同じ日に"
+msgstr "am gleichen Datum"
 
 #: templates/edit/edit.inc:329 templates/view/view.inc:114
 msgid "on the same weekday"
-msgstr "同じ曜日に"
+msgstr "am gleichen Wochentag"
 
-#: templates/chunks/calendar.php:166 templates/chunks/calendar.php:251
-#: templates/chunks/calendar.php:278 templates/chunks/calendar.php:299
-#: templates/chunks/calendar.php:319 templates/chunks/calendar.php:343
-#: templates/chunks/calendar.php:398 templates/chunks/calendar.php:433
+#: templates/chunks/calendar.php:168 templates/chunks/calendar.php:255
+#: templates/chunks/calendar.php:282 templates/chunks/calendar.php:303
+#: templates/chunks/calendar.php:323 templates/chunks/calendar.php:347
+#: templates/chunks/calendar.php:402 templates/chunks/calendar.php:437
 #: templates/dynamic/edit.inc:295 templates/dynamic/edit.inc:311
 #: templates/dynamic/index.inc:13 templates/dynamic/task.inc:166
 #: templates/dynamic/task.inc:179
 msgid "or"
-msgstr "または"
+msgstr "oder"
 
 #: templates/chunks/permissions.inc:31 templates/chunks/permissions.inc:45
 msgid "read and edit the events"
-msgstr "イベントの読み出しと編集"
+msgstr "Termine zu lesen und zu bearbeiten"
 
 #: templates/chunks/permissions.inc:31 templates/chunks/permissions.inc:45
 msgid "read and edit the tasks"
-msgstr "タスクの読み出しと編集"
+msgstr "Aufgaben zu lesen und zu bearbeiten"
 
 #: templates/chunks/permissions.inc:30 templates/chunks/permissions.inc:44
 msgid "read the events"
-msgstr "イベントの読み出し"
+msgstr "Termine zu lesen"
 
 #: templates/chunks/permissions.inc:30 templates/chunks/permissions.inc:44
 msgid "read the tasks"
-msgstr "タスクの読み出し"
+msgstr "Aufgaben zu lesen"
 
 #: templates/edit/edit.inc:384
 msgid "recurrences"
-msgstr "繰り返し"
+msgstr "Wiederholungen"
 
 #: templates/edit/edit.inc:99
 msgid "resource"
-msgstr "リソース"
+msgstr "Ressource"
 
 #: templates/dynamic/edit.inc:209
 msgid "separate e-mail addresses with a comma"
-msgstr "電子メールアドレスはカンマで区切る"
+msgstr "trennen Sie E-Mail-Adressen durch Kommas"
 
 #: templates/dynamic/edit.inc:44
 msgid "to"
-msgstr "終了"
+msgstr "bis"
 
 #: data.php:22 templates/data/import.inc:14
 msgid "vCalendar/iCalendar"
@@ -3738,25 +3912,25 @@ msgstr "vCalendar/iCalendar"
 
 #: lib/Block/Summary.php:41
 msgid "week"
-msgstr "週"
+msgstr "Woche"
 
 #: templates/edit/edit.inc:310 templates/view/view.inc:110
 msgid "week(s) on:"
-msgstr "週、同じ日に"
+msgstr "Woche(n) am:"
 
 #: lib/Block/Summary.php:42 lib/Block/Summary.php:43 lib/Block/Summary.php:44
 #: templates/dynamic/edit.inc:131 templates/dynamic/task.inc:86
 msgid "weeks"
-msgstr "週間"
+msgstr "Wochen"
 
 #: templates/edit/edit.inc:335 templates/view/view.inc:116
 msgid "year(s) on the same date"
-msgstr "年の同じ日時に"
+msgstr "Jahr(e) am gleichen Datum"
 
 #: templates/edit/edit.inc:341 templates/view/view.inc:118
 msgid "year(s) on the same day of the year"
-msgstr "年の同じ日に"
+msgstr "Jahr(e) am gleichen Jahrestag"
 
 #: templates/edit/edit.inc:347 templates/view/view.inc:120
 msgid "year(s) on the same weekday and month of the year"
-msgstr "年の同じ月で同じ週に"
+msgstr "Jahr(e) am gleichen Wochentag und Monat des Jahres"
