@@ -22,10 +22,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2014-07-08</date>
- <time>18:25:05</time>
+ <date>2014-08-04</date>
+ <time>17:26:41</time>
  <version>
-  <release>4.2.0</release>
+  <release>4.2.1</release>
   <api>4.2.0</api>
  </version>
  <stability>
@@ -34,9 +34,14 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [jan] Fix selecting days in the sidebar mini calendar (Bug #13327).
-* [mjr] Issue a cancellation iTip when an event&apos;s status changes to cancelled (Bug #13321).
-* [jan] Fix loading events for intial view in smartphone mode.
+* [jan] Fix displayed CalDAV URLs for shared calendars (Bug #12380).
+* [jan] Don&apos;t show today&apos;s events that are over in portal (Bug #13368).
+* [mjr] Fix exporting to ics file when event contains exceptions and an explicit timezone (Bug #13369).
+* [mjr] Fix importing iCalendar data that contains timezone parameters.
+* [mjr] Fix both importing and replacing text/calendar data via the API when recurrence exceptions are present (Bug #13399).
+* [mjr] Ensure default share attribute is set when auto determining a default share.
+* [mjr] Fix fatal error when calculating alarms on a recurring event that has completed.
+* [mjr] Fix catching minical clicks on browsers that return element names in uppercase (Jasper.Olbrich@students.uni-marburg.de, Bug #13370).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -55,7 +60,9 @@
    <file baseinstalldir="/" md5sum="7733e7593bfd9ad2eb15baf475715d05" name="bin/kronolith-import-icals" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
-   <file baseinstalldir="/" md5sum="c96c27dfaf7628f6c33659ca88754bae" name="bin/kronolith-import-openxchange" role="script" />
+   <file baseinstalldir="/" md5sum="c96c27dfaf7628f6c33659ca88754bae" name="bin/kronolith-import-openxchange" role="script">
+    <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
+   </file>
    <file baseinstalldir="/" md5sum="6c37bc1276796d3d5885ab9d00155c74" name="bin/kronolith-import-squirrelmail-calendar" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
@@ -71,12 +78,12 @@
    <file baseinstalldir="/" md5sum="461c4f56a3c904e454181b020e8cbc0e" name="config/conf.xml" role="horde" />
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="91fc78b157c0b8ae0fb1ce6e33e49ee1" name="config/menu.php.dist" role="horde" />
-   <file baseinstalldir="/" md5sum="94f63e4dba0ec183b306e89a78d623aa" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="1321fd16eeb562ae390094062298c440" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="83ada7f7dd0279772d583ceca8505f72" name="config/prefs.php" role="horde" />
+   <file baseinstalldir="/" md5sum="170eee54d3be204d2c28af6878a40acc" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="318edddbe2731c82666e3a9f6b47b258" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="e45359c79dd35b070595166af51fc13a" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="3642fc74754726c1cd4caf3e46e61349" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="410e5a1174fb710440c5aff310a0721f" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="cbfb6620d1e2a246ad88506e01b9508f" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
@@ -85,7 +92,7 @@
    <file baseinstalldir="/" md5sum="26e48516dc431ae336bc1c3a6fef40dd" name="js/edit.js" role="horde" />
    <file baseinstalldir="/" md5sum="e8f6f4563d14ba194c08fb848994099c" name="js/embed.js" role="horde" />
    <file baseinstalldir="/" md5sum="14ecb27d113c0941ff4bcaef7d23841b" name="js/goto.js" role="horde" />
-   <file baseinstalldir="/" md5sum="a1ff98de8995d86251d892a8c1c3b8e7" name="js/kronolith.js" role="horde" />
+   <file baseinstalldir="/" md5sum="d67688787d5adbd825101f66e20c29a1" name="js/kronolith.js" role="horde" />
    <file baseinstalldir="/" md5sum="e161f10fb3ee8368cecda8141d6cf390" name="js/smartmobile.js" role="horde" />
    <file baseinstalldir="/" md5sum="0cffaa0f7961298b37e359730fb96fc5" name="js/views.js" role="horde" />
    <file baseinstalldir="/" md5sum="3eba3dc2787d2b9031194959fa7b71ee" name="lib/Ajax/Application/Handler.php" role="horde" />
@@ -96,17 +103,17 @@
    <file baseinstalldir="/" md5sum="39399fa710fefff1c196d65dfb7516c5" name="lib/Block/Month.php" role="horde" />
    <file baseinstalldir="/" md5sum="3027c42b546207388980ee4837aa1738" name="lib/Block/Monthlist.php" role="horde" />
    <file baseinstalldir="/" md5sum="79731ba4ebd293869a29db04995a88f1" name="lib/Block/Prevmonthlist.php" role="horde" />
-   <file baseinstalldir="/" md5sum="6d636a43620ed2d871eb645f2e1a91e1" name="lib/Block/Summary.php" role="horde" />
-   <file baseinstalldir="/" md5sum="114364a92262043e022a003869ef0dff" name="lib/Calendar/External/Tasks.php" role="horde" />
+   <file baseinstalldir="/" md5sum="fae8c7437ddb74f429f0ba755e587ad0" name="lib/Block/Summary.php" role="horde" />
+   <file baseinstalldir="/" md5sum="20da6145ac7275c9aab466eb633bc209" name="lib/Calendar/External/Tasks.php" role="horde" />
    <file baseinstalldir="/" md5sum="20b260c8774676785e9017a717994868" name="lib/Calendar/External.php" role="horde" />
    <file baseinstalldir="/" md5sum="a6de6635c1f6aa0defd0c05b66ae5da1" name="lib/Calendar/Holiday.php" role="horde" />
-   <file baseinstalldir="/" md5sum="8f92b49910dd092b50cf281083021450" name="lib/Calendar/Internal.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d8877db40da176291ec613e0211a31ae" name="lib/Calendar/Internal.php" role="horde" />
    <file baseinstalldir="/" md5sum="c729006824c0407161fd3dbd4f09fc6f" name="lib/Calendar/Remote.php" role="horde" />
    <file baseinstalldir="/" md5sum="5bcf9806112f4b6749c9ffeac0e81a0c" name="lib/Calendar/Resource.php" role="horde" />
    <file baseinstalldir="/" md5sum="43fc6ac6217cde3ff581c187d0ef129a" name="lib/Calendar/ResourceGroup.php" role="horde" />
    <file baseinstalldir="/" md5sum="d48d3ea88dd9e2f64783c451922d0823" name="lib/Calendars/Base.php" role="horde" />
    <file baseinstalldir="/" md5sum="be36d608e0b219da7ea6b6895b138980" name="lib/Calendars/Default.php" role="horde" />
-   <file baseinstalldir="/" md5sum="23344a7736bff532bf36e2fdb8e0fdab" name="lib/Calendars/Kolab.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e78c2fdbc090bb3a8f0c72046299ea90" name="lib/Calendars/Kolab.php" role="horde" />
    <file baseinstalldir="/" md5sum="9f84cad72835bc0a7d5484de2b3d6e4a" name="lib/Driver/Resource/Sql.php" role="horde" />
    <file baseinstalldir="/" md5sum="f0eaebb3cd50a36834729dd8e72989d6" name="lib/Driver/Holidays.php" role="horde" />
    <file baseinstalldir="/" md5sum="2aa28843f31d701dcb9a6e58e4d51691" name="lib/Driver/Horde.php" role="horde" />
@@ -170,16 +177,16 @@
    <file baseinstalldir="/" md5sum="0044dfbbd24de736fe886d51c7273580" name="lib/View/Year.php" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="f3a142b36fa6715b6d2e9f87ce8e401c" name="lib/Ajax.php" role="horde" />
-   <file baseinstalldir="/" md5sum="d8c45c09d6a6da3c9760f6956a9be145" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="68f8d87d915b1a344a424371ac4bafa9" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e2af6a862b8ef057120774eb25812cc1" name="lib/Api.php" role="horde" />
+   <file baseinstalldir="/" md5sum="341c0f7e6951d93d003f1c8f38e7c8a3" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="485a19eced667926f29e8b3f4d2d4d7e" name="lib/Calendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="269359c8478afc7d8bddd6ed8c44c21d" name="lib/CalendarsManager.php" role="horde" />
    <file baseinstalldir="/" md5sum="21dc13240daed72525e8183911455760" name="lib/Day.php" role="horde" />
    <file baseinstalldir="/" md5sum="408e3ccecd2df199ea160b0cfeb9a0ae" name="lib/Driver.php" role="horde" />
-   <file baseinstalldir="/" md5sum="4be58febc7a39a86f4e47deb6a70163a" name="lib/Event.php" role="horde" />
+   <file baseinstalldir="/" md5sum="db6029ba148b37f7d34f2fdbf717866e" name="lib/Event.php" role="horde" />
    <file baseinstalldir="/" md5sum="89c90d4c0566be37488040dbbcd70f07" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="ecdfc4913c4d920d6e5ebe801696f415" name="lib/FreeBusy.php" role="horde" />
-   <file baseinstalldir="/" md5sum="ac2fead91f38e68775ff85c6618b4864" name="lib/Kronolith.php" role="horde" />
+   <file baseinstalldir="/" md5sum="212043bdee3e08ed8292827e1d08702c" name="lib/Kronolith.php" role="horde" />
    <file baseinstalldir="/" md5sum="60a7d25cb02842fb5aa3ed850353405a" name="lib/Resource.php" role="horde" />
    <file baseinstalldir="/" md5sum="da3de1aeeb14284aa70f776f255588a0" name="lib/Storage.php" role="horde" />
    <file baseinstalldir="/" md5sum="5529c2f46a186c4b46600ad5844c90c6" name="lib/Tagger.php" role="horde" />
@@ -2198,6 +2205,28 @@
 * [jan] Fix selecting days in the sidebar mini calendar (Bug #13327).
 * [mjr] Issue a cancellation iTip when an event&apos;s status changes to cancelled (Bug #13321).
 * [jan] Fix loading events for intial view in smartphone mode.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.1</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-08-04</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [jan] Fix displayed CalDAV URLs for shared calendars (Bug #12380).
+* [jan] Don&apos;t show today&apos;s events that are over in portal (Bug #13368).
+* [mjr] Fix exporting to ics file when event contains exceptions and an explicit timezone (Bug #13369).
+* [mjr] Fix importing iCalendar data that contains timezone parameters.
+* [mjr] Fix both importing and replacing text/calendar data via the API when recurrence exceptions are present (Bug #13399).
+* [mjr] Ensure default share attribute is set when auto determining a default share.
+* [mjr] Fix fatal error when calculating alarms on a recurring event that has completed.
+* [mjr] Fix catching minical clicks on browsers that return element names in uppercase (Jasper.Olbrich@students.uni-marburg.de, Bug #13370).
    </notes>
   </release>
  </changelog>
