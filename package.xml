@@ -22,10 +22,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2014-08-04</date>
- <time>17:26:41</time>
+ <date>2014-09-05</date>
+ <time>16:15:21</time>
  <version>
-  <release>4.2.1</release>
+  <release>4.2.2</release>
   <api>4.2.0</api>
  </version>
  <stability>
@@ -34,14 +34,15 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [jan] Fix displayed CalDAV URLs for shared calendars (Bug #12380).
-* [jan] Don&apos;t show today&apos;s events that are over in portal (Bug #13368).
-* [mjr] Fix exporting to ics file when event contains exceptions and an explicit timezone (Bug #13369).
-* [mjr] Fix importing iCalendar data that contains timezone parameters.
-* [mjr] Fix both importing and replacing text/calendar data via the API when recurrence exceptions are present (Bug #13399).
-* [mjr] Ensure default share attribute is set when auto determining a default share.
-* [mjr] Fix fatal error when calculating alarms on a recurring event that has completed.
-* [mjr] Fix catching minical clicks on browsers that return element names in uppercase (Jasper.Olbrich@students.uni-marburg.de, Bug #13370).
+* [mjr] Fix removing resource event when editing the bound event causes the resource to reject the event (Bug #13466).
+* [mjr] Fix refreshing resource events in the UI when the host event changes (Bug #13465).
+* [mjr] Fix updating the exceptionoriginaldate field when the base event changes (Bug #13512).
+* [mjr] Fix moving recurring events with exceptions from one calendar to another (Bug #13524).
+* [mjr] Fix honoring resource_management permission (Bug #13049).
+* [jan] Fix visual overlapping of certain events (Bug #13376).
+* [jan] Fix error editing events if using exotic date formats.
+* [jan] Fix JavaScript error if not showing all events in month view (Jasper Olbrich &lt;Jasper.Olbrich@students.uni-marburg.de&gt;, Bug #13433).
+* [jan] Fix displayed CalDAV URLs for shared calendars in basic view too (piper@hrz.uni-marburg.de, Bug #12380).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -77,13 +78,13 @@
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="config/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="461c4f56a3c904e454181b020e8cbc0e" name="config/conf.xml" role="horde" />
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
-   <file baseinstalldir="/" md5sum="91fc78b157c0b8ae0fb1ce6e33e49ee1" name="config/menu.php.dist" role="horde" />
-   <file baseinstalldir="/" md5sum="83ada7f7dd0279772d583ceca8505f72" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="170eee54d3be204d2c28af6878a40acc" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="6698d2c45541b6fdabbce3cedc9553c3" name="config/menu.php.dist" role="horde" />
+   <file baseinstalldir="/" md5sum="ed3988c59cce4dcf4b119f984032eccf" name="config/prefs.php" role="horde" />
+   <file baseinstalldir="/" md5sum="71feffd6f48e0fe5a0fa388bf64b6ca8" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="318edddbe2731c82666e3a9f6b47b258" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="e45359c79dd35b070595166af51fc13a" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="410e5a1174fb710440c5aff310a0721f" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="c7732f014a03eba8b7e3ed0859c26ca5" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="cbfb6620d1e2a246ad88506e01b9508f" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
@@ -92,10 +93,10 @@
    <file baseinstalldir="/" md5sum="26e48516dc431ae336bc1c3a6fef40dd" name="js/edit.js" role="horde" />
    <file baseinstalldir="/" md5sum="e8f6f4563d14ba194c08fb848994099c" name="js/embed.js" role="horde" />
    <file baseinstalldir="/" md5sum="14ecb27d113c0941ff4bcaef7d23841b" name="js/goto.js" role="horde" />
-   <file baseinstalldir="/" md5sum="d67688787d5adbd825101f66e20c29a1" name="js/kronolith.js" role="horde" />
+   <file baseinstalldir="/" md5sum="9becb24665e79be8f4f5d20fb5a5eb5c" name="js/kronolith.js" role="horde" />
    <file baseinstalldir="/" md5sum="e161f10fb3ee8368cecda8141d6cf390" name="js/smartmobile.js" role="horde" />
    <file baseinstalldir="/" md5sum="0cffaa0f7961298b37e359730fb96fc5" name="js/views.js" role="horde" />
-   <file baseinstalldir="/" md5sum="3eba3dc2787d2b9031194959fa7b71ee" name="lib/Ajax/Application/Handler.php" role="horde" />
+   <file baseinstalldir="/" md5sum="3fe52fd4bf54306b1888a27e810da0a6" name="lib/Ajax/Application/Handler.php" role="horde" />
    <file baseinstalldir="/" md5sum="900ef7e557422ad401efe5cb909287ff" name="lib/Ajax/Imple/ContactAutoCompleter.php" role="horde" />
    <file baseinstalldir="/" md5sum="4455bae8b581200e6441127975b0b105" name="lib/Ajax/Imple/ResourceAutoCompleter.php" role="horde" />
    <file baseinstalldir="/" md5sum="c989fd98d135964ffb927d0ab8a89752" name="lib/Ajax/Imple/TagAutoCompleter.php" role="horde" />
@@ -114,7 +115,7 @@
    <file baseinstalldir="/" md5sum="d48d3ea88dd9e2f64783c451922d0823" name="lib/Calendars/Base.php" role="horde" />
    <file baseinstalldir="/" md5sum="be36d608e0b219da7ea6b6895b138980" name="lib/Calendars/Default.php" role="horde" />
    <file baseinstalldir="/" md5sum="e78c2fdbc090bb3a8f0c72046299ea90" name="lib/Calendars/Kolab.php" role="horde" />
-   <file baseinstalldir="/" md5sum="9f84cad72835bc0a7d5484de2b3d6e4a" name="lib/Driver/Resource/Sql.php" role="horde" />
+   <file baseinstalldir="/" md5sum="c83707be9c7b29bf2ca6ea62c714647e" name="lib/Driver/Resource/Sql.php" role="horde" />
    <file baseinstalldir="/" md5sum="f0eaebb3cd50a36834729dd8e72989d6" name="lib/Driver/Holidays.php" role="horde" />
    <file baseinstalldir="/" md5sum="2aa28843f31d701dcb9a6e58e4d51691" name="lib/Driver/Horde.php" role="horde" />
    <file baseinstalldir="/" md5sum="2836863e2f62603ac87eba927b23a842" name="lib/Driver/Ical.php" role="horde" />
@@ -139,7 +140,7 @@
    <file baseinstalldir="/" md5sum="d1a0136ae0bf15aed6c7448c973ebc9e" name="lib/Form/DeleteCalendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="3a99ae7dc8f742688b3f47dcff6d5dcb" name="lib/Form/DeleteResource.php" role="horde" />
    <file baseinstalldir="/" md5sum="61fef710597243cc77feae8e0efe5c36" name="lib/Form/DeleteResourceGroup.php" role="horde" />
-   <file baseinstalldir="/" md5sum="1994afa3e15c2d5faba52a98fa82eb31" name="lib/Form/EditCalendar.php" role="horde" />
+   <file baseinstalldir="/" md5sum="59be1aa244e6463344e6ea772f1983a2" name="lib/Form/EditCalendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="6d311dd6b9eff6c7dfd1d98347f661d3" name="lib/Form/EditRemoteCalendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="cf35599edaf145a5dd44cd7f178e3887" name="lib/Form/EditResource.php" role="horde" />
    <file baseinstalldir="/" md5sum="5089ddb492f0769459b3dc004241105a" name="lib/Form/EditResourceGroup.php" role="horde" />
@@ -158,7 +159,7 @@
    <file baseinstalldir="/" md5sum="ab0d382e29147d4ab5dca133f64321a2" name="lib/Prefs/Special/DefaultAlarm.php" role="horde" />
    <file baseinstalldir="/" md5sum="a2cea3764ad0ae8b11281693727864e3" name="lib/Prefs/Special/EventAlarms.php" role="horde" />
    <file baseinstalldir="/" md5sum="865e7c00fe3e80a165a5521d11c591d6" name="lib/Prefs/Special/Sourceselect.php" role="horde" />
-   <file baseinstalldir="/" md5sum="4949bd048138d5b880bb6e0894eeaf5b" name="lib/Resource/Base.php" role="horde" />
+   <file baseinstalldir="/" md5sum="ed03d6eb159c0f4c60d5be3ded81a057" name="lib/Resource/Base.php" role="horde" />
    <file baseinstalldir="/" md5sum="ffd795e60548fe30d938a6a541febf44" name="lib/Resource/Group.php" role="horde" />
    <file baseinstalldir="/" md5sum="87bb0a6ed97596c1fa93adcc1c482dbd" name="lib/Resource/Single.php" role="horde" />
    <file baseinstalldir="/" md5sum="29bdea21d06f197292e105efe4e46659" name="lib/Storage/Kolab.php" role="horde" />
@@ -178,12 +179,12 @@
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="f3a142b36fa6715b6d2e9f87ce8e401c" name="lib/Ajax.php" role="horde" />
    <file baseinstalldir="/" md5sum="e2af6a862b8ef057120774eb25812cc1" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="341c0f7e6951d93d003f1c8f38e7c8a3" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="0976047629b6db89ab3d895fccae67d3" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="485a19eced667926f29e8b3f4d2d4d7e" name="lib/Calendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="269359c8478afc7d8bddd6ed8c44c21d" name="lib/CalendarsManager.php" role="horde" />
    <file baseinstalldir="/" md5sum="21dc13240daed72525e8183911455760" name="lib/Day.php" role="horde" />
-   <file baseinstalldir="/" md5sum="408e3ccecd2df199ea160b0cfeb9a0ae" name="lib/Driver.php" role="horde" />
-   <file baseinstalldir="/" md5sum="db6029ba148b37f7d34f2fdbf717866e" name="lib/Event.php" role="horde" />
+   <file baseinstalldir="/" md5sum="6e97420bd5d4b2a0ec53e28c66f3a19a" name="lib/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8906fc02e08f0128877094036016a3dd" name="lib/Event.php" role="horde" />
    <file baseinstalldir="/" md5sum="89c90d4c0566be37488040dbbcd70f07" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="ecdfc4913c4d920d6e5ebe801696f415" name="lib/FreeBusy.php" role="horde" />
    <file baseinstalldir="/" md5sum="212043bdee3e08ed8292827e1d08702c" name="lib/Kronolith.php" role="horde" />
@@ -225,8 +226,8 @@
    <file baseinstalldir="/" md5sum="35065dc309f3cfd585ade60d31b66cc4" name="locale/hr/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="ff9bd4a5dc27f6f6822ec4b2b00a28a0" name="locale/hr/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="f90076d1bc31879fce555c7292e4a428" name="locale/hr/help.xml" role="horde" />
-   <file baseinstalldir="/" md5sum="5ab6172637fa24d9836bc9afb4f69674" name="locale/hu/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="0f5ac153492f528b598a1ae674f04928" name="locale/hu/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="24f218479e0d2db57439fae4a23e261a" name="locale/hu/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="b6188383c061e3070581d731a3e050ac" name="locale/hu/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="aa133f3c4964fd22d0117a657b09697b" name="locale/hu/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="96deac1036823b97b505e07259901857" name="locale/it/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="98397c24795fbed919e690986dbae4a2" name="locale/it/LC_MESSAGES/kronolith.po" role="horde" />
@@ -2227,6 +2228,29 @@
 * [mjr] Ensure default share attribute is set when auto determining a default share.
 * [mjr] Fix fatal error when calculating alarms on a recurring event that has completed.
 * [mjr] Fix catching minical clicks on browsers that return element names in uppercase (Jasper.Olbrich@students.uni-marburg.de, Bug #13370).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.2</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-09-05</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [mjr] Fix removing resource event when editing the bound event causes the resource to reject the event (Bug #13466).
+* [mjr] Fix refreshing resource events in the UI when the host event changes (Bug #13465).
+* [mjr] Fix updating the exceptionoriginaldate field when the base event changes (Bug #13512).
+* [mjr] Fix moving recurring events with exceptions from one calendar to another (Bug #13524).
+* [mjr] Fix honoring resource_management permission (Bug #13049).
+* [jan] Fix visual overlapping of certain events (Bug #13376).
+* [jan] Fix error editing events if using exotic date formats.
+* [jan] Fix JavaScript error if not showing all events in month view (Jasper Olbrich &lt;Jasper.Olbrich@students.uni-marburg.de&gt;, Bug #13433).
+* [jan] Fix displayed CalDAV URLs for shared calendars in basic view too (piper@hrz.uni-marburg.de, Bug #12380).
    </notes>
   </release>
  </changelog>

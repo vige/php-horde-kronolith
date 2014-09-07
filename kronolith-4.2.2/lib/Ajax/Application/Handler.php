@@ -1046,7 +1046,8 @@ class Kronolith_Ajax_Application_Handler extends Horde_Core_Ajax_Application_Han
             if (!$calendar_id) {
                 // New resource
                 // @TODO: Groups.
-                if (!$GLOBALS['registry']->isAdmin()) {
+                if (!$GLOBALS['registry']->isAdmin() &&
+                    !$GLOBALS['injector']->getInstance('Horde_Core_Perms')->hasAppPermission('resource_management')) {
                     $GLOBALS['notification']->push(_("You are not allowed to create new resources."), 'horde.error');
                     return $result;
                 }
@@ -1529,6 +1530,18 @@ EOT;
                 if ($saveOriginal) {
                     $original->save();
                 }
+            }
+
+            // If this event recurs, we must add any bound exceptions to the
+            // results
+            if ($event->recurs()) {
+                $bound = $event->boundExceptions(false);
+                foreach ($bound as $day => &$exceptions) {
+                    foreach ($exceptions as &$exception) {
+                        $exception = $exception->toJson();
+                    }
+                }
+                Kronolith::mergeEvents($events, $bound);
             }
             $result->events = count($events) ? $events : array();
         } catch (Exception $e) {

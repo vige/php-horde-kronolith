@@ -1614,6 +1614,8 @@ KronolithCore = {
                                         // We don't want more than one all-day
                                         // event.
                                         var elm = allDays.pop();
+                                        // Remove element from events as well.
+                                        events = events.without(elm);
                                         elm.purge();
                                         elm.remove();
                                         insertBefore = this.findInsertBefore(events, event, date);
@@ -1792,7 +1794,14 @@ KronolithCore = {
                                                 Math.min(Math.max(y, minTop), maxTop - div.getHeight())];
                                     }
                                 };
-                            new Drag(event.value.nodeId, opts);
+                            var d = new Drag(event.value.nodeId, opts);
+                            div.store('drags', []);
+                            Object.extend(d, {
+                                event: event,
+                                innerDiv: new Element('div'),
+                                midnight: this.parseDate(date)
+                            });
+                            div.retrieve('drags').push(d);
                         }
                     }
                 }
@@ -1973,7 +1982,7 @@ KronolithCore = {
                 conflict = false,
                 // The conflict group where this event should go.
                 pos = this.dayGroups.length,
-                // The event below the current event fits.
+                // The event below that the current event fits.
                 placeFound = false,
                 // The minimum (virtual) duration of each event, defined by the
                 // minimum height of an event DIV.
@@ -1989,54 +1998,38 @@ KronolithCore = {
                 // visually overlap, even if they physically don't.
                 var minEnd = ev.start.clone().add(minMinutes).minutes(),
                     end = ev.end.isAfter(minEnd) ? ev.end : minEnd;
-                // If it doesn't conflict with the current event, rember it
-                // as a possible event below that we can put the current event
-                // and go ahead.
+
+                // If it doesn't conflict with the current event, go ahead.
                 if (!end.isAfter(event.value.start)) {
-                    placeFound = ev;
                     return;
                 }
 
-                if (!conflict) {
-                    // This is the first conflicting event.
-                    conflict = ev;
-                    for (var i = 0; i < this.dayGroups.length; i++) {
-                        // Find the conflict group of the conflicting event.
-                        if (this.dayGroups[i].indexOf(conflict) != -1) {
-                            // If our possible candidate "above" is a member of
-                            // this group, it's no longer a candidate.
-                            if (this.dayGroups[i].indexOf(placeFound) == -1) {
-                                placeFound = false;
+                // Found a conflicting event, now find its conflict group.
+                for (pos = 0; pos < this.dayGroups.length; pos++) {
+                    if (this.dayGroups[pos].indexOf(ev) != -1) {
+                        // Increase column for each conflicting event in this
+                        // group.
+                        this.dayGroups[pos].each(function(ce) {
+                            var minEnd = ce.start.clone().add(minMinutes).minutes(),
+                                end = ce.end.isAfter(minEnd) ? ce.end : minEnd;
+                            if (end.isAfter(event.value.start)) {
+                                column++;
                             }
-                            break;
-                        }
+                        });
+                        throw $break;
                     }
-                }
-                // We didn't find a place, put the event a column further right.
-                if (!placeFound) {
-                    column++;
                 }
             }, this);
-            event.value.column = column;
+            event.value.column = event.value.columns = column;
 
-            if (conflict) {
-                // We had a conflict, find the matching conflict group and add
-                // the current event there.
-                for (var i = 0; i < this.dayGroups.length; i++) {
-                    if (this.dayGroups[i].indexOf(conflict) != -1) {
-                        pos = i;
-                        break;
-                    }
-                }
-                // See if the current event had to add yet another column.
-                columns = Math.max(conflict.columns, column);
-            } else {
-                columns = column;
-            }
             if (Object.isUndefined(this.dayGroups[pos])) {
                 this.dayGroups[pos] = [];
             }
             this.dayGroups[pos].push(event.value);
+
+            // See if the current event had to add yet another column.
+            columns = Math.max(this.dayGroups[pos][0].columns, column);
+
             // Update the widths of all events in a conflict group.
             width = 100 / columns;
             this.dayGroups[pos].each(function(ev) {
@@ -4063,8 +4056,9 @@ KronolithCore = {
      *
      * @param string calendar  A calendar string or array.
      * @param string event     An event ID or empty if deleting the calendar.
+     * @param string day       A specific day to delete in yyyyMMdd form.
      */
-    deleteCache: function(calendar, event)
+    deleteCache: function(calendar, event, day)
     {
         if (Object.isString(calendar)) {
             calendar = calendar.split('|');
@@ -4077,6 +4071,8 @@ KronolithCore = {
             this.ecache.get(calendar[0]).get(calendar[1]).each(function(day) {
                 day.value.unset(event);
             });
+        } else if (day) {
+            this.ecache.get(calendar[0]).get(calendar[1]).unset(day);
         } else {
             this.ecache.get(calendar[0]).unset(calendar[1]);
         }
@@ -4121,6 +4117,7 @@ KronolithCore = {
                 !this.ecache.get(cals[0]).get(cals[1])) {
                 return $H();
             }
+            var x = this.ecache.get(cals[0]).get(cals[1]).get(date);
             return this.ecache.get(cals[0]).get(cals[1]).get(date);
         }
 
@@ -4609,6 +4606,9 @@ KronolithCore = {
                                 this.view == 'workweek' ||
                                 this.view == 'day') {
                                 days = this.findEventDays(cal, eventid);
+                                days.each(function(day) {
+                                    this.refreshResources(day, cal, eventid);
+                                }.bind(this));
                             }
                             this.removeEvent(cal, eventid);
                             if (r.uid) {
@@ -5226,7 +5226,8 @@ KronolithCore = {
     },
 
     /**
-     * Handles moving an event to a different day in month view.
+     * Handles moving an event to a different day in month view and all day
+     * events in weekly/daily views.
      */
     onDrop: function(e)
     {
@@ -5302,6 +5303,13 @@ KronolithCore = {
               }, this);
           }
           this.loadEventsCallback(r, false);
+          $H(r.events).each(function(days) {
+              $H(days.value).each(function(event) {
+                  if (event.key == eventid) {
+                      this.refreshResources(days.key, cal, eventid, lastDate.toString('yyyyMMdd'), event);
+                  }
+              }.bind(this))
+          }.bind(this));
       }.bind(this);
 
       if (event.value.mt) {
@@ -5343,10 +5351,15 @@ KronolithCore = {
         }
 
         var elt = e.element(),
-            drag = DragDrop.Drags.getDrag(elt),
-            event = drag.event.value,
+            drag = DragDrop.Drags.getDrag(elt);
             storage = this.view + 'Sizes',
             step = this[storage].height / 6;
+
+            if (!drag.event) {
+                return;
+            }
+
+        var event = drag.event.value;
 
         if (elt.hasClassName('kronolithDragger')) {
             // Resizing the event.
@@ -5413,8 +5426,13 @@ KronolithCore = {
 
         var div = e.element(),
             drag = DragDrop.Drags.getDrag(div),
-            event = drag.event,
-            date = drag.midnight,
+            event = drag.event;
+
+
+        if (event.value.al) {
+            return;
+        }
+        var date = drag.midnight,
             storage = this.view + 'Sizes',
             step = this[storage].height / 6,
             dates = this.viewDates(date, this.view),
@@ -5464,6 +5482,10 @@ KronolithCore = {
             // request.
             if (r.events &&
                 r.sig == this.eventsLoading[r.cal]) {
+                if (event.value.rs) {
+                    var d = new Date(event.value.s);
+                    this.refreshResources(d.toString('yyyyMMdd'), event.value.calendar, event.key)
+                }
                 this.removeEvent(event.value.calendar, event.key);
             }
             this.loadEventsCallback(r, false);
@@ -5485,6 +5507,80 @@ KronolithCore = {
         HordeCore.doAction('updateEvent', att, {
             callback: cb
         });
+    },
+
+    /**
+     * Refresh any resource calendars bound to the given just-updated event.
+     * Clears the old resource event from UI and cache, and clears the cache
+     * for the days of the new event, in order to allow listEvents to refresh
+     * the UI.
+     *
+     * @param  string dt       The current/new date for the event (yyyyMMdd).
+     * @param  string cal      The calendar the event exists in.
+     * @param  string eventid  The eventid that is changing.
+     * @param  string last_dt  The previous date for the event, if known. (yyyyMMdd).
+     * @param  object event    The event object (if a new event) dt is ignored.
+     *
+     */
+    refreshResources: function(dt, cal, eventid, last_dt, event)
+    {
+        var events = this.getCacheForDate(dt, cal),
+            update_cals = [], r_dates;
+
+        if (!event) {
+            event = events.find(function(e) { return e.key == eventid; });
+        }
+        if (!dt) {
+            dt = new Date(event.value.s);
+        } else {
+            dt = this.parseDate(dt);
+        }
+        if (event) {
+            $H(event.value.rs).each(function(r) {
+                var r_cal = ['resource', r.value.calendar],
+                    r_events = this.getCacheForDate(last_dt, r_cal.join('|')),
+                    r_event, day, end;
+
+                if (r_events) {
+                    r_event = r_events.find(function(e) { return e.value.uid == event.value.uid });
+                    if (r_event) {
+                        this.removeEvent(r_cal, r_event.key);
+                        day = new Date(r_event.value.s);
+                        end = new Date(r_event.value.s);
+                        while (!day.isAfter(end)) {
+                            this.deleteCache(r_cal, null, day.toString('yyyyMMdd'));
+                            day.add(1).day();
+                        }
+                        day = new Date(event.value.s);
+                        end = new Date(event.value.e);
+
+                        while (!day.isAfter(end)) {
+                            this.deleteCache(r_cal, null, day.toString('yyyyMMdd'));
+                            day.add(1).day();
+                        }
+                    } else {
+                        // Don't know the previous date/time so just nuke the cache.
+                       this.deleteCache(r_cal);
+                    }
+                } else {
+                    this.deleteCache(r_cal);
+                }
+                update_cals.push(r_cal);
+            }.bind(this));
+
+            if (update_cals.length) {
+                dates = this.viewDates(dt, this.view);
+                // Ensure we also grab the full length of the events.
+                if (dates[0].isAfter(dt)) {
+                    dates[0] = dt;
+                }
+                var dt_end = new Date(event.value.e);
+                if (dt_end.isAfter(dates[1])) {
+                    dates[1] = dt_end;
+                }
+                this.loadEvents(dates[0], dates[1], this.view, update_cals);
+            }
+        }
     },
 
     editEvent: function(calendar, id, date, title)
@@ -5703,6 +5799,26 @@ KronolithCore = {
                     this.removeEvent(cal, eventid);
                 }
                 this.loadEventsCallback(r, false);
+
+                // Refresh bound exceptions
+                var calendar = cal.split('|'), refreshed = false;
+                $H(r.events).each(function(d) {
+                    $H(d.value).each(function(evt) {
+                        if (evt.value.bid) {
+                            var cache = this.getCacheForDate(this.findEventDays(cal, evt.key, cal));
+                            cache.each(function(entry) {
+                                if (entry.value.bid == evt.value.bid && evt.value.c != calendar[1]) {
+                                    this.removeEvent(cal, entry.key);
+                                }
+                            }.bind(this));
+                        }
+                        if (!refreshed && ((evt.key == eventid) || !eventid) && evt.value.rs) {
+                            this.refreshResources(null, cal, eventid, false, evt);
+                            refreshed = true;
+                        }
+                    }.bind(this))
+                }.bind(this));
+
                 if (r.events) {
                     this.resetMap();
                     this.closeRedBox();
@@ -5850,7 +5966,7 @@ KronolithCore = {
 
         $('kronolithEventStartTime').setValue(ev.st);
         this.knl.kronolithEventStartTime.setSelected(ev.st);
-        this.updateFBDate(Date.parse(ev.sd, Kronolith.conf.date_format));
+        this.updateFBDate(Date.parseExact(ev.sd, Kronolith.conf.date_format));
         $('kronolithEventEndTime').setValue(ev.et);
         this.knl.kronolithEventEndTime.setSelected(ev.et);
         this.duration = Math.abs(Date.parse(ev.e).getTime() - Date.parse(ev.s).getTime()) / 60000;
@@ -6261,7 +6377,7 @@ KronolithCore = {
 
     fbStartDateHandler: function(start)
     {
-        this.updateFBDate(Date.parse(start, Kronolith.conf.date_format));
+        this.updateFBDate(Date.parseExact(start, Kronolith.conf.date_format));
         this.resetFBRows();
         // Need to check visisbility - multiple changes will break the display
         // due to the use of .defer() in insertFreeBusy().
