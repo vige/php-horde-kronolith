@@ -1,2 +1,7 @@
 #!/bin/sh
-php kronolith-4.2.1/test/Kronolith/AllTests.php
+
+set -x
+set -e
+
+cd kronolith*/test/./Kronolith
+phpunit -v .
