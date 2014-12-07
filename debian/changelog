@@ -1,3 +1,9 @@
+php-horde-kronolith (4.2.2-4) unstable; urgency=medium
+
+  * Don't show private events in daily agenda email. (Closes: #772454)
+
+ -- Mathieu Parent <sathieu@debian.org>  Sun, 07 Dec 2014 12:29:16 +0100
+
 php-horde-kronolith (4.2.2-3) unstable; urgency=medium
 
   * Fixed DEP-8 tests, by removing "set -x"
