@@ -1,0 +1,182 @@
+From: Mathieu Parent <math.parent@gmail.com>
+Date: Sun, 7 Dec 2014 12:10:41 +0100
+Subject: SECURITY: Don't show private events in daily agenda email.
+
+This as cherry-picked from upstream.
+
+Bug: https://bugs.horde.org/ticket/13660
+Bug-Debian: https://bugs.debian.org/772454
+Applied-Upstream: https://github.com/horde/horde/commit/de5eff0536b013bb5d9400cf0f3b914ecc00ec59
+---
+ kronolith-4.2.2/bin/kronolith-agenda     |  5 ++++-
+ kronolith-4.2.2/lib/CalendarsManager.php | 19 +++++++++++++++----
+ kronolith-4.2.2/lib/Event.php            | 21 +++++++++++++--------
+ kronolith-4.2.2/lib/Kronolith.php        | 19 +++++++++++++------
+ 4 files changed, 45 insertions(+), 19 deletions(-)
+
+diff --git a/kronolith-4.2.2/bin/kronolith-agenda b/kronolith-4.2.2/bin/kronolith-agenda
+index 993c2af..efe73e8 100755
+--- a/kronolith-4.2.2/bin/kronolith-agenda
++++ b/kronolith-4.2.2/bin/kronolith-agenda
+@@ -88,6 +88,9 @@ function send_agendas()
+             continue;
+         }
+ 
++        // Initialize the CalendarsManager for this user.
++        $GLOBALS['calendar_manager'] = new Kronolith_CalendarsManager($user);
++
+         // Try to find an email address for the user.
+         $identity = $GLOBALS['injector']->getInstance('Horde_Core_Factory_Identity')->create($user);
+         $email = $identity->getDefaultFromAddress(true);
+@@ -137,7 +140,7 @@ function send_agendas()
+             foreach ($events as $dayevents) {
+                 foreach ($dayevents as $event) {
+                     // The event list contains events starting at 12am.
+-                    if ($event->start->compareDate($runtime)) {
++                    if ($event->start->compareDate($runtime) || $event->isPrivate($user)) {
+                         continue;
+                     }
+                     $eventlist[] = $event;
+diff --git a/kronolith-4.2.2/lib/CalendarsManager.php b/kronolith-4.2.2/lib/CalendarsManager.php
+index 76b6588..205e6ca 100644
+--- a/kronolith-4.2.2/lib/CalendarsManager.php
++++ b/kronolith-4.2.2/lib/CalendarsManager.php
+@@ -124,21 +124,32 @@ class Kronolith_CalendarsManager
+      *  - displayRemote
+      *  - displayExternal
+      *  - displayHolidays
++     *
++     * @param string $user  The user to initialize for, if not the current.
++     *                      @since 4.2.4
+      */
+-    public function __construct()
++    public function __construct($user = null)
+     {
++        $emptyUser = false;
++        if (empty($user)) {
++            $user = $GLOBALS['registry']->getAuth();
++            $emptyUser = true;
++        }
+         // Always perform the display related checks.
+         $this->_checkDisplayCals();
+         $this->_checkToggleCalendars();
+ 
+         // Check that all selected shares still exist.
+-        foreach (Kronolith::listInternalCalendars() as $id => $calendar) {
++        foreach (Kronolith::listInternalCalendars(false, Horde_Perms::SHOW, $user) as $id => $calendar) {
+             $this->_allCalendars[$id] = new Kronolith_Calendar_Internal(array('share' => $calendar));
+         }
+         $this->_displayCalendars = array_intersect($this->_displayCalendars, array_keys($this->_allCalendars));
+ 
+-        // Check that the user owns a calendar.
+-        $this->_checkForOwnedCalendar();
++        // Check that the user owns a calendar if we aren't loading a different
++        // user.
++        if ($emptyUser) {
++            $this->_checkForOwnedCalendar();
++        }
+     }
+ 
+     /**
+diff --git a/kronolith-4.2.2/lib/Event.php b/kronolith-4.2.2/lib/Event.php
+index 1ffbd27..f38ea2f 100644
+--- a/kronolith-4.2.2/lib/Event.php
++++ b/kronolith-4.2.2/lib/Event.php
+@@ -2603,26 +2603,31 @@ abstract class Kronolith_Event
+      * Returns whether the event should be considered private.
+      *
+      * The event's private flag can be overriden if the current user
+-     * is an administrator and the code is run from command line. This
+-     * is to allow full event notifications in alarm messages or
+-     * agendas.
++     * is an administrator and the code is run from command line, and no
++     * $user parameter was passed. This is to allow full event notifications in
++     * alarm messages (agendas know the user the agenda is being prepared for).
+      *
+-     * @param string $user  The current user.
++     * @param string $user  The current user. If omitted, uses the current user.
+      *
+      * @return boolean  Whether to consider the event as private.
+      */
+     public function isPrivate($user = null)
+     {
++        global $registry;
++
++        $haveNullUser = false;
+         if ($user === null) {
+-            $user = $GLOBALS['registry']->getAuth();
++            $user = $registry->getAuth();
++            $haveNullUser = true;
+         }
+ 
+-        if (!(Horde_Cli::runningFromCLI() && $GLOBALS['registry']->isAdmin()) &&
++        if (!(Horde_Cli::runningFromCLI() && $registry->isAdmin()) &&
+             $this->private && $this->creator != $user) {
+             return true;
+         }
+-        if ($GLOBALS['registry']->isAdmin() ||
+-            $this->hasPermission(Horde_Perms::READ, $user)) {
++
++        if (($registry->isAdmin() && $haveNullUser) ||
++             $this->hasPermission(Horde_Perms::READ, $user)) {
+             return false;
+         }
+         return true;
+diff --git a/kronolith-4.2.2/lib/Kronolith.php b/kronolith-4.2.2/lib/Kronolith.php
+index 991a38d..a34fb4f 100644
+--- a/kronolith-4.2.2/lib/Kronolith.php
++++ b/kronolith-4.2.2/lib/Kronolith.php
+@@ -987,24 +987,31 @@ class Kronolith
+      * @param boolean $owneronly   Only return calenders that this user owns?
+      *                             Defaults to false.
+      * @param integer $permission  The permission to filter calendars by.
++     * @param string  $user        The user to list calendars for, if not
++     *                             the current.
+      *
+      * @return array  The calendar list.
+      */
+-    static public function listInternalCalendars($owneronly = false,
+-                                                 $permission = Horde_Perms::SHOW)
++    public static function listInternalCalendars($owneronly = false,
++                                                 $permission = Horde_Perms::SHOW,
++                                                 $user = null)
+     {
+         if ($owneronly && !$GLOBALS['registry']->getAuth()) {
+             return array();
+         }
+ 
++        if (empty($user)) {
++            $user = $GLOBALS['registry']->getAuth();
++        }
++
+         $kronolith_shares = $GLOBALS['injector']->getInstance('Kronolith_Shares');
+ 
+         if ($owneronly || empty($GLOBALS['conf']['share']['hidden'])) {
+             try {
+                 $calendars = $kronolith_shares->listShares(
+-                    $GLOBALS['registry']->getAuth(),
++                    $user,
+                     array('perm' => $permission,
+-                          'attributes' => $owneronly ? $GLOBALS['registry']->getAuth() : null,
++                          'attributes' => $owneronly ? $user : null,
+                           'sort_by' => 'name'));
+             } catch (Horde_Share_Exception $e) {
+                 Horde::log($e);
+@@ -1015,7 +1022,7 @@ class Kronolith
+                 $calendars = $kronolith_shares->listShares(
+                     $GLOBALS['registry']->getAuth(),
+                     array('perm' => $permission,
+-                          'attributes' => $GLOBALS['registry']->getAuth(),
++                          'attributes' => $user,
+                           'sort_by' => 'name'));
+             } catch (Horde_Share_Exception $e) {
+                 Horde::log($e);
+@@ -1026,7 +1033,7 @@ class Kronolith
+                 foreach ($display_calendars as $id) {
+                     try {
+                         $calendar = $kronolith_shares->getShare($id);
+-                        if ($calendar->hasPermission($GLOBALS['registry']->getAuth(), $permission)) {
++                        if ($calendar->hasPermission($user, $permission)) {
+                             $calendars[$id] = $calendar;
+                         }
+                     } catch (Horde_Exception_NotFound $e) {
