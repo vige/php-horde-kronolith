@@ -1,3 +1,9 @@
+php-horde-kronolith (4.2.2-5) UNRELEASED; urgency=medium
+
+  * Update Standards-Version to 3.9.6, no change
+
+ -- Mathieu Parent <sathieu@debian.org>  Sun, 03 May 2015 22:46:57 +0200
+
 php-horde-kronolith (4.2.2-4) unstable; urgency=medium
 
   * Don't show private events in daily agenda email. (Closes: #772454)
