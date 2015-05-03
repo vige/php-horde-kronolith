@@ -1,8 +1,9 @@
-php-horde-kronolith (4.2.2-5) UNRELEASED; urgency=medium
+php-horde-kronolith (4.2.6-1) UNRELEASED; urgency=medium
 
   * Update Standards-Version to 3.9.6, no change
+  * New upstream version 4.2.6
 
- -- Mathieu Parent <sathieu@debian.org>  Sun, 03 May 2015 22:46:57 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Sun, 03 May 2015 22:59:36 +0200
 
 php-horde-kronolith (4.2.2-4) unstable; urgency=medium
 
