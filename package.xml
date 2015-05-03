@@ -22,10 +22,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2014-09-05</date>
- <time>16:15:21</time>
+ <date>2015-04-28</date>
+ <time>21:56:18</time>
  <version>
-  <release>4.2.2</release>
+  <release>4.2.6</release>
   <api>4.2.0</api>
  </version>
  <stability>
@@ -34,19 +34,22 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [mjr] Fix removing resource event when editing the bound event causes the resource to reject the event (Bug #13466).
-* [mjr] Fix refreshing resource events in the UI when the host event changes (Bug #13465).
-* [mjr] Fix updating the exceptionoriginaldate field when the base event changes (Bug #13512).
-* [mjr] Fix moving recurring events with exceptions from one calendar to another (Bug #13524).
-* [mjr] Fix honoring resource_management permission (Bug #13049).
-* [jan] Fix visual overlapping of certain events (Bug #13376).
-* [jan] Fix error editing events if using exotic date formats.
-* [jan] Fix JavaScript error if not showing all events in month view (Jasper Olbrich &lt;Jasper.Olbrich@students.uni-marburg.de&gt;, Bug #13433).
-* [jan] Fix displayed CalDAV URLs for shared calendars in basic view too (piper@hrz.uni-marburg.de, Bug #12380).
+* [jan] Fix building recipient list for event update notifications.
+* [mjr] Honor background color for listTimeObjects API calendars (Bug #13951).
+* [jan] Always sort users in advanced sharing dialog (Bug #13938).
+* [mjr] Fix saving recurring event after a change in resources (Bug #13921).
+* [mjr] Fix creating recurrence exceptions from CalDAV clients.
+* [jan] Added an index to find base events of recurrence exceptions faster.
+* [jan] Fix finding duplicate events by UID.
+* [mjr] Fix updating FB data when start date changes.
+* [mjr] Fix detecting attendees when email address is not lowercase (Bug #13905).
+* [jan] Fix duplicate group names in sharing dialog.
+* [jan] Fix JavaScript error when saving an unselected calendar.
+* [mjr] Fix using custom SQL configuration parameters.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="4a8fea2987a89d8146d1e2202f2e4cdb" name="bin/kronolith-agenda" role="script">
+   <file baseinstalldir="/" md5sum="5347686dba14b02fbf94e57a6e5138e1" name="bin/kronolith-agenda" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
    <file baseinstalldir="/" md5sum="157cc6dbb380851623543ecedf867949" name="bin/kronolith-convert-datatree-shares-to-sql" role="script">
@@ -58,111 +61,114 @@
    <file baseinstalldir="/" md5sum="208c2032f7415f4f2209ec3b523f0932" name="bin/kronolith-convert-to-utc" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
-   <file baseinstalldir="/" md5sum="7733e7593bfd9ad2eb15baf475715d05" name="bin/kronolith-import-icals" role="script">
+   <file baseinstalldir="/" md5sum="371eaa3258815664527c444b365aeece" name="bin/kronolith-import-icals" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
-   <file baseinstalldir="/" md5sum="c96c27dfaf7628f6c33659ca88754bae" name="bin/kronolith-import-openxchange" role="script">
+   <file baseinstalldir="/" md5sum="42f54d058687c8a08436fabf2fae1332" name="bin/kronolith-import-openxchange" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
-   <file baseinstalldir="/" md5sum="6c37bc1276796d3d5885ab9d00155c74" name="bin/kronolith-import-squirrelmail-calendar" role="script">
+   <file baseinstalldir="/" md5sum="04b88f8ce5fd3c559a5f1180b521a779" name="bin/kronolith-import-squirrelmail-calendar" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
-   <file baseinstalldir="/" md5sum="43fa7a2c8c0594e4624df15f06bd5738" name="calendars/create.php" role="horde" />
-   <file baseinstalldir="/" md5sum="9dc88b3afcd7f038e4ed6145c00ac11a" name="calendars/delete.php" role="horde" />
-   <file baseinstalldir="/" md5sum="7ce7ec97d375037e0bbc843ade631a30" name="calendars/edit.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b57df3ef655ce1f1a72d655813cd1c1d" name="calendars/create.php" role="horde" />
+   <file baseinstalldir="/" md5sum="27b376773f938116b574fe256a27c684" name="calendars/delete.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8d05a4705ceba76ea17f5ae0b03744e7" name="calendars/edit.php" role="horde" />
    <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="calendars/index.html" role="horde" />
-   <file baseinstalldir="/" md5sum="dbbfd9c68c086344a0b52223dbd9ed55" name="calendars/remote_edit.php" role="horde" />
-   <file baseinstalldir="/" md5sum="4d31bfcee320e4f46d5587d7ee4988a7" name="calendars/remote_subscribe.php" role="horde" />
-   <file baseinstalldir="/" md5sum="ebf1afab9453865107b13994035d5fec" name="calendars/remote_unsubscribe.php" role="horde" />
-   <file baseinstalldir="/" md5sum="3b9e8e9627eb3e8495e8c0802dd9797b" name="calendars/subscribe.php" role="horde" />
+   <file baseinstalldir="/" md5sum="010865c85a3685ed0e8e27c6738d2c43" name="calendars/remote_edit.php" role="horde" />
+   <file baseinstalldir="/" md5sum="10632090ba382a5f77b0a662c1b371fb" name="calendars/remote_subscribe.php" role="horde" />
+   <file baseinstalldir="/" md5sum="544ce4c71f8a3ed26806360894debfc3" name="calendars/remote_unsubscribe.php" role="horde" />
+   <file baseinstalldir="/" md5sum="19d3d4a48e730f214bc5b9860179bec4" name="calendars/subscribe.php" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="config/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="461c4f56a3c904e454181b020e8cbc0e" name="config/conf.xml" role="horde" />
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="6698d2c45541b6fdabbce3cedc9553c3" name="config/menu.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="ed3988c59cce4dcf4b119f984032eccf" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="71feffd6f48e0fe5a0fa388bf64b6ca8" name="docs/CHANGES" role="doc" />
-   <file baseinstalldir="/" md5sum="318edddbe2731c82666e3a9f6b47b258" name="docs/CREDITS" role="doc" />
+   <file baseinstalldir="/" md5sum="1e6a5a6c97962a6d85c89faf192dd69a" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="f9c61be2e3bf0f46be8c3f5bc8e99125" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="e45359c79dd35b070595166af51fc13a" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="c7732f014a03eba8b7e3ed0859c26ca5" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="44c48fa1fe3a59321836d802b655ce44" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="cbfb6620d1e2a246ad88506e01b9508f" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="6b8a5c30f402b35f2d70ccf57a98e474" name="feed/index.php" role="horde" />
-   <file baseinstalldir="/" md5sum="cca92cff6aec6d059d6e6efbd013cbc3" name="js/dragdrop2.js" role="horde" />
-   <file baseinstalldir="/" md5sum="26e48516dc431ae336bc1c3a6fef40dd" name="js/edit.js" role="horde" />
+   <file baseinstalldir="/" md5sum="b7e5783a6b440d57ac28a2c5cf8fb22c" name="feed/index.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e78f3da4a8213e76359578005bae5abb" name="js/dragdrop2.js" role="horde" />
+   <file baseinstalldir="/" md5sum="af95f3957b54d6529e6a4cfa6643d6c0" name="js/edit.js" role="horde" />
    <file baseinstalldir="/" md5sum="e8f6f4563d14ba194c08fb848994099c" name="js/embed.js" role="horde" />
-   <file baseinstalldir="/" md5sum="14ecb27d113c0941ff4bcaef7d23841b" name="js/goto.js" role="horde" />
-   <file baseinstalldir="/" md5sum="9becb24665e79be8f4f5d20fb5a5eb5c" name="js/kronolith.js" role="horde" />
-   <file baseinstalldir="/" md5sum="e161f10fb3ee8368cecda8141d6cf390" name="js/smartmobile.js" role="horde" />
+   <file baseinstalldir="/" md5sum="67500a48fb0b540c636fee590ca628c1" name="js/goto.js" role="horde" />
+   <file baseinstalldir="/" md5sum="c1b035b76899c1aa05b908613e2fc38c" name="js/kronolith.js" role="horde" />
+   <file baseinstalldir="/" md5sum="4fd616bb16e5de512e91eb659d1662eb" name="js/smartmobile.js" role="horde" />
    <file baseinstalldir="/" md5sum="0cffaa0f7961298b37e359730fb96fc5" name="js/views.js" role="horde" />
-   <file baseinstalldir="/" md5sum="3fe52fd4bf54306b1888a27e810da0a6" name="lib/Ajax/Application/Handler.php" role="horde" />
-   <file baseinstalldir="/" md5sum="900ef7e557422ad401efe5cb909287ff" name="lib/Ajax/Imple/ContactAutoCompleter.php" role="horde" />
-   <file baseinstalldir="/" md5sum="4455bae8b581200e6441127975b0b105" name="lib/Ajax/Imple/ResourceAutoCompleter.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c989fd98d135964ffb927d0ab8a89752" name="lib/Ajax/Imple/TagAutoCompleter.php" role="horde" />
-   <file baseinstalldir="/" md5sum="df37d88a18af5e4dc62638a908adff73" name="lib/Ajax/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="00a3f28740fd1322219043bb9f99d896" name="lib/Ajax/Application/Handler.php" role="horde" />
+   <file baseinstalldir="/" md5sum="6d220cb886e1aae16637cc6713635f09" name="lib/Ajax/Imple/ContactAutoCompleter.php" role="horde" />
+   <file baseinstalldir="/" md5sum="36b7bfc89ace3daea72e8cfa4de57f6d" name="lib/Ajax/Imple/ResourceAutoCompleter.php" role="horde" />
+   <file baseinstalldir="/" md5sum="5ef5f408afa0495e750dfc74b7f90683" name="lib/Ajax/Imple/TagAutoCompleter.php" role="horde" />
+   <file baseinstalldir="/" md5sum="fa03091733fcf14b156cd4b91d9298f1" name="lib/Ajax/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="39399fa710fefff1c196d65dfb7516c5" name="lib/Block/Month.php" role="horde" />
    <file baseinstalldir="/" md5sum="3027c42b546207388980ee4837aa1738" name="lib/Block/Monthlist.php" role="horde" />
    <file baseinstalldir="/" md5sum="79731ba4ebd293869a29db04995a88f1" name="lib/Block/Prevmonthlist.php" role="horde" />
    <file baseinstalldir="/" md5sum="fae8c7437ddb74f429f0ba755e587ad0" name="lib/Block/Summary.php" role="horde" />
-   <file baseinstalldir="/" md5sum="20da6145ac7275c9aab466eb633bc209" name="lib/Calendar/External/Tasks.php" role="horde" />
-   <file baseinstalldir="/" md5sum="20b260c8774676785e9017a717994868" name="lib/Calendar/External.php" role="horde" />
-   <file baseinstalldir="/" md5sum="a6de6635c1f6aa0defd0c05b66ae5da1" name="lib/Calendar/Holiday.php" role="horde" />
-   <file baseinstalldir="/" md5sum="d8877db40da176291ec613e0211a31ae" name="lib/Calendar/Internal.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c729006824c0407161fd3dbd4f09fc6f" name="lib/Calendar/Remote.php" role="horde" />
-   <file baseinstalldir="/" md5sum="5bcf9806112f4b6749c9ffeac0e81a0c" name="lib/Calendar/Resource.php" role="horde" />
-   <file baseinstalldir="/" md5sum="43fc6ac6217cde3ff581c187d0ef129a" name="lib/Calendar/ResourceGroup.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b1a7c36b802fff647ca2547e06fba142" name="lib/Calendar/External/Tasks.php" role="horde" />
+   <file baseinstalldir="/" md5sum="27d2a23a0c3d5040cf34d17cdbc92f87" name="lib/Calendar/External.php" role="horde" />
+   <file baseinstalldir="/" md5sum="cacccd8c5f0a6707731e237fb3f451e4" name="lib/Calendar/Holiday.php" role="horde" />
+   <file baseinstalldir="/" md5sum="db464f62bda221114f6f0c2ba6db2dc4" name="lib/Calendar/Internal.php" role="horde" />
+   <file baseinstalldir="/" md5sum="f2e550fc01493745cdce9e5e159e1071" name="lib/Calendar/Remote.php" role="horde" />
+   <file baseinstalldir="/" md5sum="75cb43718e43bea13262f5c0d06866b8" name="lib/Calendar/Resource.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d1bbce37c1aa6a75a49d19b378386f03" name="lib/Calendar/ResourceGroup.php" role="horde" />
    <file baseinstalldir="/" md5sum="d48d3ea88dd9e2f64783c451922d0823" name="lib/Calendars/Base.php" role="horde" />
    <file baseinstalldir="/" md5sum="be36d608e0b219da7ea6b6895b138980" name="lib/Calendars/Default.php" role="horde" />
    <file baseinstalldir="/" md5sum="e78c2fdbc090bb3a8f0c72046299ea90" name="lib/Calendars/Kolab.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c83707be9c7b29bf2ca6ea62c714647e" name="lib/Driver/Resource/Sql.php" role="horde" />
-   <file baseinstalldir="/" md5sum="f0eaebb3cd50a36834729dd8e72989d6" name="lib/Driver/Holidays.php" role="horde" />
-   <file baseinstalldir="/" md5sum="2aa28843f31d701dcb9a6e58e4d51691" name="lib/Driver/Horde.php" role="horde" />
-   <file baseinstalldir="/" md5sum="2836863e2f62603ac87eba927b23a842" name="lib/Driver/Ical.php" role="horde" />
-   <file baseinstalldir="/" md5sum="90f4dc8ff5645209eb85633501b2061a" name="lib/Driver/Kolab.php" role="horde" />
-   <file baseinstalldir="/" md5sum="19bd9834adcb7fe28b47bfb71ce42ad3" name="lib/Driver/Mock.php" role="horde" />
-   <file baseinstalldir="/" md5sum="e0f98b58a491abca120e65617283bf95" name="lib/Driver/Sql.php" role="horde" />
-   <file baseinstalldir="/" md5sum="652dda200d3b72fb55b75dbd25c1ea12" name="lib/Event/Resource/Sql.php" role="horde" />
-   <file baseinstalldir="/" md5sum="936cb509bde6f4bd492507a4d6e379b3" name="lib/Event/Holidays.php" role="horde" />
-   <file baseinstalldir="/" md5sum="a8cc762368c635755754ee3726d5db72" name="lib/Event/Horde.php" role="horde" />
-   <file baseinstalldir="/" md5sum="baa104021f5001fa61ddb2b08feb21b7" name="lib/Event/Ical.php" role="horde" />
-   <file baseinstalldir="/" md5sum="6e3eec9ebb81cc92433b8143f9ba204c" name="lib/Event/Kolab.php" role="horde" />
-   <file baseinstalldir="/" md5sum="0ebddb8dca2d0ef07b28a983e462f8ec" name="lib/Event/Sql.php" role="horde" />
-   <file baseinstalldir="/" md5sum="8eb4ceea49c2f68f87fbabaf6a9ba117" name="lib/Factory/Calendars.php" role="horde" />
-   <file baseinstalldir="/" md5sum="df4ba77aa526ccd426cf9f70cdeaab09" name="lib/Factory/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e9cbe8949f569a1c67a51ba9d2c6fb52" name="lib/Driver/Resource/Sql.php" role="horde" />
+   <file baseinstalldir="/" md5sum="1777b2b2beaa3545cddddf291286464b" name="lib/Driver/Holidays.php" role="horde" />
+   <file baseinstalldir="/" md5sum="63afdbeda04a362b48cd5137957f5011" name="lib/Driver/Horde.php" role="horde" />
+   <file baseinstalldir="/" md5sum="aed57ae9d391c227722dfcab0867f7af" name="lib/Driver/Ical.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d414baa42226fdda2fd100ab12e357ae" name="lib/Driver/Kolab.php" role="horde" />
+   <file baseinstalldir="/" md5sum="dbb0437c8d331451054d472c72cacee0" name="lib/Driver/Mock.php" role="horde" />
+   <file baseinstalldir="/" md5sum="890ec195472f5652ea7a15993149f438" name="lib/Driver/Sql.php" role="horde" />
+   <file baseinstalldir="/" md5sum="aa30b49888b9917ebcce4ac4a2024e96" name="lib/Event/Resource/Sql.php" role="horde" />
+   <file baseinstalldir="/" md5sum="57dcd71da453d808d181d5d43bb4bd58" name="lib/Event/Holidays.php" role="horde" />
+   <file baseinstalldir="/" md5sum="87c301082ede6823b066b0f92516de6b" name="lib/Event/Horde.php" role="horde" />
+   <file baseinstalldir="/" md5sum="537ff2b8d76b9db6f49622aa68e4803c" name="lib/Event/Ical.php" role="horde" />
+   <file baseinstalldir="/" md5sum="95f7464d3ff3c805911b9ff60cb8d86d" name="lib/Event/Kolab.php" role="horde" />
+   <file baseinstalldir="/" md5sum="546bf6388b2f5177e00f8aef050f8d15" name="lib/Event/Mock.php" role="horde" />
+   <file baseinstalldir="/" md5sum="edf74ba4f26207ac72f90e46f6ee8ad2" name="lib/Event/Sql.php" role="horde" />
+   <file baseinstalldir="/" md5sum="ab4f22633e3b9737aba00ddd6397f7dc" name="lib/Factory/Calendars.php" role="horde" />
+   <file baseinstalldir="/" md5sum="c26df8feeaaa15a1c996676c57b576b1" name="lib/Factory/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="0713996aed8cbf74b2b6cf077ae6b618" name="lib/Factory/Geo.php" role="horde" />
    <file baseinstalldir="/" md5sum="e91696fee47951d212f7458984ee8c26" name="lib/Factory/Shares.php" role="horde" />
-   <file baseinstalldir="/" md5sum="4731216aacc52aa12ec757fd8ce92517" name="lib/Factory/Storage.php" role="horde" />
-   <file baseinstalldir="/" md5sum="b5c2610aa70051bc6e74584a4829a85b" name="lib/Form/Type/KronolithTags.php" role="horde" />
+   <file baseinstalldir="/" md5sum="eb4bf6089b6ef3d3a5cf2edca1721942" name="lib/Factory/Storage.php" role="horde" />
+   <file baseinstalldir="/" md5sum="25b63d996533a9490fda90990d88aeb6" name="lib/Form/Type/KronolithTags.php" role="horde" />
    <file baseinstalldir="/" md5sum="73a053b760b2da5db61d6bc2e9e4602f" name="lib/Form/CreateCalendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="bcc38be083ed5437d3d77771466c3e8c" name="lib/Form/CreateResource.php" role="horde" />
    <file baseinstalldir="/" md5sum="de42ef880d305e2e017b8c7eb43389a9" name="lib/Form/CreateResourceGroup.php" role="horde" />
    <file baseinstalldir="/" md5sum="d1a0136ae0bf15aed6c7448c973ebc9e" name="lib/Form/DeleteCalendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="3a99ae7dc8f742688b3f47dcff6d5dcb" name="lib/Form/DeleteResource.php" role="horde" />
    <file baseinstalldir="/" md5sum="61fef710597243cc77feae8e0efe5c36" name="lib/Form/DeleteResourceGroup.php" role="horde" />
-   <file baseinstalldir="/" md5sum="59be1aa244e6463344e6ea772f1983a2" name="lib/Form/EditCalendar.php" role="horde" />
-   <file baseinstalldir="/" md5sum="6d311dd6b9eff6c7dfd1d98347f661d3" name="lib/Form/EditRemoteCalendar.php" role="horde" />
+   <file baseinstalldir="/" md5sum="934bed5019dbdba060c7200b5e990850" name="lib/Form/EditCalendar.php" role="horde" />
+   <file baseinstalldir="/" md5sum="a85df6b3779602e850169bb20ffcf2c4" name="lib/Form/EditRemoteCalendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="cf35599edaf145a5dd44cd7f178e3887" name="lib/Form/EditResource.php" role="horde" />
    <file baseinstalldir="/" md5sum="5089ddb492f0769459b3dc004241105a" name="lib/Form/EditResourceGroup.php" role="horde" />
    <file baseinstalldir="/" md5sum="191bd38839c2b1700fbc35f2cbe06c60" name="lib/Form/SubscribeRemoteCalendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="fcbf02dc1bd9ebe70064b6249f463c30" name="lib/Form/UnsubscribeRemoteCalendar.php" role="horde" />
-   <file baseinstalldir="/" md5sum="8e751ce5376be9071b61bf46dc43fbbb" name="lib/FreeBusy/View/Day.php" role="horde" />
-   <file baseinstalldir="/" md5sum="46811f3a95d71bc02e90210a9682774d" name="lib/FreeBusy/View/Month.php" role="horde" />
-   <file baseinstalldir="/" md5sum="f916694bf1842cfef635d5cb6f52b286" name="lib/FreeBusy/View/Week.php" role="horde" />
-   <file baseinstalldir="/" md5sum="92c0aa04b48ac4ac3acf9032f587ff32" name="lib/FreeBusy/View/Workweek.php" role="horde" />
-   <file baseinstalldir="/" md5sum="d9bcce9c5060b9fc1291737c622047e2" name="lib/FreeBusy/View.php" role="horde" />
-   <file baseinstalldir="/" md5sum="6afe475bc64d138e42713db8542cbc4c" name="lib/Geo/Base.php" role="horde" />
-   <file baseinstalldir="/" md5sum="a5ba99e4bf99d8ac6f16918936d35188" name="lib/Geo/Mysql.php" role="horde" />
-   <file baseinstalldir="/" md5sum="e79be0213a70ba1edb2896b6cf176dfe" name="lib/Geo/Sql.php" role="horde" />
-   <file baseinstalldir="/" md5sum="b4287ddb568b4a8d6791646b0ddb68d6" name="lib/LoginTasks/SystemTask/Upgrade.php" role="horde" />
-   <file baseinstalldir="/" md5sum="daa1f3c5a1351cf8290657a95b3e592e" name="lib/LoginTasks/Task/PurgeEvents.php" role="horde" />
-   <file baseinstalldir="/" md5sum="ab0d382e29147d4ab5dca133f64321a2" name="lib/Prefs/Special/DefaultAlarm.php" role="horde" />
-   <file baseinstalldir="/" md5sum="a2cea3764ad0ae8b11281693727864e3" name="lib/Prefs/Special/EventAlarms.php" role="horde" />
-   <file baseinstalldir="/" md5sum="865e7c00fe3e80a165a5521d11c591d6" name="lib/Prefs/Special/Sourceselect.php" role="horde" />
-   <file baseinstalldir="/" md5sum="ed03d6eb159c0f4c60d5be3ded81a057" name="lib/Resource/Base.php" role="horde" />
-   <file baseinstalldir="/" md5sum="ffd795e60548fe30d938a6a541febf44" name="lib/Resource/Group.php" role="horde" />
-   <file baseinstalldir="/" md5sum="87bb0a6ed97596c1fa93adcc1c482dbd" name="lib/Resource/Single.php" role="horde" />
-   <file baseinstalldir="/" md5sum="29bdea21d06f197292e105efe4e46659" name="lib/Storage/Kolab.php" role="horde" />
+   <file baseinstalldir="/" md5sum="c8aceb2a6ef00bea5e1ad6e13aa378f7" name="lib/FreeBusy/View/Day.php" role="horde" />
+   <file baseinstalldir="/" md5sum="5637f78784257d6c68f93b607d0ef95e" name="lib/FreeBusy/View/Month.php" role="horde" />
+   <file baseinstalldir="/" md5sum="a291ed2762b32b11ec053221da27d40f" name="lib/FreeBusy/View/Week.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e32b869f1f1fb857319648c33a958802" name="lib/FreeBusy/View/Workweek.php" role="horde" />
+   <file baseinstalldir="/" md5sum="cabb0fac1b2f7782f1a7a1fab8c2d630" name="lib/FreeBusy/View.php" role="horde" />
+   <file baseinstalldir="/" md5sum="6e3ba382f303aaa20ab88222d615b0be" name="lib/Geo/Base.php" role="horde" />
+   <file baseinstalldir="/" md5sum="10aff4343c00f2dff291f1db8fc873cf" name="lib/Geo/Mysql.php" role="horde" />
+   <file baseinstalldir="/" md5sum="5daa70426b62d211fa1d059cb0d29a2f" name="lib/Geo/Sql.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d2651ab6a313ef882c8259e8fa49564e" name="lib/Icalendar/Handler/Base.php" role="horde" />
+   <file baseinstalldir="/" md5sum="5771d11efc183e92caec2af930968892" name="lib/Icalendar/Handler/Dav.php" role="horde" />
+   <file baseinstalldir="/" md5sum="bb852848d7beee7c0369d1479eb86a4e" name="lib/LoginTasks/SystemTask/Upgrade.php" role="horde" />
+   <file baseinstalldir="/" md5sum="4b81b4331a219750fff01b9a8047f741" name="lib/LoginTasks/Task/PurgeEvents.php" role="horde" />
+   <file baseinstalldir="/" md5sum="204b131e8685ee554b4d28d3afd438a4" name="lib/Prefs/Special/DefaultAlarm.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b2174904a9bcec725a654f7f8d598a9f" name="lib/Prefs/Special/EventAlarms.php" role="horde" />
+   <file baseinstalldir="/" md5sum="0588b02f3294050eb6a3766ce4b4ce8c" name="lib/Prefs/Special/Sourceselect.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8fa22664c8b90e08cd74dd52ceb095d1" name="lib/Resource/Base.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b0b4ddee21f82d6450d565e3bb86ffae" name="lib/Resource/Group.php" role="horde" />
+   <file baseinstalldir="/" md5sum="1fc579ee6c07602ae5c300938d672763" name="lib/Resource/Single.php" role="horde" />
+   <file baseinstalldir="/" md5sum="a27c81d729354cd0c457870583c9b09c" name="lib/Storage/Kolab.php" role="horde" />
    <file baseinstalldir="/" md5sum="2dbe792560c11da53b99516ff4b144cc" name="lib/Storage/Sql.php" role="horde" />
    <file baseinstalldir="/" md5sum="ea994fd3b17819ddda758687b97bfb54" name="lib/Ui/VarRenderer/Kronolith.php" role="horde" />
    <file baseinstalldir="/" md5sum="ffc72871380a42ae20459f981ec92146" name="lib/View/Day.php" role="horde" />
@@ -171,44 +177,44 @@
    <file baseinstalldir="/" md5sum="b3a700b4a08fa70013bc3e7c9b85c5e5" name="lib/View/Event.php" role="horde" />
    <file baseinstalldir="/" md5sum="7948b45df560e33cef57ec442939d6f6" name="lib/View/ExportEvent.php" role="horde" />
    <file baseinstalldir="/" md5sum="0fc14933489471dce3c2ccf938debb25" name="lib/View/Month.php" role="horde" />
-   <file baseinstalldir="/" md5sum="554d3a4f8f5a763bebf82e81043bce16" name="lib/View/Sidebar.php" role="horde" />
-   <file baseinstalldir="/" md5sum="144eee83460631f2d58ac06efecb89a8" name="lib/View/SidebarTasks.php" role="horde" />
+   <file baseinstalldir="/" md5sum="0773c253c74fcad3dd37a469599e27bc" name="lib/View/Sidebar.php" role="horde" />
+   <file baseinstalldir="/" md5sum="250af3efc6abc607d94e9da29864079c" name="lib/View/SidebarTasks.php" role="horde" />
    <file baseinstalldir="/" md5sum="62ac32c68dc6fb69c65c4ac425ea9ac8" name="lib/View/Week.php" role="horde" />
    <file baseinstalldir="/" md5sum="1004ef070b610a6fad0f973c48c9a964" name="lib/View/WorkWeek.php" role="horde" />
    <file baseinstalldir="/" md5sum="0044dfbbd24de736fe886d51c7273580" name="lib/View/Year.php" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="f3a142b36fa6715b6d2e9f87ce8e401c" name="lib/Ajax.php" role="horde" />
-   <file baseinstalldir="/" md5sum="e2af6a862b8ef057120774eb25812cc1" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="0976047629b6db89ab3d895fccae67d3" name="lib/Application.php" role="horde" />
-   <file baseinstalldir="/" md5sum="485a19eced667926f29e8b3f4d2d4d7e" name="lib/Calendar.php" role="horde" />
-   <file baseinstalldir="/" md5sum="269359c8478afc7d8bddd6ed8c44c21d" name="lib/CalendarsManager.php" role="horde" />
+   <file baseinstalldir="/" md5sum="c53008ef9f19530b9f142d5ebbbe75e7" name="lib/Ajax.php" role="horde" />
+   <file baseinstalldir="/" md5sum="31408c8e29269269e49e09f76c6605cf" name="lib/Api.php" role="horde" />
+   <file baseinstalldir="/" md5sum="733614b00d536964766074c56f909d7a" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="bb4fe968da03ca818b589cf670d60883" name="lib/Calendar.php" role="horde" />
+   <file baseinstalldir="/" md5sum="520394cb308ebb578db307be396a91bc" name="lib/CalendarsManager.php" role="horde" />
    <file baseinstalldir="/" md5sum="21dc13240daed72525e8183911455760" name="lib/Day.php" role="horde" />
-   <file baseinstalldir="/" md5sum="6e97420bd5d4b2a0ec53e28c66f3a19a" name="lib/Driver.php" role="horde" />
-   <file baseinstalldir="/" md5sum="8906fc02e08f0128877094036016a3dd" name="lib/Event.php" role="horde" />
-   <file baseinstalldir="/" md5sum="89c90d4c0566be37488040dbbcd70f07" name="lib/Exception.php" role="horde" />
+   <file baseinstalldir="/" md5sum="13a96781a1a2a9e8181f29b9f2c5af09" name="lib/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b3e7c76a4645969d5e6b475562194b90" name="lib/Event.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b2bdecca6e4a65d993b96e688cea1e3e" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="ecdfc4913c4d920d6e5ebe801696f415" name="lib/FreeBusy.php" role="horde" />
-   <file baseinstalldir="/" md5sum="212043bdee3e08ed8292827e1d08702c" name="lib/Kronolith.php" role="horde" />
-   <file baseinstalldir="/" md5sum="60a7d25cb02842fb5aa3ed850353405a" name="lib/Resource.php" role="horde" />
+   <file baseinstalldir="/" md5sum="17b1a93c3ece2c4f7e6cd9ebbbcad426" name="lib/Kronolith.php" role="horde" />
+   <file baseinstalldir="/" md5sum="90bd2deecf8190b32440c319926ba87d" name="lib/Resource.php" role="horde" />
    <file baseinstalldir="/" md5sum="da3de1aeeb14284aa70f776f255588a0" name="lib/Storage.php" role="horde" />
-   <file baseinstalldir="/" md5sum="5529c2f46a186c4b46600ad5844c90c6" name="lib/Tagger.php" role="horde" />
-   <file baseinstalldir="/" md5sum="4146e0f372df3c54aaa4c83761a606b0" name="lib/Test.php" role="horde" />
+   <file baseinstalldir="/" md5sum="72f76e6d812545c2a640393c5b74f7b8" name="lib/Tagger.php" role="horde" />
+   <file baseinstalldir="/" md5sum="004c11c6912de2aad753aa8b2246f513" name="lib/Test.php" role="horde" />
    <file baseinstalldir="/" md5sum="c77669a04c66fa45211896de5195fcf1" name="locale/ar/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="f8ede005145cb0c809b994bb2e21b897" name="locale/ar/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="81a31f5856c83a735469a65c47c7db2c" name="locale/bg/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="7db1d339ae209de83e1215634e187cbb" name="locale/bg/LC_MESSAGES/kronolith.po" role="horde" />
-   <file baseinstalldir="/" md5sum="3398e17c2e678265c7ccfc7ddc23d69c" name="locale/ca/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="ee890e06bb356f7af04b0a117b152ac3" name="locale/ca/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="74c5734021ef2932ea1ead546d8dd3a7" name="locale/bg/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="bd277b5bdc4445bcbd33b055b494a6f5" name="locale/ca/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="bb22e4082014b049e391c3234a5a39d4" name="locale/ca/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="3079126375897e2a42a71c22a167bb41" name="locale/ca/help.xml" role="horde" />
-   <file baseinstalldir="/" md5sum="1df7815a5187a13a8dccf518e62a4987" name="locale/cs/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="2e8e27026a8b6cd60fcdbf15fc154b70" name="locale/cs/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="7447675b5e43024fe3e88333e57ae06e" name="locale/cs/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="35dc2728011017feadd656ef7a8cd96f" name="locale/cs/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="b3c55b288e06f0b4d0ac0ce05bbaf912" name="locale/da/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="36844ed2728813e7a2d8540cec356a44" name="locale/da/LC_MESSAGES/kronolith.po" role="horde" />
-   <file baseinstalldir="/" md5sum="202fe174db84ed73b54f3ac02f8ff57d" name="locale/de/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="f14a8f6f5e88967c868b85829a8f2292" name="locale/de/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="ac8da0f30434317a827d3402d20aa951" name="locale/da/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="a3fbef33dd1b2fd203def90d4be1d834" name="locale/de/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="9b7a162bacd089cafe342b26dff58661" name="locale/de/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="02420864253bdc3e5459b9cdfa0e0aa0" name="locale/de/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="dc0282331a4b1d47d407497657a20e8d" name="locale/el/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="7fce10dd434447508fdaadef15b19931" name="locale/el/LC_MESSAGES/kronolith.po" role="horde" />
-   <file baseinstalldir="/" md5sum="f78ea0649591388759b06503784109c0" name="locale/en/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="ceacd6534b14b1efe35ab8f58d04ab7c" name="locale/en/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="94f41ee1980304904c303ce0720d1ee1" name="locale/es/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="a4d58a51cfb6fe0aebddde798fa83181" name="locale/es/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="312602e3af4f38b5665ddad31d32dea6" name="locale/es/help.xml" role="horde" />
@@ -220,11 +226,11 @@
    <file baseinstalldir="/" md5sum="260444fce35679094810562b405f17d3" name="locale/fi/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="ed1cc4095586827338db377a4ab47127" name="locale/fi/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="205668efc1a776572fe9eb520f1a22fd" name="locale/fi/help.xml" role="horde" />
-   <file baseinstalldir="/" md5sum="839b9de4c45064544d0f94192e51362a" name="locale/fr/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="07a02d6d84726d13bd060cfc91c8de3f" name="locale/fr/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="2356e3355bd80672b5be40cf7dfe5974" name="locale/fr/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="53705a35e87bb8d7101d9ade87b57ccd" name="locale/fr/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="f98822365db009d8f0a0e5762673246c" name="locale/fr/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="35065dc309f3cfd585ade60d31b66cc4" name="locale/hr/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="ff9bd4a5dc27f6f6822ec4b2b00a28a0" name="locale/hr/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="92b16597c09e8fbc874bd23cc824ada8" name="locale/hr/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="f90076d1bc31879fce555c7292e4a428" name="locale/hr/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="24f218479e0d2db57439fae4a23e261a" name="locale/hu/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="b6188383c061e3070581d731a3e050ac" name="locale/hu/LC_MESSAGES/kronolith.po" role="horde" />
@@ -236,81 +242,82 @@
    <file baseinstalldir="/" md5sum="4e3a93cacfb877814cc49a44b7949b22" name="locale/ko/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="c84492c556605f1bfb9c9597f971546a" name="locale/ko/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="cbf8e5b51e8a0be9d5339ea99af080f3" name="locale/lt/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="0b8c04c364072dca1bc6caf7c72d84a4" name="locale/lt/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="b7f30e92145238b07d90a00af256feda" name="locale/lt/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="338ae8efac64dd5b67d2b35d15f2a15c" name="locale/lv/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="cc7e201ce40703c5e5e5f0508963594a" name="locale/lv/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="7a31e5c2dd8c1be0841ce46b5a1f0787" name="locale/lv/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="c2a964baa22ac4de2d0ba185d8fd33cd" name="locale/lv/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="534f0f2afdc4bf6f38f8f51c99f00dbd" name="locale/nb/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="ba791b07a0e12a4438c7e3245faab59e" name="locale/nb/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="f0078a1401b04f77d186bcbb54d3a1a0" name="locale/nb/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="1725b54e06944da653a3bbdf37470562" name="locale/nl/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="f4431ee189dcdb048c52e58e18d59ba2" name="locale/nl/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="ae5f4814574bcac715d42f65697120a1" name="locale/nl/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="492788292f170d072c98ccce11706c36" name="locale/nn/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="9476d864e90a4ba3cda8c51b42e42049" name="locale/nn/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="0bfa7f4ecf07ee6632f983b3117bfbbb" name="locale/pl/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="f3ef4c875b827b66a78cb1e28cfef4f3" name="locale/pl/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="8bc7b60e8abc28b57512df4e926ed977" name="locale/pl/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="44f4f865176685ae941020778272c98a" name="locale/pt/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="382affdb3575a9b5d5d1808b39404278" name="locale/pt/LC_MESSAGES/kronolith.po" role="horde" />
-   <file baseinstalldir="/" md5sum="52bd2c8f4ce132535e9a1d6d96a5f87d" name="locale/pt_BR/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="0415c277713e6aedcb79e37a2883e72b" name="locale/pt_BR/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="237e460bed4b29d7bbe86921931e153b" name="locale/pt_BR/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="3796f11d1021ab4f6bc71bd41efb4ed7" name="locale/pt_BR/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="a1cb8947b658b92eb02873ff2007498c" name="locale/pt_BR/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="5bda3f4ea543a3e41b1136dfb349fc05" name="locale/ro/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="44625d7e5aa4867a9a642e69d7b733b7" name="locale/ro/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="8e2ef641d956166842354be11bf8aae4" name="locale/ro/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="c5a3c035809cbbdbf2ba79fc76a3f3af" name="locale/ru/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="72022c25dbbd0d75f3f0a7e60d9a3fbb" name="locale/ru/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="4f12c15d5ef03a1edef48cdef4e3e95e" name="locale/sk/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="308c15b0e10a2886847496666266639f" name="locale/sk/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="18c92af3ed82c6fd9acc434b72154439" name="locale/sl/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="a0d8e4dadb839e4e76533ba24aaa684f" name="locale/sl/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="b9f81373fb3e9c485bfca9f766807795" name="locale/sl/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="88b82f0e0e761ccab1354dbdaa21ce26" name="locale/sv/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="c7d30684318fe3a97672e066308ad800" name="locale/sv/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="781dbdb1562484ea135924a9a6757ca1" name="locale/tr/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="ebabe003f43a4be893d0678993baac22" name="locale/tr/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="96a57976225779c4489c98865582274b" name="locale/tr/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="f737e97a2e9c42e866097d33bc9282ea" name="locale/tr/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="faa20978f05bc59828efba0e257b8267" name="locale/uk/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="eba480378a2024d2316a9751d8b5211f" name="locale/uk/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="5d8d2bf21145786ec074133a66db81ac" name="locale/zh_CN/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="6ef8a74cd41b02a7365e4737bd476959" name="locale/zh_CN/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="eaa6df2cc0f3e4a92eb568f031758fd5" name="locale/zh_CN/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="88cc011b460b563a205b158de458c1b0" name="locale/zh_TW/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="98b7b0057da69e3669e7c1eca4885e90" name="locale/zh_TW/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="locale/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="28b90e7524f91179399cff5f65b3471f" name="locale/kronolith.pot" role="horde" />
-   <file baseinstalldir="/" md5sum="6418200b391620e5a683cbe502d9a5b0" name="migration/1_kronolith_base_tables.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c956ae569ca53cfd5801313b3705c3b4" name="migration/2_kronolith_upgrade_autoincrement.php" role="horde" />
-   <file baseinstalldir="/" md5sum="6cd0ad2da7cf0b97c3a55ca35e582b11" name="migration/3_kronolith_upgrade_addallday.php" role="horde" />
-   <file baseinstalldir="/" md5sum="2f840db3faa97a500095fa2a0c2fe788" name="migration/4_kronolith_upgrade_addalarmmethods.php" role="horde" />
-   <file baseinstalldir="/" md5sum="f0354725b35f554d6ae5aaf1b0dcfc5e" name="migration/5_kronolith_upgrade_addcolor.php" role="horde" />
-   <file baseinstalldir="/" md5sum="f008437eea7746d9fac2c8cd96bf1340" name="migration/6_kronolith_upgrade_addresources.php" role="horde" />
-   <file baseinstalldir="/" md5sum="57807cec01c734c08456cd441476b5f1" name="migration/7_kronolith_upgrade_resourceautoincrement.php" role="horde" />
-   <file baseinstalldir="/" md5sum="42c8a5f4a7812e992ec1f6cc30b66a77" name="migration/8_kronolith_upgrade_addgeo.php" role="horde" />
-   <file baseinstalldir="/" md5sum="2a480f7b1cbf4a26d0d3240384fe2d94" name="migration/9_kronolith_upgrade_addurl.php" role="horde" />
-   <file baseinstalldir="/" md5sum="51873492ec964d36f39f1e9b0007aac3" name="migration/10_kronolith_upgrade_exceptions.php" role="horde" />
-   <file baseinstalldir="/" md5sum="34115328d96786dbeeed693bd4d1bcab" name="migration/11_kronolith_upgrade_resourceemail.php" role="horde" />
-   <file baseinstalldir="/" md5sum="7ba83d187347d755c49bc0b0fac8f95c" name="migration/12_kronolith_upgrade_addzoom.php" role="horde" />
-   <file baseinstalldir="/" md5sum="93a4770dca378a6aada2cb68e8e9c4d2" name="migration/13_kronolith_upgrade_systemshares.php" role="horde" />
-   <file baseinstalldir="/" md5sum="fafe4fac41ee397ed0bb02a65e99e4a6" name="migration/14_kronolith_upgrade_missingresourcefield.php" role="horde" />
-   <file baseinstalldir="/" md5sum="f9e49db1095397632437a8e52720a252" name="migration/15_kronolith_upgrade_sqlng.php" role="horde" />
-   <file baseinstalldir="/" md5sum="8600a67b533566670c3d7ee9459291c2" name="migration/16_kronolith_upgrade_sqlhierarchical.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c267dabaa7561317166927c1e38cf187" name="migration/17_kronolith_upgrade_sqlnghierarchical.php" role="horde" />
-   <file baseinstalldir="/" md5sum="1ffb26779c17a48cdaa1963e4858b76f" name="migration/18_kronolith_upgrade_categoriestotags.php" role="horde" />
-   <file baseinstalldir="/" md5sum="67c87a4f9950d58ae7eecf1961f5c5c1" name="migration/19_kronolith_upgrade_addmysqlgeo.php" role="horde" />
-   <file baseinstalldir="/" md5sum="aaa1600fbeb7186a40a2173daa2a0e24" name="migration/20_kronolith_upgrade_timezone.php" role="horde" />
-   <file baseinstalldir="/" md5sum="a69b6bd8553b3343865e7516ee6ccc1c" name="migration/21_kronolith_upgrade_exceptionutc.php" role="horde" />
-   <file baseinstalldir="/" md5sum="3e9a0c26b1cf214d9edb096eab0aa9a8" name="migration/22_kronolith_upgrade_parents.php" role="horde" />
-   <file baseinstalldir="/" md5sum="85435a1fa7a5eb412901e146cf3fb410" name="resources/groups/create.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c19bbf729c8e39526c287e3eeb19025a" name="resources/groups/delete.php" role="horde" />
-   <file baseinstalldir="/" md5sum="2cff91fe4507dc3fca77d621114b8dd3" name="resources/groups/edit.php" role="horde" />
+   <file baseinstalldir="/" md5sum="ef6fe9609e0f96f0c59a46c123196705" name="locale/kronolith.pot" role="horde" />
+   <file baseinstalldir="/" md5sum="872c03998b3de2411309145028527100" name="migration/1_kronolith_base_tables.php" role="horde" />
+   <file baseinstalldir="/" md5sum="503b86db6638546c6f4d765e64f431ff" name="migration/2_kronolith_upgrade_autoincrement.php" role="horde" />
+   <file baseinstalldir="/" md5sum="46fd3606ffc51229ad503b698cae751d" name="migration/3_kronolith_upgrade_addallday.php" role="horde" />
+   <file baseinstalldir="/" md5sum="706ddd0e907ad1bcdac583dd0cf378a0" name="migration/4_kronolith_upgrade_addalarmmethods.php" role="horde" />
+   <file baseinstalldir="/" md5sum="4ad4d2dcfcb84c6d8422f1901c49ff52" name="migration/5_kronolith_upgrade_addcolor.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8c7970c4f3b1d6992c46e00ebffa267d" name="migration/6_kronolith_upgrade_addresources.php" role="horde" />
+   <file baseinstalldir="/" md5sum="97aac9fd50af52dd3caad49020802ae2" name="migration/7_kronolith_upgrade_resourceautoincrement.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d867e3e7ad5eccbf7c7fffc02025067d" name="migration/8_kronolith_upgrade_addgeo.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e85e68018adca245ddd6498b4d009267" name="migration/9_kronolith_upgrade_addurl.php" role="horde" />
+   <file baseinstalldir="/" md5sum="06e37238db47e12ef656d7775d03f4bc" name="migration/10_kronolith_upgrade_exceptions.php" role="horde" />
+   <file baseinstalldir="/" md5sum="2db309e7b1f56106af064684d43b5ebb" name="migration/11_kronolith_upgrade_resourceemail.php" role="horde" />
+   <file baseinstalldir="/" md5sum="4727083f05e82e69096f47bd1df7be7f" name="migration/12_kronolith_upgrade_addzoom.php" role="horde" />
+   <file baseinstalldir="/" md5sum="3c25f71e2f82bd5c49872b79f65f6020" name="migration/13_kronolith_upgrade_systemshares.php" role="horde" />
+   <file baseinstalldir="/" md5sum="54a096ac3d6f289b17b09d050f8575d4" name="migration/14_kronolith_upgrade_missingresourcefield.php" role="horde" />
+   <file baseinstalldir="/" md5sum="59f26368c1f514c64453f25c7554efdb" name="migration/15_kronolith_upgrade_sqlng.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e705cf4ff4df7d70fe48bc89e6d3ffcc" name="migration/16_kronolith_upgrade_sqlhierarchical.php" role="horde" />
+   <file baseinstalldir="/" md5sum="35cd17f4b883bbd1b7634dc2180a4656" name="migration/17_kronolith_upgrade_sqlnghierarchical.php" role="horde" />
+   <file baseinstalldir="/" md5sum="168750acaa43f91f9da882896ae6b47d" name="migration/18_kronolith_upgrade_categoriestotags.php" role="horde" />
+   <file baseinstalldir="/" md5sum="6b6f01d93078acc97cdd57d8f3fde585" name="migration/19_kronolith_upgrade_addmysqlgeo.php" role="horde" />
+   <file baseinstalldir="/" md5sum="7bb858332e7f26d3f77ccf1ddf83cc5b" name="migration/20_kronolith_upgrade_timezone.php" role="horde" />
+   <file baseinstalldir="/" md5sum="f557af112f74ca11d9245135c65cbd49" name="migration/21_kronolith_upgrade_exceptionutc.php" role="horde" />
+   <file baseinstalldir="/" md5sum="99e1392e3d4d78a93e67bf19500ba478" name="migration/22_kronolith_upgrade_parents.php" role="horde" />
+   <file baseinstalldir="/" md5sum="3db68a34126cf0c21ad966314c750574" name="migration/23_kronolith_upgrade_baseidindex.php" role="horde" />
+   <file baseinstalldir="/" md5sum="952032ff04647180a79381ea192c103a" name="resources/groups/create.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e849c501fd7af49b305d2b6344f72b17" name="resources/groups/delete.php" role="horde" />
+   <file baseinstalldir="/" md5sum="31e60fba374fe60eecb5c7c715ccd9da" name="resources/groups/edit.php" role="horde" />
    <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="resources/groups/index.html" role="horde" />
-   <file baseinstalldir="/" md5sum="9e413a42f5b1b901bd177dc4c40ec6ed" name="resources/create.php" role="horde" />
-   <file baseinstalldir="/" md5sum="ff865806892af35dd41fd5383ed0ad23" name="resources/delete.php" role="horde" />
-   <file baseinstalldir="/" md5sum="a47eee6285ceb4bd7b4e8d42ad2e1329" name="resources/edit.php" role="horde" />
+   <file baseinstalldir="/" md5sum="5a1d4c04101bdd8d76ccf3147f560ea4" name="resources/create.php" role="horde" />
+   <file baseinstalldir="/" md5sum="c9cac3de682040379f05145084d6f6ab" name="resources/delete.php" role="horde" />
+   <file baseinstalldir="/" md5sum="54de7d573645d6dbaadef911d839656d" name="resources/edit.php" role="horde" />
    <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="resources/index.html" role="horde" />
    <file baseinstalldir="/" md5sum="2e56d4c22a5d4555e31b1e97cd7653a8" name="templates/agenda/notification.html.php" role="horde" />
    <file baseinstalldir="/" md5sum="61912121b3366f22b8c65cffb8bb3155" name="templates/agenda/notification.plain.php" role="horde" />
    <file baseinstalldir="/" md5sum="3ba488bb0f97195b275442505cf306f9" name="templates/alarm/mail.html.php" role="horde" />
    <file baseinstalldir="/" md5sum="1f71d53ce869c7f4975f6f54d433d6ef" name="templates/alarm/mail.plain.php" role="horde" />
    <file baseinstalldir="/" md5sum="b233907eec7e701197ace3d30ab77938" name="templates/attendees/attendees.inc" role="horde" />
-   <file baseinstalldir="/" md5sum="8838372a55abf3f60d0449d78e110fa7" name="templates/chunks/calendar.php" role="horde" />
-   <file baseinstalldir="/" md5sum="2a29dfbe374d613cd4c7b525f7091599" name="templates/chunks/permissions.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="87c407ef20229b4d5d32028e5d63756a" name="templates/chunks/calendar.php" role="horde" />
+   <file baseinstalldir="/" md5sum="316335cd17e2d3eb5a4645c70af41afb" name="templates/chunks/permissions.inc" role="horde" />
    <file baseinstalldir="/" md5sum="09bb444a667fa8455f69a8c0bf899e59" name="templates/contacts/contacts.inc" role="horde" />
    <file baseinstalldir="/" md5sum="8eb9e8ea450a8005f5939f59c212c5bb" name="templates/data/export.inc" role="horde" />
    <file baseinstalldir="/" md5sum="02d0008b71af44971b7bdfeb82b4e18e" name="templates/data/import.inc" role="horde" />
@@ -372,25 +379,25 @@
    <file baseinstalldir="/" md5sum="f6988785fe430ff395b90ae765af9c02" name="test/Kronolith/fixtures/allday.ics" role="test" />
    <file baseinstalldir="/" md5sum="50c4a253a3a5a4bf3fa140a75f1cc53e" name="test/Kronolith/fixtures/bug7068.ics" role="test" />
    <file baseinstalldir="/" md5sum="c1ab910bc4e2fdbb37ec0880e8303624" name="test/Kronolith/fixtures/bug11688.ics" role="test" />
-   <file baseinstalldir="/" md5sum="26c7ff078172f9ad59cde6ffd2d8214d" name="test/Kronolith/fixtures/export1.ics" role="test" />
+   <file baseinstalldir="/" md5sum="a3d5eed1af5d07cafcf772425d254743" name="test/Kronolith/fixtures/export1.ics" role="test" />
    <file baseinstalldir="/" md5sum="0371527629bfa37da52cc8834e943ec8" name="test/Kronolith/fixtures/export2.ics" role="test" />
    <file baseinstalldir="/" md5sum="dcd43f9695aac0452064fc86b8cf83a7" name="test/Kronolith/fixtures/export3.ics" role="test" />
    <file baseinstalldir="/" md5sum="f586cf147bc0f3eecfdc6bd5fbeed635" name="test/Kronolith/fixtures/export4.ics" role="test" />
    <file baseinstalldir="/" md5sum="c1e9eada13ab9233a9f2b3d6997591d5" name="test/Kronolith/fixtures/fromicalendar.ics" role="test" />
-   <file baseinstalldir="/" md5sum="8a03233388448f8a64c2fa7a9b33d4a7" name="test/Kronolith/Integration/Driver/Sql/Pdo/SqliteTest.php" role="test" />
-   <file baseinstalldir="/" md5sum="df70154f900fb7db68eada5a5982fad3" name="test/Kronolith/Integration/Driver/Sql/Base.php" role="test" />
-   <file baseinstalldir="/" md5sum="cc9f8dcf5d8e99dca2e101b692a1e1b8" name="test/Kronolith/Integration/Driver/Base.php" role="test" />
-   <file baseinstalldir="/" md5sum="0eb9ac816f20f7400d07e89f754e3302" name="test/Kronolith/Integration/Driver/KolabTest.php" role="test" />
-   <file baseinstalldir="/" md5sum="0f07f13370c9ddd4282171bcff654e52" name="test/Kronolith/Integration/Kronolith/Sql/Pdo/SqliteTest.php" role="test" />
-   <file baseinstalldir="/" md5sum="ac9c517b6d27a6f6bb4b4330a8dd242d" name="test/Kronolith/Integration/Kronolith/Sql/Base.php" role="test" />
-   <file baseinstalldir="/" md5sum="a289ba83edd20b0361519659ec695108" name="test/Kronolith/Integration/Kronolith/Base.php" role="test" />
-   <file baseinstalldir="/" md5sum="051c5aaa163a96457bd5bea263eee1ac" name="test/Kronolith/Integration/Kronolith/KolabTest.php" role="test" />
-   <file baseinstalldir="/" md5sum="f2996899a5aaf1e8ec175ace7f898632" name="test/Kronolith/Integration/AllDayTest.php" role="test" />
-   <file baseinstalldir="/" md5sum="f4e0c45ae9504584a84be4da62f7a701" name="test/Kronolith/Integration/FromIcalendarTest.php" role="test" />
-   <file baseinstalldir="/" md5sum="6354e59a188a3cd38d3d7e6e0a03fe0e" name="test/Kronolith/Integration/ToIcalendarTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="b0754ae6ea4e189d362d74a311aca940" name="test/Kronolith/Integration/Driver/Sql/Pdo/SqliteTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="cbda176499c592932b80a3a9b386baca" name="test/Kronolith/Integration/Driver/Sql/Base.php" role="test" />
+   <file baseinstalldir="/" md5sum="5d2ca0cce17a203872f37d0712686c96" name="test/Kronolith/Integration/Driver/Base.php" role="test" />
+   <file baseinstalldir="/" md5sum="a6354881c54f35fdc5377a609f7a7351" name="test/Kronolith/Integration/Driver/KolabTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="981bbbd0c59531fb406640e3836dfaee" name="test/Kronolith/Integration/Kronolith/Sql/Pdo/SqliteTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="09063fb80b7414c737f68bbcd8b78533" name="test/Kronolith/Integration/Kronolith/Sql/Base.php" role="test" />
+   <file baseinstalldir="/" md5sum="f40d13e1816004cfda284986e8574631" name="test/Kronolith/Integration/Kronolith/Base.php" role="test" />
+   <file baseinstalldir="/" md5sum="706d97ca442f499e814e46ae724b3b95" name="test/Kronolith/Integration/Kronolith/KolabTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="27c8e05e36d21785867710204d931216" name="test/Kronolith/Integration/AllDayTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="a1d53a870208e19952da842b18a7d7d1" name="test/Kronolith/Integration/FromIcalendarTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="619a2d16dee14cb0c88b0460cbe57c4c" name="test/Kronolith/Integration/ToIcalendarTest.php" role="test" />
    <file baseinstalldir="/" md5sum="18f0a3a1fd85a8977293fb7a999c46d6" name="test/Kronolith/Stub/CalendarManager.php" role="test" />
    <file baseinstalldir="/" md5sum="abdff3bbbb249bbe043c3f166da7dac3" name="test/Kronolith/Stub/Driver.php" role="test" />
-   <file baseinstalldir="/" md5sum="0051852263d1bc1f50527a3081ddb6fc" name="test/Kronolith/Stub/Registry.php" role="test" />
+   <file baseinstalldir="/" md5sum="b940595dd8df582087cb653876aac862" name="test/Kronolith/Stub/Registry.php" role="test" />
    <file baseinstalldir="/" md5sum="210b1d0101b92b7687927d39426d3c11" name="test/Kronolith/Stub/ShareFactory.php" role="test" />
    <file baseinstalldir="/" md5sum="d21aedabd6fd3f15593797d28881083d" name="test/Kronolith/Stub/Tagger.php" role="test" />
    <file baseinstalldir="/" md5sum="d80e11b7666f01d7e8025a8fb9c1a810" name="test/Kronolith/Stub/Types.php" role="test" />
@@ -398,7 +405,7 @@
    <file baseinstalldir="/" md5sum="14f5153d9d81682215c74590fc6f7ffb" name="test/Kronolith/Autoload.php" role="test" />
    <file baseinstalldir="/" md5sum="0a5018f0726d4673850fece3ad4d72c0" name="test/Kronolith/bootstrap.php" role="test" />
    <file baseinstalldir="/" md5sum="fbe4252ae686d7a73d94512be32e7f23" name="test/Kronolith/phpunit.xml" role="test" />
-   <file baseinstalldir="/" md5sum="5035148435ced605a75a63619d6e86e7" name="test/Kronolith/TestCase.php" role="test" />
+   <file baseinstalldir="/" md5sum="84d34747c99253715fa4c649754c6474" name="test/Kronolith/TestCase.php" role="test" />
    <file baseinstalldir="/" md5sum="14246186bdebe681ed9247b94f807a3b" name="themes/default/block/screen.css" role="horde" />
    <file baseinstalldir="/" md5sum="b416306d8b6e857e423778d485ad8a52" name="themes/default/dynamic/screen.css" role="horde" />
    <file baseinstalldir="/" md5sum="2071381d03bc98e33f908ef949745a85" name="themes/default/graphics/alerts/alarm.png" role="horde" />
@@ -473,30 +480,30 @@
    <file baseinstalldir="/" md5sum="77eba2dbbcc7b45c8333a4f56351c438" name="themes/default/embed.css" role="horde" />
    <file baseinstalldir="/" md5sum="ca5abef127a323e1b57e52a7bef42a46" name="themes/default/ie8.css" role="horde" />
    <file baseinstalldir="/" md5sum="7bd769bdfa84cb69cc23014e364d7ab7" name="themes/default/opera.css" role="horde" />
-   <file baseinstalldir="/" md5sum="48347e2f2bad4c31b6171285dc7f2e85" name="themes/default/screen.css" role="horde" />
+   <file baseinstalldir="/" md5sum="c94cf1c0de08f17531c1951e0fbe57b9" name="themes/default/screen.css" role="horde" />
    <file baseinstalldir="/" md5sum="70d802fdbb857c2fea72eec78d3314fb" name="themes/default/webkit.css" role="horde" />
-   <file baseinstalldir="/" md5sum="7a1f189d553b507a9102747adbbaabc9" name="add.php" role="horde" />
-   <file baseinstalldir="/" md5sum="63cc51fe330b12fdcd925463ff5d5ca6" name="attend.php" role="horde" />
+   <file baseinstalldir="/" md5sum="bafc837ff08112f879112a2c0c3600b9" name="add.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d29ce3022de3b9f568b54b1279f7edfb" name="attend.php" role="horde" />
    <file baseinstalldir="/" md5sum="45104a84dcd363c2276ae11c4b1e7ee5" name="attendees.php" role="horde" />
-   <file baseinstalldir="/" md5sum="e23556dbdff0d8518c4617fa1b698800" name="contacts.php" role="horde" />
+   <file baseinstalldir="/" md5sum="1ccedb001cd28967911393d1a2f8d688" name="contacts.php" role="horde" />
    <file baseinstalldir="/" md5sum="83600a711e6dd70e3193eedf92653fe7" name="COPYING" role="doc" />
-   <file baseinstalldir="/" md5sum="1637fb69e6da8e35ee7d5468608fa975" name="data.php" role="horde" />
-   <file baseinstalldir="/" md5sum="306cca0d0ae60b28d7a8be43b5b7d5a5" name="day.php" role="horde" />
-   <file baseinstalldir="/" md5sum="cb7e9004f6064229b8f64344868c2353" name="delete.php" role="horde" />
-   <file baseinstalldir="/" md5sum="3b4990440f04122b07c45f6dd43d5adc" name="edit.php" role="horde" />
-   <file baseinstalldir="/" md5sum="064fd1f4429984ff7ecfcb4e6bb899a1" name="event.php" role="horde" />
-   <file baseinstalldir="/" md5sum="b120378e38813939d92b93bd6d391d7a" name="fb.php" role="horde" />
-   <file baseinstalldir="/" md5sum="e74448bb89432c0f8773985b1d3d47f4" name="index.php" role="horde" />
-   <file baseinstalldir="/" md5sum="33e436bbb01626df77445248a4736d6c" name="month.php" role="horde" />
-   <file baseinstalldir="/" md5sum="5f78d7fcbf79b7b63001d51fcf0d5fff" name="new.php" role="horde" />
-   <file baseinstalldir="/" md5sum="1e38686f60c1d244427eaa8c379a1528" name="perms.php" role="horde" />
+   <file baseinstalldir="/" md5sum="34049d355d0ce26551fec00e30b2d63b" name="data.php" role="horde" />
+   <file baseinstalldir="/" md5sum="51812e9effb4fbc10a0c35c5f7780e51" name="day.php" role="horde" />
+   <file baseinstalldir="/" md5sum="323a17301a038b7ec78da92f65eb4319" name="delete.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8eff349e4de61e475cfba1475c02fb1a" name="edit.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e51124ddeb57e96bb211198f0305878c" name="event.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d9b21dab028bae3d2448465b335c2cec" name="fb.php" role="horde" />
+   <file baseinstalldir="/" md5sum="73f741c825858fc092baaa66b92e9afc" name="index.php" role="horde" />
+   <file baseinstalldir="/" md5sum="f4db3749f93838b3b5346e15cb4d9fcc" name="month.php" role="horde" />
+   <file baseinstalldir="/" md5sum="f918eb43e803d1021aadfca7e5b362a9" name="new.php" role="horde" />
+   <file baseinstalldir="/" md5sum="0fc36364ec11ba7e2c4a7e55b6c78b20" name="perms.php" role="horde" />
    <file baseinstalldir="/" md5sum="1133ec524eaf3d50ec9ba89dab45866f" name="README" role="doc" />
-   <file baseinstalldir="/" md5sum="0f1ec6e86c0face8bd3e4fc0f40c07c8" name="search.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c348b2b25b22ef282d7e221af1126e36" name="smartmobile.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c656564a23e571f35d96aa4ba7e5da7c" name="view.php" role="horde" />
-   <file baseinstalldir="/" md5sum="28ea47797c252a3350fdfa4692ae18ab" name="week.php" role="horde" />
-   <file baseinstalldir="/" md5sum="81f3f77ed1344c0288fc753f6cbe2e4e" name="workweek.php" role="horde" />
-   <file baseinstalldir="/" md5sum="45c08914c2b9613772a7b788b2137e3b" name="year.php" role="horde" />
+   <file baseinstalldir="/" md5sum="41a7d6102d59a74343c48742b6f4add0" name="search.php" role="horde" />
+   <file baseinstalldir="/" md5sum="a6b7515fa8ab6ec8c04a4843f36e5455" name="smartmobile.php" role="horde" />
+   <file baseinstalldir="/" md5sum="9f93c68862283cea3705b3606ef7fc7e" name="view.php" role="horde" />
+   <file baseinstalldir="/" md5sum="9840a156a9e19a0b60a2196884253088" name="week.php" role="horde" />
+   <file baseinstalldir="/" md5sum="1535a2ae9dae9384264b81419138f110" name="workweek.php" role="horde" />
+   <file baseinstalldir="/" md5sum="31b93cd933289d68d5014d3bc698f8d7" name="year.php" role="horde" />
   </dir>
  </contents>
  <dependencies>
@@ -882,6 +889,7 @@
    <install as="kronolith/lib/Event/Horde.php" name="lib/Event/Horde.php" />
    <install as="kronolith/lib/Event/Ical.php" name="lib/Event/Ical.php" />
    <install as="kronolith/lib/Event/Kolab.php" name="lib/Event/Kolab.php" />
+   <install as="kronolith/lib/Event/Mock.php" name="lib/Event/Mock.php" />
    <install as="kronolith/lib/Event/Sql.php" name="lib/Event/Sql.php" />
    <install as="kronolith/lib/Event/Resource/Sql.php" name="lib/Event/Resource/Sql.php" />
    <install as="kronolith/lib/Factory/Calendars.php" name="lib/Factory/Calendars.php" />
@@ -910,6 +918,8 @@
    <install as="kronolith/lib/Geo/Base.php" name="lib/Geo/Base.php" />
    <install as="kronolith/lib/Geo/Mysql.php" name="lib/Geo/Mysql.php" />
    <install as="kronolith/lib/Geo/Sql.php" name="lib/Geo/Sql.php" />
+   <install as="kronolith/lib/Icalendar/Handler/Base.php" name="lib/Icalendar/Handler/Base.php" />
+   <install as="kronolith/lib/Icalendar/Handler/Dav.php" name="lib/Icalendar/Handler/Dav.php" />
    <install as="kronolith/lib/LoginTasks/SystemTask/Upgrade.php" name="lib/LoginTasks/SystemTask/Upgrade.php" />
    <install as="kronolith/lib/LoginTasks/Task/PurgeEvents.php" name="lib/LoginTasks/Task/PurgeEvents.php" />
    <install as="kronolith/lib/Prefs/Special/DefaultAlarm.php" name="lib/Prefs/Special/DefaultAlarm.php" />
@@ -1036,6 +1046,7 @@
    <install as="kronolith/migration/20_kronolith_upgrade_timezone.php" name="migration/20_kronolith_upgrade_timezone.php" />
    <install as="kronolith/migration/21_kronolith_upgrade_exceptionutc.php" name="migration/21_kronolith_upgrade_exceptionutc.php" />
    <install as="kronolith/migration/22_kronolith_upgrade_parents.php" name="migration/22_kronolith_upgrade_parents.php" />
+   <install as="kronolith/migration/23_kronolith_upgrade_baseidindex.php" name="migration/23_kronolith_upgrade_baseidindex.php" />
    <install as="kronolith/resources/create.php" name="resources/create.php" />
    <install as="kronolith/resources/delete.php" name="resources/delete.php" />
    <install as="kronolith/resources/edit.php" name="resources/edit.php" />
@@ -2251,6 +2262,91 @@
 * [jan] Fix error editing events if using exotic date formats.
 * [jan] Fix JavaScript error if not showing all events in month view (Jasper Olbrich &lt;Jasper.Olbrich@students.uni-marburg.de&gt;, Bug #13433).
 * [jan] Fix displayed CalDAV URLs for shared calendars in basic view too (piper@hrz.uni-marburg.de, Bug #12380).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.3</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-10-29</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [jan] Export nicer display names for users and resources via WebDAV.
+* [jan] Export custom owner and read-only properties via WebDAV.
+* [jan] Fix finding modification times of shared calendars via WebDAV.
+* [jan] Support time label rotation in week and day views on IE 11.
+* [jan] Fix updating of task list view if no tasks are returned from server.
+* [jan] Fix ordering of sub-tasks.
+* [jan] Send iTip notifications even to attendees that are not required to attend (Bug #13600).
+* [jan] Fix notification and alarm issues if alarm is longer than a day (Bug #13584).
+* [jan] Fix closure compiler errors (Bug #13593).
+* [mjr] Fix checking resource availability when adding multiple resources (Bug #13561).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.4</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-12-03</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [jan] Make access to non-CalDAV remote calendars faster (Bug #12379).
+* [jan] Continue with further events if parsing of one remote event date fails.
+* [jan] Fix JS error in month view with more events today than the maximum threshold.
+* [mjr] Fix fatal error when creating or modifying an entry via PUT.
+* [mjr] Don&apos;t show private event details in daily agenda emails if not the owner (Bug #13660).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.5</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-02-10</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [mjr] Fix generating calendar embed code (Bug #13828).
+* [jan] Don&apos;t wipe out whole calendars when PUTing individual events via WebDAV.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.6</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-04-28</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [jan] Fix building recipient list for event update notifications.
+* [mjr] Honor background color for listTimeObjects API calendars (Bug #13951).
+* [jan] Always sort users in advanced sharing dialog (Bug #13938).
+* [mjr] Fix saving recurring event after a change in resources (Bug #13921).
+* [mjr] Fix creating recurrence exceptions from CalDAV clients.
+* [jan] Added an index to find base events of recurrence exceptions faster.
+* [jan] Fix finding duplicate events by UID.
+* [mjr] Fix updating FB data when start date changes.
+* [mjr] Fix detecting attendees when email address is not lowercase (Bug #13905).
+* [jan] Fix duplicate group names in sharing dialog.
+* [jan] Fix JavaScript error when saving an unselected calendar.
+* [mjr] Fix using custom SQL configuration parameters.
    </notes>
   </release>
  </changelog>
