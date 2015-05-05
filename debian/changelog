@@ -1,9 +1,11 @@
-php-horde-kronolith (4.2.6-1) unstable; urgency=medium
+php-horde-kronolith (4.2.6-1) UNRELEASE; urgency=medium
 
   * Update Standards-Version to 3.9.6, no change
   * New upstream version 4.2.6
+    - Patch 0001-SECURITY-Don-t-show-private-events-in-daily-agenda-e.patch
+      included, dropped
 
- -- Mathieu Parent <sathieu@debian.org>  Tue, 05 May 2015 08:40:24 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Tue, 05 May 2015 08:48:46 +0200
 
 php-horde-kronolith (4.2.2-4) unstable; urgency=medium
 
