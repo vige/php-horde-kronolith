@@ -1,4 +1,4 @@
-php-horde-kronolith (4.2.6-1) UNRELEASE; urgency=medium
+php-horde-kronolith (4.2.6-1) UNRELEASED; urgency=medium
 
   * Update Standards-Version to 3.9.6, no change
   * New upstream version 4.2.6
