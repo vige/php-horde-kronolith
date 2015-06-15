@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.5" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>kronolith</name>
  <channel>pear.horde.org</channel>
  <summary>A web based calendar</summary>
@@ -22,10 +22,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2015-04-28</date>
- <time>21:56:18</time>
+ <date>2015-05-18</date>
+ <time>21:21:46</time>
  <version>
-  <release>4.2.6</release>
+  <release>4.2.7</release>
   <api>4.2.0</api>
  </version>
  <stability>
@@ -34,18 +34,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [jan] Fix building recipient list for event update notifications.
-* [mjr] Honor background color for listTimeObjects API calendars (Bug #13951).
-* [jan] Always sort users in advanced sharing dialog (Bug #13938).
-* [mjr] Fix saving recurring event after a change in resources (Bug #13921).
-* [mjr] Fix creating recurrence exceptions from CalDAV clients.
-* [jan] Added an index to find base events of recurrence exceptions faster.
-* [jan] Fix finding duplicate events by UID.
-* [mjr] Fix updating FB data when start date changes.
-* [mjr] Fix detecting attendees when email address is not lowercase (Bug #13905).
-* [jan] Fix duplicate group names in sharing dialog.
-* [jan] Fix JavaScript error when saving an unselected calendar.
-* [mjr] Fix using custom SQL configuration parameters.
+* [jan] Fix importing iCalendar events via the API (Bug #13975).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -83,11 +72,11 @@
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="6698d2c45541b6fdabbce3cedc9553c3" name="config/menu.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="ed3988c59cce4dcf4b119f984032eccf" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="1e6a5a6c97962a6d85c89faf192dd69a" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="01eb245ed90b212a9a2320a1e1360c1e" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="f9c61be2e3bf0f46be8c3f5bc8e99125" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="e45359c79dd35b070595166af51fc13a" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="44c48fa1fe3a59321836d802b655ce44" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="8151240d72fd67a4fc8d60e304cc39c7" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="cbfb6620d1e2a246ad88506e01b9508f" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
@@ -184,8 +173,8 @@
    <file baseinstalldir="/" md5sum="0044dfbbd24de736fe886d51c7273580" name="lib/View/Year.php" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="c53008ef9f19530b9f142d5ebbbe75e7" name="lib/Ajax.php" role="horde" />
-   <file baseinstalldir="/" md5sum="31408c8e29269269e49e09f76c6605cf" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="733614b00d536964766074c56f909d7a" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e776d855fd241049ed04ccc74b6bf4e3" name="lib/Api.php" role="horde" />
+   <file baseinstalldir="/" md5sum="ddb5abbf634fb54d2a1b8fe31f780007" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="bb4fe968da03ca818b589cf670d60883" name="lib/Calendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="520394cb308ebb578db307be396a91bc" name="lib/CalendarsManager.php" role="horde" />
    <file baseinstalldir="/" md5sum="21dc13240daed72525e8183911455760" name="lib/Day.php" role="horde" />
@@ -205,8 +194,8 @@
    <file baseinstalldir="/" md5sum="bd277b5bdc4445bcbd33b055b494a6f5" name="locale/ca/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="bb22e4082014b049e391c3234a5a39d4" name="locale/ca/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="3079126375897e2a42a71c22a167bb41" name="locale/ca/help.xml" role="horde" />
-   <file baseinstalldir="/" md5sum="7447675b5e43024fe3e88333e57ae06e" name="locale/cs/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="35dc2728011017feadd656ef7a8cd96f" name="locale/cs/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="85eb5e93492a8bd2b4cac3ab86532a40" name="locale/cs/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="a557c933f2b3bfbabd685d57edede2ef" name="locale/cs/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="b3c55b288e06f0b4d0ac0ce05bbaf912" name="locale/da/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="ac8da0f30434317a827d3402d20aa951" name="locale/da/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="a3fbef33dd1b2fd203def90d4be1d834" name="locale/de/LC_MESSAGES/kronolith.mo" role="horde" />
@@ -2347,6 +2336,21 @@
 * [jan] Fix duplicate group names in sharing dialog.
 * [jan] Fix JavaScript error when saving an unselected calendar.
 * [mjr] Fix using custom SQL configuration parameters.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.7</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-05-18</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [jan] Fix importing iCalendar events via the API (Bug #13975).
    </notes>
   </release>
  </changelog>
