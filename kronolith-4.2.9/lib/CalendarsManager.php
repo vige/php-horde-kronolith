@@ -295,6 +295,10 @@ class Kronolith_CalendarsManager
                     ? $pref_val
                     : array();
             }
+
+            // Run through getDisplayExternal to trim any that no longer exist.
+            $this->_getDisplayExternal();
+
             if (empty($conf['holidays']['enable'])) {
                 $this->_displayHolidays = array();
                 $this->_displayHolidaysInternal = array();
@@ -527,7 +531,7 @@ class Kronolith_CalendarsManager
         }
         $prefs->setValue('display_external_cals', serialize($this->_displayExternal));
 
-        return $this->displayExternal;
+        return $this->_displayExternal;
     }
 
     /**
