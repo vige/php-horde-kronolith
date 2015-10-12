@@ -1,8 +1,8 @@
-php-horde-kronolith (4.2.9-2) UNRELEASED; urgency=medium
+php-horde-kronolith (4.2.9-2) unstable; urgency=medium
 
   * Added php5-sqlite depends to phpunit test
 
- -- Mathieu Parent <sathieu@debian.org>  Mon, 12 Oct 2015 08:12:52 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Mon, 12 Oct 2015 08:28:19 +0200
 
 php-horde-kronolith (4.2.9-1) unstable; urgency=medium
 
