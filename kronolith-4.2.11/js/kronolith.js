@@ -6295,6 +6295,16 @@ KronolithCore = {
         row.remove();
     },
 
+    normalizeAttendee: function(attendee)
+    {
+        var pattern = /:(.*);/;
+        var match = pattern.exec(attendee);
+        if (match) {
+           return match[1].split(',');
+        }
+        return [attendee];
+    },
+
     checkOrganizerAsAttendee: function()
     {
         if (HordeImple.AutoCompleter.kronolithEventAttendees.selectedItems.length == 1 &&
@@ -6369,9 +6379,8 @@ KronolithCore = {
         div = new Element('div').setStyle({ position: 'relative', height: td.offsetHeight + 'px' });
         td.insert(div);
         $H(fb.b).each(function(busy) {
-            var from = new Date(), to = new Date(), left;
-            from.setTime(busy.key * 1000);
-            to.setTime(busy.value * 1000);
+            var left, from = Date.parse(busy.key).addSeconds(1),
+            to = Date.parse(busy.value).addSeconds(1);
             if (!end.isAfter(from) || to.isBefore(start)) {
                 return;
             }
