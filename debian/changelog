@@ -2,6 +2,8 @@ php-horde-kronolith (4.2.11-1) UNRELEASED; urgency=medium
 
   * Upgaded to debhelper compat 9
   * New upstream version 4.2.11
+  * copyright: mobile.php does not exists
+  * copyright: No more files under Apache-1.0
 
  -- Mathieu Parent <sathieu@debian.org>  Fri, 23 Oct 2015 06:25:59 +0200
 
