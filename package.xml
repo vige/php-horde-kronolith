@@ -22,10 +22,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2016-02-04</date>
- <time>01:15:46</time>
+ <date>2016-02-17</date>
+ <time>00:15:02</time>
  <version>
-  <release>4.2.13</release>
+  <release>4.2.15</release>
   <api>4.2.0</api>
  </version>
  <stability>
@@ -34,7 +34,8 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [mjr] Add missing EAS ghosted property support for all EAS versions. Prevents potential loss of event data during synchronization.
+* [mjr] Fix typo preventing deletion of events from dynamic view (Bug #14256).
+* [jan] Handle gracefully if the base event of an imported recurrence exception is no longer recurring (Bug #14249).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -72,11 +73,11 @@
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="6698d2c45541b6fdabbce3cedc9553c3" name="config/menu.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="92e183a4ba0e1a9719938ba242fe9014" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c03c0928566e1b687eadc627ec7f6c82" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="445c88fcbdd08dfefa221b592c2a0734" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="2025c8d8ec8bb0d24a8e083afd10982c" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="e45359c79dd35b070595166af51fc13a" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="0e948747808282e8a64c9d1bbf054370" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="2d966e91944db13eaf8d27366466fbce" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="cbfb6620d1e2a246ad88506e01b9508f" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
@@ -85,7 +86,7 @@
    <file baseinstalldir="/" md5sum="ec8512b5926ae5e230105171c8b94a18" name="js/edit.js" role="horde" />
    <file baseinstalldir="/" md5sum="e8f6f4563d14ba194c08fb848994099c" name="js/embed.js" role="horde" />
    <file baseinstalldir="/" md5sum="c23e55a69b82c9b1021ad15950ace623" name="js/goto.js" role="horde" />
-   <file baseinstalldir="/" md5sum="ce7e5a93182ea5da09554231198fc9b9" name="js/kronolith.js" role="horde" />
+   <file baseinstalldir="/" md5sum="f687f8105a62070235b77d72ecea2dec" name="js/kronolith.js" role="horde" />
    <file baseinstalldir="/" md5sum="ea92aabd9e8d4282003ea2d32bc2369e" name="js/smartmobile.js" role="horde" />
    <file baseinstalldir="/" md5sum="0cffaa0f7961298b37e359730fb96fc5" name="js/views.js" role="horde" />
    <file baseinstalldir="/" md5sum="9f9ec8a683963c4a6a5a9d7985c758da" name="lib/Ajax/Application/Handler.php" role="horde" />
@@ -148,7 +149,7 @@
    <file baseinstalldir="/" md5sum="e4b5efb6348adb46b4b31fafbbc6ba18" name="lib/Geo/Mysql.php" role="horde" />
    <file baseinstalldir="/" md5sum="34c6336867b671db5fd0f933de2d90c6" name="lib/Geo/Sql.php" role="horde" />
    <file baseinstalldir="/" md5sum="74fa0771b2d07c437a9d87b05126a5fa" name="lib/Icalendar/Handler/Base.php" role="horde" />
-   <file baseinstalldir="/" md5sum="8c9bd9e3e8096be870cfb1034b879aa9" name="lib/Icalendar/Handler/Dav.php" role="horde" />
+   <file baseinstalldir="/" md5sum="130050f31e63ae632d8639666b15af50" name="lib/Icalendar/Handler/Dav.php" role="horde" />
    <file baseinstalldir="/" md5sum="8c8986405f9259b29560cc9ceef2f7dc" name="lib/LoginTasks/SystemTask/Upgrade.php" role="horde" />
    <file baseinstalldir="/" md5sum="39557e9191e332e10928025400550f41" name="lib/LoginTasks/Task/PurgeEvents.php" role="horde" />
    <file baseinstalldir="/" md5sum="68187bf148c9c9d87bfa90e8ce69523c" name="lib/Prefs/Special/DefaultAlarm.php" role="horde" />
@@ -174,12 +175,12 @@
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="b3a6c34b549bec0b3569cdc9b0fc6699" name="lib/Ajax.php" role="horde" />
    <file baseinstalldir="/" md5sum="e6d4255f711ad69287a5567b4da0172d" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="f50d260f159b22bbbf86b40bd6ce79b6" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="216ad7eb6772fa794f2c2bbece9d9862" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="28a0b220e9a2c24675106404fca63a8e" name="lib/Calendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="13e664dc430e25991e9f81b8bd1dbf8c" name="lib/CalendarsManager.php" role="horde" />
    <file baseinstalldir="/" md5sum="21dc13240daed72525e8183911455760" name="lib/Day.php" role="horde" />
    <file baseinstalldir="/" md5sum="c856e3cbf37ea8e14edff2430b381df5" name="lib/Driver.php" role="horde" />
-   <file baseinstalldir="/" md5sum="4865f966ecb5e6c4a6d6d774ef2bd891" name="lib/Event.php" role="horde" />
+   <file baseinstalldir="/" md5sum="19f49acad3bfb22f8ecfe553d02ee3a2" name="lib/Event.php" role="horde" />
    <file baseinstalldir="/" md5sum="112b1752697b88c48c9626b51f2b85a5" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="a649b661f18514479d909db0bd2e0251" name="lib/FreeBusy.php" role="horde" />
    <file baseinstalldir="/" md5sum="0bd126723b2a15116fef886bd6577c23" name="lib/Kronolith.php" role="horde" />
@@ -2465,6 +2466,38 @@
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * [mjr] Add missing EAS ghosted property support for all EAS versions. Prevents potential loss of event data during synchronization.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.14</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2016-02-11</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [mjr] Fix issue deleting and closing event dialog during event deletion.
+* [mjr] Honor the SCHEDULE-AGENT attribute during CalDAV import.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.15</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2016-02-17</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [mjr] Fix typo preventing deletion of events from dynamic view (Bug #14256).
+* [jan] Handle gracefully if the base event of an imported recurrence exception is no longer recurring (Bug #14249).
    </notes>
   </release>
  </changelog>
