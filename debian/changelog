@@ -1,3 +1,9 @@
+php-horde-kronolith (4.2.15-1) UNRELEASED; urgency=medium
+
+  * New upstream version 4.2.15
+
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 20 Feb 2016 20:10:36 +0100
+
 php-horde-kronolith (4.2.13-1) unstable; urgency=medium
 
   * New upstream version 4.2.13
