@@ -1,3 +1,3 @@
 Tests: phpunit
 Restrictions: needs-recommends
-Depends: @, php5-cli, php-horde-test, php5-sqlite
+Depends: @, php-cli, php-horde-test, php-sqlite
