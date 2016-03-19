@@ -1,8 +1,8 @@
-php-horde-kronolith (4.2.15-3) UNRELEASED; urgency=medium
+php-horde-kronolith (4.2.15-3) unstable; urgency=medium
 
   * Fix debian/tests/control: php-sqlite -> php-sqlite3
 
- -- Mathieu Parent <sathieu@debian.org>  Sat, 19 Mar 2016 23:42:44 +0100
+ -- Mathieu Parent <sathieu@debian.org>  Sun, 20 Mar 2016 00:15:18 +0100
 
 php-horde-kronolith (4.2.15-2) unstable; urgency=medium
 
