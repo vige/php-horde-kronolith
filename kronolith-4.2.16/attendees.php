@@ -44,11 +44,14 @@ case 'add':
         /* Get the requested resource */
         $resource = Kronolith::getDriver('Resource')->getResource($newResource);
 
-        /* Do our best to see what the response will be. Note that this response
-         * is only guarenteed once the event is saved. */
-        $date = new Horde_Date(Horde_Util::getFormData('startdate'));
-        $end = new Horde_Date(Horde_Util::getFormData('enddate'));
-        $response = $resource->getResponse(array('start' => $date, 'end' => $end));
+        /* Do our best to see what the response will be. Note that this
+         * response is only guarenteed once the event is saved. */
+        $event = Kronolith::getDriver()->getEvent();
+        $event->start = new Horde_Date(Horde_Util::getFormData('startdate'));
+        $event->end = new Horde_Date(Horde_Util::getFormData('enddate'));
+        $event->start->setTimezone(date_default_timezone_get());
+        $event->end->setTimezone(date_default_timezone_get());
+        $response = $resource->getResponse($event);
         $resources[$resource->getId()] = array(
             'attendance' => Kronolith::PART_REQUIRED,
             'response'   => $response,
@@ -242,7 +245,11 @@ foreach ($session->get('kronolith', 'attendees', Horde_Session::TYPE_ARRAY) as $
 if (count($resources)) {
     $driver = Kronolith::getDriver('Resource');
     foreach ($resources as $r_id => $resource) {
-        $r = $driver->getResource($r_id);
+        try {
+            $r = $driver->getResource($r_id);
+        } catch (Horde_Exception_NotFound $e) {
+            continue;
+        }
         try {
             $vfb = $r->getFreeBusy(null, null, true);
             if ($resource['attendance'] == Kronolith::PART_REQUIRED) {
