@@ -3286,7 +3286,7 @@ KronolithCore = {
                     $('kronolithCalendar' + type + 'EmbedUrl').enable();
                     if (info.edit) {
                         $('kronolithCalendarinternalImport').enable();
-                        if (info.delete) {
+                        if (info.del) {
                             $('kronolithCalendarinternalImportOver').enable();
                         }
                     }
@@ -4515,6 +4515,8 @@ KronolithCore = {
             case 'kronolithEventSave':
                 if (!elt.disabled) {
                     if ($F('kronolithEventAttendees') && $F('kronolithEventId')) {
+                    this._checkDate($('kronolithEventStartDate'));
+                    this._checkDate($('kronolithEventEndDate'));
                         $('kronolithEventSendUpdates').setValue(0);
                         $('kronolithEventDiv').hide();
                         $('kronolithUpdateDiv').show();
@@ -6511,9 +6513,8 @@ KronolithCore = {
                     end.add(-1).minute();
                 }
             } else if (old) {
-                end.add(1).day();
-                end.setHours(0);
-                end.setMinutes(0);
+                end.setHours(23);
+                end.setMinutes(59);
             }
             $('kronolithEventEndDate').setValue(end.toString(Kronolith.conf.date_format));
             $('kronolithEventEndTime').setValue(end.toString(Kronolith.conf.time_format));
@@ -6694,7 +6695,11 @@ KronolithCore = {
     },
 
     checkDate: function(e) {
-        var elm = e.element();
+        this._checkDate(e.element());
+    },
+
+    _checkDate: function(elm)
+    {
         if ($F(elm)) {
             var date = Date.parseExact($F(elm), Kronolith.conf.date_format) || Date.parse($F(elm));
             if (date) {
