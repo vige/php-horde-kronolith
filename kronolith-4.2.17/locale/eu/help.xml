@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<help>
+
+<entry id="Overview" md5="87838dfdda139b759b17ff9a90506d03" state="uptodate">
+    <title>Kronolith: Ikuspegi orokorra</title>
+    <heading>Zer da Kronolith?</heading>
+    <para>
+    Kronolith webean oinarritutako egutegi-aplikazio bat da.  
+	Gertaerak sortzeko, aldatzeko eta ezabatzeko beharrezko funtzioez gain, hainbat gaitasun ditu: 
+	interfaz dinamikoa eta mugikorrentzako interfazea, CalDAV bezeroak, egutegi partekatuak,
+    urruneko egutegiak, gonbidapenen kudeaketa (iCalendar/iTip), libre/lanpetuta kudeaketa, 
+	baliabideen kudeaketa, alarmak, gertaera errepikakorrak, zereginak (zereginen zerrenda instalatuta badago),
+    inportatzeko eta esportatzeko aukerak (iCalendar eta CSV formatuetan) eta hainbat egutegi-ikuspegi desberdin.
+    </para>
+</entry>
+
+<entry id="menu-new-event" md5="d70ad8cf270fe00db71b5c9201ba7674" state="uptodate">
+    <title>Menua: Gertaera berria</title>
+    <para>
+    "Gertaera berria" menu-elementuaren bidez, gertaera berri bat jar dezakezu egutegian.
+    </para>
+</entry>
+
+<entry id="menu-Day" md5="651d2f4472a27424570f7a6f49f1509e" state="uptodate">
+    <title>Menua: Eguna</title>
+    <para>
+    "Eguna" fitxak hautatutako egunaren egun-ikuspegia bistaratuko du.
+    </para>
+</entry>
+
+<entry id="menu-work-week" md5="cdabfbbc37efedffce6df978d2341013" state="uptodate">
+    <title>Menua: Lan-astea</title>
+    <para>
+    "Lan-astea" fitxak hautatutako egunari dagokion lan-astearen ikuspegia (astelehenetik ostiralera) bistaratuko du.
+    </para>
+</entry>
+
+<entry id="menu-week" md5="68272524cd1a24467e1705cc0f7ac9aa" state="uptodate">
+    <title>Menua: Astea</title>
+    <para>
+    "Astea" fitxak hautatuko egunari dagokion aste-ikuspegia bistaratuko du (7 eguneko ikuspegia).
+    </para>
+</entry>
+
+<entry id="menu-month" md5="a051d66aa42e6d87ea72e6a429895664" state="uptodate">
+    <title>Menua: Hilabetea</title>
+    <para>
+    "Hilabetea" fitxak hautatutako egunari dagokion hilabetearen hilabete-ikuspegia bistaratuko du.
+    </para>
+</entry>
+
+<entry id="menu-prefs" md5="e0b261737d69a2a9a553d5b6578b3f78" state="uptodate">
+    <title>Menua: Hobespenak</title>
+    <para>
+    "Hobespenak" menu-elementuaren bidez, Kronolith-en itxura eta izaera kontrolatzen duten hobespenak ezar ditzakezu. Baita Kronolith-ek interakzioa Horde-rekin eta bestelako Horde aplikazioekin ere.
+    </para>
+</entry>
+
+<entry id="caldav" state="uptodate" md5="c359379f161df34da7cb8e924f1648e9">
+    <title>CalDAV Clients</title>
+    <para>
+    CalDAV clients can directly access the internal calendars (and task lists)
+    of Kronolith. External calendars like events provided by other applications
+    or remote calendars are not provided to CalDAV clients.
+    </para>
+    <para>
+    How to configure access to the calendars and which CalDAV URLs to use
+    depends on the client. Below are a few examples on how to access CalDAV
+    resources from common calendar clients:
+    </para>
+    <heading>Thunderbird/Lightning</heading>
+    <para>
+    Lightning, the calendar add-on to Thunderbird, requires to subscribe to
+    each CalDAV calendar individually. In the "File" menu choose
+    "New", then "Calendar". In the following dialogs choose
+    "On the Network", then "CalDAV". Copy the "CalDAV
+    Subscription URL" from the "Subscription" tab of Kronolith's
+    calendar dialog into the "Location" field.
+    </para>
+    <heading>Apple iCal</heading>
+    <para>
+    CalDAV servers can be added in the "Preferences" dialog, at the
+    "Accounts" tab. Click on the "+" button and choose
+    "CalDAV" as the "Account Type" in the upcoming
+    dialog. Enter your user name and password into the correct fields. Copy the
+    "CalDAV Account URL" from the "Subscription" tab of
+    Kronolith's calendar dialog into iCal's "Server Address" field.
+    </para>
+    <heading>Evolution</heading>
+    <para>
+    Evolution requires to subscribe to each CalDAV calendar individually. In
+    the "File" menu choose "New", then
+    "Calendar". Choose "CalDAV" as the "Type" in
+    the upcoming dialog. Copy the server name of the "CalDAV Subscription
+    URL" from the "Subscription" tab of Kronolith's calendar
+    dialog into the "Server" field. Copy the path of the URL to the
+    "Path" field. E.g. if your Subscription URL is
+    "http://www.example.com/rpc/calendars/user/calendar:xyz/", then
+    copy "www.example.com" to the "Server" field and
+    "/rpc/calendars/user/calendar:xyz/" to the path field.
+    </para>
+</entry>
+
+<entry id="menu-import-export" md5="c49df861ba74b6db8160ee14bd9723ea" state="uptodate">
+    <title>Menua: Inportatu/Esportatu</title>
+    <para>
+    "Inportatu/Esportatu" menu-elementuaren bidez (oinarrizko moduan) edo "Inportatu" eta "Esportatu" fitxen bidez ikuspegi dinamikoan, egutegi-gertaerak inporta edo esporta ditzakezu.  
+	CSV, Microsoft Outlook, edo vCalendar/iCalendar formatuak erabili daitezke ikuspegi moduaren arabera.
+    </para>
+</entry>
+
+<entry id="alarms" md5="5c9210cbe0ebe009d8ed364733114679" state="uptodate">
+    <title>Alarmak</title>
+    <para>
+    Kronolith-ek egutegi bateko gertaeretarako alarmak sor ditzake.  
+	Alarma edozein denbora-bitartetan jotzeko ezar daiteke (gertaera bakoitzeko).
+    </para>
+</entry>
+
+<entry id="recurring-events" md5="706687c15d60c1b7201819a07c6d2df7" state="uptodate">
+    <title>Gertaera errepikakorrak</title>
+    <para>
+    Gertaerak hainbat modutara errepika daitezke. Gertaera asko modu jakin batzuetan errepikatzen dira. 
+	Adibidez, "Hilero" errepikatze motarekin hautatutako elementua hilero errepikatzen da eta 
+	"Astero" errepikatze motarekin hautatutako elementua astero errepikatzen da. 
+	Horiek erabil daitezke modu konplexuan errepikatzen diren gertaerak adierazteko. 
+	Adibidez, hil bakoitzeko hirugarren ostiralean gertatzen den elementu bat edo astero astelehenean, 
+	asteazkenean eta ostiralean gertatzen den elementu bat adierazteko.
+    </para>
+    <para>
+    Gertaera bat noiz arte errepikatu behar den ere muga dezakezu, bukaera data aukeratuz edo zenbat aldiz errepikatu behar den zehaztuz.
+    </para>
+    <para>
+    Normalean, gertaera errepikakor batean aldaketaren bat egiten bada gertaera horren aldi guztietan aplikatzen da. 
+	Gertaera errepikakor baten agerraldi bat aldi hori editatuta alda daiteke, bere errepikatze-informazioa kenduz eta Errepikatze-menuko "Gorde berria bezala" aukeratuz. 
+	Horrela, hautatutako gertaera alda dezakezu, gainerakoetan inolako eraginik izan gabe.
+    </para>
+</entry>
+
+<entry id="embed" md5="a26733fab6cbfca5fa1b5052da7ca7b6" state="uptodate">
+  <title>Kapsulatu</title>
+  <para>
+    Egutegien ikuspegi txikiak kapsula ditzakezu kanpoko webguneetan.
+    Horde-ren atarian jar ditzakezun ikuspegi berdinak kapsula ditzakezu. 
+	Ikuspegi bakoitza kanpoko blog edo webgune batean kapsulatzeko erabili beharreko 
+	kodearen adibide batzuk bildu dira hemen. 
+	Gero zuk kodea editatu beharko duzu noski, zerbitzari-helbide eta egutegi-izen egokiak jartzeko.  
+	'Container' (edukitzailea) parametroa arbitrarioa da, baina bat etorri behar du div elementuaren DOM id-arekin 
+	eta gainera bakarra izan behar du kapsulatzen ari zaren orri osoan.
+  </para>
+  <para>
+    Uneko hilabetearen hileko ikuspegi txiki bat kapsulatzeko:
+  </para>
+  <raw>
+    &lt;div id="kronolithCal"&gt;&lt;/div&gt;&lt;script
+    src="http://hostname.example.com/horde/services/ajax.php/kronolith/embed?
+    container=kronolithCal&amp;amp;view=Monthlist"type="text/javascript"&gt;
+    &lt;/script&gt;
+  </raw>
+  <para>
+    Hurrengo gertaeren ikuspegi bat kapsulatzeko (kontuan izan 'months' eta 'maxevents' parametroak):
+  </para>
+  <raw>
+    &lt;div id="kronolist"&gt;&lt;/div&gt;&lt;script
+    src="http://hostname.example.com/horde/services/ajax.php/kronolith/embed?
+    view=Monthlist&amp;calendar=calendar_name&amp;container=kronolist&amp;
+    months=2&amp;maxevents=10" type="text/javascript"&gt;
+    &lt;/script&gt;
+  </raw>
+  <para>
+    Laburpen-ikuspegi bat kapsulatzeko:
+  </para>
+  <raw>
+    &lt;div id="kronosummary"&gt;
+    &lt;/div&gt;&lt;script type="text/javascript"
+    src="http://hostname.example.com/horde/services/ajax.php/kronolith/embed?
+    container=kronosummary&amp;view=Summary&amp;calendar=calendar_name
+    "&gt;&lt;/script&gt;
+  </raw>
+</entry>
+</help>
