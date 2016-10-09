@@ -3385,7 +3385,7 @@ KronolithCore = {
             } else {
                 $('kronolithC' + type + 'PGedit_' + group).setValue(0);
             }
-            $('kronolithC' + type + 'PGdelete_' + group).setValue(0);
+            $('kronolithC' + type + 'PGdel_' + group).setValue(0);
             if ($('kronolithC' + type + 'PGdelegate_' + group)) {
                 $('kronolithC' + type + 'PGdelegate_' + group).setValue(0);
             }
@@ -3401,7 +3401,9 @@ KronolithCore = {
             var users = $F('kronolithC' + type + 'PUList').strip();
             users = users ? users.split(/,\s*/) : [];
             users.each(function(user) {
-                this.insertGroupOrUser(type, 'user', user, true);
+                if (!this.insertGroupOrUser(type, 'user', user, true)) {
+                    return;
+                }
                 $('kronolithC' + type + 'PUshow_' + user).setValue(1);
                 $('kronolithC' + type + 'PUread_' + user).setValue(1);
                 if ($F('kronolithC' + type + 'PUPerms') == 'edit') {
@@ -3409,7 +3411,7 @@ KronolithCore = {
                 } else {
                     $('kronolithC' + type + 'PUedit_' + user).setValue(0);
                 }
-                $('kronolithC' + type + 'PUdelete_' + user).setValue(0);
+                $('kronolithC' + type + 'PUdel_' + user).setValue(0);
                 if ($('kronolithC' + type + 'PUdelegate_' + user)) {
                     $('kronolithC' + type + 'PUdelegate_' + user).setValue(0);
                 }
@@ -3457,7 +3459,9 @@ KronolithCore = {
             case 'groups':
                 if (!Object.isArray(perm.value)) {
                     $H(perm.value).each(function(group) {
-                        this.insertGroupOrUser(type, 'group', group.key);
+                        if (!this.insertGroupOrUser(type, 'group', group.key)) {
+                            return;
+                        }
                         if (!$('kronolithC' + type + 'PGshow_' + group.key)) {
                             // Group doesn't exist anymore.
                             delete perm.value[group.key];
@@ -3480,7 +3484,9 @@ KronolithCore = {
                 if (!Object.isArray(perm.value)) {
                     $H(perm.value).each(function(user) {
                         if (user.key != Kronolith.conf.user) {
-                            this.insertGroupOrUser(type, 'user', user.key);
+                            if (!this.insertGroupOrUser(type, 'user', user.key)) {
+                                return;
+                            }
                             if (!$('kronolithC' + type + 'PUshow_' + user.key)) {
                                 // User doesn't exist anymore.
                                 delete perm.value[user.key];
@@ -3672,6 +3678,8 @@ KronolithCore = {
      *                             Defaults to the value of the drop down.
      * @param stay_basic boolean   Enforces to NOT switch to the advanced
      *                             permissions screen.
+     *
+     * @return boolean  Whether a row has been inserted.
      */
     insertGroupOrUser: function(type, what, id, stay_basic)
     {
@@ -3681,7 +3689,10 @@ KronolithCore = {
         }
         var value = elm.getValue();
         if (!value) {
-            return;
+            if (id) {
+                HordeCore.notify(Kronolith.text.invalid_user + ': ' + id, 'horde.error');
+            }
+            return false;
         }
 
         var tr = elm.up('tr'),
@@ -3710,6 +3721,8 @@ KronolithCore = {
         if (!stay_basic) {
             this.activateAdvancedPerms(type);
         }
+
+        return true;
     },
 
     /**
@@ -4514,9 +4527,9 @@ KronolithCore = {
 
             case 'kronolithEventSave':
                 if (!elt.disabled) {
-                    if ($F('kronolithEventAttendees') && $F('kronolithEventId')) {
                     this._checkDate($('kronolithEventStartDate'));
                     this._checkDate($('kronolithEventEndDate'));
+                    if ($F('kronolithEventAttendees') && $F('kronolithEventId')) {
                         $('kronolithEventSendUpdates').setValue(0);
                         $('kronolithEventDiv').hide();
                         $('kronolithUpdateDiv').show();
@@ -6440,6 +6453,10 @@ KronolithCore = {
 
     fbStartDateOnChange: function()
     {
+        if (!$F('kronolithEventStartDate')) {
+          this._checkDate($('kronolithEventStartDate'));
+          return;
+        }
         this.fbStartDateHandler(Date.parseExact($F('kronolithEventStartDate'), Kronolith.conf.date_format));
     },
 
@@ -6709,6 +6726,9 @@ KronolithCore = {
                 HordeCore.notify(Kronolith.text.wrong_date_format.interpolate({ wrong: $F(elm), right: new Date().toString(Kronolith.conf.date_format) }), 'horde.warning');
                 this.wrongFormat.set(elm.id, true);
             }
+        } else {
+            HordeCore.notify(Kronolith.text.wrong_date_format.interpolate({ wrong: $F(elm), right: new Date().toString(Kronolith.conf.date_format) }), 'horde.warning');
+            this.wrongFormat.set(elm.id, true);
         }
     },
 
@@ -6772,6 +6792,9 @@ KronolithCore = {
         }
         if (!date) {
             date = end;
+        }
+        if (!date) {
+            return;
         }
         if (start.isAfter(end)) {
             $('kronolithEventStartDate').setValue(date.toString(Kronolith.conf.date_format));
