@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.10.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>kronolith</name>
  <channel>pear.horde.org</channel>
  <summary>A web based calendar</summary>
@@ -22,10 +22,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2016-07-01</date>
- <time>19:01:13</time>
+ <date>2016-09-06</date>
+ <time>18:11:52</time>
  <version>
-  <release>4.2.17</release>
+  <release>4.2.18</release>
   <api>4.2.0</api>
  </version>
  <stability>
@@ -34,12 +34,12 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [jan] Update Portuguese translation.
-* [jan] Update Basque translation.
-* [mjr] Fix issue where it is possible to save an event with an empty start or end date on some browsers.
-* [mjr] Require Horde_Perms::DELETE for including a calendar as sync-able.
-* [mjr] Fix end date when toggling an all day event off (Bug #13979).
-* [jan] Fix showing error message if loading of remote calendars failed.
+* [mjr] Fix potential memory issue with really long events (Bug #14453).
+* [mjr] Fix setting DELETE permissions (Bug #14447).
+* [mjr] More fixes and improvements related to preventing empty date values.
+* [jan] Fix losing shared users when adding invalid user name (Bug #14415).
+* [mjr] Fix displaying tag search results (Bug #14412).
+* [jan] Fix sender of event change notification messages.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -77,11 +77,11 @@
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="6698d2c45541b6fdabbce3cedc9553c3" name="config/menu.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="0d1d837f3f37ee452441071c26b2223b" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="53dfc85a64f54087ab5f353cd74fcaa4" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="436f473b2f0705958d5e924e029b43cf" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="960263aa4d0e68f80869541c47bd6ff9" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="e45359c79dd35b070595166af51fc13a" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="0eb03cc58ecdc4728b8055f6399bc658" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="332835bcd6fc648de815a80bf1f9e51b" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="cbfb6620d1e2a246ad88506e01b9508f" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
@@ -90,7 +90,7 @@
    <file baseinstalldir="/" md5sum="ec8512b5926ae5e230105171c8b94a18" name="js/edit.js" role="horde" />
    <file baseinstalldir="/" md5sum="e8f6f4563d14ba194c08fb848994099c" name="js/embed.js" role="horde" />
    <file baseinstalldir="/" md5sum="c23e55a69b82c9b1021ad15950ace623" name="js/goto.js" role="horde" />
-   <file baseinstalldir="/" md5sum="4acf3eaf1a081dfff57d250867c711d9" name="js/kronolith.js" role="horde" />
+   <file baseinstalldir="/" md5sum="e9d09d9f28058363b028e565d8fc6778" name="js/kronolith.js" role="horde" />
    <file baseinstalldir="/" md5sum="ea92aabd9e8d4282003ea2d32bc2369e" name="js/smartmobile.js" role="horde" />
    <file baseinstalldir="/" md5sum="0cffaa0f7961298b37e359730fb96fc5" name="js/views.js" role="horde" />
    <file baseinstalldir="/" md5sum="506382ac8a19560aa5fea52f4211f27a" name="lib/Ajax/Application/Handler.php" role="horde" />
@@ -177,17 +177,17 @@
    <file baseinstalldir="/" md5sum="1004ef070b610a6fad0f973c48c9a964" name="lib/View/WorkWeek.php" role="horde" />
    <file baseinstalldir="/" md5sum="0044dfbbd24de736fe886d51c7273580" name="lib/View/Year.php" role="horde" />
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="4df32783260b598761012e6217a801f6" name="lib/Ajax.php" role="horde" />
+   <file baseinstalldir="/" md5sum="6606208cd65894a94523f64bae4541d7" name="lib/Ajax.php" role="horde" />
    <file baseinstalldir="/" md5sum="e6d4255f711ad69287a5567b4da0172d" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="d1d4ccac167c5d9143eb641d80b135ea" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="5015dc109b3824dcfa8c3bcb3b1b1dc8" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="28a0b220e9a2c24675106404fca63a8e" name="lib/Calendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="13e664dc430e25991e9f81b8bd1dbf8c" name="lib/CalendarsManager.php" role="horde" />
    <file baseinstalldir="/" md5sum="21dc13240daed72525e8183911455760" name="lib/Day.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c856e3cbf37ea8e14edff2430b381df5" name="lib/Driver.php" role="horde" />
-   <file baseinstalldir="/" md5sum="19f49acad3bfb22f8ecfe553d02ee3a2" name="lib/Event.php" role="horde" />
+   <file baseinstalldir="/" md5sum="318bcf52dbb540d1a73767470007c048" name="lib/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="34b18f327c9310cfa7d25347caba4aeb" name="lib/Event.php" role="horde" />
    <file baseinstalldir="/" md5sum="112b1752697b88c48c9626b51f2b85a5" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="a649b661f18514479d909db0bd2e0251" name="lib/FreeBusy.php" role="horde" />
-   <file baseinstalldir="/" md5sum="19111bc2e882a6a2bd857ce9f6c2911e" name="lib/Kronolith.php" role="horde" />
+   <file baseinstalldir="/" md5sum="38ebb157df12580d6ee0b23a886ca215" name="lib/Kronolith.php" role="horde" />
    <file baseinstalldir="/" md5sum="6b3029131e0540519353b5ece0ee1529" name="lib/Resource.php" role="horde" />
    <file baseinstalldir="/" md5sum="da3de1aeeb14284aa70f776f255588a0" name="lib/Storage.php" role="horde" />
    <file baseinstalldir="/" md5sum="3b035d2df26c0fbea574365454b785e4" name="lib/Tagger.php" role="horde" />
@@ -203,8 +203,8 @@
    <file baseinstalldir="/" md5sum="5a487ccb66b5a5a8c4a071bbc460ec9a" name="locale/cs/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="b3c55b288e06f0b4d0ac0ce05bbaf912" name="locale/da/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="867d2e0122a78bdad2d949526e74f2c3" name="locale/da/LC_MESSAGES/kronolith.po" role="horde" />
-   <file baseinstalldir="/" md5sum="96ad6b5f4e8a6cec60045f561756ba79" name="locale/de/LC_MESSAGES/kronolith.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="5047e269d3dbc99f0390e725ce07d49d" name="locale/de/LC_MESSAGES/kronolith.po" role="horde" />
+   <file baseinstalldir="/" md5sum="0516f6be8f7ddfcce6c2b394ae3bc404" name="locale/de/LC_MESSAGES/kronolith.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="fb1cc9167ad0a6266371ac3e1df0e199" name="locale/de/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="02420864253bdc3e5459b9cdfa0e0aa0" name="locale/de/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="981659e1e23ec572a40d6a99fdbf9467" name="locale/el/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="95b2e8f17e77d1f097e49ba7bbd30be3" name="locale/el/LC_MESSAGES/kronolith.po" role="horde" />
@@ -273,7 +273,7 @@
    <file baseinstalldir="/" md5sum="88cc011b460b563a205b158de458c1b0" name="locale/zh_TW/LC_MESSAGES/kronolith.mo" role="horde" />
    <file baseinstalldir="/" md5sum="98b7b0057da69e3669e7c1eca4885e90" name="locale/zh_TW/LC_MESSAGES/kronolith.po" role="horde" />
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="locale/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="0259eb3ae61f633090e3c356bba890df" name="locale/kronolith.pot" role="horde" />
+   <file baseinstalldir="/" md5sum="86502d8a5a9a843cf59da66b88bf27c7" name="locale/kronolith.pot" role="horde" />
    <file baseinstalldir="/" md5sum="e9b77aaab4250e1b3e605fa2ed9c5130" name="migration/1_kronolith_base_tables.php" role="horde" />
    <file baseinstalldir="/" md5sum="60df8e45dd23a31fd7f4b9fc0b06ec83" name="migration/2_kronolith_upgrade_autoincrement.php" role="horde" />
    <file baseinstalldir="/" md5sum="2f4221c3a7c14b8c5c191c0c3ac9f0d4" name="migration/3_kronolith_upgrade_addallday.php" role="horde" />
@@ -311,7 +311,7 @@
    <file baseinstalldir="/" md5sum="1f71d53ce869c7f4975f6f54d433d6ef" name="templates/alarm/mail.plain.php" role="horde" />
    <file baseinstalldir="/" md5sum="b233907eec7e701197ace3d30ab77938" name="templates/attendees/attendees.inc" role="horde" />
    <file baseinstalldir="/" md5sum="87c407ef20229b4d5d32028e5d63756a" name="templates/chunks/calendar.php" role="horde" />
-   <file baseinstalldir="/" md5sum="316335cd17e2d3eb5a4645c70af41afb" name="templates/chunks/permissions.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="77f67ee028d3779eba7e3e82626cd1af" name="templates/chunks/permissions.inc" role="horde" />
    <file baseinstalldir="/" md5sum="09bb444a667fa8455f69a8c0bf899e59" name="templates/contacts/contacts.inc" role="horde" />
    <file baseinstalldir="/" md5sum="8eb9e8ea450a8005f5939f59c212c5bb" name="templates/data/export.inc" role="horde" />
    <file baseinstalldir="/" md5sum="02d0008b71af44971b7bdfeb82b4e18e" name="templates/data/import.inc" role="horde" />
@@ -403,7 +403,7 @@
    <file baseinstalldir="/" md5sum="fbe4252ae686d7a73d94512be32e7f23" name="test/Kronolith/phpunit.xml" role="test" />
    <file baseinstalldir="/" md5sum="5c4d510acea4006b99e09cf90fdd8a54" name="test/Kronolith/TestCase.php" role="test" />
    <file baseinstalldir="/" md5sum="14246186bdebe681ed9247b94f807a3b" name="themes/default/block/screen.css" role="horde" />
-   <file baseinstalldir="/" md5sum="b416306d8b6e857e423778d485ad8a52" name="themes/default/dynamic/screen.css" role="horde" />
+   <file baseinstalldir="/" md5sum="e14ad83b6496b7b1276567125ff4c4a2" name="themes/default/dynamic/screen.css" role="horde" />
    <file baseinstalldir="/" md5sum="2071381d03bc98e33f908ef949745a85" name="themes/default/graphics/alerts/alarm.png" role="horde" />
    <file baseinstalldir="/" md5sum="51302debbb7a622e1ef238eb6cf50979" name="themes/default/graphics/alerts/error.png" role="horde" />
    <file baseinstalldir="/" md5sum="e464deee6a08b43d45f6bda768484248" name="themes/default/graphics/alerts/message.png" role="horde" />
@@ -2539,6 +2539,26 @@
 * [mjr] Require Horde_Perms::DELETE for including a calendar as sync-able.
 * [mjr] Fix end date when toggling an all day event off (Bug #13979).
 * [jan] Fix showing error message if loading of remote calendars failed.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.18</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2016-09-06</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [mjr] Fix potential memory issue with really long events (Bug #14453).
+* [mjr] Fix setting DELETE permissions (Bug #14447).
+* [mjr] More fixes and improvements related to preventing empty date values.
+* [jan] Fix losing shared users when adding invalid user name (Bug #14415).
+* [mjr] Fix displaying tag search results (Bug #14412).
+* [jan] Fix sender of event change notification messages.
    </notes>
   </release>
  </changelog>

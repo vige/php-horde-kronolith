@@ -322,6 +322,16 @@ class Kronolith
             $timezone = date_default_timezone_get();
         }
 
+        // If we are adding coverDates, but have no $endDate, default to
+        // +5 years from $startDate. This protects against hitting memory
+        // limit and other issues due to extremely long loops if a single event
+        // was added with a duration of thousands of years while still
+        // providing for reasonable alarm trigger times.
+        if ($coverDates && empty($endDate)) {
+            $endDate = clone $startDate;
+            $endDate->year += 5;
+        }
+
         if ($event->recurs() && $showRecurrence) {
             /* Recurring Event. */
 
@@ -364,7 +374,7 @@ class Kronolith
                                                       $event->start->month,
                                                       $event->start->mday)) {
                     if ($coverDates) {
-                        self::addCoverDates($results, $event, $event->start, $event->end, $json);
+                        self::addCoverDates($results, $event, $event->start, $event->end, $json, $endDate);
                     } else {
                         $results[$event->start->dateString()][$event->id] = $json ? $event->toJson() : $event;
                     }
@@ -406,7 +416,7 @@ class Kronolith
                     $addEvent->start = $addEvent->originalStart = $next;
                     $addEvent->end = $addEvent->originalEnd = $nextEnd;
                     if ($coverDates) {
-                        self::addCoverDates($results, $addEvent, $next, $nextEnd, $json);
+                        self::addCoverDates($results, $addEvent, $next, $nextEnd, $json, $endDate);
                     } else {
                         $addEvent->start = $next;
                         $addEvent->end = $nextEnd;
@@ -519,7 +529,8 @@ class Kronolith
                 $loopDate = new Horde_Date(array('month' => $eventStart->month,
                                                  'mday' => $i,
                                                  'year' => $eventStart->year));
-                while ($loopDate->compareDateTime($eventEnd) <= 0) {
+                while ($loopDate->compareDateTime($eventEnd) <= 0 &&
+                       $loopDate->compareDateTime($endDate) <=0) {
                     if (!$allDay ||
                         $loopDate->compareDateTime($eventEnd) != 0) {
                         $addEvent = clone $event;
@@ -571,13 +582,16 @@ class Kronolith
      * @param Horde_Date $eventEnd    The event's end at the actual recurrence.
      * @param boolean $json           Store the results of the events' toJson()
      *                                method?
+     * @param Horde_Date $endDate     The ending date of the current view.
      */
     static public function addCoverDates(&$results, $event, $eventStart,
-                                         $eventEnd, $json)
+                                         $eventEnd, $json, Horde_Date $endDate = null)
     {
         $loopDate = new Horde_Date($eventStart->year, $eventStart->month, $eventStart->mday);
         $allDay = $event->isAllDay();
-        while ($loopDate->compareDateTime($eventEnd) <= 0) {
+        $endDate = empty($endDate) ? $eventEnd : $endDate;
+        while ($loopDate->compareDateTime($eventEnd) <= 0 &&
+               $loopDate->compareDateTime($endDate) <= 0) {
             if (!$allDay ||
                 $loopDate->compareDateTime($eventEnd) != 0) {
                 $addEvent = clone $event;
@@ -649,6 +663,11 @@ class Kronolith
                 }
             }
         } else {
+            // Don't include any results that are outside the query range.
+            if ((!empty($query->end) && $event->start->after($query->end)) ||
+                (!empty($query->start) && $event->end->before($query->start))) {
+                return;
+            }
             $eventStart = $event->start;
             $eventEnd = $event->end;
         }
@@ -2093,7 +2112,7 @@ class Kronolith
         }
 
         $senderIdentity = $injector->getInstance('Horde_Core_Factory_Identity')
-            ->create($event->creator ?: $owner);
+            ->create($registry->getAuth() ?: $event->creator ?: $owner);
 
         foreach ($share->listUsers(Horde_Perms::READ) as $user) {
             if (empty($recipients[$user])) {
