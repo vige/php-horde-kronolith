@@ -1,4 +1,15 @@
 -------
+v4.2.19
+-------
+
+[mjr] Fix allowing ics import on when user has edit permissions on a shared
+      calendar (Bug #14501).
+[jan] Disallow setting of creator permissions too if sharing with world is
+      disabled.
+[jan] Split shared users by linebreaks too.
+
+
+-------
 v4.2.18
 -------
 
