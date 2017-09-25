@@ -2965,7 +2965,9 @@ class Kronolith
             $uids = array();
             foreach ($events as $dayevents) {
                 foreach ($dayevents as $event) {
-                    $uids[] = $event->uid;
+                    if (!$event->baseid) {
+                        $uids[] = $event->uid;
+                    }
                 }
             }
             foreach ($uids as $uid) {
@@ -3000,9 +3002,12 @@ class Kronolith
     }
 
     /**
-     * Export an event to a timeslice.
+     * Exports an event to a timeslice.
      *
      *
+     * @param Kronolith_Event $event  An event.
+     * @param integer $type           A job type ID.
+     * @param string $client          A client ID.
      */
     static public function toTimeslice(Kronolith_Event $event, $type, $client)
     {
