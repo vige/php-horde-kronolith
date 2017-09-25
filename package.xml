@@ -22,10 +22,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2017-08-01</date>
- <time>13:15:24</time>
+ <date>2017-09-19</date>
+ <time>17:02:34</time>
  <version>
-  <release>4.2.22</release>
+  <release>4.2.23</release>
   <api>4.2.0</api>
  </version>
  <stability>
@@ -34,10 +34,10 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [jan] SECURITY: Fix open redirects.
-* [mjr] Prevent broken iCalendar files from causing fatal errors (Bug #14672).
-* [jan] Work around calendar servers advertising as CalDAV-capable, but ignoring CalDAV requests (Bug #14662).
-* [jan] Fix displaying yesterday&apos;s event in Prior Events portal block (admin@layertec.de, Bug #14638).
+* [jan] Officially support PHP 7.
+* [jan] Fix time offsets when importing CSV data with two-digit years.
+* [jan] Fix updating and deleting events from external CalDAV servers (martin1@k0k.net, Bug #14021).
+* [jan] Fix exporting multiple tags to iCalendar CATEGORIES (Bug #14057).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -75,11 +75,11 @@
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="cc925cfc3723e48c44bb90247500a39c" name="config/menu.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="6d6f41c2d0249afbbf56d2da74fb480a" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="6fc12900c34f12ceb04125834fa6009a" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="5e40e99b1f05475f808c087836dc0255" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="960263aa4d0e68f80869541c47bd6ff9" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="e45359c79dd35b070595166af51fc13a" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="1b9761a1285e134ee9726f71a12954c0" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="5d30cc197c13d0c655a3f00e571e5f0a" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="cbfb6620d1e2a246ad88506e01b9508f" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
@@ -113,7 +113,7 @@
    <file baseinstalldir="/" md5sum="c6a508e34e35078c306b9b455bd26694" name="lib/Driver/Resource/Sql.php" role="horde" />
    <file baseinstalldir="/" md5sum="def0b1eac5207ff2d868f59e629116cb" name="lib/Driver/Holidays.php" role="horde" />
    <file baseinstalldir="/" md5sum="2624ba4eccee2e5b6efefcaf9ea3d389" name="lib/Driver/Horde.php" role="horde" />
-   <file baseinstalldir="/" md5sum="ce267731991f14093d6e967eccbfc3c3" name="lib/Driver/Ical.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8429c13eb4edc8eb6825d98091889276" name="lib/Driver/Ical.php" role="horde" />
    <file baseinstalldir="/" md5sum="241634ce1d25c784636c2f9e7f2b9d2a" name="lib/Driver/Kolab.php" role="horde" />
    <file baseinstalldir="/" md5sum="3f58e9e63ffc7a4238d0f387691fb989" name="lib/Driver/Mock.php" role="horde" />
    <file baseinstalldir="/" md5sum="d3f2692e51ec606f1ca398d83589d5e4" name="lib/Driver/Sql.php" role="horde" />
@@ -177,15 +177,15 @@
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="1ddeb9d9dcd5ef14835ee79b29e556bb" name="lib/Ajax.php" role="horde" />
    <file baseinstalldir="/" md5sum="e6d4255f711ad69287a5567b4da0172d" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="96f43c3da212ba42f820879562f5fc74" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="ff010af449ef161553ff3256027439eb" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="731667aca354d1f0712aea2c1134122b" name="lib/Calendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="8cc418604f8867c1e9d48e96a38938b4" name="lib/CalendarsManager.php" role="horde" />
    <file baseinstalldir="/" md5sum="21dc13240daed72525e8183911455760" name="lib/Day.php" role="horde" />
-   <file baseinstalldir="/" md5sum="781d1f6e41b634250080188ff8f5cd03" name="lib/Driver.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c693442b57b71c0f0a4c1b88bda7f5fc" name="lib/Event.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d637687e0c4a5b9fd494f1fc7d2cfed8" name="lib/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="2591131058b37e3a481e36851e23fa62" name="lib/Event.php" role="horde" />
    <file baseinstalldir="/" md5sum="18557bf524191ac05b4097671a0de1b0" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="a649b661f18514479d909db0bd2e0251" name="lib/FreeBusy.php" role="horde" />
-   <file baseinstalldir="/" md5sum="9e93361e17676bc0d19f7f9d6b86951b" name="lib/Kronolith.php" role="horde" />
+   <file baseinstalldir="/" md5sum="a25020eb45d3c199d194d01371106dd9" name="lib/Kronolith.php" role="horde" />
    <file baseinstalldir="/" md5sum="fb60202b07cbfdbd8f27768694fa01b1" name="lib/Resource.php" role="horde" />
    <file baseinstalldir="/" md5sum="da3de1aeeb14284aa70f776f255588a0" name="lib/Storage.php" role="horde" />
    <file baseinstalldir="/" md5sum="9a37ec8db9bc8f4566d06967edce5d04" name="lib/Tagger.php" role="horde" />
@@ -504,8 +504,8 @@
   <required>
    <php>
     <min>5.3.0</min>
-    <max>6.0.0alpha1</max>
-    <exclude>6.0.0alpha1</exclude>
+    <max>8.0.0alpha1</max>
+    <exclude>8.0.0alpha1</exclude>
    </php>
    <pearinstaller>
     <min>1.7.0</min>
@@ -522,7 +522,7 @@
     <channel>pear.horde.org</channel>
     <min>5.0.0</min>
     <max>6.0.0alpha1</max>
-    <exclude>6.0.0alpha1</exclude>
+    <exclude>8.0.0alpha1</exclude>
    </package>
    <package>
     <name>Horde_Auth</name>
@@ -2623,6 +2623,24 @@
 * [mjr] Prevent broken iCalendar files from causing fatal errors (Bug #14672).
 * [jan] Work around calendar servers advertising as CalDAV-capable, but ignoring CalDAV requests (Bug #14662).
 * [jan] Fix displaying yesterday&apos;s event in Prior Events portal block (admin@layertec.de, Bug #14638).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.23</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2017-09-19</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [jan] Officially support PHP 7.
+* [jan] Fix time offsets when importing CSV data with two-digit years.
+* [jan] Fix updating and deleting events from external CalDAV servers (martin1@k0k.net, Bug #14021).
+* [jan] Fix exporting multiple tags to iCalendar CATEGORIES (Bug #14057).
    </notes>
   </release>
  </changelog>

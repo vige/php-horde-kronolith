@@ -795,8 +795,11 @@ abstract class Kronolith_Event
 
             // Tags
             if ($this->tags) {
-                $tags = implode(', ', $this->tags);
-                $vEvent->setAttribute('CATEGORIES', $tags);
+                if (count($this->tags == 1)) {
+                    $vEvent->setAttribute('CATEGORIES', $this->tags[0]);
+                } else {
+                    $vEvent->setAttribute('CATEGORIES', '', array(), true, $this->tags);
+                }
             }
 
             // Location
@@ -1989,6 +1992,9 @@ abstract class Kronolith_Event
             }
             if (count($time) == 3 && count($date) == 3 &&
                 !empty($date[1]) && !empty($date[2])) {
+                if ($date[0] < 100) {
+                    $date[0] += (date('Y') / 100 | 0) * 100;
+                }
                 $this->start = new Horde_Date(
                     array(
                         'year'  => $date[0],
@@ -2035,6 +2041,9 @@ abstract class Kronolith_Event
             }
             if (count($time) == 3 && count($date) == 3 &&
                 !empty($date[1]) && !empty($date[2])) {
+                if ($date[0] < 100) {
+                    $date[0] += (date('Y') / 100 | 0) * 100;
+                }
                 $this->end = new Horde_Date(
                     array(
                         'year'  => $date[0],
