@@ -1,8 +1,10 @@
-php-horde-kronolith (4.2.24-1) UNRELEASED; urgency=medium
+php-horde-kronolith (4.2.24-1) unstable; urgency=medium
 
   * New upstream version 4.2.24
+  * CVE-2017-16906 XSS via URL field (Closes: #909737)
+  * CVE-2017-16908 XSS via Name field (Closes: #909738)
 
- -- Mathieu Parent <sathieu@debian.org>  Sun, 07 Oct 2018 12:48:41 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Mon, 08 Oct 2018 09:51:44 +0200
 
 php-horde-kronolith (4.2.23-3) unstable; urgency=medium
 
