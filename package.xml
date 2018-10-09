@@ -22,10 +22,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2018-07-04</date>
- <time>13:54:45</time>
+ <date>2018-09-26</date>
+ <time>09:19:47</time>
  <version>
-  <release>4.2.24</release>
+  <release>4.2.25</release>
   <api>4.2.0</api>
  </version>
  <stability>
@@ -34,10 +34,8 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [jan] Fix displaying event start time in calendar feed if using 12-hours time format.
-* [jan] Fix SCHEDULE-AGENT setting if there is only one attendee.
-* [mjr] Prevent fatal error if calendar not found during DAV sync.
-* [jan] Fix regression in exporting single tags to iCalendar CATEGORIES (Bug #14698).
+* [mjr] SECURITY: Fix XSS vulnerability in resource group property view (Bug #14857).
+* [mjr] SECURITY: Fix XSS vulnerability in event URL field (Bug #14857).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -75,11 +73,11 @@
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="cc925cfc3723e48c44bb90247500a39c" name="config/menu.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="6d6f41c2d0249afbbf56d2da74fb480a" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c3dbbfd6bb11fcb9a5f6e88eb2cfdcbb" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="0dd56f40477db959d267f3ee06d0731b" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="960263aa4d0e68f80869541c47bd6ff9" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="e45359c79dd35b070595166af51fc13a" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="b5d02342fe4ca0e2fe8e56e108959d7a" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="609edce585f685d2a582ac2a7d9ac8cd" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="cbfb6620d1e2a246ad88506e01b9508f" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
@@ -88,7 +86,7 @@
    <file baseinstalldir="/" md5sum="d934e798ad1fd7003e286945bdf6f158" name="js/edit.js" role="horde" />
    <file baseinstalldir="/" md5sum="e8f6f4563d14ba194c08fb848994099c" name="js/embed.js" role="horde" />
    <file baseinstalldir="/" md5sum="fd1df6825198a17e37a9f22df866b192" name="js/goto.js" role="horde" />
-   <file baseinstalldir="/" md5sum="d3b77975e9a47d81ce3e7e6034b19ebc" name="js/kronolith.js" role="horde" />
+   <file baseinstalldir="/" md5sum="124a0d99374542f7adcbe2d39cf930ea" name="js/kronolith.js" role="horde" />
    <file baseinstalldir="/" md5sum="b1d026590a4b9a0ca711d12ddfc1446f" name="js/smartmobile.js" role="horde" />
    <file baseinstalldir="/" md5sum="0cffaa0f7961298b37e359730fb96fc5" name="js/views.js" role="horde" />
    <file baseinstalldir="/" md5sum="85addc568035fd0b09385eb133705e13" name="lib/Ajax/Application/Handler.php" role="horde" />
@@ -177,12 +175,12 @@
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="1ddeb9d9dcd5ef14835ee79b29e556bb" name="lib/Ajax.php" role="horde" />
    <file baseinstalldir="/" md5sum="e6d4255f711ad69287a5567b4da0172d" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="f41d5721565c37133b78f72f15f70e41" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e71430d803e33305a6bf1e36a66a1cb9" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="731667aca354d1f0712aea2c1134122b" name="lib/Calendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="8cc418604f8867c1e9d48e96a38938b4" name="lib/CalendarsManager.php" role="horde" />
    <file baseinstalldir="/" md5sum="21dc13240daed72525e8183911455760" name="lib/Day.php" role="horde" />
    <file baseinstalldir="/" md5sum="d637687e0c4a5b9fd494f1fc7d2cfed8" name="lib/Driver.php" role="horde" />
-   <file baseinstalldir="/" md5sum="951c4b49596445da2907fb4b905ceb88" name="lib/Event.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d608419e5d0e7ce32e01c6fe2f13efad" name="lib/Event.php" role="horde" />
    <file baseinstalldir="/" md5sum="18557bf524191ac05b4097671a0de1b0" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="a649b661f18514479d909db0bd2e0251" name="lib/FreeBusy.php" role="horde" />
    <file baseinstalldir="/" md5sum="a25020eb45d3c199d194d01371106dd9" name="lib/Kronolith.php" role="horde" />
@@ -3890,6 +3888,22 @@
 * [jan] Fix SCHEDULE-AGENT setting if there is only one attendee.
 * [mjr] Prevent fatal error if calendar not found during DAV sync.
 * [jan] Fix regression in exporting single tags to iCalendar CATEGORIES (Bug #14698).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.25</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2018-09-26</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [mjr] SECURITY: Fix XSS vulnerability in resource group property view (Bug #14857).
+* [mjr] SECURITY: Fix XSS vulnerability in event URL field (Bug #14857).
    </notes>
   </release>
   <release>
