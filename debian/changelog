@@ -1,8 +1,10 @@
-php-horde-kronolith (4.2.25-1) UNRELEASED; urgency=medium
+php-horde-kronolith (4.2.25-1) unstable; urgency=medium
 
   * New upstream version 4.2.25
+    - Remove patch for CVE-2017-16906, merged
+    - Remove patch for CVE-2017-16908, merged
 
- -- Mathieu Parent <sathieu@debian.org>  Tue, 09 Oct 2018 16:25:29 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Wed, 24 Oct 2018 22:44:46 +0200
 
 php-horde-kronolith (4.2.24-1) unstable; urgency=medium
 
