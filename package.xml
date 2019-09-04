@@ -22,10 +22,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2018-09-26</date>
- <time>09:19:47</time>
+ <date>2019-01-07</date>
+ <time>22:48:19</time>
  <version>
-  <release>4.2.25</release>
+  <release>4.2.27</release>
   <api>4.2.0</api>
  </version>
  <stability>
@@ -34,8 +34,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [mjr] SECURITY: Fix XSS vulnerability in resource group property view (Bug #14857).
-* [mjr] SECURITY: Fix XSS vulnerability in event URL field (Bug #14857).
+* [mjr] Remove erroneously added patch file.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -73,15 +72,15 @@
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="cc925cfc3723e48c44bb90247500a39c" name="config/menu.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="6d6f41c2d0249afbbf56d2da74fb480a" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="0dd56f40477db959d267f3ee06d0731b" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="874fffb3b9b38c4cf356e935c25d1f9e" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="960263aa4d0e68f80869541c47bd6ff9" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="e45359c79dd35b070595166af51fc13a" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="609edce585f685d2a582ac2a7d9ac8cd" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="727462e1ecbea9d4cb4e3fbc28a4b605" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="cbfb6620d1e2a246ad88506e01b9508f" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="e3794a61bf858d92da3d6cc322e35c09" name="feed/index.php" role="horde" />
+   <file baseinstalldir="/" md5sum="be4cac3d9f330b8a979accd71136fcc8" name="feed/index.php" role="horde" />
    <file baseinstalldir="/" md5sum="e6f24bb2bd0884513b7404d2b5bd7940" name="js/dragdrop2.js" role="horde" />
    <file baseinstalldir="/" md5sum="d934e798ad1fd7003e286945bdf6f158" name="js/edit.js" role="horde" />
    <file baseinstalldir="/" md5sum="e8f6f4563d14ba194c08fb848994099c" name="js/embed.js" role="horde" />
@@ -175,12 +174,12 @@
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="1ddeb9d9dcd5ef14835ee79b29e556bb" name="lib/Ajax.php" role="horde" />
    <file baseinstalldir="/" md5sum="e6d4255f711ad69287a5567b4da0172d" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="e71430d803e33305a6bf1e36a66a1cb9" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b8348958f8f3b467553408b124f1aa7d" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="731667aca354d1f0712aea2c1134122b" name="lib/Calendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="8cc418604f8867c1e9d48e96a38938b4" name="lib/CalendarsManager.php" role="horde" />
    <file baseinstalldir="/" md5sum="21dc13240daed72525e8183911455760" name="lib/Day.php" role="horde" />
    <file baseinstalldir="/" md5sum="d637687e0c4a5b9fd494f1fc7d2cfed8" name="lib/Driver.php" role="horde" />
-   <file baseinstalldir="/" md5sum="d608419e5d0e7ce32e01c6fe2f13efad" name="lib/Event.php" role="horde" />
+   <file baseinstalldir="/" md5sum="6e116dab7625d0a369bde2ab9e6292d3" name="lib/Event.php" role="horde" />
    <file baseinstalldir="/" md5sum="18557bf524191ac05b4097671a0de1b0" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="a649b661f18514479d909db0bd2e0251" name="lib/FreeBusy.php" role="horde" />
    <file baseinstalldir="/" md5sum="a25020eb45d3c199d194d01371106dd9" name="lib/Kronolith.php" role="horde" />
@@ -3908,6 +3907,36 @@
   </release>
   <release>
    <version>
+    <release>4.2.26</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-01-06</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [mjr] Remove hard coded end date for calendar feed and allow it to be specified in url.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.27</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-01-08</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [mjr] Remove erroneously added patch file.
+   </notes>
+  </release>
+  <release>
+   <version>
     <release>5.0.0</release>
     <api>5.0.0</api>
    </version>
@@ -3919,7 +3948,6 @@
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * [mjr] Prevent creation of corrupt recurrence end dates (Bug #14752).
-* [mjr] Allow to optinoally specify end date for calendar feed.
 * [jan] Add API to backup and restore user data.
 * [jan] Use colors, names, and descriptions of remote CalDAV calendars (Request #14612).
 * [jan] Add headers to print views.
