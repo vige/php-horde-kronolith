@@ -2,6 +2,7 @@ php-horde-kronolith (4.2.27-1) UNRELEASED; urgency=medium
 
   * New upstream version 4.2.27
   * Bump debhelper from old 11 to 12.
+  * d/control: Orphaning package (See #942282)
 
  -- Mathieu Parent <sathieu@debian.org>  Wed, 04 Sep 2019 21:07:06 +0200
 
