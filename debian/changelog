@@ -1,5 +1,7 @@
 php-horde-kronolith (4.2.27-2) UNRELEASED; urgency=medium
 
+  * Re-upload to Debian. (Closes: #959320).
+
   * d/control: Add to Uploaders: Mike Gabriel.
   * d/control: Drop from Uploaders: Debian QA Group.
 
