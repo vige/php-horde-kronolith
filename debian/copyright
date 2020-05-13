@@ -57,7 +57,7 @@ License: GPL-2
 Files: kronolith-*/attendees.php
 Copyright: 2004-2007, Code Fusion  (http://www.codefusion.co.za/)
            2004-2007, Stuart Binge <s.binge@codefusion.co.za>
-Files: GPL-2
+License: GPL-2
 
 Files: kronolith-*/js/dragdrop2.js
 Copyright: 2008-2017, Horde LLC (http://www.horde.org/)
