@@ -1,13 +1,76 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Horde kronolith (A web based calendar)
 Upstream-Contact: Horde <horde@lists.horde.org>
-		  Horde development <dev@lists.horde.org>
+                  Horde development <dev@lists.horde.org>
 Source: http://pear.horde.org/
 
 Files: *
-Copyright: 1999-2012 Horde LLC (http://www.horde.org/)
-           2004-2007 Code Fusion  (http://www.codefusion.co.za/)
-           2004-2007 Stuart Binge <s.binge@codefusion.co.za>
+Copyright: 1999-2017, Horde LLC (http://www.horde.org/)
+           2001-2017, Horde LLC (http://www.horde.org/)
+           2002-2017, Horde LLC (http://www.horde.org/)
+           2003-2017, Horde LLC (http://www.horde.org/)
+           2004-2017, Horde LLC (http://www.horde.org/)
+           2005-2017, Horde LLC (http://www.horde.org/)
+           2006-2017, Horde LLC (http://www.horde.org/)
+           2008-2017, Horde LLC (http://www.horde.org/)
+           2009-2017, Horde LLC (http://www.horde.org/)
+           2010-2017, Horde LLC (http://www.horde.org/)
+           2011-2017, Horde LLC (http://www.horde.org/)
+           2012-2017, Horde LLC (http://www.horde.org/)
+           2013-2017, Horde LLC (http://www.horde.org/)
+           2014-2017, Horde LLC (http://www.horde.org/)
+           2015-2017, Horde LLC (http://www.horde.org/)
+License: GPL-2
+
+Files: kronolith-*/locale/*
+Copyright: 2001, Samuel Mota <samuel@bumerangue.com>
+           2001, Mikhaël Janson
+           2001, Anton Nekhoroshih <anton@valuehost.ru>
+           2001, David Chang <david@tmv.gov.tw>
+           2002, Fedor A. Fetisov <faf@ssc.ru>
+           2002-2005, Andreas Dahlén <andreas@dahlen.ws>
+           2002-2007, Thierry Thomas
+           2001-2017, Horde LLC (http://www.horde.org/)
+           2002, J.I Kim. <aporie@netian.com>
+           2002, Leo Mrafko, <leo@oel.sk>
+           2002, Per-Stian Vatne <psv@orsta.org>
+           2002-2017, Horde LLC (http://www.horde.org/)
+           2003, Platinum Inc. <pl@tinum.info>
+           2003, Sergio G. Caredda <scaredda@tiscali.it>
+           2007, nethesis srl.
+           2003-2012, Leena Heino <liinu@uta.fi>
+           2004, Ivan Noris <vix@vazka.sk>
+           2004-2013, Horde LLC (http://www.horde.org/)
+           2004-2017, Horde LLC (http://www.horde.org/)
+           2005-2017, Horde LLC (http://www.horde.org/)
+           2006-2017, Horde LLC (http://www.horde.org/)
+           2007-2017, Horde LLC (http://www.horde.org/)
+           2008-2017, Horde LLC (http://www.horde.org/)
+           2011-2017, Horde LLC (http://www.horde.org/)
+           2012, Massimo Malabotta <mmalabotta@units.it>
+           2012-2013, Horde LLC (http://www.horde.org/)
+           2012-2017, Horde LLC (http://www.horde.org/)
+           2014, Horde LLC (http://www.horde.org/)
+           2013, Andriy Kopystyansky <anri@polynet.lviv.ua>
+License: GPL-2
+
+Files: kronolith-*/attendees.php
+Copyright: 2004-2007, Code Fusion  (http://www.codefusion.co.za/)
+           2004-2007, Stuart Binge <s.binge@codefusion.co.za>
+Files: GPL-2
+
+Files: kronolith-*/js/dragdrop2.js
+Copyright: 2008-2017, Horde LLC (http://www.horde.org/)
+           2007, Aleksandras Ilarionovas (http://www.skybyte.net/scripts/)
+           2005-2007, Thomas Fuchs (http://script.aculo.us/)
+           2005-2007, Sammi Williams (http://www.oriontransfer.co.nz/)
+License: Expat-Like
+
+Files: debian/*
+Copyright: 2011-2019, Mathieu Parent <math.parent@gmail.com>
+           2020, Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+License: LGPL-2.1+ or GPL-2 or Expat-Like
+
 License: GPL-2
  This program is free software; you can redistribute it
  and/or modify it under the terms of the GNU General Public
@@ -28,11 +91,6 @@ License: GPL-2
  License version 2 can be found in the file
  `/usr/share/common-licenses/GPL-2'.
 
-Files: kronolith-*/js/dragdrop2.js
-Copyright: 2008-2012 Horde LLC (http://www.horde.org/)
-           2007 Aleksandras Ilarionovas (http://www.skybyte.net/scripts/)
-           2005-2007 Thomas Fuchs (http://script.aculo.us/)
-           2005-2007 Sammi Williams (http://www.oriontransfer.co.nz/)
 License: Expat-Like
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -49,8 +107,6 @@ License: Expat-Like
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  DEALINGS IN THE SOFTWARE.
 
-Files: debian/*
-Copyright: 2011 Mathieu Parent <math.parent@gmail.com>
 License: LGPL-2.1+
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
