@@ -1,3 +1,16 @@
+php-horde-kronolith (4.2.27-3) UNRELEASED; urgency=medium
+
+  [ Mike Gabriel ]
+  * d/control: Add to Uploaders: Juri Grabowski.
+  * d/control: Bump DH compat level to version 13.
+  * d/salsa-ci.yml: Add file with salsa-ci.yml and pipeline-jobs.yml calls.
+
+  [ Juri Grabowski ]
+  * d/salsa-ci.yml: enable aptly
+  * d/salsa-ci.yml: allow_failure on autopkgtest.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 01 Jul 2020 12:33:31 +0200
+
 php-horde-kronolith (4.2.27-2) unstable; urgency=medium
 
   * Re-upload to Debian. (Closes: #959320).
