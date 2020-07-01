@@ -1,4 +1,4 @@
-php-horde-kronolith (4.2.27-3) UNRELEASED; urgency=medium
+php-horde-kronolith (4.2.27-3) unstable; urgency=medium
 
   [ Mike Gabriel ]
   * d/control: Add to Uploaders: Juri Grabowski.
@@ -9,7 +9,7 @@ php-horde-kronolith (4.2.27-3) UNRELEASED; urgency=medium
   * d/salsa-ci.yml: enable aptly
   * d/salsa-ci.yml: allow_failure on autopkgtest.
 
- -- Mike Gabriel <sunweaver@debian.org>  Wed, 01 Jul 2020 12:33:31 +0200
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 01 Jul 2020 12:46:42 +0200
 
 php-horde-kronolith (4.2.27-2) unstable; urgency=medium
 
