@@ -1,3 +1,10 @@
+php-horde-kronolith (4.2.27-4) UNRELEASED; urgency=medium
+
+  * d/control: Enforce versioned D on php-horde (>= 5.2.23+debian0-1~).
+  * d/rules: Move theme files to /etc/horde/.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 02 Jul 2020 21:35:45 +0200
+
 php-horde-kronolith (4.2.27-3) unstable; urgency=medium
 
   [ Mike Gabriel ]
