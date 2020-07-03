@@ -1,9 +1,10 @@
-php-horde-kronolith (4.2.27-4) UNRELEASED; urgency=medium
+php-horde-kronolith (4.2.27-4) unstable; urgency=medium
 
   * d/control: Enforce versioned D on php-horde (>= 5.2.23+debian0-1~).
   * d/rules: Move theme files to /etc/horde/.
+  * d/maintscript: Turn /usr/share/horde/kronolith/themes/ into symlink.
 
- -- Mike Gabriel <sunweaver@debian.org>  Thu, 02 Jul 2020 21:35:45 +0200
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 03 Jul 2020 23:40:31 +0200
 
 php-horde-kronolith (4.2.27-3) unstable; urgency=medium
 
