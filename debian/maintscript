@@ -1,0 +1,1 @@
+dir_to_symlink /usr/share/horde/kronolith/themes /etc/horde/themes-enabled.d/kronolith 4.2.27-4~ php-horde-kronolith
