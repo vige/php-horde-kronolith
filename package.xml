@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.10.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.10.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>kronolith</name>
  <channel>pear.horde.org</channel>
  <summary>Calendar and scheduling application</summary>
@@ -22,10 +22,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2019-01-07</date>
- <time>22:48:19</time>
+ <date>2020-07-04</date>
+ <time>14:34:01</time>
  <version>
-  <release>4.2.27</release>
+  <release>4.2.28</release>
   <api>4.2.0</api>
  </version>
  <stability>
@@ -34,7 +34,9 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [mjr] Remove erroneously added patch file.
+* [mjr] SECURITY: Don&apos;t leak private details when sending notifications for private events (Bug #15011).
+* [mjr] Fix regression in display of clickable event URL property (Bug #14941).
+* |+
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -50,7 +52,7 @@
    <file baseinstalldir="/" md5sum="208c2032f7415f4f2209ec3b523f0932" name="bin/kronolith-convert-to-utc" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
-   <file baseinstalldir="/" md5sum="f0a81c437faba71679e3f070d180b463" name="bin/kronolith-import-icals" role="script">
+   <file baseinstalldir="/" md5sum="649ec3952af58326cfda833fdd253fb0" name="bin/kronolith-import-icals" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
    <file baseinstalldir="/" md5sum="15248cb18a7b66b00165ea9106918169" name="bin/kronolith-import-openxchange" role="script">
@@ -72,11 +74,11 @@
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="cc925cfc3723e48c44bb90247500a39c" name="config/menu.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="6d6f41c2d0249afbbf56d2da74fb480a" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="874fffb3b9b38c4cf356e935c25d1f9e" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="6289fd49c9b2d20d208efec37d15e98a" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="960263aa4d0e68f80869541c47bd6ff9" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="e45359c79dd35b070595166af51fc13a" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="727462e1ecbea9d4cb4e3fbc28a4b605" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="aa7143b180968afc87ed6580bc3c913c" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="cbfb6620d1e2a246ad88506e01b9508f" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
@@ -174,15 +176,15 @@
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="1ddeb9d9dcd5ef14835ee79b29e556bb" name="lib/Ajax.php" role="horde" />
    <file baseinstalldir="/" md5sum="e6d4255f711ad69287a5567b4da0172d" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="b8348958f8f3b467553408b124f1aa7d" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="7065558fc8feba2a088f3b2b4da91fff" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="731667aca354d1f0712aea2c1134122b" name="lib/Calendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="8cc418604f8867c1e9d48e96a38938b4" name="lib/CalendarsManager.php" role="horde" />
    <file baseinstalldir="/" md5sum="21dc13240daed72525e8183911455760" name="lib/Day.php" role="horde" />
    <file baseinstalldir="/" md5sum="d637687e0c4a5b9fd494f1fc7d2cfed8" name="lib/Driver.php" role="horde" />
-   <file baseinstalldir="/" md5sum="6e116dab7625d0a369bde2ab9e6292d3" name="lib/Event.php" role="horde" />
+   <file baseinstalldir="/" md5sum="14150ffda7eb68747a90459ca4569d68" name="lib/Event.php" role="horde" />
    <file baseinstalldir="/" md5sum="18557bf524191ac05b4097671a0de1b0" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="a649b661f18514479d909db0bd2e0251" name="lib/FreeBusy.php" role="horde" />
-   <file baseinstalldir="/" md5sum="a25020eb45d3c199d194d01371106dd9" name="lib/Kronolith.php" role="horde" />
+   <file baseinstalldir="/" md5sum="66609e72cac30dd292d2624e727266d7" name="lib/Kronolith.php" role="horde" />
    <file baseinstalldir="/" md5sum="fb60202b07cbfdbd8f27768694fa01b1" name="lib/Resource.php" role="horde" />
    <file baseinstalldir="/" md5sum="da3de1aeeb14284aa70f776f255588a0" name="lib/Storage.php" role="horde" />
    <file baseinstalldir="/" md5sum="9a37ec8db9bc8f4566d06967edce5d04" name="lib/Tagger.php" role="horde" />
@@ -391,7 +393,7 @@
    <file baseinstalldir="/" md5sum="b940595dd8df582087cb653876aac862" name="test/Kronolith/Stub/Registry.php" role="test" />
    <file baseinstalldir="/" md5sum="210b1d0101b92b7687927d39426d3c11" name="test/Kronolith/Stub/ShareFactory.php" role="test" />
    <file baseinstalldir="/" md5sum="d21aedabd6fd3f15593797d28881083d" name="test/Kronolith/Stub/Tagger.php" role="test" />
-   <file baseinstalldir="/" md5sum="d80e11b7666f01d7e8025a8fb9c1a810" name="test/Kronolith/Stub/Types.php" role="test" />
+   <file baseinstalldir="/" md5sum="6d07365505389ee0a57415ad083c9e8c" name="test/Kronolith/Stub/Types.php" role="test" />
    <file baseinstalldir="/" md5sum="8bc9518b9c0576806c82d9413489d099" name="test/Kronolith/AllTests.php" role="test" />
    <file baseinstalldir="/" md5sum="67a7d34cfcf0f7e6e33ebc89caff5ece" name="test/Kronolith/Autoload.php" role="test" />
    <file baseinstalldir="/" md5sum="0a5018f0726d4673850fece3ad4d72c0" name="test/Kronolith/bootstrap.php" role="test" />
@@ -3933,6 +3935,23 @@
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * [mjr] Remove erroneously added patch file.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.28</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-01-08</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [mjr] SECURITY: Don&apos;t leak private details when sending notifications for private events (Bug #15011).
+* [mjr] Fix regression in display of clickable event URL property (Bug #14941).
+* |+
    </notes>
   </release>
   <release>
