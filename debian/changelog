@@ -1,3 +1,9 @@
+php-horde-kronolith (4.2.28-1) UNRELEASED; urgency=medium
+
+  * New upstream version 4.2.28
+
+ -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Wed, 08 Jul 2020 21:07:23 +0200
+
 php-horde-kronolith (4.2.27-4) unstable; urgency=medium
 
   * d/control: Enforce versioned D on php-horde (>= 5.2.23+debian0-1~).
