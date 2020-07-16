@@ -2110,16 +2110,18 @@ class Kronolith
 
         $owner = $share->get('owner');
         if ($owner) {
-            $recipients[$owner] = self::_notificationPref($owner, 'owner');
-            $recipients[$owner]['private'] = $event->isPrivate($owner);
+            if ($notificationPrefs = self::_notificationPref($owner, 'owner')) {
+                $recipients[$owner] = $notificationPrefs;
+                $recipients[$owner]['private'] = $event->isPrivate($owner);
+            }
         }
 
         $senderIdentity = $injector->getInstance('Horde_Core_Factory_Identity')
             ->create($registry->getAuth() ?: $event->creator ?: $owner);
 
         foreach ($share->listUsers(Horde_Perms::READ) as $user) {
-            if (empty($recipients[$user])) {
-                $recipients[$user] = self::_notificationPref($user, 'read', $calendar);
+            if (empty($recipients[$user]) && ($notificationPrefs = self::_notificationPref($user, 'read', $calendar))) {
+                $recipients[$user] = $notificationPrefs;
                 $recipients[$user]['private'] = $event->isPrivate($user);
             }
         }
@@ -2133,8 +2135,8 @@ class Kronolith
             }
 
             foreach ($group_users as $user) {
-                if (empty($recipients[$user])) {
-                    $recipients[$user] = self::_notificationPref($user, 'read', $calendar);
+            if (empty($recipients[$user]) && ($notificationPrefs = self::_notificationPref($user, 'read', $calendar))) {
+                    $recipients[$user] = $notificationPrefs;
                     $recipients[$user]['private'] = $event->isPrivate($user);
                 }
             }
@@ -2282,8 +2284,9 @@ class Kronolith
      *                          currently shown.
      * @param string $calendar  The name of the calendar if mode is "read".
      *
-     * @return mixed  The user's email, time, and language preferences if they
-     *                want a notification for this calendar.
+     * @return array|boolen  The user's email, time, and language preferences if
+     *                       they want a notification for this calendar. False
+     *                       if no notification should be sent.
      */
     static public function _notificationPref($user, $mode, $calendar = null)
     {
