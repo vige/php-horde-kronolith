@@ -1,3 +1,9 @@
+php-horde-kronolith (4.2.29-1) UNRELEASED; urgency=medium
+
+  * New upstream version 4.2.29
+
+ -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Thu, 16 Jul 2020 11:06:41 +0200
+
 php-horde-kronolith (4.2.28-1) unstable; urgency=medium
 
   * New upstream version 4.2.28
