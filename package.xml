@@ -22,10 +22,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2020-07-04</date>
- <time>14:34:01</time>
+ <date>2020-07-12</date>
+ <time>14:42:34</time>
  <version>
-  <release>4.2.28</release>
+  <release>4.2.29</release>
   <api>4.2.0</api>
  </version>
  <stability>
@@ -34,9 +34,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* [mjr] SECURITY: Don&apos;t leak private details when sending notifications for private events (Bug #15011).
-* [mjr] Fix regression in display of clickable event URL property (Bug #14941).
-* |+
+* [mjr] Fix regresssion in event modification notifications (Bug #15022).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -74,11 +72,11 @@
    <file baseinstalldir="/" md5sum="e896ba8d56d555739ec7027843c9ac82" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="cc925cfc3723e48c44bb90247500a39c" name="config/menu.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="6d6f41c2d0249afbbf56d2da74fb480a" name="config/prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="6289fd49c9b2d20d208efec37d15e98a" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="4c26381e13cd161d6f05d533d95d49b1" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="960263aa4d0e68f80869541c47bd6ff9" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="e45359c79dd35b070595166af51fc13a" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="2dfceb9fca77afbe48bb12266ca5d9c2" name="docs/lighttpd-kronolith.conf" role="doc" />
-   <file baseinstalldir="/" md5sum="aa7143b180968afc87ed6580bc3c913c" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="e0729cd9c6faf98ce49bb47a1cbb2e4d" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="fb21ad93c4a584c014d95ac867c49b1a" name="docs/TODO" role="doc" />
    <file baseinstalldir="/" md5sum="cbfb6620d1e2a246ad88506e01b9508f" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="c69b5de307b19775a3602f984753828f" name="feed/.htaccess" role="horde" />
@@ -176,7 +174,7 @@
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="1ddeb9d9dcd5ef14835ee79b29e556bb" name="lib/Ajax.php" role="horde" />
    <file baseinstalldir="/" md5sum="e6d4255f711ad69287a5567b4da0172d" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="7065558fc8feba2a088f3b2b4da91fff" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="a22cf6fa22a124b184672fde918b7bf0" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="731667aca354d1f0712aea2c1134122b" name="lib/Calendar.php" role="horde" />
    <file baseinstalldir="/" md5sum="8cc418604f8867c1e9d48e96a38938b4" name="lib/CalendarsManager.php" role="horde" />
    <file baseinstalldir="/" md5sum="21dc13240daed72525e8183911455760" name="lib/Day.php" role="horde" />
@@ -184,7 +182,7 @@
    <file baseinstalldir="/" md5sum="14150ffda7eb68747a90459ca4569d68" name="lib/Event.php" role="horde" />
    <file baseinstalldir="/" md5sum="18557bf524191ac05b4097671a0de1b0" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="a649b661f18514479d909db0bd2e0251" name="lib/FreeBusy.php" role="horde" />
-   <file baseinstalldir="/" md5sum="66609e72cac30dd292d2624e727266d7" name="lib/Kronolith.php" role="horde" />
+   <file baseinstalldir="/" md5sum="1b9f515d18238f808ebd6bf9ba147544" name="lib/Kronolith.php" role="horde" />
    <file baseinstalldir="/" md5sum="fb60202b07cbfdbd8f27768694fa01b1" name="lib/Resource.php" role="horde" />
    <file baseinstalldir="/" md5sum="da3de1aeeb14284aa70f776f255588a0" name="lib/Storage.php" role="horde" />
    <file baseinstalldir="/" md5sum="9a37ec8db9bc8f4566d06967edce5d04" name="lib/Tagger.php" role="horde" />
@@ -3946,12 +3944,26 @@
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2019-01-08</date>
+   <date>2020-07-04</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * [mjr] SECURITY: Don&apos;t leak private details when sending notifications for private events (Bug #15011).
 * [mjr] Fix regression in display of clickable event URL property (Bug #14941).
-* |+
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.29</release>
+    <api>4.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2020-07-04</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [mjr] Fix regresssion in event modification notifications (Bug #15022).
    </notes>
   </release>
   <release>
