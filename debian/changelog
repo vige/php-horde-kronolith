@@ -1,3 +1,12 @@
+php-horde-kronolith (4.2.19-1+deb9u1) stretch-security; urgency=medium
+
+  * debian/patches:
+    + Add 0001-escape-user-provided-resource-name-when-outputting_CVE-
+      2017-16908.patch. Escape user-provided resource name when outputting.
+      Prevents XSS vuln. (Closes: #909738, CVE-2017-16908).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 29 Aug 2020 21:25:48 +0200
+
 php-horde-kronolith (4.2.19-1) unstable; urgency=medium
 
   * New upstream version 4.2.19
