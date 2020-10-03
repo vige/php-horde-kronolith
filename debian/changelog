@@ -1,3 +1,13 @@
+php-horde-kronolith (4.2.29-2) unstable; urgency=medium
+
+  * d/patches: Add 1010_phpunit-8.x+9.x.patch. Fix tests with PHPUnit 8.x/9.x.
+  * d/t/control: Require php-horde-test (>= 2.6.4+debian0-7~).
+  * d/patches: Add 1001_set-noset-parameter-for-session-handler-instance.patch.
+    Propagate 'noset' parameter up to the Horde_SessionHandler instance during
+    Horde_Test_Setup.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 03 Oct 2020 15:12:34 +0200
+
 php-horde-kronolith (4.2.29-1) unstable; urgency=medium
 
   * New upstream version 4.2.29
