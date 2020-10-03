@@ -1,1 +1,2 @@
 1010_phpunit-8.x+9.x.patch
+1001_set-noset-parameter-for-session-handler-instance.patch
