@@ -1,2 +1,2 @@
 Tests: phpunit
-Depends: @, php-cli, php-horde-test, php-sqlite3
+Depends: @, php-cli, php-horde-test (>= 2.6.4+debian0-6~), php-sqlite3
