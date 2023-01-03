@@ -1,3 +1,18 @@
+php-horde-kronolith (4.2.29-3) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Mike Gabriel ]
+  * d/watch: Switch to format version 4.
+
+  [ Anton Gladky ]
+  * d/salsa-ci.yml: use aptly, simplify.
+  * d/t/control: allow-stderr due warnings in other packages
+  * d/contro: Update standards version to 4.6.2, no changes needed.
+  * d/control: Switch BD from pear-horde-channel to pear-channels.
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 03 Jan 2023 07:33:57 +0100
+
 php-horde-kronolith (4.2.29-2) unstable; urgency=medium
 
   * d/patches: Add 1010_phpunit-8.x+9.x.patch. Fix tests with PHPUnit 8.x/9.x.
