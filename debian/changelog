@@ -1,3 +1,11 @@
+php-horde-kronolith (4.2.29-4~1.gbpcfa61a) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @cfa61a9b58133bbe9d1c1ce8a9e7c9d473b87000 **
+
+  * Don't call dateDiff statically
+
+ -- Ville Nummela <ville@nummela.org>  Thu, 26 Oct 2023 13:32:30 +0300
+
 php-horde-kronolith (4.2.29-3) unstable; urgency=medium
 
   * Team upload.
