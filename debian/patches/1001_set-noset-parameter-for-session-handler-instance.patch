@@ -1,9 +1,17 @@
-Description: Set 'noset' parameter for SessionHandler instance creation during unit tests.
-Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+From: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Date: Thu, 26 Oct 2023 13:23:45 +0300
+Subject: Set 'noset' parameter for SessionHandler instance creation during
+ unit tests.
 
+---
+ kronolith-4.2.29/test/Kronolith/TestCase.php | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/kronolith-4.2.29/test/Kronolith/TestCase.php b/kronolith-4.2.29/test/Kronolith/TestCase.php
+index d7d12bc..cecac45 100644
 --- a/kronolith-4.2.29/test/Kronolith/TestCase.php
 +++ b/kronolith-4.2.29/test/Kronolith/TestCase.php
-@@ -47,7 +47,8 @@
+@@ -47,7 +47,8 @@ extends Horde_Test_Case
              array(
                  '_PARAMS' => array(
                      'user' => 'test@example.com',

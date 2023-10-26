@@ -1,0 +1,86 @@
+From: Ville Nummela <ville@nummela.org>
+Date: Thu, 26 Oct 2023 13:28:45 +0300
+Subject: Don't call dateDiff statically
+
+---
+ kronolith-4.2.29/lib/Block/Monthlist.php     | 2 +-
+ kronolith-4.2.29/lib/Block/Prevmonthlist.php | 2 +-
+ kronolith-4.2.29/lib/Day.php                 | 2 +-
+ kronolith-4.2.29/lib/Driver/Sql.php          | 2 +-
+ kronolith-4.2.29/lib/Event.php               | 4 ++--
+ 5 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/kronolith-4.2.29/lib/Block/Monthlist.php b/kronolith-4.2.29/lib/Block/Monthlist.php
+index fd3baab..ddc0592 100644
+--- a/kronolith-4.2.29/lib/Block/Monthlist.php
++++ b/kronolith-4.2.29/lib/Block/Monthlist.php
+@@ -113,7 +113,7 @@ class Kronolith_Block_Monthlist extends Horde_Core_Block
+         }
+ 
+         /* How many days do we need to check. */
+-        $days = Date_Calc::dateDiff(
++        $days = (new Date_Calc)->dateDiff(
+             $startDate->mday, $startDate->month, $startDate->year,
+             $endDate->mday, $endDate->month, $endDate->year);
+ 
+diff --git a/kronolith-4.2.29/lib/Block/Prevmonthlist.php b/kronolith-4.2.29/lib/Block/Prevmonthlist.php
+index f78e50f..24604da 100644
+--- a/kronolith-4.2.29/lib/Block/Prevmonthlist.php
++++ b/kronolith-4.2.29/lib/Block/Prevmonthlist.php
+@@ -107,7 +107,7 @@ class Kronolith_Block_Prevmonthlist extends Horde_Core_Block
+         $html = '';
+ 
+         /* How many days do we need to check. */
+-        $days = Date_Calc::dateDiff(
++        $days = (new Date_Calc)->dateDiff(
+             $startDate->mday, $startDate->month, $startDate->year,
+             $endDate->mday, $endDate->month, $endDate->year
+         );
+diff --git a/kronolith-4.2.29/lib/Day.php b/kronolith-4.2.29/lib/Day.php
+index 9c5c60f..2067c91 100644
+--- a/kronolith-4.2.29/lib/Day.php
++++ b/kronolith-4.2.29/lib/Day.php
+@@ -112,7 +112,7 @@ class Kronolith_Day extends Horde_Date
+     public function diff($other = null)
+     {
+         $day2 = new Kronolith_Day();
+-        return Date_Calc::dateDiff($this->mday, $this->month, $this->year,
++        return (new Date_Calc)->dateDiff($this->mday, $this->month, $this->year,
+                                    $day2->mday, $day2->month, $day2->year);
+     }
+ 
+diff --git a/kronolith-4.2.29/lib/Driver/Sql.php b/kronolith-4.2.29/lib/Driver/Sql.php
+index 910b2d0..199b12f 100644
+--- a/kronolith-4.2.29/lib/Driver/Sql.php
++++ b/kronolith-4.2.29/lib/Driver/Sql.php
+@@ -105,7 +105,7 @@ class Kronolith_Driver_Sql extends Kronolith_Driver
+                         }
+                         $start = new Horde_Date($next);
+                         $start->min -= $event->alarm;
+-                        $diff = Date_Calc::dateDiff(
++                        $diff = (new Date_Calc)->dateDiff(
+                             $event->start->mday,
+                             $event->start->month,
+                             $event->start->year,
+diff --git a/kronolith-4.2.29/lib/Event.php b/kronolith-4.2.29/lib/Event.php
+index bc9f26d..b0acf51 100644
+--- a/kronolith-4.2.29/lib/Event.php
++++ b/kronolith-4.2.29/lib/Event.php
+@@ -2171,7 +2171,7 @@ abstract class Kronolith_Event
+                 return;
+             }
+             $start = clone $eventDate;
+-            $diff = Date_Calc::dateDiff(
++            $diff = (new Date_Calc)->dateDiff(
+                 $this->start->mday,
+                 $this->start->month,
+                 $this->start->year,
+@@ -2484,7 +2484,7 @@ abstract class Kronolith_Event
+         }
+ 
+         if ($this->start && $this->end) {
+-            $dur_day_match = Date_Calc::dateDiff($this->start->mday,
++            $dur_day_match = (new Date_Calc)->dateDiff($this->start->mday,
+                                                  $this->start->month,
+                                                  $this->start->year,
+                                                  $this->end->mday,

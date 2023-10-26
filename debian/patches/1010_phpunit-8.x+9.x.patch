@@ -1,9 +1,42 @@
-Description: Adapt to PHPUnit 8.x and 9.x API.
-Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+From: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Date: Thu, 26 Oct 2023 13:23:45 +0300
+Subject: Adapt to PHPUnit 8.x and 9.x API.
 
+---
+ kronolith-4.2.29/test/Kronolith/Integration/AllDayTest.php        | 2 +-
+ kronolith-4.2.29/test/Kronolith/Integration/Driver/Base.php       | 8 ++++----
+ kronolith-4.2.29/test/Kronolith/Integration/Driver/KolabTest.php  | 4 ++--
+ kronolith-4.2.29/test/Kronolith/Integration/Driver/Sql/Base.php   | 2 +-
+ .../test/Kronolith/Integration/Driver/Sql/Pdo/SqliteTest.php      | 2 +-
+ kronolith-4.2.29/test/Kronolith/Integration/FromIcalendarTest.php | 6 ++++--
+ kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Base.php    | 8 ++++----
+ .../test/Kronolith/Integration/Kronolith/KolabTest.php            | 4 ++--
+ .../test/Kronolith/Integration/Kronolith/Sql/Base.php             | 2 +-
+ .../test/Kronolith/Integration/Kronolith/Sql/Pdo/SqliteTest.php   | 2 +-
+ kronolith-4.2.29/test/Kronolith/Integration/ToIcalendarTest.php   | 4 ++--
+ kronolith-4.2.29/test/Kronolith/TestCase.php                      | 2 +-
+ kronolith-4.2.29/test/Kronolith/phpunit.xml                       | 1 +
+ 13 files changed, 25 insertions(+), 22 deletions(-)
+ create mode 100644 kronolith-4.2.29/test/Kronolith/phpunit.xml
+
+diff --git a/kronolith-4.2.29/test/Kronolith/Integration/AllDayTest.php b/kronolith-4.2.29/test/Kronolith/Integration/AllDayTest.php
+index 54de16d..3ce31b4 100644
+--- a/kronolith-4.2.29/test/Kronolith/Integration/AllDayTest.php
++++ b/kronolith-4.2.29/test/Kronolith/Integration/AllDayTest.php
+@@ -29,7 +29,7 @@
+  */
+ class Kronolith_Integration_AllDayTest extends Kronolith_TestCase
+ {
+-    static public function setupBeforeClass()
++    static public function setupBeforeClass(): void
+     {
+         $GLOBALS['calendar_manager'] = new Kronolith_Stub_CalendarManager();
+     }
+diff --git a/kronolith-4.2.29/test/Kronolith/Integration/Driver/Base.php b/kronolith-4.2.29/test/Kronolith/Integration/Driver/Base.php
+index c11891f..3a45ac6 100644
 --- a/kronolith-4.2.29/test/Kronolith/Integration/Driver/Base.php
 +++ b/kronolith-4.2.29/test/Kronolith/Integration/Driver/Base.php
-@@ -53,14 +53,14 @@
+@@ -53,14 +53,14 @@ class Kronolith_Integration_Driver_Base extends Kronolith_TestCase
       */
      private $_added = array();
  
@@ -20,7 +53,7 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          self::$driver = null;
          parent::tearDownAfterClass();
-@@ -70,7 +70,7 @@
+@@ -70,7 +70,7 @@ class Kronolith_Integration_Driver_Base extends Kronolith_TestCase
          unset($GLOBALS['session']);
      }
  
@@ -29,7 +62,7 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          $error = self::$setup->getError();
          if (!empty($error)) {
-@@ -78,7 +78,7 @@
+@@ -78,7 +78,7 @@ class Kronolith_Integration_Driver_Base extends Kronolith_TestCase
          }
      }
  
@@ -38,9 +71,11 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          parent::tearDown();
          foreach ($this->_added as $added) {
+diff --git a/kronolith-4.2.29/test/Kronolith/Integration/Driver/KolabTest.php b/kronolith-4.2.29/test/Kronolith/Integration/Driver/KolabTest.php
+index 10c4f93..aebb817 100644
 --- a/kronolith-4.2.29/test/Kronolith/Integration/Driver/KolabTest.php
 +++ b/kronolith-4.2.29/test/Kronolith/Integration/Driver/KolabTest.php
-@@ -31,7 +31,7 @@
+@@ -31,7 +31,7 @@ class Kronolith_Integration_Driver_KolabTest extends Kronolith_Integration_Drive
  {
      protected $backupGlobals = false;
  
@@ -49,7 +84,7 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          return;
          parent::setUpBeforeClass();
-@@ -41,7 +41,7 @@
+@@ -41,7 +41,7 @@ class Kronolith_Integration_Driver_KolabTest extends Kronolith_Integration_Drive
          self::$type = 'Kolab';
      }
  
@@ -58,9 +93,11 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          $this->markTestIncomplete('Unserialization error from Kolab share objects.');
      }
+diff --git a/kronolith-4.2.29/test/Kronolith/Integration/Driver/Sql/Base.php b/kronolith-4.2.29/test/Kronolith/Integration/Driver/Sql/Base.php
+index 6f9b5eb..3d0a786 100644
 --- a/kronolith-4.2.29/test/Kronolith/Integration/Driver/Sql/Base.php
 +++ b/kronolith-4.2.29/test/Kronolith/Integration/Driver/Sql/Base.php
-@@ -31,7 +31,7 @@
+@@ -31,7 +31,7 @@ class Kronolith_Integration_Driver_Sql_Base extends Kronolith_Integration_Driver
  {
      static $callback;
  
@@ -69,9 +106,11 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          parent::setUpBeforeClass();
          self::getDb();
+diff --git a/kronolith-4.2.29/test/Kronolith/Integration/Driver/Sql/Pdo/SqliteTest.php b/kronolith-4.2.29/test/Kronolith/Integration/Driver/Sql/Pdo/SqliteTest.php
+index 3e23158..6b2271f 100644
 --- a/kronolith-4.2.29/test/Kronolith/Integration/Driver/Sql/Pdo/SqliteTest.php
 +++ b/kronolith-4.2.29/test/Kronolith/Integration/Driver/Sql/Pdo/SqliteTest.php
-@@ -31,7 +31,7 @@
+@@ -31,7 +31,7 @@ class Kronolith_Integration_Driver_Sql_Pdo_SqliteTest extends Kronolith_Integrat
  {
      protected $backupGlobals = false;
  
@@ -80,6 +119,8 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          self::$callback = array(__CLASS__, 'getDb');
          parent::setUpBeforeClass();
+diff --git a/kronolith-4.2.29/test/Kronolith/Integration/FromIcalendarTest.php b/kronolith-4.2.29/test/Kronolith/Integration/FromIcalendarTest.php
+index eb133f2..37c2db8 100644
 --- a/kronolith-4.2.29/test/Kronolith/Integration/FromIcalendarTest.php
 +++ b/kronolith-4.2.29/test/Kronolith/Integration/FromIcalendarTest.php
 @@ -29,13 +29,13 @@
@@ -98,7 +139,7 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          date_default_timezone_set($this->_timezone);
      }
-@@ -107,6 +107,8 @@
+@@ -107,6 +107,8 @@ class Kronolith_Integration_FromIcalendarTest extends Kronolith_TestCase
  
      public function testInvalidTimezone()
      {
@@ -107,9 +148,11 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
          $GLOBALS['conf']['calendar']['driver'] = 'Mock';
          $GLOBALS['injector'] = new Horde_Injector(new Horde_Injector_TopLevel());
          $event = $this->_getFixture('bug11688.ics', 1);
+diff --git a/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Base.php b/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Base.php
+index 140d966..4380b0d 100644
 --- a/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Base.php
 +++ b/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Base.php
-@@ -43,14 +43,14 @@
+@@ -43,14 +43,14 @@ class Kronolith_Integration_Kronolith_Base extends Kronolith_TestCase
       */
      protected $default_name = 'Calendar of test@example.com';
  
@@ -126,7 +169,7 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          parent::tearDownAfterClass();
          unset($GLOBALS['registry']);
-@@ -59,7 +59,7 @@
+@@ -59,7 +59,7 @@ class Kronolith_Integration_Kronolith_Base extends Kronolith_TestCase
          unset($GLOBALS['session']);
      }
  
@@ -135,7 +178,7 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          $GLOBALS['conf']['autoshare']['shareperms'] = 'none';
          $error = self::$setup->getError();
-@@ -68,7 +68,7 @@
+@@ -68,7 +68,7 @@ class Kronolith_Integration_Kronolith_Base extends Kronolith_TestCase
          }
      }
  
@@ -144,9 +187,11 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          foreach ($GLOBALS['injector']->getInstance('Kronolith_Shares')->listShares('test@example.com') as $share) {
              $GLOBALS['injector']->getInstance('Kronolith_Shares')->removeShare($share);
+diff --git a/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/KolabTest.php b/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/KolabTest.php
+index a476bbe..c50dd8f 100644
 --- a/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/KolabTest.php
 +++ b/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/KolabTest.php
-@@ -38,7 +38,7 @@
+@@ -38,7 +38,7 @@ class Kronolith_Integration_Kronolith_KolabTest extends Kronolith_Integration_Kr
       */
      protected $default_name = 'Calendar';
  
@@ -155,7 +200,7 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          return;
          self::$setup = new Horde_Test_Setup();
-@@ -46,7 +46,7 @@
+@@ -46,7 +46,7 @@ class Kronolith_Integration_Kronolith_KolabTest extends Kronolith_Integration_Kr
          self::createKolabShares(self::$setup);
      }
  
@@ -164,9 +209,11 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          $this->markTestIncomplete("No query of type 'Share' registered!");
      }
+diff --git a/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Sql/Base.php b/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Sql/Base.php
+index 2ab3560..28e24cd 100644
 --- a/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Sql/Base.php
 +++ b/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Sql/Base.php
-@@ -31,7 +31,7 @@
+@@ -31,7 +31,7 @@ class Kronolith_Integration_Kronolith_Sql_Base extends Kronolith_Integration_Kro
  {
      static $callback;
  
@@ -175,9 +222,11 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          parent::setUpBeforeClass();
          self::getDb();
+diff --git a/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Sql/Pdo/SqliteTest.php b/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Sql/Pdo/SqliteTest.php
+index 0dbcb43..b7120f1 100644
 --- a/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Sql/Pdo/SqliteTest.php
 +++ b/kronolith-4.2.29/test/Kronolith/Integration/Kronolith/Sql/Pdo/SqliteTest.php
-@@ -31,7 +31,7 @@
+@@ -31,7 +31,7 @@ class Kronolith_Integration_Kronolith_Sql_Pdo_SqliteTest extends Kronolith_Integ
  {
      protected $backupGlobals = false;
  
@@ -186,6 +235,8 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          self::$callback = array(__CLASS__, 'getDb');
          parent::setUpBeforeClass();
+diff --git a/kronolith-4.2.29/test/Kronolith/Integration/ToIcalendarTest.php b/kronolith-4.2.29/test/Kronolith/Integration/ToIcalendarTest.php
+index 6f72606..bee4455 100644
 --- a/kronolith-4.2.29/test/Kronolith/Integration/ToIcalendarTest.php
 +++ b/kronolith-4.2.29/test/Kronolith/Integration/ToIcalendarTest.php
 @@ -29,7 +29,7 @@
@@ -197,7 +248,7 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          $this->_timezone = date_default_timezone_get();
          date_default_timezone_set('Europe/Berlin');
-@@ -43,7 +43,7 @@
+@@ -43,7 +43,7 @@ class Kronolith_Integration_ToIcalendarTest extends Kronolith_TestCase
          $GLOBALS['conf']['calendar']['driver'] = 'Mock';
      }
  
@@ -206,6 +257,8 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
      {
          unset($GLOBALS['registry']);
          unset($GLOBALS['injector']);
+diff --git a/kronolith-4.2.29/test/Kronolith/TestCase.php b/kronolith-4.2.29/test/Kronolith/TestCase.php
+index e8b974e..d7d12bc 100644
 --- a/kronolith-4.2.29/test/Kronolith/TestCase.php
 +++ b/kronolith-4.2.29/test/Kronolith/TestCase.php
 @@ -28,7 +28,7 @@
@@ -217,18 +270,10 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
  {
      protected function getInjector()
      {
+diff --git a/kronolith-4.2.29/test/Kronolith/phpunit.xml b/kronolith-4.2.29/test/Kronolith/phpunit.xml
+new file mode 100644
+index 0000000..5dcbab2
 --- /dev/null
 +++ b/kronolith-4.2.29/test/Kronolith/phpunit.xml
 @@ -0,0 +1 @@
 +<phpunit bootstrap="bootstrap.php"></phpunit>
---- a/kronolith-4.2.29/test/Kronolith/Integration/AllDayTest.php
-+++ b/kronolith-4.2.29/test/Kronolith/Integration/AllDayTest.php
-@@ -29,7 +29,7 @@
-  */
- class Kronolith_Integration_AllDayTest extends Kronolith_TestCase
- {
--    static public function setupBeforeClass()
-+    static public function setupBeforeClass(): void
-     {
-         $GLOBALS['calendar_manager'] = new Kronolith_Stub_CalendarManager();
-     }
